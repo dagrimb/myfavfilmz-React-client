@@ -1,5 +1,7 @@
 //import React into file
 import React from 'react';
+//import MovieCard into file
+import { MovieCard } from '../movie-card/movie-card';
 
 //create MainView component as a class component by using React.Component template
 export class MainView extends React.Component {
