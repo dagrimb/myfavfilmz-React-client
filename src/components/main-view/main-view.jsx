@@ -19,9 +19,9 @@ export class MainView extends React.Component {
 
   render() {
     const  { movies } = this.state;
-
+    //if no movies, display message stating that the list is empty
     if (movies.length === 0) return <div className="main-view">The list is empty!</div>;
-
+    //else, display list of movie cards
     return (
         <div className="main-view">
           {movies.map(movie => <MovieCard key={movie._id} movieData={movie}/>)}
