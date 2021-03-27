@@ -3,12 +3,26 @@ import React from 'react';
 
 //create MainView component as a class component by using React.Component template
 export class MainView extends React.Component {
+  //add movies state that will hold list of movies
+  constructor(){
+    super(); //initialize component state
+    this.state = {
+      movies: [
+        { _id: 1, Title: 'Inception', Description: 'desc1...', ImagePath: '...'},
+        { _id: 2, Title: 'The Shawshank Redemption', Description: 'desc2...', ImagePath: '...'},
+        { _id: 3, Title: 'Gladiator', Description: 'desc3...', ImagePath: '...'}
+      ]
+    }
+  }
+
   render() {
+    const  { movies } = this.state;
+
+    if (movies.length === 0) return <div className="main-view">The list is empty!</div>;
+
     return (
         <div className="main-view">
-          <div>Inception</div>
-          <div>The Shawshank Redemption</div>
-          <div>Gladiator</div>
+          {movies.map(movie => <div key={movie._id}>{movie.Title}</div>)}
         </div>
     );
   }
