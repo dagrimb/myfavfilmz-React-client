@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { MainView } from './components/main-view/main-view';
 
 // Import statement that indicates the need to bundle `./index.scss`
 import './index.scss';
@@ -8,9 +9,7 @@ import './index.scss';
 class myfavfilmzApplication extends React.Component {
   render() {
     return (
-      <div className="my-fav-filmz">
-        <div>Good morning</div>
-      </div>
+      <MainView />
     );
   }
 }
