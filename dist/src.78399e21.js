@@ -29701,7 +29701,31 @@ var MovieView = /*#__PURE__*/function (_React$Component) {
         className: "label"
       }, "Description: "), _react.default.createElement("span", {
         className: "value"
-      }, movie.Description)), _react.default.createElement("button", {
+      }, movie.Description)), _react.default.createElement("div", {
+        className: "movie-genre"
+      }, _react.default.createElement("span", {
+        className: "label"
+      }, "Genre: "), _react.default.createElement("span", {
+        className: "value"
+      }, movie.Genre)), _react.default.createElement("div", {
+        className: "movie-director"
+      }, _react.default.createElement("span", {
+        className: "label"
+      }, "Director: "), _react.default.createElement("span", {
+        className: "value"
+      }, movie.Director)), _react.default.createElement("div", {
+        className: "movie-actors"
+      }, _react.default.createElement("span", {
+        className: "label"
+      }, "Actors: "), _react.default.createElement("span", {
+        className: "value"
+      }, movie.Actors)), _react.default.createElement("div", {
+        className: "movie-year"
+      }, _react.default.createElement("span", {
+        className: "label"
+      }, "Year Released: "), _react.default.createElement("span", {
+        className: "value"
+      }, movie.Year)), _react.default.createElement("button", {
         onClick: function onClick() {
           onBackClick(null);
         }
@@ -29769,18 +29793,30 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       movies: [{
         _id: 1,
         Title: 'Inception',
-        Description: 'desc1...',
-        ImagePath: '...'
+        Description: 'A thief who steals corporate secrets through the user of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.',
+        ImagePath: 'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_UX182_CR0,0,182,268_AL_.jpg',
+        Genre: 'Action',
+        Director: 'Christopher Nolan',
+        Actors: 'Leonardo DiCaprio, Ken Wantanabe, Joseph Gordon-Levitt',
+        Year: '2010'
       }, {
         _id: 2,
         Title: 'The Shawshank Redemption',
-        Description: 'desc2...',
-        ImagePath: '...'
+        Description: 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.',
+        ImagePath: 'https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX182_CR0,0,182,268_AL_.jpg',
+        Genre: 'Drama',
+        Director: 'Frank Darabont',
+        Actors: 'Tim Robbins, Morgan Freeman, Bob Gunton',
+        Year: '1994'
       }, {
         _id: 3,
         Title: 'Gladiator',
-        Description: 'desc3...',
-        ImagePath: '...'
+        Description: 'A former Roman General sets out to exact vengence against the corrupt emperor who murdered his family and sent him into slavery.',
+        ImagePath: 'https://m.media-amazon.com/images/M/MV5BMDliMmNhNDEtODUyOS00MjNlLTgxODEtN2U3NzIxMGVkZTA1L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX182_CR0,0,182,268_AL_.jpg',
+        Genre: 'Action',
+        Director: 'Ridley Scott',
+        Actors: 'Russell Crowe, Joaquin Phoenix, Connie Nielsen',
+        Year: '2000'
       }],
       selectedMovie: null //set default (pre-click event) value to null
 
@@ -29996,7 +30032,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55785" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58999" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
