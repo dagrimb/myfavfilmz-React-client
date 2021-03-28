@@ -29,7 +29,7 @@ export class MainView extends React.Component {
     //else, display list of movie cards
     return (
         <div className="main-view">
-          {movies.map(movie => <MovieCard key={movie._id} movieData={movie}/>)}
+          {movies.map(movie => <MovieCard key={movie._id} onMovieClick={(newSelectedMovie) => { this.state.selectedMovie = newSelectedMovie; }} />)}
         </div>
     );
   }
