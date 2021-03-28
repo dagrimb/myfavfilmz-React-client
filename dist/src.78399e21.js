@@ -29680,7 +29680,9 @@ var MovieView = /*#__PURE__*/function (_React$Component) {
   _createClass(MovieView, [{
     key: "render",
     value: function render() {
-      var movie = this.props.movie;
+      var _this$props = this.props,
+          movie = _this$props.movie,
+          onBackClick = _this$props.onBackClick;
       return _react.default.createElement("div", {
         className: "movie-view"
       }, _react.default.createElement("div", {
@@ -29699,7 +29701,11 @@ var MovieView = /*#__PURE__*/function (_React$Component) {
         className: "label"
       }, "Description: "), _react.default.createElement("span", {
         className: "value"
-      }, movie.Description)));
+      }, movie.Description)), _react.default.createElement("button", {
+        onClick: function onClick() {
+          onBackClick(null);
+        }
+      }, "Back"));
     }
   }]);
 
@@ -29783,6 +29789,13 @@ var MainView = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(MainView, [{
+    key: "setSelectedMovie",
+    value: function setSelectedMovie(newSelectedMovie) {
+      this.setState({
+        selectedMovie: newSelectedMovie
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -29792,7 +29805,10 @@ var MainView = /*#__PURE__*/function (_React$Component) {
           selectedMovie = _this$state.selectedMovie; //if not clicked, access selectedMovie state
 
       if (selectedMovie) return _react.default.createElement(_movieView.MovieView, {
-        movie: selectedMovie
+        movie: selectedMovie,
+        onBackClick: function onBackClick(newSelectedMovie) {
+          _this2.setSelectedMovie(newSelectedMovie);
+        }
       }); //if no movies, display message stating that the list is empty
 
       if (movies.length === 0) return _react.default.createElement("div", {
@@ -29980,7 +29996,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55075" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55785" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

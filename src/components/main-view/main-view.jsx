@@ -9,6 +9,7 @@ import { MovieView } from '../movie-view/movie-view';
 export class MainView extends React.Component {
   //add movies state that will hold list of movies
   constructor(){
+
     super(); //initialize component state
     this.state = {
       movies: [
@@ -20,17 +21,23 @@ export class MainView extends React.Component {
     }
   }
 
+  setSelectedMovie(newSelectedMovie) {
+    this.setState({
+      selectedMovie: newSelectedMovie
+    });
+  }
+
   render() {
     const  { movies, selectedMovie } = this.state;
     //if not clicked, access selectedMovie state
-    if (selectedMovie) return <MovieView movie={selectedMovie} />;
+    if (selectedMovie) return <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />;
     //if no movies, display message stating that the list is empty
     if (movies.length === 0) return <div className="main-view">The list is empty!</div>;
     //else, display list of movie cards
     return (
         <div className="main-view">
-          {movies.map(movie => <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setState({ selectedMovie: 
-          newSelectedMovie}); }} />)}
+          {movies.map(movie => <MovieCard key={movie._id} movie={movie} onMovieClick={newSelectedMovie => { this.setState({ selectedMovie: 
+          newSelectedMovie }); }} />)}
         </div>
     );
   }
