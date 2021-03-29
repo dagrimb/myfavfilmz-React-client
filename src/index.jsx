@@ -7,13 +7,25 @@ import './index.scss';
 
 // Main component (will eventually use all the others)
 class myfavfilmzApplication extends React.Component {
-  render() {
-    return (
-      <MainView />
-    );
+  
+  /*constructor() {
+    super();
+      // code executed right when the component is created in the memory
   }
+  
+  render() {
+    return <div>Hello World</div>;
 }
 
+  componenetDidMount() {
+    // code executed right after the component is added to the DOM
+  }
+
+  componentWillUnmount() {
+    // code executed just before the moment the component gets removed from the DOM
+  }
+  */
+}
 // Finds the root of your app
 const container = document.getElementsByClassName('app-container')[0];
 
