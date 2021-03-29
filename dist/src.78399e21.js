@@ -31755,6 +31755,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
@@ -31781,10 +31785,17 @@ var myfavfilmzApplication = /*#__PURE__*/function (_React$Component) {
     return _super.apply(this, arguments);
   }
 
-  return myfavfilmzApplication;
-}(_react.default.Component);
+  _createClass(myfavfilmzApplication, [{
+    key: "render",
+    value: function render() {
+      return _react.default.createElement(_mainView.MainView, null);
+    }
+  }]);
 
-// Finds the root of your app
+  return myfavfilmzApplication;
+}(_react.default.Component); // Finds the root of your app
+
+
 var container = document.getElementsByClassName('app-container')[0]; // Tells React to render your app in the root DOM element
 
 _reactDom.default.render(_react.default.createElement(myfavfilmzApplication), container);
@@ -31816,7 +31827,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53089" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53251" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
