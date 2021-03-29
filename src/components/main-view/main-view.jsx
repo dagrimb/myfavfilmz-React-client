@@ -1,5 +1,7 @@
 //import React into file
 import React from 'react';
+//import Axios info file
+import axios from 'axios';
 //import MovieCard into file
 import { MovieCard } from '../movie-card/movie-card';
 //import MovieView into file

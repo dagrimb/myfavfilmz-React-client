@@ -1,12 +1,8 @@
 import React from 'react'; 
-import axios from 'axios';
-
-import { MovieCard } from '../movie-card/movie-card';
-import { MovieView } from '../movie-view/movie-view';
-
 
 //create MovieView component
 export class MovieView extends React.Component {
+  
   render() {
     const { movie, onBackClick } = this.props;
 
@@ -48,4 +44,7 @@ export class MovieView extends React.Component {
       </div>
     );
   }
+
+
+
 }
