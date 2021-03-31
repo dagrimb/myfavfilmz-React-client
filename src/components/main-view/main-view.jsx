@@ -14,7 +14,7 @@ export class MainView extends React.Component {
 
     super(); //initialize component state
     this.state = {
-      movies: [],
+      movies: [{}],
       selectedMovie: null //set default (pre-click event) value to null
     }
   }
