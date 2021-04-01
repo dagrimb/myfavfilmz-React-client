@@ -9,6 +9,8 @@ export class MovieView extends React.Component {
     });
   }
 
+
+
   render() {
     const { movie, onBackClick } = this.props;
 
@@ -16,7 +18,7 @@ export class MovieView extends React.Component {
       <div className="movie-view">
         <div className="movie-description">
           <span className="label">Description: </span>
-          <span className="value">{movie.Description}</span>
+          { movies.map((movie, index) => (<span key={index} className="value">{movie.Description}</span>)) }
           <div className="movie-synopsis">
             <span className="label">Synopsis: </span>
             <span className="value">{movie.Description.Synopsis}</span>
@@ -92,6 +94,8 @@ export class MovieView extends React.Component {
         <button onClick={() => { onBackClick(null); }}>Back</button>
       </div>
     );
-  
   }
 }
+
+
+<ul>Quote: { response.map((item, index) => (<li key={index}>{item.quote}</li>)) }</ul>
