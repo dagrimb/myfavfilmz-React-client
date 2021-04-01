@@ -18,14 +18,14 @@ export class MovieView extends React.Component {
       <div className="movie-view">
         <div className="movie-description">
           <span className="label">Description: </span>
-          { movies.map((movie, index) => (<span key={index} className="value">{movie.Description}</span>)) }
+          { movies.map(movie => <span key={movie._id} className="value">{movie.Description}</span>) }
           <div className="movie-synopsis">
             <span className="label">Synopsis: </span>
-            { movies.map((movie, index) => (<span key={index} className="value">{movie.Synopsis}</span>)) }
+            { movies.map(movie => <span key={movie._id} className="value">{movie.Synopsis}</span>) }
           </div>
           <div className="movie-synopsis-source">
             <span className="label">Source: </span>
-            { movies.map((movie, index) => (<span key={index} className="value">{movie.Source}</span>)) }
+            { movies.map(movie => <span key={movie._id} className="value">{movie.Source}</span>) }
           </div>
         </div>
         <div className="movie-genre">
