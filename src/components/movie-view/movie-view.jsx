@@ -21,11 +21,11 @@ export class MovieView extends React.Component {
           { movies.map((movie, index) => (<span key={index} className="value">{movie.Description}</span>)) }
           <div className="movie-synopsis">
             <span className="label">Synopsis: </span>
-            <span className="value">{movie.Description.Synopsis}</span>
+            { movies.map((movie, index) => (<span key={index} className="value">{movie.Synopsis}</span>)) }
           </div>
           <div className="movie-synopsis-source">
             <span className="label">Source: </span>
-            <span className="value">{movie.Description.Source}</span>
+            { movies.map((movie, index) => (<span key={index} className="value">{movie.Source}</span>)) }
           </div>
         </div>
         <div className="movie-genre">
