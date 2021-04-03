@@ -98,4 +98,6 @@ export class MovieView extends React.Component {
 }
 
 
-<ul>Quote: { response.map((item, index) => (<li key={index}>{item.quote}</li>)) }</ul>
+
+
+
