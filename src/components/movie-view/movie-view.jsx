@@ -17,7 +17,7 @@ export class MovieView extends React.Component {
       <div className="movie-view">
         <div className="movie-description">
           <span className="label">Description: </span>
-          <span className="value">{movie.Description}</span>)
+          <span className="value"></span>)
           <div className="movie-synopsis">
             <span className="label">Synopsis: </span>
             <span className="value">{movie.Description.Synopsis}</span>) 
@@ -29,7 +29,7 @@ export class MovieView extends React.Component {
         </div>
         <div className="movie-genre">
           <span className="label">Genre: </span>
-          <span className="value">{movie.Genre}</span>
+          <span className="value"></span>
           <div className="movie-genre-name">
             <span className="label">Name: </span>
             <span className="value">{movie.Genre.Name}</span>
@@ -45,7 +45,7 @@ export class MovieView extends React.Component {
         </div>
         <div className="movie-director">
           <span className="label">Director: </span>
-          <span className="value">{movie.Director}</span>
+          <span className="value"></span>
           <div className="movie-director-name">
             <span className="label">Name: </span>
             <span className="value">{movie.Director.Name}</span>
