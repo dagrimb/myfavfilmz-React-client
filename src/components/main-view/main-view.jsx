@@ -19,10 +19,11 @@ export class MainView extends React.Component {
     }
   }
 
+  //Fetch the list of movies from your database with MainView is mounted
   componentDidMount(){
-    axios.get('https://myfavfilmz.herokuapp.com/movies')
+    axios.get('https://myfavfilmz.herokuapp.com/movies') //use Axios to fetch the movies
       .then(response => {
-        this.setState({
+        this.setState({ //set the state of movies to the data received
           movies: response.data
         });
       })
@@ -31,15 +32,15 @@ export class MainView extends React.Component {
       });
   }
 
-  setSelectedMovie(newSelectedMovie) {
-    this.setState({
+  setSelectedMovie(newSelectedMovie) { //setSelectedMovie is a custom component method
+    this.setState({ //to change the state of the MainView
       selectedMovie: newSelectedMovie
     });
   }
 
   render() {
-    const  { movies, selectedMovie } = this.state;
-    //if not clicked, access selectedMovie state
+    const  { movies, selectedMovie } = this.state; // shortened form of const movies = this.state.movies
+    //if not clicked, access selectedMovie state (passing a function as a prop called "onMovieClick")
     if (selectedMovie) return <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />;
     //if no movies, display message stating that the list is empty
     if (movies.length === 0) return <div className="main-view" />;
