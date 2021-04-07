@@ -31493,40 +31493,112 @@ var MovieView = /*#__PURE__*/function (_React$Component) {
       return _react.default.createElement("div", {
         className: "movie-view"
       }, _react.default.createElement("div", {
-        className: "movie-poster"
-      }, _react.default.createElement("img", {
-        src: movie.ImagePath
-      })), _react.default.createElement("div", {
-        className: "movie-title"
-      }, _react.default.createElement("span", {
-        className: "label"
-      }, "Title: "), _react.default.createElement("span", {
-        className: "value"
-      }, movie.Title)), _react.default.createElement("div", {
         className: "movie-description"
       }, _react.default.createElement("span", {
         className: "label"
       }, "Description: "), _react.default.createElement("span", {
         className: "value"
-      }, movie.Description)), _react.default.createElement("div", {
+      }, movie.Description), ")", _react.default.createElement("div", {
+        className: "movie-synopsis"
+      }, _react.default.createElement("span", {
+        className: "label"
+      }, "Synopsis: "), _react.default.createElement("span", {
+        className: "value"
+      }, movie.Description.Synopsis), ")"), _react.default.createElement("div", {
+        className: "movie-synopsis-source"
+      }, _react.default.createElement("span", {
+        className: "label"
+      }, "Source: "), _react.default.createElement("span", {
+        className: "value"
+      }, movie.Description.Source), ")")), _react.default.createElement("div", {
         className: "movie-genre"
       }, _react.default.createElement("span", {
         className: "label"
       }, "Genre: "), _react.default.createElement("span", {
         className: "value"
-      }, movie.Genre)), _react.default.createElement("div", {
+      }, movie.Genre), _react.default.createElement("div", {
+        className: "movie-genre-name"
+      }, _react.default.createElement("span", {
+        className: "label"
+      }, "Name: "), _react.default.createElement("span", {
+        className: "value"
+      }, movie.Genre.Name)), _react.default.createElement("div", {
+        className: "movie-genre-description"
+      }, _react.default.createElement("span", {
+        className: "label"
+      }, "Description: "), _react.default.createElement("span", {
+        className: "value"
+      }, movie.Genre.Description)), _react.default.createElement("div", {
+        className: "movie-genre-source"
+      }, _react.default.createElement("span", {
+        className: "label"
+      }, "Source: "), _react.default.createElement("span", {
+        className: "value"
+      }, movie.Genre.Source))), _react.default.createElement("div", {
         className: "movie-director"
       }, _react.default.createElement("span", {
         className: "label"
       }, "Director: "), _react.default.createElement("span", {
         className: "value"
-      }, movie.Director)), _react.default.createElement("div", {
+      }, movie.Director), _react.default.createElement("div", {
+        className: "movie-director-name"
+      }, _react.default.createElement("span", {
+        className: "label"
+      }, "Name: "), _react.default.createElement("span", {
+        className: "value"
+      }, movie.Director.Name)), _react.default.createElement("div", {
+        className: "movie-director-bio"
+      }, _react.default.createElement("span", {
+        className: "label"
+      }, "Bio: "), _react.default.createElement("span", {
+        className: "value"
+      }, movie.Director.Bio)), _react.default.createElement("div", {
+        className: "movie-director-birth"
+      }, _react.default.createElement("span", {
+        className: "label"
+      }, "Birth: "), _react.default.createElement("span", {
+        className: "value"
+      }, movie.Director.Birth)), _react.default.createElement("div", {
+        className: "movie-director-source"
+      }, _react.default.createElement("span", {
+        className: "label"
+      }, "Source: "), _react.default.createElement("span", {
+        className: "value"
+      }, movie.Director.Source))), _react.default.createElement("div", {
         className: "movie-actors"
       }, _react.default.createElement("span", {
         className: "label"
       }, "Actors: "), _react.default.createElement("span", {
         className: "value"
       }, movie.Actors)), _react.default.createElement("div", {
+        className: "movie-id"
+      }, _react.default.createElement("span", {
+        className: "label"
+      }, "ID: "), _react.default.createElement("span", {
+        className: "value"
+      }, movie._id)), _react.default.createElement("div", {
+        className: "movie-title"
+      }, _react.default.createElement("span", {
+        className: "label"
+      }, "Title: "), _react.default.createElement("span", {
+        className: "value"
+      }, movie.Title)), _react.default.createElement("div", {
+        className: "movie-poster"
+      }, _react.default.createElement("img", {
+        src: movie.ImagePath
+      })), _react.default.createElement("div", {
+        className: "movie-featured"
+      }, _react.default.createElement("span", {
+        className: "label"
+      }, "Featured: "), _react.default.createElement("span", {
+        className: "value"
+      }, movie.Featured)), _react.default.createElement("div", {
+        className: "movie-score"
+      }, _react.default.createElement("span", {
+        className: "label"
+      }, "Rotten Tomatoes score: "), _react.default.createElement("span", {
+        className: "value"
+      }, movie.Rotten_Tomatoes_score)), _react.default.createElement("div", {
         className: "movie-year"
       }, _react.default.createElement("span", {
         className: "label"
@@ -31827,7 +31899,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49168" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49663" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
