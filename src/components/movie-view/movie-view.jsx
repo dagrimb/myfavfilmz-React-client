@@ -4,28 +4,27 @@ import React from 'react';
 export class MovieView extends React.Component {
 
   componentDidMount() {
-    document.addEventListener('keypress', event => {
-      console.log(event.key);
+    document.addEventListener('keypress', event => { //add event listener for keyboard key presses
+      console.log(event.key); // why event.key? Is "key" for "key-press?"
     });
   }
 
-
-
   render() {
     const { movie, onBackClick } = this.props;
+
 
     return (
       <div className="movie-view">
         <div className="movie-description">
           <span className="label">Description: </span>
-          { movies.map(movie => <span key={movie._id} className="value">{movie.Description}</span>) }
+          <span className="value">{movie.Description}</span>)
           <div className="movie-synopsis">
             <span className="label">Synopsis: </span>
-            { movies.map(movie => <span key={movie._id} className="value">{movie.Synopsis}</span>) }
+            <span className="value">{movie.Description.Synopsis}</span>) 
           </div>
           <div className="movie-synopsis-source">
             <span className="label">Source: </span>
-            { movies.map(movie => <span key={movie._id} className="value">{movie.Source}</span>) }
+            <span className="value">{movie.Description.Source}</span>) 
           </div>
         </div>
         <div className="movie-genre">
