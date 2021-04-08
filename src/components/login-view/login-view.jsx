@@ -10,6 +10,8 @@ export function LoginView(props) {
     // Send a request to the server for authentication then call props on LoggedIn(username)
     props.onLoggedIn(username);
   }
+
+    
     return (
       <form>
         <label>
