@@ -3,15 +3,20 @@ import React from 'react';
 //create MovieView component
 export class MovieView extends React.Component {
 
+  keypressCallback(event) {
+    console.log(event.key);
+  }
+
   componentDidMount() {
-    document.addEventListener('keypress', event => { //add event listener for keyboard key presses
-      console.log(event.key); // why event.key? Is "key" for "key-press?"
-    });
+    document.addEventListener('keypress', this.keypressCallback); //add event listener for keyboard key presses
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keypress', this.keypressCallback);
   }
 
   render() {
     const { movie, onBackClick } = this.props;
-
 
     return (
       <div className="movie-view">
