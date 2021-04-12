@@ -28750,11 +28750,17 @@ try {
     // Send request to server for auth
     var handleSubmit = function handleSubmit() {
       e.preventDefault();
-      console.log(username, password);
+      console.log(username, password, email, birthday);
       props.onRegistered(username);
     };
+    // Send request to server for auth
+    var handleClick = function handleClick() {
+      return (
+        /*#__PURE__*/_react["default"].createElement(LoginView, null)
+      );
+    };
     return (
-      /*#__PURE__*/_react["default"].createElement("form", null, /*#__PURE__*/_react["default"].createElement("label", null, "Username:", /*#__PURE__*/_react["default"].createElement("input", {
+      /*#__PURE__*/_react["default"].createElement("form", null, /*#__PURE__*/_react["default"].createElement("h3", null, "Register Here"), /*#__PURE__*/_react["default"].createElement("label", null, "Username:", /*#__PURE__*/_react["default"].createElement("input", {
         type: "text",
         value: username,
         onChange: function onChange(e) {
@@ -28781,7 +28787,10 @@ try {
       })), /*#__PURE__*/_react["default"].createElement("button", {
         type: "submit",
         onClick: handleSubmit
-      }, "Submit"))
+      }, "Submit"), /*#__PURE__*/_react["default"].createElement("p", null, "Already a member?"), /*#__PURE__*/_react["default"].createElement("button", {
+        type: "button",
+        onClick: handleClick
+      }, "Click here!"))
     );
   }
   _s2(RegistrationView, "Sm4/B7Ss7XpbZkZHxsTCdDKe1RI=");
@@ -28933,6 +28942,11 @@ try {
       console.log(username, password);
       props.onLoggedIn(username);
     };
+    // Send request to server for auth
+    function handleClick(e) {
+      e.preventDefault();
+      console.log('Loading registeration page');
+    }
     return (
       /*#__PURE__*/_react["default"].createElement("form", null, /*#__PURE__*/_react["default"].createElement("label", null, "Username:", /*#__PURE__*/_react["default"].createElement("input", {
         type: "text",
@@ -28949,13 +28963,16 @@ try {
       })), /*#__PURE__*/_react["default"].createElement("button", {
         type: "submit",
         onClick: handleSubmit
-      }, "Submit"))
+      }, "Submit"), /*#__PURE__*/_react["default"].createElement("p", null, "New to myfavfilmz?"), /*#__PURE__*/_react["default"].createElement("button", {
+        type: "button",
+        onClick: handleClick
+      }, "Click here to register!"))
     );
   }
   _s2(LoginView, "9FY2cPL9VBDmuhjwpF2ik6flsHs=");
   _c = LoginView;
   LoginView.propTypes = {
-    username: _propTypes["default"].shape({
+    user: _propTypes["default"].shape({
       Username: _propTypes["default"].string.isRequired,
       Password: _propTypes["default"].string.isRequired
     }).isRequired,
