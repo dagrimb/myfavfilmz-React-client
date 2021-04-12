@@ -10,3 +10,4 @@ src/.DS_Store
 >>>>>>> main
 *.v8
 *.blob
+.babelrc
