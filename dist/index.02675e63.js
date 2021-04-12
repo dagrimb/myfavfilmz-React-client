@@ -28647,6 +28647,7 @@ try {
   });
   exports.RegistrationView = RegistrationView;
   var _react = _interopRequireWildcard(require("react"));
+  var _loginView = require("../login-view/login-view");
   var _propTypes = _interopRequireDefault(require("prop-types"));
   var _s2 = $RefreshSig$();
   function _interopRequireDefault(obj) {
@@ -28753,12 +28754,6 @@ try {
       console.log(username, password, email, birthday);
       props.onRegistered(username);
     };
-    // Send request to server for auth
-    var handleClick = function handleClick() {
-      return (
-        /*#__PURE__*/_react["default"].createElement(LoginView, null)
-      );
-    };
     return (
       /*#__PURE__*/_react["default"].createElement("form", null, /*#__PURE__*/_react["default"].createElement("h3", null, "Register Here"), /*#__PURE__*/_react["default"].createElement("label", null, "Username:", /*#__PURE__*/_react["default"].createElement("input", {
         type: "text",
@@ -28813,7 +28808,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"6M7fu":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","../login-view/login-view":"6M7fu"}],"6M7fu":[function(require,module,exports) {
 "use strict";
 var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
@@ -28942,11 +28937,6 @@ try {
       console.log(username, password);
       props.onLoggedIn(username);
     };
-    // Send request to server for auth
-    function handleClick(e) {
-      e.preventDefault();
-      console.log('Loading registeration page');
-    }
     return (
       /*#__PURE__*/_react["default"].createElement("form", null, /*#__PURE__*/_react["default"].createElement("label", null, "Username:", /*#__PURE__*/_react["default"].createElement("input", {
         type: "text",
