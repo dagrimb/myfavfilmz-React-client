@@ -1,12 +1,20 @@
 import React from 'react'; 
+import PropTypes from 'prop-types';
 
 //create MovieView component
 export class MovieView extends React.Component {
 
+  //function for both adding and removing event listener
+  keypressCallback(event) {
+    console.log(event.key);
+  }
+
   componentDidMount() {
-    document.addEventListener('keypress', event => { //add event listener for keyboard key presses
-      console.log(event.key); // why event.key? Is "key" for "key-press?"
-    });
+    document.addEventListener('keypress', this.keypressCallback);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keypress', this.keypressCallback);
   }
 
   render() {
@@ -95,3 +103,31 @@ export class MovieView extends React.Component {
     );
   }
 }
+
+MovieView.propTypes = {
+  movie: PropTypes.shape({
+    Description: PropTypes.shape({
+      Synopsis: PropTypes.string.isRequired,
+      Source: PropTypes.string.isRequired
+    }),
+    Genre: PropTypes.shape({
+      Name: PropTypes.string.isRequired,
+      Description: PropTypes.string.isRequired,
+      Source: PropTypes.string.isRequired
+    }),                   
+    Director: PropTypes.shape({
+      Name: PropTypes.string.isRequired,
+      Bio: PropTypes.string.isRequired,
+      Birth: PropTypes.string.isRequired,
+      Source: PropTypes.string.isRequired
+    }),
+    Actors: PropTypes.array.isRequired,
+    _id: PropTypes.string.isRequired,    
+    Title: PropTypes.string.isRequired,
+    ImagePath: PropTypes.string.isRequired,
+    Featured: PropTypes.bool.isRequired,
+    Rotten_Tomatoes_score: PropTypes.string.isRequired,
+    Year: PropTypes.string.isRequired
+  }).isRequired,
+  onClick: PropTypes.func.isRequired
+};
