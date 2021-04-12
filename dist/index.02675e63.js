@@ -28647,6 +28647,7 @@ try {
   });
   exports.RegistrationView = RegistrationView;
   var _react = _interopRequireWildcard(require("react"));
+  var _loginView = require("../login-view/login-view");
   var _propTypes = _interopRequireDefault(require("prop-types"));
   var _s2 = $RefreshSig$();
   function _interopRequireDefault(obj) {
@@ -28750,11 +28751,11 @@ try {
     // Send request to server for auth
     var handleSubmit = function handleSubmit() {
       e.preventDefault();
-      console.log(username, password);
+      console.log(username, password, email, birthday);
       props.onRegistered(username);
     };
     return (
-      /*#__PURE__*/_react["default"].createElement("form", null, /*#__PURE__*/_react["default"].createElement("label", null, "Username:", /*#__PURE__*/_react["default"].createElement("input", {
+      /*#__PURE__*/_react["default"].createElement("form", null, /*#__PURE__*/_react["default"].createElement("h3", null, "Register Here"), /*#__PURE__*/_react["default"].createElement("label", null, "Username:", /*#__PURE__*/_react["default"].createElement("input", {
         type: "text",
         value: username,
         onChange: function onChange(e) {
@@ -28781,7 +28782,10 @@ try {
       })), /*#__PURE__*/_react["default"].createElement("button", {
         type: "submit",
         onClick: handleSubmit
-      }, "Submit"))
+      }, "Submit"), /*#__PURE__*/_react["default"].createElement("p", null, "Already a member?"), /*#__PURE__*/_react["default"].createElement("button", {
+        type: "button",
+        onClick: handleClick
+      }, "Click here!"))
     );
   }
   _s2(RegistrationView, "Sm4/B7Ss7XpbZkZHxsTCdDKe1RI=");
@@ -28804,7 +28808,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"6M7fu":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","../login-view/login-view":"6M7fu"}],"6M7fu":[function(require,module,exports) {
 "use strict";
 var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
@@ -28949,13 +28953,16 @@ try {
       })), /*#__PURE__*/_react["default"].createElement("button", {
         type: "submit",
         onClick: handleSubmit
-      }, "Submit"))
+      }, "Submit"), /*#__PURE__*/_react["default"].createElement("p", null, "New to myfavfilmz?"), /*#__PURE__*/_react["default"].createElement("button", {
+        type: "button",
+        onClick: handleClick
+      }, "Click here to register!"))
     );
   }
   _s2(LoginView, "9FY2cPL9VBDmuhjwpF2ik6flsHs=");
   _c = LoginView;
   LoginView.propTypes = {
-    username: _propTypes["default"].shape({
+    user: _propTypes["default"].shape({
       Username: _propTypes["default"].string.isRequired,
       Password: _propTypes["default"].string.isRequired
     }).isRequired,
