@@ -2,7 +2,9 @@
 import React from 'react';
 //import Axios info file
 import axios from 'axios';
-// import LoginView into file
+//import RegistrationView into file
+import { RegistrationView } from '../registration-view/registration-view';
+//import LoginView into file
 import { LoginView } from '../login-view/login-view';
 //import MovieCard into file
 import { MovieCard } from '../movie-card/movie-card';
@@ -12,13 +14,13 @@ import { MovieView } from '../movie-view/movie-view';
 //create MainView component as a class component by using React.Component template
 export class MainView extends React.Component {
   //add movies state that will hold list of movies
-  constructor() {
-
+  constructor(){
     super(); //initialize component state
     this.state = {
       movies: null,
-      selectedMovie: null, //set default (pre-click event) value to null
-      user: null // represents a default state of a user being logged out
+      selectedMovie: null,//set default (pre-click event) value to null
+      user: null,
+      newUser: null
     };
   }
 
@@ -35,14 +37,21 @@ export class MainView extends React.Component {
       });
   }
 
-  //After movie clicked, update the state of the selectedMovie property
+  //a method later passed as a prop to LoginView (below). When user clicks movie, the function updates
+  //state of the selectedMovie property with that movie
   onMovieClick(movie) {
     this.setState({
       selectedMovie: movie
     });
   }
 
-  //Upon successful log in, update user property in state to specific user. The onLoggedIn method will be passed as a prop to LoginView
+  onRegistered(newUser) {
+    this.setState({
+      newUser
+    });
+  }
+
+  //Upon successful login, this method will update the user property with specific user
   onLoggedIn(user) {
     this.setState({
       user
@@ -56,9 +65,11 @@ export class MainView extends React.Component {
   }
 
   render() {
-    const  { movies, selectedMovie, user } = this.state; // shortened form of const movies = this.state.movies
-    //if no user, LoginView is rendered; if there  is, their details are passed as a prop to that component
-    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />; // onLoggedIn method from above user state of MainView component; called when user successfully logins in
+    const  { movies, selectedMovie, newUser, user } = this.state; // shortened form of const movies = this.state.movies
+    //if no user exists, render RegistrationView
+    if (!newUser) return <RegistrationView onRegistered={newUser => this.onRegistered(newUser)} />;
+    //if no user signed in, render LoginView
+    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
     //if not clicked, access selectedMovie state (passing a function as a prop called "onMovieClick")
     if (selectedMovie) return <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />;
     //if no movies, display message stating that the list is empty
