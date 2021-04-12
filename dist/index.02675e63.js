@@ -28754,6 +28754,11 @@ try {
       console.log(username, password, email, birthday);
       props.onRegistered(username);
     };
+    var handleClick = function handleClick() {
+      return (
+        /*#__PURE__*/_react["default"].createElement(_loginView.LoginView, null)
+      );
+    };
     return (
       /*#__PURE__*/_react["default"].createElement("form", null, /*#__PURE__*/_react["default"].createElement("h3", null, "Register Here"), /*#__PURE__*/_react["default"].createElement("label", null, "Username:", /*#__PURE__*/_react["default"].createElement("input", {
         type: "text",
