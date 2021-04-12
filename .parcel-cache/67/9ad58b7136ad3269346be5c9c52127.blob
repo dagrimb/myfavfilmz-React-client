@@ -1,0 +1,143 @@
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "MainView", function () {
+    return MainView;
+  });
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _axios = require('axios');
+  var _axiosDefault = _parcelHelpers.interopDefault(_axios);
+  require('../registration-view/registration-view');
+  var _loginViewLoginView = require('../login-view/login-view');
+  var _movieCardMovieCard = require('../movie-card/movie-card');
+  var _movieViewMovieView = require('../movie-view/movie-view');
+  var _jsxFileName = "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx";
+  class MainView extends _reactDefault.default.Component {
+    // add movies state that will hold list of movies
+    constructor() {
+      super();
+      // initialize component state
+      this.state = {
+        movies: null,
+        selectedMovie: null,
+        // set default (pre-click event) value to null
+        user: null
+      };
+    }
+    /*Fetch the list of movies from your database with MainView is mounted*/
+    componentDidMount() {
+      _axiosDefault.default.get('https://myfavfilmz.herokuapp.com/movies').// use Axios to fetch the movies
+      then(response => {
+        this.setState({
+          // set the state of movies to the data received
+          movies: response.data
+        });
+      }).catch(error => {
+        console.log(error);
+      });
+    }
+    /*a method later passed as a prop to LoginView (below). When user clicks movie, the function updates*/
+    /*state of the selectedMovie property with that movie*/
+    onMovieClick(movie) {
+      this.setState({
+        selectedMovie: movie
+      });
+    }
+    /*Upon successful login, this method will update the user property with specific user*/
+    onLoggedIn(user) {
+      this.setState({
+        user
+      });
+    }
+    setSelectedMovie(newSelectedMovie) {
+      // setSelectedMovie is a custom component method
+      this.setState({
+        // to change the state of the MainView
+        selectedMovie: newSelectedMovie
+      });
+    }
+    render() {
+      const {movies, selectedMovie, user} = this.state;
+      // shortened form of const movies = this.state.movies
+      // if no user, render LoginView; if user, user details passed as prop to that component
+      if (!user) return (
+        /*#__PURE__*/_reactDefault.default.createElement(_loginViewLoginView.LoginView, {
+          on: true,
+          LoggedIn: user => this.onLoggedIn(user),
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 63,
+            columnNumber: 23
+          }
+        })
+      );
+      // if not clicked, access selectedMovie state (passing a function as a prop called "onMovieClick")
+      if (selectedMovie) return (
+        /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
+          movie: selectedMovie,
+          onBackClick: newSelectedMovie => {
+            this.setSelectedMovie(newSelectedMovie);
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 65,
+            columnNumber: 31
+          }
+        })
+      );
+      // if no movies, display message stating that the list is empty
+      if (!movies || movies.length === 0) return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "main-view",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 67,
+            columnNumber: 48
+          }
+        })
+      );
+      // else, display list of movie cards
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement("div", {
+          className: "main-view",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 70,
+            columnNumber: 9
+          }
+        }, selectedMovie ? /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
+          movie: selectedMovie,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 72,
+            columnNumber: 15
+          }
+        }) : movies.map(movie => /*#__PURE__*/_reactDefault.default.createElement(_movieCardMovieCard.MovieCard, {
+          key: movie._id,
+          movie: movie,
+          onClick: movie => this.onMovieClick(movie),
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 74,
+            columnNumber: 15
+          }
+        })))
+      );
+    }
+  }
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
