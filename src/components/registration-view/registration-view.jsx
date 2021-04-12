@@ -17,6 +17,10 @@ export function RegistrationView(props) {
     props.onRegistered(username);
   };
 
+  const handleClick = () => {
+    return <LoginView />
+  };
+
   return (
     <form>
       <h3>Register Here</h3>
