@@ -2,6 +2,10 @@
 import React from 'react';
 //import Axios info file
 import axios from 'axios';
+//import RegistrationView into file
+import { RegistrationView } from '../registration-view/registration-view';
+//import LoginView into file
+import { LoginView } from '../login-view/login-view';
 //import MovieCard into file
 import { MovieCard } from '../movie-card/movie-card';
 //import MovieView into file
@@ -11,12 +15,13 @@ import { MovieView } from '../movie-view/movie-view';
 export class MainView extends React.Component {
   //add movies state that will hold list of movies
   constructor(){
-
     super(); //initialize component state
     this.state = {
-      movies: [],
-      selectedMovie: null //set default (pre-click event) value to null
-    }
+      movies: null,
+      selectedMovie: null,//set default (pre-click event) value to null
+      user: null,
+      newUser: null
+    };
   }
 
   //Fetch the list of movies from your database with MainView is mounted
@@ -32,6 +37,27 @@ export class MainView extends React.Component {
       });
   }
 
+  //a method later passed as a prop to LoginView (below). When user clicks movie, the function updates
+  //state of the selectedMovie property with that movie
+  onMovieClick(movie) {
+    this.setState({
+      selectedMovie: movie
+    });
+  }
+
+  onRegistered(newUser) {
+    this.setState({
+      newUser
+    });
+  }
+
+  //Upon successful login, this method will update the user property with specific user
+  onLoggedIn(user) {
+    this.setState({
+      user
+    });
+  }
+
   setSelectedMovie(newSelectedMovie) { //setSelectedMovie is a custom component method
     this.setState({ //to change the state of the MainView
       selectedMovie: newSelectedMovie
@@ -39,16 +65,24 @@ export class MainView extends React.Component {
   }
 
   render() {
-    const  { movies, selectedMovie } = this.state; // shortened form of const movies = this.state.movies
+    const  { movies, selectedMovie, newUser, user } = this.state; // shortened form of const movies = this.state.movies
+    //if no user exists, render RegistrationView
+    if (!newUser) return <RegistrationView onRegistered={newUser => this.onRegistered(newUser)} />;
+    //if no user signed in, render LoginView
+    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
     //if not clicked, access selectedMovie state (passing a function as a prop called "onMovieClick")
     if (selectedMovie) return <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />;
     //if no movies, display message stating that the list is empty
-    if (movies.length === 0) return <div className="main-view" />;
+    if (!movies || movies.length === 0) return <div className="main-view" />;
     //else, display list of movie cards
     return (
         <div className="main-view">
-          {movies.map(movie => <MovieCard key={movie._id} movie={movie} onMovieClick={newSelectedMovie => { this.setState({ selectedMovie: 
-          newSelectedMovie }); }} />)}
+          {selectedMovie
+            ? <MovieView movie={selectedMovie}/>
+            : movies.map(movie => (
+              <MovieCard key={movie._id} movie={movie} onClick={movie => this.onMovieClick(movie)}/>
+            ))
+          }
         </div>
     );
   }
