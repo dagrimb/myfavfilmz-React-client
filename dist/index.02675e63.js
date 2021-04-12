@@ -28827,7 +28827,7 @@ try {
   _s(LoginView, "9FY2cPL9VBDmuhjwpF2ik6flsHs=");
   _c = LoginView;
   LoginView.propTypes = {
-    user: _propTypesDefault.default.shape({
+    username: _propTypesDefault.default.shape({
       Username: _propTypesDefault.default.string.isRequired,
       Password: _propTypesDefault.default.string.isRequired
     }).isRequired,
