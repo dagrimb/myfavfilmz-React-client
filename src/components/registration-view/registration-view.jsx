@@ -17,10 +17,6 @@ export function RegistrationView(props) {
     props.onRegistered(username);
   };
 
-  const handleClick = () => {
-    return <LoginView />
-  };
-
   return (
     <form>
       <h3>Register Here</h3>
@@ -42,8 +38,7 @@ export function RegistrationView(props) {
       </label>
       <button type="submit" onClick={handleSubmit}>Submit</button>
       <p>Already a member?</p>
-      <button type="button" onClick={handleClick}>Click here!</button>
-    </form>
+      <button type="button" onClick={() => props.onRegistered(false)}>Click here to log in!</button>     </form>
   );
 }
 
