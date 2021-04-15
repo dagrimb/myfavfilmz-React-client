@@ -25414,13 +25414,18 @@ try {
       var _this;
       _classCallCheck(this, MainView);
       _this = _super.call(this);
+      _this.onRegistered = function (value) {
+        _this.setState({
+          registerClicked: value
+        });
+      };
       // initialize component state
       _this.state = {
         movies: null,
         selectedMovie: null,
         // set default (pre-click event) value to null
         user: null,
-        newUser: null
+        registerClicked: true
       };
       return _this;
     }
@@ -25449,13 +25454,6 @@ try {
         });
       }
     }, {
-      key: "onRegistered",
-      value: function onRegistered(newUser) {
-        this.setState({
-          newUser: newUser
-        });
-      }
-    }, {
       key: "onLoggedIn",
       value: // Upon successful login, this method will update the user property with specific user
       function onLoggedIn(user) {
@@ -25476,22 +25474,18 @@ try {
       key: "render",
       value: function render() {
         var _this3 = this;
-        var _this$state = this.state, movies = _this$state.movies, selectedMovie = _this$state.selectedMovie, newUser = _this$state.newUser, user = _this$state.user;
+        var _this$state = this.state, movies = _this$state.movies, selectedMovie = _this$state.selectedMovie, newUser = _this$state.newUser, user = _this$state.user, registerClicked = _this$state.registerClicked;
         // shortened form of const movies = this.state.movies
-        // if no user exists, render RegistrationView
-        if (!newUser) return (
+        // if no user signed in and button to render RegistrationView is clicked, render RegistrationView
+        if (!user && registerClicked) return (
           /*#__PURE__*/_react["default"].createElement(_registrationView.RegistrationView, {
-            onRegistered: function onRegistered(newUser) {
-              return _this3.onRegistered(newUser);
-            }
+            onRegistered: this.onRegistered
           })
         );
         // if no user signed in, render LoginView
         if (!user) return (
           /*#__PURE__*/_react["default"].createElement(_loginView.LoginView, {
-            onLoggedIn: function onLoggedIn(user) {
-              return _this3.onLoggedIn(user);
-            }
+            onRegistered: this.onRegistered
           })
         );
         // if not clicked, access selectedMovie state (passing a function as a prop called "onMovieClick")
@@ -28754,11 +28748,6 @@ try {
       console.log(username, password, email, birthday);
       props.onRegistered(username);
     };
-    var handleClick = function handleClick() {
-      return (
-        /*#__PURE__*/_react["default"].createElement(_loginView.LoginView, null)
-      );
-    };
     return (
       /*#__PURE__*/_react["default"].createElement("form", null, /*#__PURE__*/_react["default"].createElement("h3", null, "Register Here"), /*#__PURE__*/_react["default"].createElement("label", null, "Username:", /*#__PURE__*/_react["default"].createElement("input", {
         type: "text",
@@ -28789,8 +28778,10 @@ try {
         onClick: handleSubmit
       }, "Submit"), /*#__PURE__*/_react["default"].createElement("p", null, "Already a member?"), /*#__PURE__*/_react["default"].createElement("button", {
         type: "button",
-        onClick: handleClick
-      }, "Click here!"))
+        onClick: function onClick() {
+          return props.onRegistered(false);
+        }
+      }, "Click here to log in!"), "     ")
     );
   }
   _s2(RegistrationView, "Sm4/B7Ss7XpbZkZHxsTCdDKe1RI=");
@@ -28960,7 +28951,9 @@ try {
         onClick: handleSubmit
       }, "Submit"), /*#__PURE__*/_react["default"].createElement("p", null, "New to myfavfilmz?"), /*#__PURE__*/_react["default"].createElement("button", {
         type: "button",
-        onClick: handleClick
+        onClick: function onClick() {
+          return props.onRegistered(true);
+        }
       }, "Click here to register!"))
     );
   }
