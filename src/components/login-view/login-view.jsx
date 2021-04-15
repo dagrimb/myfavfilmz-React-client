@@ -26,7 +26,7 @@ export function LoginView(props) {
       </label>
       <button type="submit" onClick={handleSubmit}>Submit</button>
       <p>New to myfavfilmz?</p>
-      <button type="button" onClick={handleClick}>Click here to register!</button>  
+      <button type="button" onClick={() => props.onRegistered(true)}>Click here to register!</button>  
     </form>
   );
 }

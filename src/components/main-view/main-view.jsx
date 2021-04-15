@@ -20,7 +20,7 @@ export class MainView extends React.Component {
       movies: null,
       selectedMovie: null,//set default (pre-click event) value to null
       user: null,
-      newUser: null
+      registerClicked: true
     };
   }
 
@@ -45,12 +45,6 @@ export class MainView extends React.Component {
     });
   }
 
-  onRegistered(newUser) {
-    this.setState({
-      newUser
-    });
-  }
-
   //Upon successful login, this method will update the user property with specific user
   onLoggedIn(user) {
     this.setState({
@@ -64,12 +58,16 @@ export class MainView extends React.Component {
     });
   }
 
+  onRegistered = (value) => {
+    this.setState({ registerClicked: value });
+  }
+
   render() {
-    const  { movies, selectedMovie, newUser, user } = this.state; // shortened form of const movies = this.state.movies
-    //if no user exists, render RegistrationView
-    if (!newUser) return <RegistrationView onRegistered={newUser => this.onRegistered(newUser)} />;
+    const  { movies, selectedMovie, newUser, user, registerClicked } = this.state; // shortened form of const movies = this.state.movies
+    //if no user signed in and button to render RegistrationView is clicked, render RegistrationView
+    if (!user && registerClicked) return <RegistrationView onRegistered={this.onRegistered} />;
     //if no user signed in, render LoginView
-    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+    if (!user) return <LoginView onRegistered={this.onRegistered} />;
     //if not clicked, access selectedMovie state (passing a function as a prop called "onMovieClick")
     if (selectedMovie) return <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />;
     //if no movies, display message stating that the list is empty
