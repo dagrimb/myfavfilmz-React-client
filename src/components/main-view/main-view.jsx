@@ -2,6 +2,8 @@
 import React from 'react';
 //import Axios info file
 import axios from 'axios';
+//import Button into file
+import { Button } from '../button/button';
 //import RegistrationView into file
 import { RegistrationView } from '../registration-view/registration-view';
 //import LoginView into file
