@@ -2,6 +2,8 @@
 import React from 'react';
 //import Axios info file
 import axios from 'axios';
+//import Container into file
+import Container from 'react-bootstrap/Container';
 //import MovieCard into file
 import { MovieCard } from '../movie-card/movie-card';
 //import MovieView into file
@@ -77,14 +79,20 @@ export class MainView extends React.Component {
     if (!movies || movies.length === 0) return <div className="main-view" />;
     //else, display list of movie cards
     return (
+      <Container>
         <div className="main-view">
           {selectedMovie
-            ? <MovieView movie={selectedMovie}/>
+            ? (
+              <Row> 
+                <MovieView movie={selectedMovie} onBackClick={movie => this.onMovieClick(null)}/>
+              </Row>
+            )
             : movies.map(movie => (
               <MovieCard key={movie._id} movie={movie} onClick={movie => this.onMovieClick(movie)}/>
             ))
           }
         </div>
+      </Container>
     );
   }
 }
