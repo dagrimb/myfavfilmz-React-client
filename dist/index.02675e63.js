@@ -25318,6 +25318,8 @@ try {
   var _react = _interopRequireDefault(require("react"));
   var _axios = _interopRequireDefault(require("axios"));
   var _Container = _interopRequireDefault(require("react-bootstrap/Container"));
+  var _Row = _interopRequireDefault(require("react-bootstrap/Row"));
+  var _Col = _interopRequireDefault(require("react-bootstrap/Col"));
   var _movieCard = require("../movie-card/movie-card");
   var _movieView = require("../movie-view/movie-view");
   var _button = require("../button/button");
@@ -25501,24 +25503,28 @@ try {
         );
         // else, display list of movie cards
         return (
-          /*#__PURE__*/_react["default"].createElement(_Container["default"], null, /*#__PURE__*/_react["default"].createElement("div", {
-            className: "main-view"
-          }, selectedMovie ? /*#__PURE__*/_react["default"].createElement(Row, null, /*#__PURE__*/_react["default"].createElement(_movieView.MovieView, {
+          /*#__PURE__*/_react["default"].createElement(_Row["default"], {
+            className: "main-view justify-content-md-center"
+          }, selectedMovie ? /*#__PURE__*/_react["default"].createElement(_Col["default"], {
+            md: 8
+          }, /*#__PURE__*/_react["default"].createElement(_movieView.MovieView, {
             movie: selectedMovie,
             onBackClick: function onBackClick(movie) {
               return _this3.onMovieClick(null);
             }
           })) : movies.map(function (movie) {
             return (
-              /*#__PURE__*/_react["default"].createElement(_movieCard.MovieCard, {
+              /*#__PURE__*/_react["default"].createElement(_Col["default"], {
+                md: 3
+              }, /*#__PURE__*/_react["default"].createElement(_movieCard.MovieCard, {
                 key: movie._id,
                 movie: movie,
                 onClick: function onClick(movie) {
                   return _this3.onMovieClick(movie);
                 }
-              })
+              }))
             );
-          })))
+          }))
         );
       }
     }]);
@@ -25531,7 +25537,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","axios":"7rA65","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","../registration-view/registration-view":"7gvH2","../login-view/login-view":"6M7fu","../button/button":"6ruyx","react-bootstrap/Container":"3Mt3t"}],"7rA65":[function(require,module,exports) {
+},{"react":"3b2NM","axios":"7rA65","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","../registration-view/registration-view":"7gvH2","../login-view/login-view":"6M7fu","../button/button":"6ruyx","react-bootstrap/Container":"3Mt3t","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8"}],"7rA65":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 },{"./lib/axios":"4qfhW"}],"4qfhW":[function(require,module,exports) {
 'use strict';
@@ -30722,7 +30728,7 @@ Container.defaultProps = defaultProps;
 var _default = Container;
 exports.default = _default;
 module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S"}],"5iJih":[function() {},{}],"3fzwD":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S"}],"3fzwD":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -30781,6 +30787,6 @@ Row.defaultProps = defaultProps;
 var _default = Row;
 exports.default = _default;
 module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S"}]},["1j6wU","68WUB","1DVjT"], "1DVjT", "parcelRequire0837")
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S"}],"5iJih":[function() {},{}]},["1j6wU","68WUB","1DVjT"], "1DVjT", "parcelRequire0837")
 
 //# sourceMappingURL=index.02675e63.js.map
