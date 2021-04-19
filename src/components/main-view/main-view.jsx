@@ -5,6 +5,8 @@ import axios from 'axios';
 //import Container into file
 import Container from 'react-bootstrap/Container';
 //import MovieCard into file
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { MovieCard } from '../movie-card/movie-card';
 //import MovieView into file
 import { MovieView } from '../movie-view/movie-view';
@@ -79,20 +81,20 @@ export class MainView extends React.Component {
     if (!movies || movies.length === 0) return <div className="main-view" />;
     //else, display list of movie cards
     return (
-      <Container>
-        <div className="main-view">
-          {selectedMovie
-            ? (
-              <Row> 
-                <MovieView movie={selectedMovie} onBackClick={movie => this.onMovieClick(null)}/>
-              </Row>
-            )
-            : movies.map(movie => (
+      <Row className="main-view justify-content-md-center">
+        {selectedMovie
+          ? (
+            <Col md={8}>
+              <MovieView movie={selectedMovie} onBackClick={movie => this.onMovieClick(null)}/>
+            </Col>
+          )
+          : movies.map(movie => (
+            <Col md={3}>
               <MovieCard key={movie._id} movie={movie} onClick={movie => this.onMovieClick(movie)}/>
-            ))
-          }
-        </div>
-      </Container>
+            </Col>
+          ))
+        }
+      </Row>
     );
   }
 }
