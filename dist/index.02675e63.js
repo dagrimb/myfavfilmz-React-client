@@ -25770,9 +25770,17 @@ try {
         var _this$state = this.state, movies = _this$state.movies, selectedMovie = _this$state.selectedMovie, newUser = _this$state.newUser, user = _this$state.user, registerClicked = _this$state.registerClicked;
         // shortened form of const movies = this.state.movies
         // if no user signed in and button to render RegistrationView is clicked, render RegistrationView
-        // if (!user && registerClicked) return <RegistrationView onRegistered={this.onRegistered} />;
+        if (!user && registerClicked) return (
+          /*#__PURE__*/_react["default"].createElement(_registrationView.RegistrationView, {
+            onRegistered: this.onRegistered
+          })
+        );
         // if no user signed in, render LoginView
-        // if (!user) return <LoginView onRegistered={this.onRegistered} />;
+        if (!user) return (
+          /*#__PURE__*/_react["default"].createElement(_loginView.LoginView, {
+            onRegistered: this.onRegistered
+          })
+        );
         // if not clicked, access selectedMovie state (passing a function as a prop called "onMovieClick")
         if (selectedMovie) return (
           /*#__PURE__*/_react["default"].createElement(_movieView.MovieView, {
@@ -25802,8 +25810,7 @@ try {
           })) : movies.map(function (movie) {
             return (
               /*#__PURE__*/_react["default"].createElement(_Col["default"], {
-                key: movie._id,
-                md: 3
+                key: movie._id
               }, /*#__PURE__*/_react["default"].createElement(_movieCard.MovieCard, {
                 movie: movie,
                 onClick: function onClick(movie) {
@@ -27722,6 +27729,7 @@ try {
   var _propTypes = _interopRequireDefault(require("prop-types"));
   var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
   var _Card = _interopRequireDefault(require("react-bootstrap/Card"));
+  var _CardDeck = _interopRequireDefault(require("react-bootstrap/CardDeck"));
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
       "default": obj
@@ -27821,15 +27829,20 @@ try {
       value: function render() {
         var _this$props = this.props, movie = _this$props.movie, _onClick = _this$props.onClick;
         return (
-          /*#__PURE__*/_react["default"].createElement(_Card["default"], null, /*#__PURE__*/_react["default"].createElement(_Card["default"].Img, {
+          /*#__PURE__*/_react["default"].createElement(_CardDeck["default"], null, /*#__PURE__*/_react["default"].createElement(_Card["default"], {
+            border: "success",
+            style: {
+              width: '14rem'
+            }
+          }, /*#__PURE__*/_react["default"].createElement(_Card["default"].Img, {
             variant: "top",
             src: movie.ImagePath
           }), /*#__PURE__*/_react["default"].createElement(_Card["default"].Body, null, /*#__PURE__*/_react["default"].createElement(_Card["default"].Title, null, movie.Title), /*#__PURE__*/_react["default"].createElement(_Card["default"].Text, null, movie.Description.Synopsis), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+            variant: "primary",
             onClick: function onClick() {
               return _onClick(movie);
-            },
-            variant: "link"
-          }, "Open")))
+            }
+          }, "Open"))))
         );
       }
     }]);
@@ -27869,7 +27882,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","prop-types":"4dfy5","react-bootstrap/Button":"1ru0l","react-bootstrap/Card":"1CZWQ","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"4dfy5":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","react-bootstrap/Button":"1ru0l","react-bootstrap/Card":"1CZWQ","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/CardDeck":"4fiZs"}],"4dfy5":[function(require,module,exports) {
 /**
 * Copyright (c) 2013-present, Facebook, Inc.
 *
@@ -29176,7 +29189,21 @@ function registerExportsForReactRefresh(module) {
   }
 }
 
-},{"react-refresh/runtime":"592mh"}],"3xBbr":[function(require,module,exports) {
+},{"react-refresh/runtime":"592mh"}],"4fiZs":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
+
+var _default = (0, _createWithBsPrefix.default)('card-deck');
+
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","./createWithBsPrefix":"2oVVc"}],"3xBbr":[function(require,module,exports) {
 "use strict";
 var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
@@ -29467,7 +29494,7 @@ try {
       Rotten_Tomatoes_score: _propTypes["default"].string.isRequired,
       Year: _propTypes["default"].string.isRequired
     }).isRequired,
-    onClick: _propTypes["default"].func.isRequired
+    onClick: _propTypes["default"].func
   };
   helpers.postlude(module);
 } finally {
