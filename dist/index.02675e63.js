@@ -25607,11 +25607,11 @@ try {
   var _axios = _interopRequireDefault(require("axios"));
   var _Row = _interopRequireDefault(require("react-bootstrap/Row"));
   var _Col = _interopRequireDefault(require("react-bootstrap/Col"));
+  var _registrationView = require("../registration-view/registration-view");
+  var _loginView = require("../login-view/login-view");
   var _movieCard = require("../movie-card/movie-card");
   var _movieView = require("../movie-view/movie-view");
   var _button = require("../button/button");
-  var _registrationView = require("../registration-view/registration-view");
-  var _loginView = require("../login-view/login-view");
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
       "default": obj
@@ -25698,6 +25698,7 @@ try {
     };
     return _getPrototypeOf(o);
   }
+  // import RegistrationView into file
   // create MainView component as a class component by using React.Component template
   var MainView = /*#__PURE__*/(function (_React$Component) {
     _inherits(MainView, _React$Component);
@@ -27729,7 +27730,7 @@ try {
   var _propTypes = _interopRequireDefault(require("prop-types"));
   var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
   var _Card = _interopRequireDefault(require("react-bootstrap/Card"));
-  var _CardDeck = _interopRequireDefault(require("react-bootstrap/CardDeck"));
+  var _CardGroup = _interopRequireDefault(require("react-bootstrap/CardGroup"));
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
       "default": obj
@@ -27829,20 +27830,19 @@ try {
       value: function render() {
         var _this$props = this.props, movie = _this$props.movie, _onClick = _this$props.onClick;
         return (
-          /*#__PURE__*/_react["default"].createElement(_CardDeck["default"], null, /*#__PURE__*/_react["default"].createElement(_Card["default"], {
-            border: "success",
+          /*#__PURE__*/_react["default"].createElement(_Card["default"], {
             style: {
-              width: '14rem'
+              width: '18rem '
             }
           }, /*#__PURE__*/_react["default"].createElement(_Card["default"].Img, {
             variant: "top",
             src: movie.ImagePath
           }), /*#__PURE__*/_react["default"].createElement(_Card["default"].Body, null, /*#__PURE__*/_react["default"].createElement(_Card["default"].Title, null, movie.Title), /*#__PURE__*/_react["default"].createElement(_Card["default"].Text, null, movie.Description.Synopsis), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
-            variant: "primary",
             onClick: function onClick() {
               return _onClick(movie);
-            }
-          }, "Open"))))
+            },
+            variant: "link"
+          }, "Open")))
         );
       }
     }]);
@@ -27882,7 +27882,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","prop-types":"4dfy5","react-bootstrap/Button":"1ru0l","react-bootstrap/Card":"1CZWQ","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/CardDeck":"4fiZs"}],"4dfy5":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","react-bootstrap/Button":"1ru0l","react-bootstrap/Card":"1CZWQ","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/CardGroup":"1B9U7"}],"4dfy5":[function(require,module,exports) {
 /**
 * Copyright (c) 2013-present, Facebook, Inc.
 *
@@ -29189,7 +29189,7 @@ function registerExportsForReactRefresh(module) {
   }
 }
 
-},{"react-refresh/runtime":"592mh"}],"4fiZs":[function(require,module,exports) {
+},{"react-refresh/runtime":"592mh"}],"1B9U7":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -29199,7 +29199,7 @@ exports.default = void 0;
 
 var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
 
-var _default = (0, _createWithBsPrefix.default)('card-deck');
+var _default = (0, _createWithBsPrefix.default)('card-group');
 
 exports.default = _default;
 module.exports = exports["default"];
@@ -29564,6 +29564,15 @@ try {
   var _react = _interopRequireWildcard(require("react"));
   var _loginView = require("../login-view/login-view");
   var _propTypes = _interopRequireDefault(require("prop-types"));
+  var _Form = _interopRequireDefault(require("react-bootstrap/Form"));
+  var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
+  var _Row = _interopRequireDefault(require("react-bootstrap/Row"));
+  var _Col = _interopRequireDefault(require("react-bootstrap/Col"));
+  var _InputGroup = _interopRequireDefault(require("react-bootstrap/InputGroup"));
+  var _FormControl = _interopRequireDefault(require("react-bootstrap/FormControl"));
+  var _FormCheck = _interopRequireDefault(require("react-bootstrap/FormCheck"));
+  var _FormFile = _interopRequireDefault(require("react-bootstrap/FormFile"));
+  var _reactDom = require("react-dom");
   var _s2 = $RefreshSig$();
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -29670,31 +29679,77 @@ try {
       props.onRegistered(username);
     };
     return (
-      /*#__PURE__*/_react["default"].createElement("form", null, /*#__PURE__*/_react["default"].createElement("h3", null, "Register Here"), /*#__PURE__*/_react["default"].createElement("label", null, "Username:", /*#__PURE__*/_react["default"].createElement("input", {
+      /*#__PURE__*/_react["default"].createElement(_Form["default"], null, /*#__PURE__*/_react["default"].createElement("h3", null, "Register now"), /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, {
+        className: "text-muted"
+      }, "We will never share your username, password, email or birthdate with a third-party."), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+        as: _Col["default"],
+        md: "4",
+        controlId: "validationCustomUsername"
+      }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Username"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+        hasValidation: true
+      }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
         type: "text",
+        placeholder: "Username",
+        "aria-describedby": "inputGroupPrepend",
+        required: true,
         value: username,
         onChange: function onChange(e) {
           return setUsername(e.target.value);
         }
-      })), /*#__PURE__*/_react["default"].createElement("label", null, "Password:", /*#__PURE__*/_react["default"].createElement("input", {
+      }))), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+        as: _Col["default"],
+        md: "4",
+        controlId: "formBasicPassword"
+      }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Password"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+        hasValidation: true
+      }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
+        required: true,
         type: "password",
+        placeholder: "Password",
         value: password,
+        "aria-describedby": "passwordHelpBlock",
         onChange: function onChange(e) {
           return setPassword(e.target.value);
         }
-      })), /*#__PURE__*/_react["default"].createElement("label", null, "Email:", /*#__PURE__*/_react["default"].createElement("input", {
+      })), /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, {
+        id: "passwordHelpBlock",
+        muted: true
+      }, "Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+        as: _Col["default"],
+        md: "4",
+        controlId: "formBasicEmail"
+      }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Email address"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+        hasValidation: true
+      }), /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
         type: "email",
+        placeholder: "Enter email",
         value: email,
+        "aria-describedby": "inputGroupPrepend",
         onChange: function onChange(e) {
           return setEmail(e.target.value);
         }
-      })), /*#__PURE__*/_react["default"].createElement("label", null, "Birthday:", /*#__PURE__*/_react["default"].createElement("input", {
+      })), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+        as: _Col["default"],
+        md: "4",
+        controlId: "validationCustom01"
+      }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Birthday"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+        hasValidation: true
+      }), /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
+        required: true,
         type: "date",
         value: birthday,
+        "aria-describedby": "inputGroupPrepend",
         onChange: function onChange(e) {
           return setBirthday(e.target.value);
-        }
-      })), /*#__PURE__*/_react["default"].createElement("button", {
+        },
+        placeholder: "Birthday"
+      }), /*#__PURE__*/_react["default"].createElement(_Form["default"].Control.Feedback, null, "Looks good!")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+        controlId: "formBasicCheckbox"
+      }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Check, {
+        type: "checkbox",
+        label: "I agree to the myfavfilmz Terms of Serivce"
+      })), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+        variant: "primary",
         type: "submit",
         onClick: handleSubmit
       }, "Submit"), /*#__PURE__*/_react["default"].createElement("p", null, "Already a member?"), /*#__PURE__*/_react["default"].createElement("button", {
@@ -29702,7 +29757,7 @@ try {
         onClick: function onClick() {
           return props.onRegistered(false);
         }
-      }, "Click here to log in!"), "     ")
+      }, "Click here to log in!"))
     );
   }
   _s2(RegistrationView, "Sm4/B7Ss7XpbZkZHxsTCdDKe1RI=");
@@ -29725,7 +29780,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","../login-view/login-view":"6M7fu","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"6M7fu":[function(require,module,exports) {
+},{"react":"3b2NM","../login-view/login-view":"6M7fu","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","react-bootstrap/InputGroup":"3nb5C","react-bootstrap/FormControl":"573gP","react-bootstrap/FormCheck":"6WcKM","react-bootstrap/FormFile":"6mhKG","react-dom":"2sg1U"}],"6M7fu":[function(require,module,exports) {
 "use strict";
 var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
@@ -29753,6 +29808,15 @@ try {
   var _Form = _interopRequireDefault(require("react-bootstrap/Form"));
   var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
   var _propTypes = _interopRequireDefault(require("prop-types"));
+  var _Card = _interopRequireDefault(require("react-bootstrap/Card"));
+  var _InputGroup = _interopRequireDefault(require("react-bootstrap/InputGroup"));
+  var _CardDeck = _interopRequireDefault(require("react-bootstrap/CardDeck"));
+  var _CardGroup = _interopRequireDefault(require("react-bootstrap/CardGroup"));
+  var _CardColumns = _interopRequireDefault(require("react-bootstrap/CardColumns"));
+  require("../../index.scss");
+  var _FormControl = _interopRequireDefault(require("react-bootstrap/FormControl"));
+  var _FormCheck = _interopRequireDefault(require("react-bootstrap/FormCheck"));
+  var _FormFile = _interopRequireDefault(require("react-bootstrap/FormFile"));
   var _s2 = $RefreshSig$();
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -29856,27 +29920,58 @@ try {
       console.log(username, password);
       props.onLoggedIn(username);
     };
-    return (
-      /*#__PURE__*/_react["default"].createElement(_Form["default"], null, /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
-        controlId: "formUsername"
-      }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Username:"), /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
-        type: "text",
-        onChange: function onChange(e) {
-          return setUsername(e.target.value);
-        }
-      })), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
-        controlId: "formPassword"
-      }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Password:"), /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
-        type: "password",
-        onChange: function onChange(e) {
-          return setPassword(e.target.value);
-        }
-      })), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
-        variant: "primary",
-        type: "submit",
-        onClick: handleSubmit
-      }, "Submit"))
-    );
+    return ['Dark'].map(function (variant, idx) {
+      return (
+        /*#__PURE__*/_react["default"].createElement(_Card["default"], {
+          bg: variant.toLowerCase(),
+          key: idx,
+          text: variant.toLowerCase() === 'light' ? 'dark' : 'white',
+          style: {
+            width: '28rem'
+          },
+          className: "justify-content-center mx-auto mt-5"
+        }, /*#__PURE__*/_react["default"].createElement(_Card["default"].Body, null, /*#__PURE__*/_react["default"].createElement("h3", null, "Welcome Back!"), /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, null, "Login into your account"), /*#__PURE__*/_react["default"].createElement(_Form["default"], null, /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+          controlId: "validationCustomUsername"
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Username:"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+          hasValidation: true
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
+          required: true,
+          type: "text",
+          value: username,
+          "aria-describedby": "inputGroupPrepend",
+          placeholder: "Enter username",
+          onChange: function onChange(e) {
+            return setUsername(e.target.value);
+          }
+        })), /*#__PURE__*/_react["default"].createElement(_Form["default"].Check, {
+          label: "Remember me"
+        })), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+          controlId: "formBasicPassword"
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, {
+          htmlFor: "inputPassword5"
+        }, "Password:"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+          hasValidation: true
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
+          required: true,
+          type: "password",
+          id: "inputPassword5",
+          placeholder: "Enter password",
+          value: password,
+          onChange: function onChange(e) {
+            return setPassword(e.target.value);
+          }
+        }))), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+          variant: "primary",
+          type: "submit",
+          onClick: handleSubmit
+        }, "Submit"), /*#__PURE__*/_react["default"].createElement("p", null, "New to myfavfilmz?"), /*#__PURE__*/_react["default"].createElement("button", {
+          type: "button",
+          onClick: function onClick() {
+            return props.onRegistered(true);
+          }
+        }, "Click here to register!"))))
+      );
+    });
   }
   _s2(LoginView, "9FY2cPL9VBDmuhjwpF2ik6flsHs=");
   _c = LoginView;
@@ -29895,7 +29990,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"6A5ko":[function(require,module,exports) {
+},{"react":"3b2NM","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/FormControl":"573gP","react-bootstrap/FormCheck":"6WcKM","react-bootstrap/FormFile":"6mhKG","../../index.scss":"5iJih","react-bootstrap/Card":"1CZWQ","react-bootstrap/CardDeck":"4fiZs","react-bootstrap/CardGroup":"1B9U7","react-bootstrap/CardColumns":"48yv5","react-bootstrap/InputGroup":"3nb5C"}],"6A5ko":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -30812,6 +30907,107 @@ Switch.Label = _FormCheck.default.Label;
 var _default = Switch;
 exports.default = _default;
 module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","react":"3b2NM","./FormCheck":"6WcKM"}],"5iJih":[function() {},{}]},["1j6wU","68WUB","1DVjT"], "1DVjT", "parcelRequire0837")
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","react":"3b2NM","./FormCheck":"6WcKM"}],"5iJih":[function() {},{}],"4fiZs":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
+
+var _default = (0, _createWithBsPrefix.default)('card-deck');
+
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","./createWithBsPrefix":"2oVVc"}],"48yv5":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
+
+var _default = (0, _createWithBsPrefix.default)('card-columns');
+
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","./createWithBsPrefix":"2oVVc"}],"3nb5C":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var InputGroupAppend = (0, _createWithBsPrefix.default)('input-group-append');
+var InputGroupPrepend = (0, _createWithBsPrefix.default)('input-group-prepend');
+var InputGroupText = (0, _createWithBsPrefix.default)('input-group-text', {
+  Component: 'span'
+});
+
+var InputGroupCheckbox = function InputGroupCheckbox(props) {
+  return /*#__PURE__*/_react.default.createElement(InputGroupText, null, /*#__PURE__*/_react.default.createElement("input", (0, _extends2.default)({
+    type: "checkbox"
+  }, props)));
+};
+
+var InputGroupRadio = function InputGroupRadio(props) {
+  return /*#__PURE__*/_react.default.createElement(InputGroupText, null, /*#__PURE__*/_react.default.createElement("input", (0, _extends2.default)({
+    type: "radio"
+  }, props)));
+};
+
+/**
+ *
+ * @property {InputGroupAppend} Append
+ * @property {InputGroupPrepend} Prepend
+ * @property {InputGroupText} Text
+ * @property {InputGroupRadio} Radio
+ * @property {InputGroupCheckbox} Checkbox
+ */
+var InputGroup = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      size = _ref.size,
+      hasValidation = _ref.hasValidation,
+      className = _ref.className,
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'div' : _ref$as,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "size", "hasValidation", "className", "as"]);
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'input-group');
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({
+    ref: ref
+  }, props, {
+    className: (0, _classnames.default)(className, bsPrefix, size && bsPrefix + "-" + size, hasValidation && 'has-validation')
+  }));
+});
+
+InputGroup.displayName = 'InputGroup';
+var InputGroupWithExtras = (0, _extends2.default)({}, InputGroup, {
+  Text: InputGroupText,
+  Radio: InputGroupRadio,
+  Checkbox: InputGroupCheckbox,
+  Append: InputGroupAppend,
+  Prepend: InputGroupPrepend
+});
+var _default = InputGroupWithExtras;
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","@babel/runtime/helpers/extends":"3krLJ","classnames":"5aJRc","react":"3b2NM","./createWithBsPrefix":"2oVVc","./ThemeProvider":"4rz1S"}],"5iJih":[function() {},{}]},["1j6wU","68WUB","1DVjT"], "1DVjT", "parcelRequire0837")
 
 //# sourceMappingURL=index.02675e63.js.map
