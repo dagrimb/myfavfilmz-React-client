@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
 import InputGroup from 'react-bootstrap/InputGroup';
 import CardDeck from 'react-bootstrap/CardDeck'
 import CardGroup from 'react-bootstrap/CardGroup'
@@ -83,7 +83,7 @@ export function LoginView(props) {
         Login
       </Button><br /><br /><br />  
       <p>New to myfavfilmz?</p>
-      <button type="button" onClick={() => props.onRegistered(true)}>Click here to register!</button>
+      <Button variant="primary" size="sm" block type="button" onClick={() => props.onRegistered(true)}>Click here to register!</Button>
     </Form>
     </Card.Body>
     </Card>
