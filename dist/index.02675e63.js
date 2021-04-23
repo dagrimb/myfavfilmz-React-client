@@ -29566,6 +29566,7 @@ try {
   var _propTypes = _interopRequireDefault(require("prop-types"));
   var _Form = _interopRequireDefault(require("react-bootstrap/Form"));
   var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
+  var _Card = _interopRequireDefault(require("react-bootstrap/Card"));
   var _Row = _interopRequireDefault(require("react-bootstrap/Row"));
   var _Col = _interopRequireDefault(require("react-bootstrap/Col"));
   var _InputGroup = _interopRequireDefault(require("react-bootstrap/InputGroup"));
@@ -29678,87 +29679,99 @@ try {
       console.log(username, password, email, birthday);
       props.onRegistered(username);
     };
-    return (
-      /*#__PURE__*/_react["default"].createElement(_Form["default"], null, /*#__PURE__*/_react["default"].createElement("h3", null, "Register now"), /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, {
-        className: "text-muted"
-      }, "We will never share your username, password, email or birthdate with a third-party."), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
-        as: _Col["default"],
-        md: "4",
-        controlId: "validationCustomUsername"
-      }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Username"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
-        hasValidation: true
-      }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
-        type: "text",
-        placeholder: "Username",
-        "aria-describedby": "inputGroupPrepend",
-        required: true,
-        value: username,
-        onChange: function onChange(e) {
-          return setUsername(e.target.value);
-        }
-      }))), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
-        as: _Col["default"],
-        md: "4",
-        controlId: "formBasicPassword"
-      }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Password"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
-        hasValidation: true
-      }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
-        required: true,
-        type: "password",
-        placeholder: "Password",
-        value: password,
-        "aria-describedby": "passwordHelpBlock",
-        onChange: function onChange(e) {
-          return setPassword(e.target.value);
-        }
-      })), /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, {
-        id: "passwordHelpBlock",
-        muted: true
-      }, "Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
-        as: _Col["default"],
-        md: "4",
-        controlId: "formBasicEmail"
-      }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Email address"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
-        hasValidation: true
-      }), /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
-        type: "email",
-        placeholder: "Enter email",
-        value: email,
-        "aria-describedby": "inputGroupPrepend",
-        onChange: function onChange(e) {
-          return setEmail(e.target.value);
-        }
-      })), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
-        as: _Col["default"],
-        md: "4",
-        controlId: "validationCustom01"
-      }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Birthday"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
-        hasValidation: true
-      }), /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
-        required: true,
-        type: "date",
-        value: birthday,
-        "aria-describedby": "inputGroupPrepend",
-        onChange: function onChange(e) {
-          return setBirthday(e.target.value);
-        },
-        placeholder: "Birthday"
-      }), /*#__PURE__*/_react["default"].createElement(_Form["default"].Control.Feedback, null, "Looks good!")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
-        controlId: "formBasicCheckbox"
-      }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Check, {
-        type: "checkbox",
-        label: "I agree to the myfavfilmz Terms of Serivce"
-      })), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
-        variant: "primary",
-        type: "submit",
-        onClick: handleSubmit
-      }, "Submit"), /*#__PURE__*/_react["default"].createElement("p", null, "Already a member?"), /*#__PURE__*/_react["default"].createElement("button", {
-        type: "button",
-        onClick: function onClick() {
-          return props.onRegistered(false);
-        }
-      }, "Click here to log in!"))
-    );
+    return ['Dark'].map(function (variant, idx) {
+      return (
+        /*#__PURE__*/_react["default"].createElement(_Card["default"], {
+          bg: variant.toLowerCase(),
+          key: idx,
+          text: variant.toLowerCase() === 'light' ? 'dark' : 'white',
+          style: {
+            width: '28rem'
+          },
+          className: "justify-content-center text-center mx-auto mt-5"
+        }, /*#__PURE__*/_react["default"].createElement(_Card["default"].Body, null, /*#__PURE__*/_react["default"].createElement("div", {
+          className: "text-align-center"
+        }, /*#__PURE__*/_react["default"].createElement("h3", null, "Great to meet you!")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, null, "Creat an account"), /*#__PURE__*/_react["default"].createElement(_Form["default"], null, /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, {
+          className: "text-muted"
+        }, "We will never share your username, password, email or birthdate with a third-party."), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+          as: _Col["default"],
+          md: "4",
+          controlId: "validationCustomUsername"
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Username"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+          hasValidation: true
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
+          type: "text",
+          placeholder: "Username",
+          "aria-describedby": "inputGroupPrepend",
+          required: true,
+          value: username,
+          onChange: function onChange(e) {
+            return setUsername(e.target.value);
+          }
+        }))), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+          as: _Col["default"],
+          md: "4",
+          controlId: "formBasicEmail"
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Email address"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+          hasValidation: true
+        }), /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
+          type: "email",
+          placeholder: "Enter email",
+          value: email,
+          "aria-describedby": "inputGroupPrepend",
+          onChange: function onChange(e) {
+            return setEmail(e.target.value);
+          }
+        })), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+          as: _Col["default"],
+          md: "4",
+          controlId: "formBasicPassword"
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Password"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+          hasValidation: true
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
+          required: true,
+          type: "password",
+          placeholder: "Password",
+          value: password,
+          "aria-describedby": "passwordHelpBlock",
+          onChange: function onChange(e) {
+            return setPassword(e.target.value);
+          }
+        })), /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, {
+          id: "passwordHelpBlock",
+          muted: true
+        }, "Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+          as: _Col["default"],
+          md: "4",
+          controlId: "validationCustom01"
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Birthday"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+          hasValidation: true
+        }), /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
+          required: true,
+          type: "date",
+          value: birthday,
+          "aria-describedby": "inputGroupPrepend",
+          onChange: function onChange(e) {
+            return setBirthday(e.target.value);
+          },
+          placeholder: "Birthday"
+        }), /*#__PURE__*/_react["default"].createElement(_Form["default"].Control.Feedback, null, "Looks good!")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+          controlId: "formBasicCheckbox"
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Check, {
+          type: "checkbox",
+          label: "I agree to the myfavfilmz Terms of Serivce"
+        })), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+          variant: "primary",
+          type: "submit",
+          onClick: handleSubmit
+        }, "Submit"), /*#__PURE__*/_react["default"].createElement("p", null, "Already a member?"), /*#__PURE__*/_react["default"].createElement("button", {
+          type: "button",
+          onClick: function onClick() {
+            return props.onRegistered(false);
+          }
+        }, "Click here to log in!"))))
+      );
+    });
   }
   _s2(RegistrationView, "Sm4/B7Ss7XpbZkZHxsTCdDKe1RI=");
   _c = RegistrationView;
@@ -29780,7 +29793,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","../login-view/login-view":"6M7fu","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","react-bootstrap/InputGroup":"3nb5C","react-bootstrap/FormControl":"573gP","react-bootstrap/FormCheck":"6WcKM","react-bootstrap/FormFile":"6mhKG","react-dom":"2sg1U"}],"6M7fu":[function(require,module,exports) {
+},{"react":"3b2NM","../login-view/login-view":"6M7fu","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","react-bootstrap/InputGroup":"3nb5C","react-bootstrap/FormControl":"573gP","react-bootstrap/FormCheck":"6WcKM","react-bootstrap/FormFile":"6mhKG","react-dom":"2sg1U","react-bootstrap/Card":"1CZWQ"}],"6M7fu":[function(require,module,exports) {
 "use strict";
 var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
@@ -29972,7 +29985,10 @@ try {
           variant: "primary float-right mr-5",
           type: "submit",
           onClick: handleSubmit
-        }, "Login"), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("p", null, "New to myfavfilmz?"), /*#__PURE__*/_react["default"].createElement("button", {
+        }, "Login"), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("p", null, "New to myfavfilmz?"), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+          variant: "primary",
+          size: "sm",
+          block: true,
           type: "button",
           onClick: function onClick() {
             return props.onRegistered(true);
