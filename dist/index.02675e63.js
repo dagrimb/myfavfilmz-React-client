@@ -29929,9 +29929,13 @@ try {
           style: {
             width: '28rem'
           },
-          className: "justify-content-center mx-auto mt-5"
-        }, /*#__PURE__*/_react["default"].createElement(_Card["default"].Body, null, /*#__PURE__*/_react["default"].createElement("h3", null, "Welcome Back!"), /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, null, "Login into your account"), /*#__PURE__*/_react["default"].createElement(_Form["default"], null, /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+          className: "justify-content-center text-center mx-auto mt-5"
+        }, /*#__PURE__*/_react["default"].createElement(_Card["default"].Body, null, /*#__PURE__*/_react["default"].createElement("div", {
+          className: "text-align-center"
+        }, /*#__PURE__*/_react["default"].createElement("h3", null, "Welcome Back!")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, null, "Login into your account"), /*#__PURE__*/_react["default"].createElement(_Form["default"], null, /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
           controlId: "validationCustomUsername"
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Row, {
+          className: "align-items-left"
         }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Username:"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
           hasValidation: true
         }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
@@ -29943,10 +29947,14 @@ try {
           onChange: function onChange(e) {
             return setUsername(e.target.value);
           }
-        })), /*#__PURE__*/_react["default"].createElement(_Form["default"].Check, {
+        }))), /*#__PURE__*/_react["default"].createElement(_Form["default"].Row, {
+          className: "align-items-left"
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Check, {
           label: "Remember me"
-        })), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+        }))), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
           controlId: "formBasicPassword"
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Row, {
+          className: "align-items-left"
         }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, {
           htmlFor: "inputPassword5"
         }, "Password:"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
@@ -29960,11 +29968,11 @@ try {
           onChange: function onChange(e) {
             return setPassword(e.target.value);
           }
-        }))), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
-          variant: "primary",
+        })))), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+          variant: "primary float-right mr-5",
           type: "submit",
           onClick: handleSubmit
-        }, "Submit"), /*#__PURE__*/_react["default"].createElement("p", null, "New to myfavfilmz?"), /*#__PURE__*/_react["default"].createElement("button", {
+        }, "Login"), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("p", null, "New to myfavfilmz?"), /*#__PURE__*/_react["default"].createElement("button", {
           type: "button",
           onClick: function onClick() {
             return props.onRegistered(true);
