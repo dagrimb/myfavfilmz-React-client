@@ -4,6 +4,7 @@ import { LoginView } from '../login-view/login-view';
 import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -30,8 +31,25 @@ export function RegistrationView(props) {
 
 
   return (
+
+    [
+      'Dark',
+    ].map((variant, idx) => (
+      <Card
+        bg={variant.toLowerCase()}
+        key={idx}
+        text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
+        style={{ width: '28rem' }}
+        className="justify-content-center text-center mx-auto mt-5"
+      >
+      <Card.Body>
+        <div className="text-align-center">
+          <h3>Great to meet you!</h3>
+        </div>
+       <Form.Text>
+         Creat an account
+       </Form.Text>
     <Form>
-      <h3>Register now</h3>
       <Form.Text className="text-muted">
         We will never share your username, password, email or birthdate with a third-party.
       </Form.Text>
@@ -50,6 +68,18 @@ export function RegistrationView(props) {
           </InputGroup>
         </Form.Group>
 
+        <Form.Group as={Col} md="4" controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <InputGroup hasValidation></InputGroup>
+            <Form.Control 
+              type="email" 
+              placeholder="Enter email"
+              value={email}
+              aria-describedby="inputGroupPrepend"
+              onChange={e => setEmail(e.target.value)}  
+            />
+        </Form.Group>
+
         <Form.Group as={Col} md="4" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <InputGroup hasValidation>
@@ -66,18 +96,6 @@ export function RegistrationView(props) {
             Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or 
             emoji.
           </Form.Text>
-        </Form.Group>
-
-        <Form.Group as={Col} md="4" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <InputGroup hasValidation></InputGroup>
-            <Form.Control 
-              type="email" 
-              placeholder="Enter email"
-              value={email}
-              aria-describedby="inputGroupPrepend"
-              onChange={e => setEmail(e.target.value)}  
-            />
         </Form.Group>
 
         <Form.Group as={Col} md="4" controlId="validationCustom01">
@@ -102,11 +120,13 @@ export function RegistrationView(props) {
           <p>Already a member?</p>
         
         <button type="button" onClick={() => props.onRegistered(false)}>Click here to log in!</button>
-
-
 </Form>
-  );
-}
+</Card.Body>
+    </Card>
+
+
+    ))
+  )}
 
 
 
