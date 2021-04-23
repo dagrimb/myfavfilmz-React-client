@@ -54,9 +54,9 @@ export function RegistrationView(props) {
         We will never share your username, password, email or birthdate with a third-party.
       </Form.Text>
 
-        <Form.Group as={Col} md="4" controlId="validationCustomUsername">
+        <Form.Group as={Col} controlId="validationCustomUsername">
           <Form.Label>Username</Form.Label>
-          <InputGroup hasValidation>
+          <InputGroup className="mb-3" hasValidation>
             <Form.Control
               type="text" 
               placeholder="Username" 
@@ -68,7 +68,7 @@ export function RegistrationView(props) {
           </InputGroup>
         </Form.Group>
 
-        <Form.Group as={Col} md="4" controlId="formBasicEmail">
+        <Form.Group as={Col} controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <InputGroup hasValidation></InputGroup>
             <Form.Control 
@@ -80,13 +80,13 @@ export function RegistrationView(props) {
             />
         </Form.Group>
 
-        <Form.Group as={Col} md="4" controlId="formBasicPassword">
+        <Form.Group as={Col} controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <InputGroup hasValidation>
             <Form.Control 
               required
               type="password" 
-              placeholder="Password"
+              placeholder="Enter your password"
               value={password}
               aria-describedby="passwordHelpBlock"
               onChange={e => setPassword(e.target.value)}
@@ -98,7 +98,21 @@ export function RegistrationView(props) {
           </Form.Text>
         </Form.Group>
 
-        <Form.Group as={Col} md="4" controlId="validationCustom01">
+
+        <Form.Group as={Col} controlId="formBasicPassword">
+          <InputGroup hasValidation>
+            <Form.Control 
+              required
+              type="password" 
+              placeholder="Enter your password again"
+              value={password}
+              aria-describedby="passwordHelpBlock"
+              onChange={e => setPassword(e.target.value)}
+            />
+          </InputGroup>
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="validationCustom01">
           <Form.Label>Birthday</Form.Label>
           <InputGroup hasValidation></InputGroup>
             <Form.Control
@@ -116,10 +130,10 @@ export function RegistrationView(props) {
           <Form.Check type="checkbox" label="I agree to the myfavfilmz Terms of Serivce" />
         </Form.Group>
       
-        <Button variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
+        <Button variant="primary float-right mr-5" type="submit" onClick={handleSubmit}>Register</Button><br /><br /><br />
           <p>Already a member?</p>
         
-        <button type="button" onClick={() => props.onRegistered(false)}>Click here to log in!</button>
+          <Button variant="primary" size="sm" block type="button" onClick={() => props.onRegistered(false)}>Click here to log in!</Button>
 </Form>
 </Card.Body>
     </Card>
