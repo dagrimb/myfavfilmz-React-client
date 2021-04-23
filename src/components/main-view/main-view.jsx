@@ -7,15 +7,16 @@ import axios from 'axios';
 //import MovieCard into file
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { RegistrationView } from '../registration-view/registration-view';
+//import LoginView into file
+import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 //import MovieView into file
 import { MovieView } from '../movie-view/movie-view';
 //import Button into file
 import { Button } from '../button/button';
 //import RegistrationView into file
-import { RegistrationView } from '../registration-view/registration-view';
-//import LoginView into file
-import { LoginView } from '../login-view/login-view';
+
 
 
 //create MainView component as a class component by using React.Component template
