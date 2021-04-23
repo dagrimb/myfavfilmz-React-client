@@ -36,30 +36,36 @@ export function LoginView(props) {
         key={idx}
         text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
         style={{ width: '28rem' }}
-        className="justify-content-center mx-auto mt-5"
+        className="justify-content-center text-center mx-auto mt-5"
       >
       <Card.Body>
-       <h3>Welcome Back!</h3>
+        <div className="text-align-center">
+          <h3>Welcome Back!</h3>
+        </div>
        <Form.Text>
          Login into your account
        </Form.Text>
     <Form>
       <Form.Group controlId="validationCustomUsername">
-        <Form.Label>Username:</Form.Label>
-        <InputGroup hasValidation>
-        <Form.Control 
-          required
-          type="text" 
-          value={username}
-          aria-describedby="inputGroupPrepend"
-          placeholder="Enter username" 
-          onChange={e => setUsername(e.target.value)} 
-        />
-        </InputGroup>
+        <Form.Row className="align-items-left">
+          <Form.Label>Username:</Form.Label>
+          <InputGroup hasValidation>
+            <Form.Control 
+              required
+              type="text" 
+              value={username}
+              aria-describedby="inputGroupPrepend"
+              placeholder="Enter username" 
+              onChange={e => setUsername(e.target.value)} 
+            />
+          </InputGroup>
+        </Form.Row>
+        <Form.Row className="align-items-left">
         <Form.Check label="Remember me" />
+        </Form.Row>
       </Form.Group>
-      
       <Form.Group controlId="formBasicPassword">
+      <Form.Row className="align-items-left">
         <Form.Label htmlFor="inputPassword5">Password:</Form.Label>
         <InputGroup hasValidation>
           <Form.Control
@@ -71,10 +77,11 @@ export function LoginView(props) {
             onChange={e => setPassword(e.target.value)} 
           />
         </InputGroup>
+        </Form.Row>
       </Form.Group>
-      <Button variant="primary" type="submit" onClick={handleSubmit}>
-        Submit
-      </Button> 
+      <Button variant="primary float-right mr-5" type="submit" onClick={handleSubmit}>
+        Login
+      </Button><br /><br /><br />  
       <p>New to myfavfilmz?</p>
       <button type="button" onClick={() => props.onRegistered(true)}>Click here to register!</button>
     </Form>
