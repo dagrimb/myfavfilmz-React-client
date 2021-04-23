@@ -29695,9 +29695,9 @@ try {
           className: "text-muted"
         }, "We will never share your username, password, email or birthdate with a third-party."), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
           as: _Col["default"],
-          md: "4",
           controlId: "validationCustomUsername"
         }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Username"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+          className: "mb-3",
           hasValidation: true
         }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
           type: "text",
@@ -29710,7 +29710,6 @@ try {
           }
         }))), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
           as: _Col["default"],
-          md: "4",
           controlId: "formBasicEmail"
         }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Email address"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
           hasValidation: true
@@ -29724,14 +29723,13 @@ try {
           }
         })), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
           as: _Col["default"],
-          md: "4",
           controlId: "formBasicPassword"
         }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Password"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
           hasValidation: true
         }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
           required: true,
           type: "password",
-          placeholder: "Password",
+          placeholder: "Enter your password",
           value: password,
           "aria-describedby": "passwordHelpBlock",
           onChange: function onChange(e) {
@@ -29742,7 +29740,20 @@ try {
           muted: true
         }, "Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
           as: _Col["default"],
-          md: "4",
+          controlId: "formBasicPassword"
+        }, /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+          hasValidation: true
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
+          required: true,
+          type: "password",
+          placeholder: "Enter your password again",
+          value: password,
+          "aria-describedby": "passwordHelpBlock",
+          onChange: function onChange(e) {
+            return setPassword(e.target.value);
+          }
+        }))), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+          as: _Col["default"],
           controlId: "validationCustom01"
         }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Birthday"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
           hasValidation: true
@@ -29761,10 +29772,13 @@ try {
           type: "checkbox",
           label: "I agree to the myfavfilmz Terms of Serivce"
         })), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
-          variant: "primary",
+          variant: "primary float-right mr-5",
           type: "submit",
           onClick: handleSubmit
-        }, "Submit"), /*#__PURE__*/_react["default"].createElement("p", null, "Already a member?"), /*#__PURE__*/_react["default"].createElement("button", {
+        }, "Register"), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("p", null, "Already a member?"), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+          variant: "primary",
+          size: "sm",
+          block: true,
           type: "button",
           onClick: function onClick() {
             return props.onRegistered(false);
