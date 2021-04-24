@@ -82,7 +82,7 @@ export class MainView extends React.Component {
     if (!movies || movies.length === 0) return <div className="main-view" />;
     //else, display list of movie cards
     return (
-      <Row className="main-view justify-content-md-center">
+      <Row className="main-view justify-content-md-center my-5">
         {selectedMovie
           ? (
             <Col md={8}>
