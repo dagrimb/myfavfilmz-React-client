@@ -11,7 +11,7 @@ class myfavfilmzApplication extends React.Component {
   
   render() {
     return (
-      <Container>
+      <Container fluid>
         <MainView />
       </Container>
     );
