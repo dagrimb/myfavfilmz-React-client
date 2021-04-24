@@ -35,6 +35,7 @@ export function RegistrationView(props) {
     [
       'Dark',
     ].map((variant, idx) => (
+      <div class="bg-primary">
       <Card
         bg={variant.toLowerCase()}
         key={idx}
@@ -137,7 +138,7 @@ export function RegistrationView(props) {
 </Form>
 </Card.Body>
     </Card>
-
+    </div>
 
     ))
   )}
