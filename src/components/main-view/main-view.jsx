@@ -15,6 +15,8 @@ import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 //import Button into file
 import { Button } from '../button/button';
+import { Navbar,Nav,NavDropdown,Form,FormControl} from 'react-bootstrap';
+
 //import RegistrationView into file
 
 
@@ -82,7 +84,22 @@ export class MainView extends React.Component {
     if (!movies || movies.length === 0) return <div className="main-view" />;
     //else, display list of movie cards
     return (
-      <Row className="main-view justify-content-md-center my-5">
+
+      <Row className="main-view justify-content-md-center mx-3">
+        <div class="w-100">
+          <Navbar bg="dark" variant="dark">
+            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+            <Nav className="mr-auto">
+              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link href="#features">Features</Nav.Link>
+              <Nav.Link href="#pricing">Pricing</Nav.Link>
+            </Nav>
+            <Form inline>
+              <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+              <Button variant="outline-light">Search</Button>
+            </Form>
+          </Navbar>
+        </div>
         {selectedMovie
           ? (
             <Col md={8}>
