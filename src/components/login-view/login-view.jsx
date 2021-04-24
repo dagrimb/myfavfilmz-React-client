@@ -31,6 +31,7 @@ export function LoginView(props) {
     [
       'Dark',
     ].map((variant, idx) => (
+      <div class="bg-primary">
       <Card
         bg={variant.toLowerCase()}
         key={idx}
@@ -87,6 +88,7 @@ export function LoginView(props) {
     </Form>
     </Card.Body>
     </Card>
+    </div>
   ))
 )}
 
