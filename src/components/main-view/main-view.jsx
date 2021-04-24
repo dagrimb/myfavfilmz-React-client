@@ -73,9 +73,9 @@ export class MainView extends React.Component {
   render() {
     const  { movies, selectedMovie, newUser, user, registerClicked } = this.state; // shortened form of const movies = this.state.movies
     //if no user signed in and button to render RegistrationView is clicked, render RegistrationView
-    if (!user && registerClicked) return <RegistrationView onRegistered={this.onRegistered} />;
+    //if (!user && registerClicked) return <RegistrationView onRegistered={this.onRegistered} />;
     //if no user signed in, render LoginView
-    if (!user) return <LoginView onRegistered={this.onRegistered} />;
+    //if (!user) return <LoginView onRegistered={this.onRegistered} />;
     //if not clicked, access selectedMovie state (passing a function as a prop called "onMovieClick")
     if (selectedMovie) return <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />;
     //if no movies, display message stating that the list is empty
@@ -90,7 +90,7 @@ export class MainView extends React.Component {
             </Col>
           )
           : movies.map(movie => (
-            <Col key={movie._id}>
+            <Col variant="h-50" md={4} key={movie._id}>
               <MovieCard movie={movie} onClick={movie => this.onMovieClick(movie)}/>
             </Col>
           ))
