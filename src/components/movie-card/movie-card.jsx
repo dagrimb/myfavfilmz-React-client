@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+
 //import { IoArrowForwardCircle } from 'react-icons/io';
 // Wanted to use  <div><IoArrowForwardCircle /> </div> to create arrow button in movies mockup
 
@@ -13,6 +16,8 @@ export class MovieCard extends React.Component {
     const { movie, onClick } = this.props;
 
     return (
+      <div className="bg-dark">
+     
       <CardDeck>
         <Card style={{ width: '18rem'}}>
           <Card.Body>
@@ -23,6 +28,7 @@ export class MovieCard extends React.Component {
           </Card.Body>
         </Card>
       </CardDeck>
+      </div>
     );
   }
 }
