@@ -25771,17 +25771,9 @@ try {
         var _this$state = this.state, movies = _this$state.movies, selectedMovie = _this$state.selectedMovie, newUser = _this$state.newUser, user = _this$state.user, registerClicked = _this$state.registerClicked;
         // shortened form of const movies = this.state.movies
         // if no user signed in and button to render RegistrationView is clicked, render RegistrationView
-        if (!user && registerClicked) return (
-          /*#__PURE__*/_react["default"].createElement(_registrationView.RegistrationView, {
-            onRegistered: this.onRegistered
-          })
-        );
+        // if (!user && registerClicked) return <RegistrationView onRegistered={this.onRegistered} />;
         // if no user signed in, render LoginView
-        if (!user) return (
-          /*#__PURE__*/_react["default"].createElement(_loginView.LoginView, {
-            onRegistered: this.onRegistered
-          })
-        );
+        // if (!user) return <LoginView onRegistered={this.onRegistered} />;
         // if not clicked, access selectedMovie state (passing a function as a prop called "onMovieClick")
         if (selectedMovie) return (
           /*#__PURE__*/_react["default"].createElement(_movieView.MovieView, {
@@ -25811,6 +25803,8 @@ try {
           })) : movies.map(function (movie) {
             return (
               /*#__PURE__*/_react["default"].createElement(_Col["default"], {
+                variant: "h-50",
+                md: 4,
                 key: movie._id
               }, /*#__PURE__*/_react["default"].createElement(_movieCard.MovieCard, {
                 movie: movie,
@@ -27730,7 +27724,7 @@ try {
   var _propTypes = _interopRequireDefault(require("prop-types"));
   var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
   var _Card = _interopRequireDefault(require("react-bootstrap/Card"));
-  var _CardGroup = _interopRequireDefault(require("react-bootstrap/CardGroup"));
+  var _CardDeck = _interopRequireDefault(require("react-bootstrap/CardDeck"));
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
       "default": obj
@@ -27817,6 +27811,8 @@ try {
     };
     return _getPrototypeOf(o);
   }
+  // import { IoArrowForwardCircle } from 'react-icons/io';
+  // Wanted to use  <div><IoArrowForwardCircle /> </div> to create arrow button in movies mockup
   // create MovieCard component
   var MovieCard = /*#__PURE__*/(function (_React$Component) {
     _inherits(MovieCard, _React$Component);
@@ -27830,19 +27826,22 @@ try {
       value: function render() {
         var _this$props = this.props, movie = _this$props.movie, _onClick = _this$props.onClick;
         return (
-          /*#__PURE__*/_react["default"].createElement(_Card["default"], {
+          /*#__PURE__*/_react["default"].createElement(_CardDeck["default"], {
+            variant: "h-50"
+          }, /*#__PURE__*/_react["default"].createElement(_Card["default"], {
+            border: "success",
             style: {
-              width: '18rem '
+              width: '16rem'
             }
-          }, /*#__PURE__*/_react["default"].createElement(_Card["default"].Img, {
-            variant: "top",
+          }, /*#__PURE__*/_react["default"].createElement(_Card["default"].Body, null, /*#__PURE__*/_react["default"].createElement(_Card["default"].Title, null, movie.Title), /*#__PURE__*/_react["default"].createElement(_Card["default"].Img, {
+            variant: "top mb-3",
             src: movie.ImagePath
-          }), /*#__PURE__*/_react["default"].createElement(_Card["default"].Body, null, /*#__PURE__*/_react["default"].createElement(_Card["default"].Title, null, movie.Title), /*#__PURE__*/_react["default"].createElement(_Card["default"].Text, null, movie.Description.Synopsis), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+          }), /*#__PURE__*/_react["default"].createElement(_Card["default"].Text, null, movie.Description.Synopsis), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+            variant: "primary",
             onClick: function onClick() {
               return _onClick(movie);
-            },
-            variant: "link"
-          }, "Open")))
+            }
+          }, "Open"))))
         );
       }
     }]);
@@ -27882,7 +27881,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","prop-types":"4dfy5","react-bootstrap/Button":"1ru0l","react-bootstrap/Card":"1CZWQ","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/CardGroup":"1B9U7"}],"4dfy5":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","react-bootstrap/Button":"1ru0l","react-bootstrap/Card":"1CZWQ","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/CardDeck":"4fiZs"}],"4dfy5":[function(require,module,exports) {
 /**
 * Copyright (c) 2013-present, Facebook, Inc.
 *
@@ -29189,7 +29188,7 @@ function registerExportsForReactRefresh(module) {
   }
 }
 
-},{"react-refresh/runtime":"592mh"}],"1B9U7":[function(require,module,exports) {
+},{"react-refresh/runtime":"592mh"}],"4fiZs":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -29199,7 +29198,7 @@ exports.default = void 0;
 
 var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
 
-var _default = (0, _createWithBsPrefix.default)('card-group');
+var _default = (0, _createWithBsPrefix.default)('card-deck');
 
 exports.default = _default;
 module.exports = exports["default"];
@@ -30945,7 +30944,7 @@ Switch.Label = _FormCheck.default.Label;
 var _default = Switch;
 exports.default = _default;
 module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","react":"3b2NM","./FormCheck":"6WcKM"}],"5iJih":[function() {},{}],"4fiZs":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","react":"3b2NM","./FormCheck":"6WcKM"}],"5iJih":[function() {},{}],"1B9U7":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -30955,7 +30954,7 @@ exports.default = void 0;
 
 var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
 
-var _default = (0, _createWithBsPrefix.default)('card-deck');
+var _default = (0, _createWithBsPrefix.default)('card-group');
 
 exports.default = _default;
 module.exports = exports["default"];
