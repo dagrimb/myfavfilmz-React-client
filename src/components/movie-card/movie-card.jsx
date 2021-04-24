@@ -13,13 +13,13 @@ export class MovieCard extends React.Component {
     const { movie, onClick } = this.props;
 
     return (
-      <CardDeck variant="h-50">
-        <Card border="success" style={{ width: '16rem'}}>
+      <CardDeck>
+        <Card style={{ width: '18rem'}}>
           <Card.Body>
             <Card.Title>{movie.Title}</Card.Title>
             <Card.Img variant="top mb-3" src={movie.ImagePath} />
             <Card.Text>{movie.Description.Synopsis}</Card.Text>
-            <Button variant="primary" onClick={() => onClick(movie)}>Open</Button>
+            <Button variant="primary" onClick={() => onClick(movie)}>Read More</Button>
           </Card.Body>
         </Card>
       </CardDeck>
