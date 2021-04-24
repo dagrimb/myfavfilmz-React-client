@@ -25803,22 +25803,24 @@ try {
             variant: "dark"
           }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Navbar.Brand, {
             href: "#home"
-          }, "Navbar"), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Nav, {
+          }, "myfavfilmz"), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Nav, {
             className: "mr-auto"
           }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Nav.Link, {
             href: "#home"
-          }, "Home"), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Nav.Link, {
+          }, "Account"), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Nav.Link, {
             href: "#features"
-          }, "Features"), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Nav.Link, {
+          }, "Movies"), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Nav.Link, {
             href: "#pricing"
-          }, "Pricing")), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Form, {
+          }, "About")), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Form, {
             inline: true
           }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.FormControl, {
             type: "text",
             placeholder: "Search",
             className: "mr-sm-2"
           }), /*#__PURE__*/_react["default"].createElement(_button.Button, {
-            variant: "outline-light"
+            type: "button",
+            "class": "btn btn-outline-info",
+            size: "lg"
           }, "Search")))), selectedMovie ? /*#__PURE__*/_react["default"].createElement(_Col["default"], {
             md: 8
           }, /*#__PURE__*/_react["default"].createElement(_movieView.MovieView, {
