@@ -25792,7 +25792,7 @@ try {
         // else, display list of movie cards
         return (
           /*#__PURE__*/_react["default"].createElement(_Row["default"], {
-            className: "main-view justify-content-md-center"
+            className: "main-view justify-content-md-center my-5"
           }, selectedMovie ? /*#__PURE__*/_react["default"].createElement(_Col["default"], {
             md: 8
           }, /*#__PURE__*/_react["default"].createElement(_movieView.MovieView, {
@@ -27826,12 +27826,9 @@ try {
       value: function render() {
         var _this$props = this.props, movie = _this$props.movie, _onClick = _this$props.onClick;
         return (
-          /*#__PURE__*/_react["default"].createElement(_CardDeck["default"], {
-            variant: "h-50"
-          }, /*#__PURE__*/_react["default"].createElement(_Card["default"], {
-            border: "success",
+          /*#__PURE__*/_react["default"].createElement(_CardDeck["default"], null, /*#__PURE__*/_react["default"].createElement(_Card["default"], {
             style: {
-              width: '16rem'
+              width: '18rem'
             }
           }, /*#__PURE__*/_react["default"].createElement(_Card["default"].Body, null, /*#__PURE__*/_react["default"].createElement(_Card["default"].Title, null, movie.Title), /*#__PURE__*/_react["default"].createElement(_Card["default"].Img, {
             variant: "top mb-3",
@@ -27841,7 +27838,7 @@ try {
             onClick: function onClick() {
               return _onClick(movie);
             }
-          }, "Open"))))
+          }, "Read More"))))
         );
       }
     }]);
