@@ -1,6 +1,7 @@
 import React from 'react'; 
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import PropTypes from 'prop-types';
 import { Navbar,Nav,NavDropdown,Form,FormControl} from 'react-bootstrap';
 import { Button } from '../button/button';
@@ -44,85 +45,82 @@ export class MovieView extends React.Component {
             </Navbar>      
           </div>
         </Row>
-        <div> 
-          <div className="movie-poster" fluid>
-            <img src={movie.ImagePath} height="5%" width="10%" />
+        <Col className="justify-content-center text-center mx-auto mt-5">
+          <div className="movie-poster mb-4" fluid>
+            <img src={movie.ImagePath} height="5%" width="20%" />
           </div>
-          <span className="value">{movie.Genre.Name}</span>
-          <div className="movie-title">
-            <span className="value">{movie.Title}</span>
-          </div>  
-          <div className="movie-description">
-            <span className="label">Description </span>
-            <span className="value"></span>
-            <div className="movie-synopsis">
-              <span className="label"></span>
-              <span className="value">{movie.Description.Synopsis}</span> 
+          <div class="mx-auto w-50">
+            <div className="movie-title">
+              <span className="value">{movie.Title}</span>
+            </div>  
+            <div className="movie-description">
+              <span className="label">Description </span>
+              <span className="value"></span>
+              <div className="movie-synopsis">
+                <span className="label"></span>
+                <span className="value">{movie.Description.Synopsis}</span> 
+              </div>
+              <div className="movie-synopsis-source">
+                <span className="label">Source: </span>
+                <span className="value">{movie.Description.Source}</span>) 
+              </div>
             </div>
-            <div className="movie-synopsis-source">
-              <span className="label">Source: </span>
-              <span className="value">{movie.Description.Source}</span>) 
+            <div className="movie-actors">
+              <span className="label">Actors: </span>
+              <span className="value">{movie.Actors}</span>
             </div>
-          </div>
-          <div className="movie-actors">
-            <span className="label">Actors: </span>
-            <span className="value">{movie.Actors}</span>
-          </div>
-          <div className="movie-director">
-            <span className="label">Director: </span>
-            <span className="value"></span>
-            <div className="movie-director-name">
-              <span className="label">Name: </span>
-              <span className="value">{movie.Director.Name}</span>
+            <div className="movie-director">
+              <span className="label">Director: </span>
+              <span className="value"></span>
+              <div className="movie-director-name">
+                <span className="label">Name: </span>
+                <span className="value">{movie.Director.Name}</span>
+              </div>
+              <div className="movie-director-bio">
+                <span className="label">Bio: </span>
+                <span className="value">{movie.Director.Bio}</span>
+              </div>
+              <div className="movie-director-birth">
+                <span className="label">Birth: </span>
+                <span className="value">{movie.Director.Birth}</span>
+              </div>
+              <div className="movie-director-source">
+                <span className="label">Source: </span>
+                <span className="value">{movie.Director.Source}</span>
+              </div>
             </div>
-            <div className="movie-director-bio">
-              <span className="label">Bio: </span>
-              <span className="value">{movie.Director.Bio}</span>
+            <div className="movie-genre">
+              <span className="label">Genre: </span>
+              <span className="value"></span>
+              <div className="movie-genre-name">
+                <span className="label">Name: </span>
+                <span className="value">{movie.Genre.Name}</span>
+              </div>
+              <div className="movie-genre-description">
+                <span className="label">Description: </span>
+                <span className="value">{movie.Genre.Description}</span>
+              </div>
+              <div className="movie-genre-source">
+                <span className="label">Source: </span>
+                <span className="value">{movie.Genre.Source}</span>
+              </div>
             </div>
-            <div className="movie-director-birth">
-              <span className="label">Birth: </span>
-              <span className="value">{movie.Director.Birth}</span>
+            <div className="movie-year">
+              <span className="label">Year Released: </span>
+              <span className="value">{movie.Year}</span>
             </div>
-            <div className="movie-director-source">
-              <span className="label">Source: </span>
-              <span className="value">{movie.Director.Source}</span>
+            <div className="movie-score">
+              <span className="label">Rotten Tomatoes score: </span>
+              <span className="value">{movie.Rotten_Tomatoes_score}</span>
             </div>
-          </div>
-          <div className="movie-genre">
-            <span className="label">Genre: </span>
-            <span className="value"></span>
-            <div className="movie-genre-name">
-              <span className="label">Name: </span>
-              <span className="value">{movie.Genre.Name}</span>
+            <div className="movie-id">
+              <span className="label">ID: </span>
+              <span className="value">{movie._id}</span>
             </div>
-            <div className="movie-genre-description">
-              <span className="label">Description: </span>
-              <span className="value">{movie.Genre.Description}</span>
+            <button onClick={() => { onBackClick(null); }}>Back</button>
             </div>
-            <div className="movie-genre-source">
-              <span className="label">Source: </span>
-              <span className="value">{movie.Genre.Source}</span>
-            </div>
-          </div>
-          <div className="movie-year">
-            <span className="label">Year Released: </span>
-            <span className="value">{movie.Year}</span>
-          </div>
-          <div className="movie-score">
-            <span className="label">Rotten Tomatoes score: </span>
-            <span className="value">{movie.Rotten_Tomatoes_score}</span>
-          </div>
-          <div className="movie-id">
-            <span className="label">ID: </span>
-            <span className="value">{movie._id}</span>
-          </div>
-        </div>
-
-
-
-
-        <button onClick={() => { onBackClick(null); }}>Back</button>
-      </div>
+        </Col>
+      </div>  
     );
   }
 }
