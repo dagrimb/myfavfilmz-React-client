@@ -42024,7 +42024,13 @@ try {
       return (
         /*#__PURE__*/_react["default"].createElement("div", {
           "class": "bg-primary h-100"
-        }, /*#__PURE__*/_react["default"].createElement(_Card["default"], {
+        }, /*#__PURE__*/_react["default"].createElement("p", {
+          style: {
+            color: 'white',
+            paddingTop: 15,
+            paddingLeft: 15
+          }
+        }, "myfavfilmz"), /*#__PURE__*/_react["default"].createElement(_Card["default"], {
           bg: variant.toLowerCase(),
           key: idx,
           text: variant.toLowerCase() === 'light' ? 'dark' : 'white',
@@ -42298,7 +42304,13 @@ try {
           "class": "w-100 h-100"
         }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
           className: "bg-primary w-100 h-100"
-        }, /*#__PURE__*/_react["default"].createElement(_Card["default"], {
+        }, /*#__PURE__*/_react["default"].createElement("p", {
+          style: {
+            color: 'white',
+            paddingTop: 15,
+            paddingLeft: 0
+          }
+        }, "myfavfilmz"), /*#__PURE__*/_react["default"].createElement(_Card["default"], {
           bg: variant.toLowerCase(),
           key: idx,
           text: variant.toLowerCase() === 'light' ? 'dark' : 'white',
