@@ -13,6 +13,8 @@ import '../../index.scss';
 import FormControl from 'react-bootstrap/FormControl';
 import FormCheck from 'react-bootstrap/FormCheck';
 import FormFile from 'react-bootstrap/FormFile';
+import Alert from 'react-bootstrap/Alert';
+import { Col } from 'react-bootstrap';
 
 
 //call useState method and set to empty string the represents values prior to login
@@ -31,13 +33,14 @@ export function LoginView(props) {
     [
       'Dark',
     ].map((variant, idx) => (
-      <div class="bg-primary">
+      <div class="w-100 h-100">
+      <Col className="bg-primary w-100 h-100">
       <Card
         bg={variant.toLowerCase()}
         key={idx}
         text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
         style={{ width: '28rem' }}
-        className="justify-content-center text-center mx-auto mt-5"
+        className="justify-content-center text-center mx-auto"
       >
       <Card.Body>
         <div className="text-align-center">
@@ -67,12 +70,11 @@ export function LoginView(props) {
       </Form.Group>
       <Form.Group controlId="formBasicPassword">
       <Form.Row className="align-items-left">
-        <Form.Label htmlFor="inputPassword5">Password:</Form.Label>
+        <Form.Label>Password:</Form.Label>
         <InputGroup hasValidation>
           <Form.Control
             required 
             type="password" 
-            id="inputPassword5"
             placeholder="Enter password" 
             value={password}
             onChange={e => setPassword(e.target.value)} 
@@ -88,6 +90,7 @@ export function LoginView(props) {
     </Form>
     </Card.Body>
     </Card>
+    </Col>
     </div>
   ))
 )}
@@ -101,5 +104,5 @@ LoginView.propTypes = {
     Username: PropTypes.string.isRequired,
     Password: PropTypes.string.isRequired,
   }).isRequired,
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func
 };
