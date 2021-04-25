@@ -86,7 +86,7 @@ export class MainView extends React.Component {
     return (
 
       <Row className="main-view justify-content-md-center mx-3">
-        <div class="w-100">
+        <div class="w-100 h-100">
           <Navbar bg="dark" variant="dark">
             <Navbar.Brand href="#home">myfavfilmz</Navbar.Brand>
             <Nav className="mr-auto">
