@@ -1,4 +1,5 @@
 import React from 'react'; 
+import Image from 'react-bootstrap/Image';
 import PropTypes from 'prop-types';
 
 //create MovieView component
@@ -23,33 +24,28 @@ export class MovieView extends React.Component {
 
     return (
       <div className="movie-view">
+        <div className="movie-poster" fluid>
+          <img src={movie.ImagePath} height="5%" width="10%" />
+        </div>
+        <span className="value">{movie.Genre.Name}</span>
+        <div className="movie-title">
+          <span className="value">{movie.Title}</span>
+        </div>  
         <div className="movie-description">
-          <span className="label">Description: </span>
-          <span className="value"></span>)
+          <span className="label">Description </span>
+          <span className="value"></span>
           <div className="movie-synopsis">
-            <span className="label">Synopsis: </span>
-            <span className="value">{movie.Description.Synopsis}</span>) 
+            <span className="label"></span>
+            <span className="value">{movie.Description.Synopsis}</span> 
           </div>
           <div className="movie-synopsis-source">
             <span className="label">Source: </span>
             <span className="value">{movie.Description.Source}</span>) 
           </div>
         </div>
-        <div className="movie-genre">
-          <span className="label">Genre: </span>
-          <span className="value"></span>
-          <div className="movie-genre-name">
-            <span className="label">Name: </span>
-            <span className="value">{movie.Genre.Name}</span>
-          </div>
-          <div className="movie-genre-description">
-            <span className="label">Description: </span>
-            <span className="value">{movie.Genre.Description}</span>
-          </div>
-          <div className="movie-genre-source">
-            <span className="label">Source: </span>
-            <span className="value">{movie.Genre.Source}</span>
-          </div>
+        <div className="movie-actors">
+          <span className="label">Actors: </span>
+          <span className="value">{movie.Actors}</span>
         </div>
         <div className="movie-director">
           <span className="label">Director: </span>
@@ -71,33 +67,39 @@ export class MovieView extends React.Component {
             <span className="value">{movie.Director.Source}</span>
           </div>
         </div>
-        <div className="movie-actors">
-          <span className="label">Actors: </span>
-          <span className="value">{movie.Actors}</span>
-        </div>
-        <div className="movie-id">
-          <span className="label">ID: </span>
-          <span className="value">{movie._id}</span>
-        </div>
-        <div className="movie-title">
-          <span className="label">Title: </span>
-          <span className="value">{movie.Title}</span>
-        </div>
-        <div className="movie-poster">
-          <img src={movie.ImagePath} />
-        </div>
-        <div className="movie-featured">
-          <span className="label">Featured: </span>
-          <span className="value">{movie.Featured}</span>
-        </div>
-        <div className="movie-score">
-          <span className="label">Rotten Tomatoes score: </span>
-          <span className="value">{movie.Rotten_Tomatoes_score}</span>
+        <div className="movie-genre">
+          <span className="label">Genre: </span>
+          <span className="value"></span>
+          <div className="movie-genre-name">
+            <span className="label">Name: </span>
+            <span className="value">{movie.Genre.Name}</span>
+          </div>
+          <div className="movie-genre-description">
+            <span className="label">Description: </span>
+            <span className="value">{movie.Genre.Description}</span>
+          </div>
+          <div className="movie-genre-source">
+            <span className="label">Source: </span>
+            <span className="value">{movie.Genre.Source}</span>
+          </div>
         </div>
         <div className="movie-year">
           <span className="label">Year Released: </span>
           <span className="value">{movie.Year}</span>
         </div>
+        <div className="movie-score">
+          <span className="label">Rotten Tomatoes score: </span>
+          <span className="value">{movie.Rotten_Tomatoes_score}</span>
+        </div>
+        <div className="movie-id">
+          <span className="label">ID: </span>
+          <span className="value">{movie._id}</span>
+        </div>
+
+
+
+
+
         <button onClick={() => { onBackClick(null); }}>Back</button>
       </div>
     );
