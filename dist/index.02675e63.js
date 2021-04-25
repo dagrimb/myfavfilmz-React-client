@@ -25774,9 +25774,17 @@ try {
         var _this$state = this.state, movies = _this$state.movies, selectedMovie = _this$state.selectedMovie, newUser = _this$state.newUser, user = _this$state.user, registerClicked = _this$state.registerClicked;
         // shortened form of const movies = this.state.movies
         // if no user signed in and button to render RegistrationView is clicked, render RegistrationView
-        // if (!user && registerClicked) return <RegistrationView onRegistered={this.onRegistered} />;
+        if (!user && registerClicked) return (
+          /*#__PURE__*/_react["default"].createElement(_registrationView.RegistrationView, {
+            onRegistered: this.onRegistered
+          })
+        );
         // if no user signed in, render LoginView
-        // if (!user) return <LoginView onRegistered={this.onRegistered} />;
+        if (!user) return (
+          /*#__PURE__*/_react["default"].createElement(_loginView.LoginView, {
+            onRegistered: this.onRegistered
+          })
+        );
         // if not clicked, access selectedMovie state (passing a function as a prop called "onMovieClick")
         if (selectedMovie) return (
           /*#__PURE__*/_react["default"].createElement(_movieView.MovieView, {
@@ -25831,7 +25839,7 @@ try {
           })) : movies.map(function (movie) {
             return (
               /*#__PURE__*/_react["default"].createElement(_Col["default"], {
-                variant: "h-50",
+                variant: "h-25",
                 md: 4,
                 key: movie._id
               }, /*#__PURE__*/_react["default"].createElement(_movieCard.MovieCard, {
@@ -27863,7 +27871,7 @@ try {
               width: '18rem'
             }
           }, /*#__PURE__*/_react["default"].createElement(_Card["default"].Body, null, /*#__PURE__*/_react["default"].createElement(_Card["default"].Title, null, movie.Title), /*#__PURE__*/_react["default"].createElement(_Card["default"].Img, {
-            variant: "top mb-3",
+            variant: "top mb-3 w-75",
             src: movie.ImagePath
           }), /*#__PURE__*/_react["default"].createElement(_Card["default"].Text, null, movie.Description.Synopsis), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
             variant: "primary",
@@ -31810,6 +31818,7 @@ try {
   var _react = _interopRequireDefault(require("react"));
   var _Image = _interopRequireDefault(require("react-bootstrap/Image"));
   var _Row = _interopRequireDefault(require("react-bootstrap/Row"));
+  var _Col = _interopRequireDefault(require("react-bootstrap/Col"));
   var _propTypes = _interopRequireDefault(require("prop-types"));
   var _reactBootstrap = require("react-bootstrap");
   var _button = require("../button/button");
@@ -31955,16 +31964,18 @@ try {
             type: "button",
             "class": "btn btn-outline-info",
             size: "lg"
-          }, "Search"))))), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-poster",
+          }, "Search"))))), /*#__PURE__*/_react["default"].createElement(_Col["default"], {
+            className: "justify-content-center text-center mx-auto mt-5"
+          }, /*#__PURE__*/_react["default"].createElement("div", {
+            className: "movie-poster mb-4",
             fluid: true
           }, /*#__PURE__*/_react["default"].createElement("img", {
             src: movie.ImagePath,
             height: "5%",
-            width: "10%"
-          })), /*#__PURE__*/_react["default"].createElement("span", {
-            className: "value"
-          }, movie.Genre.Name), /*#__PURE__*/_react["default"].createElement("div", {
+            width: "20%"
+          })), /*#__PURE__*/_react["default"].createElement("div", {
+            "class": "mx-auto w-50"
+          }, /*#__PURE__*/_react["default"].createElement("div", {
             className: "movie-title"
           }, /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
@@ -32064,11 +32075,11 @@ try {
             className: "label"
           }, "ID: "), /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
-          }, movie._id))), /*#__PURE__*/_react["default"].createElement("button", {
+          }, movie._id)), /*#__PURE__*/_react["default"].createElement("button", {
             onClick: function onClick() {
               onBackClick(null);
             }
-          }, "Back"))
+          }, "Back"))))
         );
       }
     }]);
@@ -32108,7 +32119,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/Image":"5qrP5","react-bootstrap/Row":"3fzwD","react-bootstrap":"4n7hB","../button/button":"6ruyx"}],"5qrP5":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/Image":"5qrP5","react-bootstrap/Row":"3fzwD","react-bootstrap":"4n7hB","../button/button":"6ruyx","react-bootstrap/Col":"2D0r8"}],"5qrP5":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
