@@ -88,15 +88,15 @@ export class MainView extends React.Component {
       <Row className="main-view justify-content-md-center mx-3">
         <div class="w-100">
           <Navbar bg="dark" variant="dark">
-            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+            <Navbar.Brand href="#home">myfavfilmz</Navbar.Brand>
             <Nav className="mr-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#features">Features</Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
+              <Nav.Link href="#home">Account</Nav.Link>
+              <Nav.Link href="#features">Movies</Nav.Link>
+              <Nav.Link href="#pricing">About</Nav.Link>
             </Nav>
             <Form inline>
               <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-              <Button variant="outline-light">Search</Button>
+              <Button type="button" class="btn btn-outline-info" size="lg">Search</Button>
             </Form>
           </Navbar>
         </div>
