@@ -31809,7 +31809,10 @@ try {
   exports.MovieView = void 0;
   var _react = _interopRequireDefault(require("react"));
   var _Image = _interopRequireDefault(require("react-bootstrap/Image"));
+  var _Row = _interopRequireDefault(require("react-bootstrap/Row"));
   var _propTypes = _interopRequireDefault(require("prop-types"));
+  var _reactBootstrap = require("react-bootstrap");
+  var _button = require("../button/button");
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
       "default": obj
@@ -31927,7 +31930,32 @@ try {
         return (
           /*#__PURE__*/_react["default"].createElement("div", {
             className: "movie-view"
-          }, /*#__PURE__*/_react["default"].createElement("div", {
+          }, /*#__PURE__*/_react["default"].createElement(_Row["default"], null, /*#__PURE__*/_react["default"].createElement("div", {
+            "class": "w-100"
+          }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Navbar, {
+            bg: "dark",
+            variant: "dark"
+          }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Navbar.Brand, {
+            href: "#home"
+          }, "myfavfilmz"), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Nav, {
+            className: "mr-auto"
+          }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Nav.Link, {
+            href: "#home"
+          }, "Account"), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Nav.Link, {
+            href: "#features"
+          }, "Movies"), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Nav.Link, {
+            href: "#pricing"
+          }, "About")), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Form, {
+            inline: true
+          }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.FormControl, {
+            type: "text",
+            placeholder: "Search",
+            className: "mr-sm-2"
+          }), /*#__PURE__*/_react["default"].createElement(_button.Button, {
+            type: "button",
+            "class": "btn btn-outline-info",
+            size: "lg"
+          }, "Search"))))), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
             className: "movie-poster",
             fluid: true
           }, /*#__PURE__*/_react["default"].createElement("img", {
@@ -32036,7 +32064,7 @@ try {
             className: "label"
           }, "ID: "), /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
-          }, movie._id)), /*#__PURE__*/_react["default"].createElement("button", {
+          }, movie._id))), /*#__PURE__*/_react["default"].createElement("button", {
             onClick: function onClick() {
               onBackClick(null);
             }
@@ -32080,7 +32108,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/Image":"5qrP5"}],"5qrP5":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/Image":"5qrP5","react-bootstrap/Row":"3fzwD","react-bootstrap":"4n7hB","../button/button":"6ruyx"}],"5qrP5":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -32156,1415 +32184,7 @@ Image.displayName = 'Image';
 Image.defaultProps = defaultProps;
 var _default = Image;
 exports.default = _default;
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","prop-types":"4dfy5","./ThemeProvider":"4rz1S"}],"6ruyx":[function(require,module,exports) {
-"use strict";
-var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-helpers.prelude(module);
-try {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.Button = Button;
-  var _react = _interopRequireDefault(require("react"));
-  require("./button.scss");
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-      "default": obj
-    };
-  }
-  function Button(_ref) {
-    var label = _ref.label;
-    return (
-      /*#__PURE__*/_react["default"].createElement("button", {
-        className: "toggle-button"
-      }, label)
-    );
-  }
-  _c = Button;
-  var _c;
-  $RefreshReg$(_c, "Button");
-  helpers.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-
-},{"react":"3b2NM","./button.scss":"579qr","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"579qr":[function() {},{}],"7gvH2":[function(require,module,exports) {
-"use strict";
-var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-helpers.prelude(module);
-try {
-  function _typeof(obj) {
-    "@babel/helpers - typeof";
-    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-      _typeof = function _typeof(obj) {
-        return typeof obj;
-      };
-    } else {
-      _typeof = function _typeof(obj) {
-        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-      };
-    }
-    return _typeof(obj);
-  }
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.RegistrationView = RegistrationView;
-  var _react = _interopRequireWildcard(require("react"));
-  var _loginView = require("../login-view/login-view");
-  var _propTypes = _interopRequireDefault(require("prop-types"));
-  var _Form = _interopRequireDefault(require("react-bootstrap/Form"));
-  var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
-  var _Card = _interopRequireDefault(require("react-bootstrap/Card"));
-  var _Row = _interopRequireDefault(require("react-bootstrap/Row"));
-  var _Col = _interopRequireDefault(require("react-bootstrap/Col"));
-  var _InputGroup = _interopRequireDefault(require("react-bootstrap/InputGroup"));
-  var _FormControl = _interopRequireDefault(require("react-bootstrap/FormControl"));
-  var _FormCheck = _interopRequireDefault(require("react-bootstrap/FormCheck"));
-  var _FormFile = _interopRequireDefault(require("react-bootstrap/FormFile"));
-  var _reactDom = require("react-dom");
-  var _s2 = $RefreshSig$();
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-      "default": obj
-    };
-  }
-  function _getRequireWildcardCache() {
-    if (typeof WeakMap !== "function") return null;
-    var cache = new WeakMap();
-    _getRequireWildcardCache = function _getRequireWildcardCache() {
-      return cache;
-    };
-    return cache;
-  }
-  function _interopRequireWildcard(obj) {
-    if (obj && obj.__esModule) {
-      return obj;
-    }
-    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
-      return {
-        "default": obj
-      };
-    }
-    var cache = _getRequireWildcardCache();
-    if (cache && cache.has(obj)) {
-      return cache.get(obj);
-    }
-    var newObj = {};
-    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-    for (var key in obj) {
-      if (Object.prototype.hasOwnProperty.call(obj, key)) {
-        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-        if (desc && (desc.get || desc.set)) {
-          Object.defineProperty(newObj, key, desc);
-        } else {
-          newObj[key] = obj[key];
-        }
-      }
-    }
-    newObj["default"] = obj;
-    if (cache) {
-      cache.set(obj, newObj);
-    }
-    return newObj;
-  }
-  function _slicedToArray(arr, i) {
-    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
-  }
-  function _nonIterableRest() {
-    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-  }
-  function _unsupportedIterableToArray(o, minLen) {
-    if (!o) return;
-    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
-    var n = Object.prototype.toString.call(o).slice(8, -1);
-    if (n === "Object" && o.constructor) n = o.constructor.name;
-    if (n === "Map" || n === "Set") return Array.from(o);
-    if (n === "Arguments" || (/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/).test(n)) return _arrayLikeToArray(o, minLen);
-  }
-  function _arrayLikeToArray(arr, len) {
-    if (len == null || len > arr.length) len = arr.length;
-    for (var i = 0, arr2 = new Array(len); i < len; i++) {
-      arr2[i] = arr[i];
-    }
-    return arr2;
-  }
-  function _iterableToArrayLimit(arr, i) {
-    if (typeof Symbol === "undefined" || !((Symbol.iterator in Object(arr)))) return;
-    var _arr = [];
-    var _n = true;
-    var _d = false;
-    var _e = undefined;
-    try {
-      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
-        _arr.push(_s.value);
-        if (i && _arr.length === i) break;
-      }
-    } catch (err) {
-      _d = true;
-      _e = err;
-    } finally {
-      try {
-        if (!_n && _i["return"] != null) _i["return"]();
-      } finally {
-        if (_d) throw _e;
-      }
-    }
-    return _arr;
-  }
-  function _arrayWithHoles(arr) {
-    if (Array.isArray(arr)) return arr;
-  }
-  // call useState method and set to empty string the represents values prior to login
-  function RegistrationView(props) {
-    _s2();
-    var _useState = (0, _react.useState)(''), _useState2 = _slicedToArray(_useState, 2), username = _useState2[0], setUsername = _useState2[1];
-    var _useState3 = (0, _react.useState)(''), _useState4 = _slicedToArray(_useState3, 2), password = _useState4[0], setPassword = _useState4[1];
-    var _useState5 = (0, _react.useState)(''), _useState6 = _slicedToArray(_useState5, 2), email = _useState6[0], setEmail = _useState6[1];
-    var _useState7 = (0, _react.useState)(new Date()), _useState8 = _slicedToArray(_useState7, 2), birthday = _useState8[0], setBirthday = _useState8[1];
-    // Send request to server for auth
-    var handleSubmit = function handleSubmit() {
-      e.preventDefault();
-      console.log(username, password, email, birthday);
-      props.onRegistered(username);
-    };
-    return ['Dark'].map(function (variant, idx) {
-      return (
-        /*#__PURE__*/_react["default"].createElement("div", {
-          "class": "bg-primary"
-        }, /*#__PURE__*/_react["default"].createElement(_Card["default"], {
-          bg: variant.toLowerCase(),
-          key: idx,
-          text: variant.toLowerCase() === 'light' ? 'dark' : 'white',
-          style: {
-            width: '28rem'
-          },
-          className: "justify-content-center text-center mx-auto mt-5"
-        }, /*#__PURE__*/_react["default"].createElement(_Card["default"].Body, null, /*#__PURE__*/_react["default"].createElement("div", {
-          className: "text-align-center"
-        }, /*#__PURE__*/_react["default"].createElement("h3", null, "Great to meet you!")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, null, "Creat an account"), /*#__PURE__*/_react["default"].createElement(_Form["default"], null, /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, {
-          className: "text-muted"
-        }, "We will never share your username, password, email or birthdate with a third-party."), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
-          as: _Col["default"],
-          controlId: "validationCustomUsername"
-        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Username"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
-          className: "mb-3",
-          hasValidation: true
-        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
-          type: "text",
-          placeholder: "Username",
-          "aria-describedby": "inputGroupPrepend",
-          required: true,
-          value: username,
-          onChange: function onChange(e) {
-            return setUsername(e.target.value);
-          }
-        }))), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
-          as: _Col["default"],
-          controlId: "formBasicEmail"
-        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Email address"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
-          hasValidation: true
-        }), /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
-          type: "email",
-          placeholder: "Enter email",
-          value: email,
-          "aria-describedby": "inputGroupPrepend",
-          onChange: function onChange(e) {
-            return setEmail(e.target.value);
-          }
-        })), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
-          as: _Col["default"],
-          controlId: "formBasicPassword"
-        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Password"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
-          hasValidation: true
-        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
-          required: true,
-          type: "password",
-          placeholder: "Enter your password",
-          value: password,
-          "aria-describedby": "passwordHelpBlock",
-          onChange: function onChange(e) {
-            return setPassword(e.target.value);
-          }
-        })), /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, {
-          id: "passwordHelpBlock",
-          muted: true
-        }, "Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
-          as: _Col["default"],
-          controlId: "formBasicPassword"
-        }, /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
-          hasValidation: true
-        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
-          required: true,
-          type: "password",
-          placeholder: "Enter your password again",
-          value: password,
-          "aria-describedby": "passwordHelpBlock",
-          onChange: function onChange(e) {
-            return setPassword(e.target.value);
-          }
-        }))), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
-          as: _Col["default"],
-          controlId: "validationCustom01"
-        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Birthday"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
-          hasValidation: true
-        }), /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
-          required: true,
-          type: "date",
-          value: birthday,
-          "aria-describedby": "inputGroupPrepend",
-          onChange: function onChange(e) {
-            return setBirthday(e.target.value);
-          },
-          placeholder: "Birthday"
-        }), /*#__PURE__*/_react["default"].createElement(_Form["default"].Control.Feedback, null, "Looks good!")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
-          controlId: "formBasicCheckbox"
-        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Check, {
-          type: "checkbox",
-          label: "I agree to the myfavfilmz Terms of Serivce"
-        })), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
-          variant: "primary float-right mr-5",
-          type: "submit",
-          onClick: handleSubmit
-        }, "Register"), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("p", null, "Already a member?"), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
-          variant: "primary",
-          size: "sm",
-          block: true,
-          type: "button",
-          onClick: function onClick() {
-            return props.onRegistered(false);
-          }
-        }, "Click here to log in!")))))
-      );
-    });
-  }
-  _s2(RegistrationView, "Sm4/B7Ss7XpbZkZHxsTCdDKe1RI=");
-  _c = RegistrationView;
-  RegistrationView.propTypes = {
-    username: _propTypes["default"].shape({
-      FavoriteMovies: _propTypes["default"].array.isRequired,
-      Username: _propTypes["default"].string.isRequired,
-      Password: _propTypes["default"].string.isRequired,
-      Email: _propTypes["default"].string.isRequired,
-      Birthday: _propTypes["default"].instanceOf(Date)
-    }),
-    onClick: _propTypes["default"].func
-  };
-  var _c;
-  $RefreshReg$(_c, "RegistrationView");
-  helpers.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-
-},{"react":"3b2NM","../login-view/login-view":"6M7fu","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","react-bootstrap/InputGroup":"3nb5C","react-bootstrap/FormControl":"573gP","react-bootstrap/FormCheck":"6WcKM","react-bootstrap/FormFile":"6mhKG","react-dom":"2sg1U","react-bootstrap/Card":"1CZWQ"}],"6M7fu":[function(require,module,exports) {
-"use strict";
-var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-helpers.prelude(module);
-try {
-  function _typeof(obj) {
-    "@babel/helpers - typeof";
-    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-      _typeof = function _typeof(obj) {
-        return typeof obj;
-      };
-    } else {
-      _typeof = function _typeof(obj) {
-        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-      };
-    }
-    return _typeof(obj);
-  }
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.LoginView = LoginView;
-  var _react = _interopRequireWildcard(require("react"));
-  var _Form = _interopRequireDefault(require("react-bootstrap/Form"));
-  var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
-  var _propTypes = _interopRequireDefault(require("prop-types"));
-  var _Card = _interopRequireDefault(require("react-bootstrap/Card"));
-  var _InputGroup = _interopRequireDefault(require("react-bootstrap/InputGroup"));
-  var _CardDeck = _interopRequireDefault(require("react-bootstrap/CardDeck"));
-  var _CardGroup = _interopRequireDefault(require("react-bootstrap/CardGroup"));
-  var _CardColumns = _interopRequireDefault(require("react-bootstrap/CardColumns"));
-  require("../../index.scss");
-  var _FormControl = _interopRequireDefault(require("react-bootstrap/FormControl"));
-  var _FormCheck = _interopRequireDefault(require("react-bootstrap/FormCheck"));
-  var _FormFile = _interopRequireDefault(require("react-bootstrap/FormFile"));
-  var _s2 = $RefreshSig$();
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-      "default": obj
-    };
-  }
-  function _getRequireWildcardCache() {
-    if (typeof WeakMap !== "function") return null;
-    var cache = new WeakMap();
-    _getRequireWildcardCache = function _getRequireWildcardCache() {
-      return cache;
-    };
-    return cache;
-  }
-  function _interopRequireWildcard(obj) {
-    if (obj && obj.__esModule) {
-      return obj;
-    }
-    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
-      return {
-        "default": obj
-      };
-    }
-    var cache = _getRequireWildcardCache();
-    if (cache && cache.has(obj)) {
-      return cache.get(obj);
-    }
-    var newObj = {};
-    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-    for (var key in obj) {
-      if (Object.prototype.hasOwnProperty.call(obj, key)) {
-        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-        if (desc && (desc.get || desc.set)) {
-          Object.defineProperty(newObj, key, desc);
-        } else {
-          newObj[key] = obj[key];
-        }
-      }
-    }
-    newObj["default"] = obj;
-    if (cache) {
-      cache.set(obj, newObj);
-    }
-    return newObj;
-  }
-  function _slicedToArray(arr, i) {
-    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
-  }
-  function _nonIterableRest() {
-    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-  }
-  function _unsupportedIterableToArray(o, minLen) {
-    if (!o) return;
-    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
-    var n = Object.prototype.toString.call(o).slice(8, -1);
-    if (n === "Object" && o.constructor) n = o.constructor.name;
-    if (n === "Map" || n === "Set") return Array.from(o);
-    if (n === "Arguments" || (/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/).test(n)) return _arrayLikeToArray(o, minLen);
-  }
-  function _arrayLikeToArray(arr, len) {
-    if (len == null || len > arr.length) len = arr.length;
-    for (var i = 0, arr2 = new Array(len); i < len; i++) {
-      arr2[i] = arr[i];
-    }
-    return arr2;
-  }
-  function _iterableToArrayLimit(arr, i) {
-    if (typeof Symbol === "undefined" || !((Symbol.iterator in Object(arr)))) return;
-    var _arr = [];
-    var _n = true;
-    var _d = false;
-    var _e = undefined;
-    try {
-      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
-        _arr.push(_s.value);
-        if (i && _arr.length === i) break;
-      }
-    } catch (err) {
-      _d = true;
-      _e = err;
-    } finally {
-      try {
-        if (!_n && _i["return"] != null) _i["return"]();
-      } finally {
-        if (_d) throw _e;
-      }
-    }
-    return _arr;
-  }
-  function _arrayWithHoles(arr) {
-    if (Array.isArray(arr)) return arr;
-  }
-  // call useState method and set to empty string the represents values prior to login
-  function LoginView(props) {
-    _s2();
-    var _useState = (0, _react.useState)(''), _useState2 = _slicedToArray(_useState, 2), username = _useState2[0], setUsername = _useState2[1];
-    var _useState3 = (0, _react.useState)(''), _useState4 = _slicedToArray(_useState3, 2), password = _useState4[0], setPassword = _useState4[1];
-    // Send request to server for auth
-    var handleSubmit = function handleSubmit(e) {
-      e.preventDefault();
-      console.log(username, password);
-      props.onLoggedIn(username);
-    };
-    return ['Dark'].map(function (variant, idx) {
-      return (
-        /*#__PURE__*/_react["default"].createElement("div", {
-          "class": "bg-primary"
-        }, /*#__PURE__*/_react["default"].createElement(_Card["default"], {
-          bg: variant.toLowerCase(),
-          key: idx,
-          text: variant.toLowerCase() === 'light' ? 'dark' : 'white',
-          style: {
-            width: '28rem'
-          },
-          className: "justify-content-center text-center mx-auto mt-5"
-        }, /*#__PURE__*/_react["default"].createElement(_Card["default"].Body, null, /*#__PURE__*/_react["default"].createElement("div", {
-          className: "text-align-center"
-        }, /*#__PURE__*/_react["default"].createElement("h3", null, "Welcome Back!")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, null, "Login into your account"), /*#__PURE__*/_react["default"].createElement(_Form["default"], null, /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
-          controlId: "validationCustomUsername"
-        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Row, {
-          className: "align-items-left"
-        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Username:"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
-          hasValidation: true
-        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
-          required: true,
-          type: "text",
-          value: username,
-          "aria-describedby": "inputGroupPrepend",
-          placeholder: "Enter username",
-          onChange: function onChange(e) {
-            return setUsername(e.target.value);
-          }
-        }))), /*#__PURE__*/_react["default"].createElement(_Form["default"].Row, {
-          className: "align-items-left"
-        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Check, {
-          label: "Remember me"
-        }))), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
-          controlId: "formBasicPassword"
-        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Row, {
-          className: "align-items-left"
-        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, {
-          htmlFor: "inputPassword5"
-        }, "Password:"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
-          hasValidation: true
-        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
-          required: true,
-          type: "password",
-          id: "inputPassword5",
-          placeholder: "Enter password",
-          value: password,
-          onChange: function onChange(e) {
-            return setPassword(e.target.value);
-          }
-        })))), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
-          variant: "primary float-right mr-5",
-          type: "submit",
-          onClick: handleSubmit
-        }, "Login"), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("p", null, "New to myfavfilmz?"), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
-          variant: "primary",
-          size: "sm",
-          block: true,
-          type: "button",
-          onClick: function onClick() {
-            return props.onRegistered(true);
-          }
-        }, "Click here to register!")))))
-      );
-    });
-  }
-  _s2(LoginView, "9FY2cPL9VBDmuhjwpF2ik6flsHs=");
-  _c = LoginView;
-  LoginView.propTypes = {
-    user: _propTypes["default"].shape({
-      Username: _propTypes["default"].string.isRequired,
-      Password: _propTypes["default"].string.isRequired
-    }).isRequired,
-    onClick: _propTypes["default"].func.isRequired
-  };
-  var _c;
-  $RefreshReg$(_c, "LoginView");
-  helpers.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-
-},{"react":"3b2NM","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/FormControl":"573gP","react-bootstrap/FormCheck":"6WcKM","react-bootstrap/FormFile":"6mhKG","../../index.scss":"5iJih","react-bootstrap/Card":"1CZWQ","react-bootstrap/CardDeck":"4fiZs","react-bootstrap/CardGroup":"1B9U7","react-bootstrap/CardColumns":"48yv5","react-bootstrap/InputGroup":"3nb5C"}],"6A5ko":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _react = _interopRequireDefault(require("react"));
-
-var _FormCheck = _interopRequireDefault(require("./FormCheck"));
-
-var _FormFile = _interopRequireDefault(require("./FormFile"));
-
-var _FormControl = _interopRequireDefault(require("./FormControl"));
-
-var _FormGroup = _interopRequireDefault(require("./FormGroup"));
-
-var _FormLabel = _interopRequireDefault(require("./FormLabel"));
-
-var _FormText = _interopRequireDefault(require("./FormText"));
-
-var _Switch = _interopRequireDefault(require("./Switch"));
-
-var _ThemeProvider = require("./ThemeProvider");
-
-var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
-
-var FormRow = (0, _createWithBsPrefix.default)('form-row');
-var defaultProps = {
-  inline: false
-};
-
-var FormImpl = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
-  var bsPrefix = _ref.bsPrefix,
-      inline = _ref.inline,
-      className = _ref.className,
-      validated = _ref.validated,
-      _ref$as = _ref.as,
-      Component = _ref$as === void 0 ? 'form' : _ref$as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "inline", "className", "validated", "as"]);
-  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'form');
-  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
-    ref: ref,
-    className: (0, _classnames.default)(className, validated && 'was-validated', inline && bsPrefix + "-inline")
-  }));
-});
-
-FormImpl.displayName = 'Form';
-FormImpl.defaultProps = defaultProps;
-FormImpl.Row = FormRow;
-FormImpl.Group = _FormGroup.default;
-FormImpl.Control = _FormControl.default;
-FormImpl.Check = _FormCheck.default;
-FormImpl.File = _FormFile.default;
-FormImpl.Switch = _Switch.default;
-FormImpl.Label = _FormLabel.default;
-FormImpl.Text = _FormText.default;
-var _default = FormImpl;
-exports.default = _default;
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./FormCheck":"6WcKM","./FormFile":"6mhKG","./FormControl":"573gP","./FormGroup":"120iJ","./FormLabel":"70qP9","./FormText":"2VsfR","./Switch":"5DfiR","./ThemeProvider":"4rz1S","./createWithBsPrefix":"2oVVc"}],"6WcKM":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _all = _interopRequireDefault(require("prop-types-extra/lib/all"));
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _Feedback = _interopRequireDefault(require("./Feedback"));
-
-var _FormCheckInput = _interopRequireDefault(require("./FormCheckInput"));
-
-var _FormCheckLabel = _interopRequireDefault(require("./FormCheckLabel"));
-
-var _FormContext = _interopRequireDefault(require("./FormContext"));
-
-var _ThemeProvider = require("./ThemeProvider");
-
-var FormCheck = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
-  var id = _ref.id,
-      bsPrefix = _ref.bsPrefix,
-      bsCustomPrefix = _ref.bsCustomPrefix,
-      _ref$inline = _ref.inline,
-      inline = _ref$inline === void 0 ? false : _ref$inline,
-      _ref$disabled = _ref.disabled,
-      disabled = _ref$disabled === void 0 ? false : _ref$disabled,
-      _ref$isValid = _ref.isValid,
-      isValid = _ref$isValid === void 0 ? false : _ref$isValid,
-      _ref$isInvalid = _ref.isInvalid,
-      isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid,
-      _ref$feedbackTooltip = _ref.feedbackTooltip,
-      feedbackTooltip = _ref$feedbackTooltip === void 0 ? false : _ref$feedbackTooltip,
-      feedback = _ref.feedback,
-      className = _ref.className,
-      style = _ref.style,
-      _ref$title = _ref.title,
-      title = _ref$title === void 0 ? '' : _ref$title,
-      _ref$type = _ref.type,
-      type = _ref$type === void 0 ? 'checkbox' : _ref$type,
-      label = _ref.label,
-      children = _ref.children,
-      propCustom = _ref.custom,
-      _ref$as = _ref.as,
-      as = _ref$as === void 0 ? 'input' : _ref$as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["id", "bsPrefix", "bsCustomPrefix", "inline", "disabled", "isValid", "isInvalid", "feedbackTooltip", "feedback", "className", "style", "title", "type", "label", "children", "custom", "as"]);
-  var custom = type === 'switch' ? true : propCustom;
-
-  var _ref2 = custom ? [bsCustomPrefix, 'custom-control'] : [bsPrefix, 'form-check'],
-      prefix = _ref2[0],
-      defaultPrefix = _ref2[1];
-
-  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
-
-  var _useContext = (0, _react.useContext)(_FormContext.default),
-      controlId = _useContext.controlId;
-
-  var innerFormContext = (0, _react.useMemo)(function () {
-    return {
-      controlId: id || controlId,
-      custom: custom
-    };
-  }, [controlId, custom, id]);
-  var hasLabel = custom || label != null && label !== false && !children;
-
-  var input = /*#__PURE__*/_react.default.createElement(_FormCheckInput.default, (0, _extends2.default)({}, props, {
-    type: type === 'switch' ? 'checkbox' : type,
-    ref: ref,
-    isValid: isValid,
-    isInvalid: isInvalid,
-    isStatic: !hasLabel,
-    disabled: disabled,
-    as: as
-  }));
-
-  return /*#__PURE__*/_react.default.createElement(_FormContext.default.Provider, {
-    value: innerFormContext
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    style: style,
-    className: (0, _classnames.default)(className, bsPrefix, custom && "custom-" + type, inline && bsPrefix + "-inline")
-  }, children || /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, input, hasLabel && /*#__PURE__*/_react.default.createElement(_FormCheckLabel.default, {
-    title: title
-  }, label), (isValid || isInvalid) && /*#__PURE__*/_react.default.createElement(_Feedback.default, {
-    type: isValid ? 'valid' : 'invalid',
-    tooltip: feedbackTooltip
-  }, feedback))));
-});
-
-FormCheck.displayName = 'FormCheck';
-FormCheck.Input = _FormCheckInput.default;
-FormCheck.Label = _FormCheckLabel.default;
-var _default = FormCheck;
-exports.default = _default;
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireWildcard":"28En5","@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","prop-types-extra/lib/all":"7gDS0","react":"3b2NM","./Feedback":"40O3n","./FormCheckInput":"3MfQl","./FormCheckLabel":"5aWG1","./FormContext":"72akU","./ThemeProvider":"4rz1S"}],"40O3n":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _react = _interopRequireDefault(require("react"));
-
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
-var propTypes = {
-  /**
-   * Specify whether the feedback is for valid or invalid fields
-   *
-   * @type {('valid'|'invalid')}
-   */
-  type: _propTypes.default.string,
-
-  /** Display feedback as a tooltip. */
-  tooltip: _propTypes.default.bool,
-  as: _propTypes.default.elementType
-};
-
-var Feedback = /*#__PURE__*/_react.default.forwardRef( // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-function (_ref, ref) {
-  var _ref$as = _ref.as,
-      Component = _ref$as === void 0 ? 'div' : _ref$as,
-      className = _ref.className,
-      _ref$type = _ref.type,
-      type = _ref$type === void 0 ? 'valid' : _ref$type,
-      _ref$tooltip = _ref.tooltip,
-      tooltip = _ref$tooltip === void 0 ? false : _ref$tooltip,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["as", "className", "type", "tooltip"]);
-  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
-    ref: ref,
-    className: (0, _classnames.default)(className, type + "-" + (tooltip ? 'tooltip' : 'feedback'))
-  }));
-});
-
-Feedback.displayName = 'Feedback';
-Feedback.propTypes = propTypes;
-var _default = Feedback;
-exports.default = _default;
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","prop-types":"4dfy5"}],"3MfQl":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _FormContext = _interopRequireDefault(require("./FormContext"));
-
-var _ThemeProvider = require("./ThemeProvider");
-
-var FormCheckInput = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
-  var id = _ref.id,
-      bsPrefix = _ref.bsPrefix,
-      bsCustomPrefix = _ref.bsCustomPrefix,
-      className = _ref.className,
-      _ref$type = _ref.type,
-      type = _ref$type === void 0 ? 'checkbox' : _ref$type,
-      _ref$isValid = _ref.isValid,
-      isValid = _ref$isValid === void 0 ? false : _ref$isValid,
-      _ref$isInvalid = _ref.isInvalid,
-      isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid,
-      isStatic = _ref.isStatic,
-      _ref$as = _ref.as,
-      Component = _ref$as === void 0 ? 'input' : _ref$as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["id", "bsPrefix", "bsCustomPrefix", "className", "type", "isValid", "isInvalid", "isStatic", "as"]);
-
-  var _useContext = (0, _react.useContext)(_FormContext.default),
-      controlId = _useContext.controlId,
-      custom = _useContext.custom;
-
-  var _ref2 = custom ? [bsCustomPrefix, 'custom-control-input'] : [bsPrefix, 'form-check-input'],
-      prefix = _ref2[0],
-      defaultPrefix = _ref2[1];
-
-  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
-  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
-    ref: ref,
-    type: type,
-    id: id || controlId,
-    className: (0, _classnames.default)(className, bsPrefix, isValid && 'is-valid', isInvalid && 'is-invalid', isStatic && 'position-static')
-  }));
-});
-
-FormCheckInput.displayName = 'FormCheckInput';
-var _default = FormCheckInput;
-exports.default = _default;
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireWildcard":"28En5","@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./FormContext":"72akU","./ThemeProvider":"4rz1S"}],"72akU":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var FormContext = /*#__PURE__*/_react.default.createContext({
-  controlId: undefined
-});
-
-var _default = FormContext;
-exports.default = _default;
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","react":"3b2NM"}],"5aWG1":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _FormContext = _interopRequireDefault(require("./FormContext"));
-
-var _ThemeProvider = require("./ThemeProvider");
-
-var FormCheckLabel = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
-  var bsPrefix = _ref.bsPrefix,
-      bsCustomPrefix = _ref.bsCustomPrefix,
-      className = _ref.className,
-      htmlFor = _ref.htmlFor,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "bsCustomPrefix", "className", "htmlFor"]);
-
-  var _useContext = (0, _react.useContext)(_FormContext.default),
-      controlId = _useContext.controlId,
-      custom = _useContext.custom;
-
-  var _ref2 = custom ? [bsCustomPrefix, 'custom-control-label'] : [bsPrefix, 'form-check-label'],
-      prefix = _ref2[0],
-      defaultPrefix = _ref2[1];
-
-  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
-  return /*#__PURE__*/_react.default.createElement("label", (0, _extends2.default)({}, props, {
-    ref: ref,
-    htmlFor: htmlFor || controlId,
-    className: (0, _classnames.default)(className, bsPrefix)
-  }));
-});
-
-FormCheckLabel.displayName = 'FormCheckLabel';
-var _default = FormCheckLabel;
-exports.default = _default;
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireWildcard":"28En5","@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./FormContext":"72akU","./ThemeProvider":"4rz1S"}],"6mhKG":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _all = _interopRequireDefault(require("prop-types-extra/lib/all"));
-
-var _Feedback = _interopRequireDefault(require("./Feedback"));
-
-var _FormFileInput = _interopRequireDefault(require("./FormFileInput"));
-
-var _FormFileLabel = _interopRequireDefault(require("./FormFileLabel"));
-
-var _FormContext = _interopRequireDefault(require("./FormContext"));
-
-var _ThemeProvider = require("./ThemeProvider");
-
-var FormFile = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
-  var id = _ref.id,
-      bsPrefix = _ref.bsPrefix,
-      bsCustomPrefix = _ref.bsCustomPrefix,
-      _ref$disabled = _ref.disabled,
-      disabled = _ref$disabled === void 0 ? false : _ref$disabled,
-      _ref$isValid = _ref.isValid,
-      isValid = _ref$isValid === void 0 ? false : _ref$isValid,
-      _ref$isInvalid = _ref.isInvalid,
-      isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid,
-      _ref$feedbackTooltip = _ref.feedbackTooltip,
-      feedbackTooltip = _ref$feedbackTooltip === void 0 ? false : _ref$feedbackTooltip,
-      feedback = _ref.feedback,
-      className = _ref.className,
-      style = _ref.style,
-      label = _ref.label,
-      children = _ref.children,
-      custom = _ref.custom,
-      lang = _ref.lang,
-      dataBrowse = _ref['data-browse'],
-      _ref$as = _ref.as,
-      Component = _ref$as === void 0 ? 'div' : _ref$as,
-      _ref$inputAs = _ref.inputAs,
-      inputAs = _ref$inputAs === void 0 ? 'input' : _ref$inputAs,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["id", "bsPrefix", "bsCustomPrefix", "disabled", "isValid", "isInvalid", "feedbackTooltip", "feedback", "className", "style", "label", "children", "custom", "lang", "data-browse", "as", "inputAs"]);
-
-  var _ref2 = custom ? [bsCustomPrefix, 'custom'] : [bsPrefix, 'form-file'],
-      prefix = _ref2[0],
-      defaultPrefix = _ref2[1];
-
-  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
-  var type = 'file';
-
-  var _useContext = (0, _react.useContext)(_FormContext.default),
-      controlId = _useContext.controlId;
-
-  var innerFormContext = (0, _react.useMemo)(function () {
-    return {
-      controlId: id || controlId,
-      custom: custom
-    };
-  }, [controlId, custom, id]);
-  var hasLabel = label != null && label !== false && !children;
-
-  var input = /*#__PURE__*/_react.default.createElement(_FormFileInput.default, (0, _extends2.default)({}, props, {
-    ref: ref,
-    isValid: isValid,
-    isInvalid: isInvalid,
-    disabled: disabled,
-    as: inputAs,
-    lang: lang
-  }));
-
-  return /*#__PURE__*/_react.default.createElement(_FormContext.default.Provider, {
-    value: innerFormContext
-  }, /*#__PURE__*/_react.default.createElement(Component, {
-    style: style,
-    className: (0, _classnames.default)(className, bsPrefix, custom && "custom-" + type)
-  }, children || /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, custom ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, input, hasLabel && /*#__PURE__*/_react.default.createElement(_FormFileLabel.default, {
-    "data-browse": dataBrowse
-  }, label)) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, hasLabel && /*#__PURE__*/_react.default.createElement(_FormFileLabel.default, null, label), input), (isValid || isInvalid) && /*#__PURE__*/_react.default.createElement(_Feedback.default, {
-    type: isValid ? 'valid' : 'invalid',
-    tooltip: feedbackTooltip
-  }, feedback))));
-});
-
-FormFile.displayName = 'FormFile';
-FormFile.Input = _FormFileInput.default;
-FormFile.Label = _FormFileLabel.default;
-var _default = FormFile;
-exports.default = _default;
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireWildcard":"28En5","@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","prop-types-extra/lib/all":"7gDS0","./Feedback":"40O3n","./FormFileInput":"5D05r","./FormFileLabel":"2ZRUF","./FormContext":"72akU","./ThemeProvider":"4rz1S"}],"5D05r":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _FormContext = _interopRequireDefault(require("./FormContext"));
-
-var _ThemeProvider = require("./ThemeProvider");
-
-var FormFileInput = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
-  var id = _ref.id,
-      bsPrefix = _ref.bsPrefix,
-      bsCustomPrefix = _ref.bsCustomPrefix,
-      className = _ref.className,
-      isValid = _ref.isValid,
-      isInvalid = _ref.isInvalid,
-      lang = _ref.lang,
-      _ref$as = _ref.as,
-      Component = _ref$as === void 0 ? 'input' : _ref$as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["id", "bsPrefix", "bsCustomPrefix", "className", "isValid", "isInvalid", "lang", "as"]);
-
-  var _useContext = (0, _react.useContext)(_FormContext.default),
-      controlId = _useContext.controlId,
-      custom = _useContext.custom;
-
-  var type = 'file';
-
-  var _ref2 = custom ? [bsCustomPrefix, 'custom-file-input'] : [bsPrefix, 'form-control-file'],
-      prefix = _ref2[0],
-      defaultPrefix = _ref2[1];
-
-  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
-  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
-    ref: ref,
-    id: id || controlId,
-    type: type,
-    lang: lang,
-    className: (0, _classnames.default)(className, bsPrefix, isValid && 'is-valid', isInvalid && 'is-invalid')
-  }));
-});
-
-FormFileInput.displayName = 'FormFileInput';
-var _default = FormFileInput;
-exports.default = _default;
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireWildcard":"28En5","@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./FormContext":"72akU","./ThemeProvider":"4rz1S"}],"2ZRUF":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _FormContext = _interopRequireDefault(require("./FormContext"));
-
-var _ThemeProvider = require("./ThemeProvider");
-
-var FormFileLabel = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
-  var bsPrefix = _ref.bsPrefix,
-      bsCustomPrefix = _ref.bsCustomPrefix,
-      className = _ref.className,
-      htmlFor = _ref.htmlFor,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "bsCustomPrefix", "className", "htmlFor"]);
-
-  var _useContext = (0, _react.useContext)(_FormContext.default),
-      controlId = _useContext.controlId,
-      custom = _useContext.custom;
-
-  var _ref2 = custom ? [bsCustomPrefix, 'custom-file-label'] : [bsPrefix, 'form-file-label'],
-      prefix = _ref2[0],
-      defaultPrefix = _ref2[1];
-
-  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
-  return /*#__PURE__*/_react.default.createElement("label", (0, _extends2.default)({}, props, {
-    ref: ref,
-    htmlFor: htmlFor || controlId,
-    className: (0, _classnames.default)(className, bsPrefix),
-    "data-browse": props['data-browse']
-  }));
-});
-
-FormFileLabel.displayName = 'FormFileLabel';
-var _default = FormFileLabel;
-exports.default = _default;
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireWildcard":"28En5","@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./FormContext":"72akU","./ThemeProvider":"4rz1S"}],"573gP":[function(require,module,exports) {
-"use strict";
-var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-exports.__esModule = true;
-exports.default = void 0;
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-var _classnames = _interopRequireDefault(require("classnames"));
-var _all = _interopRequireDefault(require("prop-types-extra/lib/all"));
-var _react = _interopRequireWildcard(require("react"));
-var _warning = _interopRequireDefault(require("warning"));
-var _Feedback = _interopRequireDefault(require("./Feedback"));
-var _FormContext = _interopRequireDefault(require("./FormContext"));
-var _ThemeProvider = require("./ThemeProvider");
-var FormControl = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
-  var bsPrefix = _ref.bsPrefix, bsCustomPrefix = _ref.bsCustomPrefix, type = _ref.type, size = _ref.size, htmlSize = _ref.htmlSize, id = _ref.id, className = _ref.className, _ref$isValid = _ref.isValid, isValid = _ref$isValid === void 0 ? false : _ref$isValid, _ref$isInvalid = _ref.isInvalid, isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid, plaintext = _ref.plaintext, readOnly = _ref.readOnly, custom = _ref.custom, _ref$as = _ref.as, Component = _ref$as === void 0 ? 'input' : _ref$as, props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "bsCustomPrefix", "type", "size", "htmlSize", "id", "className", "isValid", "isInvalid", "plaintext", "readOnly", "custom", "as"]);
-  var _useContext = (0, _react.useContext)(_FormContext.default), controlId = _useContext.controlId;
-  var _ref2 = custom ? [bsCustomPrefix, 'custom'] : [bsPrefix, 'form-control'], prefix = _ref2[0], defaultPrefix = _ref2[1];
-  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
-  var classes;
-  if (plaintext) {
-    var _classes;
-    classes = (_classes = {}, _classes[bsPrefix + "-plaintext"] = true, _classes);
-  } else if (type === 'file') {
-    var _classes2;
-    classes = (_classes2 = {}, _classes2[bsPrefix + "-file"] = true, _classes2);
-  } else if (type === 'range') {
-    var _classes3;
-    classes = (_classes3 = {}, _classes3[bsPrefix + "-range"] = true, _classes3);
-  } else if (Component === 'select' && custom) {
-    var _classes4;
-    classes = (_classes4 = {}, _classes4[bsPrefix + "-select"] = true, _classes4[bsPrefix + "-select-" + size] = size, _classes4);
-  } else {
-    var _classes5;
-    classes = (_classes5 = {}, _classes5[bsPrefix] = true, _classes5[bsPrefix + "-" + size] = size, _classes5);
-  }
-  "development" !== "production" ? (0, _warning.default)(controlId == null || !id, '`controlId` is ignored on `<FormControl>` when `id` is specified.') : void 0;
-  return (
-    /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
-      type: type,
-      size: htmlSize,
-      ref: ref,
-      readOnly: readOnly,
-      id: id || controlId,
-      className: (0, _classnames.default)(className, classes, isValid && "is-valid", isInvalid && "is-invalid")
-    }))
-  );
-});
-FormControl.displayName = 'FormControl';
-var _default = Object.assign(FormControl, {
-  Feedback: _Feedback.default
-});
-exports.default = _default;
-module.exports = exports["default"];
-
-},{"@babel/runtime/helpers/interopRequireWildcard":"28En5","@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","prop-types-extra/lib/all":"7gDS0","react":"3b2NM","warning":"5jojS","./Feedback":"40O3n","./FormContext":"72akU","./ThemeProvider":"4rz1S"}],"120iJ":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _FormContext = _interopRequireDefault(require("./FormContext"));
-
-var _ThemeProvider = require("./ThemeProvider");
-
-var FormGroup = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
-  var bsPrefix = _ref.bsPrefix,
-      className = _ref.className,
-      children = _ref.children,
-      controlId = _ref.controlId,
-      _ref$as = _ref.as,
-      Component = _ref$as === void 0 ? 'div' : _ref$as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "children", "controlId", "as"]);
-  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'form-group');
-  var context = (0, _react.useMemo)(function () {
-    return {
-      controlId: controlId
-    };
-  }, [controlId]);
-  return /*#__PURE__*/_react.default.createElement(_FormContext.default.Provider, {
-    value: context
-  }, /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
-    ref: ref,
-    className: (0, _classnames.default)(className, bsPrefix)
-  }), children));
-});
-
-FormGroup.displayName = 'FormGroup';
-var _default = FormGroup;
-exports.default = _default;
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireWildcard":"28En5","@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./FormContext":"72akU","./ThemeProvider":"4rz1S"}],"70qP9":[function(require,module,exports) {
-"use strict";
-var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-exports.__esModule = true;
-exports.default = void 0;
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-var _classnames = _interopRequireDefault(require("classnames"));
-var _react = _interopRequireWildcard(require("react"));
-var _warning = _interopRequireDefault(require("warning"));
-var _Col = _interopRequireDefault(require("./Col"));
-var _FormContext = _interopRequireDefault(require("./FormContext"));
-var _ThemeProvider = require("./ThemeProvider");
-var defaultProps = {
-  column: false,
-  srOnly: false
-};
-var FormLabel = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
-  var _ref$as = _ref.as, Component = _ref$as === void 0 ? 'label' : _ref$as, bsPrefix = _ref.bsPrefix, column = _ref.column, srOnly = _ref.srOnly, className = _ref.className, htmlFor = _ref.htmlFor, props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["as", "bsPrefix", "column", "srOnly", "className", "htmlFor"]);
-  var _useContext = (0, _react.useContext)(_FormContext.default), controlId = _useContext.controlId;
-  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'form-label');
-  var columnClass = 'col-form-label';
-  if (typeof column === 'string') columnClass = columnClass + " " + columnClass + "-" + column;
-  var classes = (0, _classnames.default)(className, bsPrefix, srOnly && 'sr-only', column && columnClass);
-  "development" !== "production" ? (0, _warning.default)(controlId == null || !htmlFor, '`controlId` is ignored on `<FormLabel>` when `htmlFor` is specified.') : void 0;
-  htmlFor = htmlFor || controlId;
-  if (column) return (
-    /*#__PURE__*/_react.default.createElement(_Col.default, (0, _extends2.default)({
-      as: "label",
-      className: classes,
-      htmlFor: htmlFor
-    }, props))
-  );
-  return (
-    /*#__PURE__*/
-    // eslint-disable-next-line jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control
-    _react.default.createElement(Component, (0, _extends2.default)({
-      ref: ref,
-      className: classes,
-      htmlFor: htmlFor
-    }, props))
-  );
-});
-FormLabel.displayName = 'FormLabel';
-FormLabel.defaultProps = defaultProps;
-var _default = FormLabel;
-exports.default = _default;
-module.exports = exports["default"];
-
-},{"@babel/runtime/helpers/interopRequireWildcard":"28En5","@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","warning":"5jojS","./Col":"2D0r8","./FormContext":"72akU","./ThemeProvider":"4rz1S"}],"2VsfR":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _react = _interopRequireDefault(require("react"));
-
-var _ThemeProvider = require("./ThemeProvider");
-
-var FormText = /*#__PURE__*/_react.default.forwardRef( // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-function (_ref, ref) {
-  var bsPrefix = _ref.bsPrefix,
-      className = _ref.className,
-      _ref$as = _ref.as,
-      Component = _ref$as === void 0 ? 'small' : _ref$as,
-      muted = _ref.muted,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "as", "muted"]);
-  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'form-text');
-  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
-    ref: ref,
-    className: (0, _classnames.default)(className, bsPrefix, muted && 'text-muted')
-  }));
-});
-
-FormText.displayName = 'FormText';
-var _default = FormText;
-exports.default = _default;
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S"}],"5DfiR":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
-var _react = _interopRequireDefault(require("react"));
-
-var _FormCheck = _interopRequireDefault(require("./FormCheck"));
-
-var Switch = /*#__PURE__*/_react.default.forwardRef(function (props, ref) {
-  return /*#__PURE__*/_react.default.createElement(_FormCheck.default, (0, _extends2.default)({}, props, {
-    ref: ref,
-    type: "switch"
-  }));
-});
-
-Switch.displayName = 'Switch';
-Switch.Input = _FormCheck.default.Input;
-Switch.Label = _FormCheck.default.Label;
-var _default = Switch;
-exports.default = _default;
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","react":"3b2NM","./FormCheck":"6WcKM"}],"5iJih":[function() {},{}],"1B9U7":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
-
-var _default = (0, _createWithBsPrefix.default)('card-group');
-
-exports.default = _default;
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","./createWithBsPrefix":"2oVVc"}],"48yv5":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
-
-var _default = (0, _createWithBsPrefix.default)('card-columns');
-
-exports.default = _default;
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","./createWithBsPrefix":"2oVVc"}],"3nb5C":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _react = _interopRequireDefault(require("react"));
-
-var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
-
-var _ThemeProvider = require("./ThemeProvider");
-
-var InputGroupAppend = (0, _createWithBsPrefix.default)('input-group-append');
-var InputGroupPrepend = (0, _createWithBsPrefix.default)('input-group-prepend');
-var InputGroupText = (0, _createWithBsPrefix.default)('input-group-text', {
-  Component: 'span'
-});
-
-var InputGroupCheckbox = function InputGroupCheckbox(props) {
-  return /*#__PURE__*/_react.default.createElement(InputGroupText, null, /*#__PURE__*/_react.default.createElement("input", (0, _extends2.default)({
-    type: "checkbox"
-  }, props)));
-};
-
-var InputGroupRadio = function InputGroupRadio(props) {
-  return /*#__PURE__*/_react.default.createElement(InputGroupText, null, /*#__PURE__*/_react.default.createElement("input", (0, _extends2.default)({
-    type: "radio"
-  }, props)));
-};
-
-/**
- *
- * @property {InputGroupAppend} Append
- * @property {InputGroupPrepend} Prepend
- * @property {InputGroupText} Text
- * @property {InputGroupRadio} Radio
- * @property {InputGroupCheckbox} Checkbox
- */
-var InputGroup = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
-  var bsPrefix = _ref.bsPrefix,
-      size = _ref.size,
-      hasValidation = _ref.hasValidation,
-      className = _ref.className,
-      _ref$as = _ref.as,
-      Component = _ref$as === void 0 ? 'div' : _ref$as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "size", "hasValidation", "className", "as"]);
-  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'input-group');
-  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({
-    ref: ref
-  }, props, {
-    className: (0, _classnames.default)(className, bsPrefix, size && bsPrefix + "-" + size, hasValidation && 'has-validation')
-  }));
-});
-
-InputGroup.displayName = 'InputGroup';
-var InputGroupWithExtras = (0, _extends2.default)({}, InputGroup, {
-  Text: InputGroupText,
-  Radio: InputGroupRadio,
-  Checkbox: InputGroupCheckbox,
-  Append: InputGroupAppend,
-  Prepend: InputGroupPrepend
-});
-var _default = InputGroupWithExtras;
-exports.default = _default;
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","@babel/runtime/helpers/extends":"3krLJ","classnames":"5aJRc","react":"3b2NM","./createWithBsPrefix":"2oVVc","./ThemeProvider":"4rz1S"}],"4n7hB":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","prop-types":"4dfy5","./ThemeProvider":"4rz1S"}],"4n7hB":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
@@ -34491,7 +33111,35 @@ ButtonToolbar.defaultProps = defaultProps;
 var _default = ButtonToolbar;
 exports.default = _default;
 module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S"}],"2Zcjk":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S"}],"48yv5":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
+
+var _default = (0, _createWithBsPrefix.default)('card-columns');
+
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","./createWithBsPrefix":"2oVVc"}],"1B9U7":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
+
+var _default = (0, _createWithBsPrefix.default)('card-group');
+
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","./createWithBsPrefix":"2oVVc"}],"2Zcjk":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
@@ -38587,7 +37235,784 @@ DropdownButton.propTypes = propTypes;
 var _default = DropdownButton;
 exports.default = _default;
 module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireWildcard":"28En5","@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","react":"3b2NM","prop-types":"4dfy5","./Dropdown":"27PdI","./DropdownToggle":"3wlzX","./DropdownMenu":"2Ipap"}],"2ZDTl":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireWildcard":"28En5","@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","react":"3b2NM","prop-types":"4dfy5","./Dropdown":"27PdI","./DropdownToggle":"3wlzX","./DropdownMenu":"2Ipap"}],"6A5ko":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _FormCheck = _interopRequireDefault(require("./FormCheck"));
+
+var _FormFile = _interopRequireDefault(require("./FormFile"));
+
+var _FormControl = _interopRequireDefault(require("./FormControl"));
+
+var _FormGroup = _interopRequireDefault(require("./FormGroup"));
+
+var _FormLabel = _interopRequireDefault(require("./FormLabel"));
+
+var _FormText = _interopRequireDefault(require("./FormText"));
+
+var _Switch = _interopRequireDefault(require("./Switch"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
+
+var FormRow = (0, _createWithBsPrefix.default)('form-row');
+var defaultProps = {
+  inline: false
+};
+
+var FormImpl = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      inline = _ref.inline,
+      className = _ref.className,
+      validated = _ref.validated,
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'form' : _ref$as,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "inline", "className", "validated", "as"]);
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'form');
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
+    ref: ref,
+    className: (0, _classnames.default)(className, validated && 'was-validated', inline && bsPrefix + "-inline")
+  }));
+});
+
+FormImpl.displayName = 'Form';
+FormImpl.defaultProps = defaultProps;
+FormImpl.Row = FormRow;
+FormImpl.Group = _FormGroup.default;
+FormImpl.Control = _FormControl.default;
+FormImpl.Check = _FormCheck.default;
+FormImpl.File = _FormFile.default;
+FormImpl.Switch = _Switch.default;
+FormImpl.Label = _FormLabel.default;
+FormImpl.Text = _FormText.default;
+var _default = FormImpl;
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./FormCheck":"6WcKM","./FormFile":"6mhKG","./FormControl":"573gP","./FormGroup":"120iJ","./FormLabel":"70qP9","./FormText":"2VsfR","./Switch":"5DfiR","./ThemeProvider":"4rz1S","./createWithBsPrefix":"2oVVc"}],"6WcKM":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _all = _interopRequireDefault(require("prop-types-extra/lib/all"));
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _Feedback = _interopRequireDefault(require("./Feedback"));
+
+var _FormCheckInput = _interopRequireDefault(require("./FormCheckInput"));
+
+var _FormCheckLabel = _interopRequireDefault(require("./FormCheckLabel"));
+
+var _FormContext = _interopRequireDefault(require("./FormContext"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var FormCheck = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
+  var id = _ref.id,
+      bsPrefix = _ref.bsPrefix,
+      bsCustomPrefix = _ref.bsCustomPrefix,
+      _ref$inline = _ref.inline,
+      inline = _ref$inline === void 0 ? false : _ref$inline,
+      _ref$disabled = _ref.disabled,
+      disabled = _ref$disabled === void 0 ? false : _ref$disabled,
+      _ref$isValid = _ref.isValid,
+      isValid = _ref$isValid === void 0 ? false : _ref$isValid,
+      _ref$isInvalid = _ref.isInvalid,
+      isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid,
+      _ref$feedbackTooltip = _ref.feedbackTooltip,
+      feedbackTooltip = _ref$feedbackTooltip === void 0 ? false : _ref$feedbackTooltip,
+      feedback = _ref.feedback,
+      className = _ref.className,
+      style = _ref.style,
+      _ref$title = _ref.title,
+      title = _ref$title === void 0 ? '' : _ref$title,
+      _ref$type = _ref.type,
+      type = _ref$type === void 0 ? 'checkbox' : _ref$type,
+      label = _ref.label,
+      children = _ref.children,
+      propCustom = _ref.custom,
+      _ref$as = _ref.as,
+      as = _ref$as === void 0 ? 'input' : _ref$as,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["id", "bsPrefix", "bsCustomPrefix", "inline", "disabled", "isValid", "isInvalid", "feedbackTooltip", "feedback", "className", "style", "title", "type", "label", "children", "custom", "as"]);
+  var custom = type === 'switch' ? true : propCustom;
+
+  var _ref2 = custom ? [bsCustomPrefix, 'custom-control'] : [bsPrefix, 'form-check'],
+      prefix = _ref2[0],
+      defaultPrefix = _ref2[1];
+
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
+
+  var _useContext = (0, _react.useContext)(_FormContext.default),
+      controlId = _useContext.controlId;
+
+  var innerFormContext = (0, _react.useMemo)(function () {
+    return {
+      controlId: id || controlId,
+      custom: custom
+    };
+  }, [controlId, custom, id]);
+  var hasLabel = custom || label != null && label !== false && !children;
+
+  var input = /*#__PURE__*/_react.default.createElement(_FormCheckInput.default, (0, _extends2.default)({}, props, {
+    type: type === 'switch' ? 'checkbox' : type,
+    ref: ref,
+    isValid: isValid,
+    isInvalid: isInvalid,
+    isStatic: !hasLabel,
+    disabled: disabled,
+    as: as
+  }));
+
+  return /*#__PURE__*/_react.default.createElement(_FormContext.default.Provider, {
+    value: innerFormContext
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    style: style,
+    className: (0, _classnames.default)(className, bsPrefix, custom && "custom-" + type, inline && bsPrefix + "-inline")
+  }, children || /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, input, hasLabel && /*#__PURE__*/_react.default.createElement(_FormCheckLabel.default, {
+    title: title
+  }, label), (isValid || isInvalid) && /*#__PURE__*/_react.default.createElement(_Feedback.default, {
+    type: isValid ? 'valid' : 'invalid',
+    tooltip: feedbackTooltip
+  }, feedback))));
+});
+
+FormCheck.displayName = 'FormCheck';
+FormCheck.Input = _FormCheckInput.default;
+FormCheck.Label = _FormCheckLabel.default;
+var _default = FormCheck;
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireWildcard":"28En5","@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","prop-types-extra/lib/all":"7gDS0","react":"3b2NM","./Feedback":"40O3n","./FormCheckInput":"3MfQl","./FormCheckLabel":"5aWG1","./FormContext":"72akU","./ThemeProvider":"4rz1S"}],"40O3n":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var propTypes = {
+  /**
+   * Specify whether the feedback is for valid or invalid fields
+   *
+   * @type {('valid'|'invalid')}
+   */
+  type: _propTypes.default.string,
+
+  /** Display feedback as a tooltip. */
+  tooltip: _propTypes.default.bool,
+  as: _propTypes.default.elementType
+};
+
+var Feedback = /*#__PURE__*/_react.default.forwardRef( // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+function (_ref, ref) {
+  var _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'div' : _ref$as,
+      className = _ref.className,
+      _ref$type = _ref.type,
+      type = _ref$type === void 0 ? 'valid' : _ref$type,
+      _ref$tooltip = _ref.tooltip,
+      tooltip = _ref$tooltip === void 0 ? false : _ref$tooltip,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["as", "className", "type", "tooltip"]);
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
+    ref: ref,
+    className: (0, _classnames.default)(className, type + "-" + (tooltip ? 'tooltip' : 'feedback'))
+  }));
+});
+
+Feedback.displayName = 'Feedback';
+Feedback.propTypes = propTypes;
+var _default = Feedback;
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","prop-types":"4dfy5"}],"3MfQl":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _FormContext = _interopRequireDefault(require("./FormContext"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var FormCheckInput = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
+  var id = _ref.id,
+      bsPrefix = _ref.bsPrefix,
+      bsCustomPrefix = _ref.bsCustomPrefix,
+      className = _ref.className,
+      _ref$type = _ref.type,
+      type = _ref$type === void 0 ? 'checkbox' : _ref$type,
+      _ref$isValid = _ref.isValid,
+      isValid = _ref$isValid === void 0 ? false : _ref$isValid,
+      _ref$isInvalid = _ref.isInvalid,
+      isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid,
+      isStatic = _ref.isStatic,
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'input' : _ref$as,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["id", "bsPrefix", "bsCustomPrefix", "className", "type", "isValid", "isInvalid", "isStatic", "as"]);
+
+  var _useContext = (0, _react.useContext)(_FormContext.default),
+      controlId = _useContext.controlId,
+      custom = _useContext.custom;
+
+  var _ref2 = custom ? [bsCustomPrefix, 'custom-control-input'] : [bsPrefix, 'form-check-input'],
+      prefix = _ref2[0],
+      defaultPrefix = _ref2[1];
+
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
+    ref: ref,
+    type: type,
+    id: id || controlId,
+    className: (0, _classnames.default)(className, bsPrefix, isValid && 'is-valid', isInvalid && 'is-invalid', isStatic && 'position-static')
+  }));
+});
+
+FormCheckInput.displayName = 'FormCheckInput';
+var _default = FormCheckInput;
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireWildcard":"28En5","@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./FormContext":"72akU","./ThemeProvider":"4rz1S"}],"72akU":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var FormContext = /*#__PURE__*/_react.default.createContext({
+  controlId: undefined
+});
+
+var _default = FormContext;
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","react":"3b2NM"}],"5aWG1":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _FormContext = _interopRequireDefault(require("./FormContext"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var FormCheckLabel = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      bsCustomPrefix = _ref.bsCustomPrefix,
+      className = _ref.className,
+      htmlFor = _ref.htmlFor,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "bsCustomPrefix", "className", "htmlFor"]);
+
+  var _useContext = (0, _react.useContext)(_FormContext.default),
+      controlId = _useContext.controlId,
+      custom = _useContext.custom;
+
+  var _ref2 = custom ? [bsCustomPrefix, 'custom-control-label'] : [bsPrefix, 'form-check-label'],
+      prefix = _ref2[0],
+      defaultPrefix = _ref2[1];
+
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
+  return /*#__PURE__*/_react.default.createElement("label", (0, _extends2.default)({}, props, {
+    ref: ref,
+    htmlFor: htmlFor || controlId,
+    className: (0, _classnames.default)(className, bsPrefix)
+  }));
+});
+
+FormCheckLabel.displayName = 'FormCheckLabel';
+var _default = FormCheckLabel;
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireWildcard":"28En5","@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./FormContext":"72akU","./ThemeProvider":"4rz1S"}],"6mhKG":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _all = _interopRequireDefault(require("prop-types-extra/lib/all"));
+
+var _Feedback = _interopRequireDefault(require("./Feedback"));
+
+var _FormFileInput = _interopRequireDefault(require("./FormFileInput"));
+
+var _FormFileLabel = _interopRequireDefault(require("./FormFileLabel"));
+
+var _FormContext = _interopRequireDefault(require("./FormContext"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var FormFile = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
+  var id = _ref.id,
+      bsPrefix = _ref.bsPrefix,
+      bsCustomPrefix = _ref.bsCustomPrefix,
+      _ref$disabled = _ref.disabled,
+      disabled = _ref$disabled === void 0 ? false : _ref$disabled,
+      _ref$isValid = _ref.isValid,
+      isValid = _ref$isValid === void 0 ? false : _ref$isValid,
+      _ref$isInvalid = _ref.isInvalid,
+      isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid,
+      _ref$feedbackTooltip = _ref.feedbackTooltip,
+      feedbackTooltip = _ref$feedbackTooltip === void 0 ? false : _ref$feedbackTooltip,
+      feedback = _ref.feedback,
+      className = _ref.className,
+      style = _ref.style,
+      label = _ref.label,
+      children = _ref.children,
+      custom = _ref.custom,
+      lang = _ref.lang,
+      dataBrowse = _ref['data-browse'],
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'div' : _ref$as,
+      _ref$inputAs = _ref.inputAs,
+      inputAs = _ref$inputAs === void 0 ? 'input' : _ref$inputAs,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["id", "bsPrefix", "bsCustomPrefix", "disabled", "isValid", "isInvalid", "feedbackTooltip", "feedback", "className", "style", "label", "children", "custom", "lang", "data-browse", "as", "inputAs"]);
+
+  var _ref2 = custom ? [bsCustomPrefix, 'custom'] : [bsPrefix, 'form-file'],
+      prefix = _ref2[0],
+      defaultPrefix = _ref2[1];
+
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
+  var type = 'file';
+
+  var _useContext = (0, _react.useContext)(_FormContext.default),
+      controlId = _useContext.controlId;
+
+  var innerFormContext = (0, _react.useMemo)(function () {
+    return {
+      controlId: id || controlId,
+      custom: custom
+    };
+  }, [controlId, custom, id]);
+  var hasLabel = label != null && label !== false && !children;
+
+  var input = /*#__PURE__*/_react.default.createElement(_FormFileInput.default, (0, _extends2.default)({}, props, {
+    ref: ref,
+    isValid: isValid,
+    isInvalid: isInvalid,
+    disabled: disabled,
+    as: inputAs,
+    lang: lang
+  }));
+
+  return /*#__PURE__*/_react.default.createElement(_FormContext.default.Provider, {
+    value: innerFormContext
+  }, /*#__PURE__*/_react.default.createElement(Component, {
+    style: style,
+    className: (0, _classnames.default)(className, bsPrefix, custom && "custom-" + type)
+  }, children || /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, custom ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, input, hasLabel && /*#__PURE__*/_react.default.createElement(_FormFileLabel.default, {
+    "data-browse": dataBrowse
+  }, label)) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, hasLabel && /*#__PURE__*/_react.default.createElement(_FormFileLabel.default, null, label), input), (isValid || isInvalid) && /*#__PURE__*/_react.default.createElement(_Feedback.default, {
+    type: isValid ? 'valid' : 'invalid',
+    tooltip: feedbackTooltip
+  }, feedback))));
+});
+
+FormFile.displayName = 'FormFile';
+FormFile.Input = _FormFileInput.default;
+FormFile.Label = _FormFileLabel.default;
+var _default = FormFile;
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireWildcard":"28En5","@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","prop-types-extra/lib/all":"7gDS0","./Feedback":"40O3n","./FormFileInput":"5D05r","./FormFileLabel":"2ZRUF","./FormContext":"72akU","./ThemeProvider":"4rz1S"}],"5D05r":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _FormContext = _interopRequireDefault(require("./FormContext"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var FormFileInput = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
+  var id = _ref.id,
+      bsPrefix = _ref.bsPrefix,
+      bsCustomPrefix = _ref.bsCustomPrefix,
+      className = _ref.className,
+      isValid = _ref.isValid,
+      isInvalid = _ref.isInvalid,
+      lang = _ref.lang,
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'input' : _ref$as,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["id", "bsPrefix", "bsCustomPrefix", "className", "isValid", "isInvalid", "lang", "as"]);
+
+  var _useContext = (0, _react.useContext)(_FormContext.default),
+      controlId = _useContext.controlId,
+      custom = _useContext.custom;
+
+  var type = 'file';
+
+  var _ref2 = custom ? [bsCustomPrefix, 'custom-file-input'] : [bsPrefix, 'form-control-file'],
+      prefix = _ref2[0],
+      defaultPrefix = _ref2[1];
+
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
+    ref: ref,
+    id: id || controlId,
+    type: type,
+    lang: lang,
+    className: (0, _classnames.default)(className, bsPrefix, isValid && 'is-valid', isInvalid && 'is-invalid')
+  }));
+});
+
+FormFileInput.displayName = 'FormFileInput';
+var _default = FormFileInput;
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireWildcard":"28En5","@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./FormContext":"72akU","./ThemeProvider":"4rz1S"}],"2ZRUF":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _FormContext = _interopRequireDefault(require("./FormContext"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var FormFileLabel = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      bsCustomPrefix = _ref.bsCustomPrefix,
+      className = _ref.className,
+      htmlFor = _ref.htmlFor,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "bsCustomPrefix", "className", "htmlFor"]);
+
+  var _useContext = (0, _react.useContext)(_FormContext.default),
+      controlId = _useContext.controlId,
+      custom = _useContext.custom;
+
+  var _ref2 = custom ? [bsCustomPrefix, 'custom-file-label'] : [bsPrefix, 'form-file-label'],
+      prefix = _ref2[0],
+      defaultPrefix = _ref2[1];
+
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
+  return /*#__PURE__*/_react.default.createElement("label", (0, _extends2.default)({}, props, {
+    ref: ref,
+    htmlFor: htmlFor || controlId,
+    className: (0, _classnames.default)(className, bsPrefix),
+    "data-browse": props['data-browse']
+  }));
+});
+
+FormFileLabel.displayName = 'FormFileLabel';
+var _default = FormFileLabel;
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireWildcard":"28En5","@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./FormContext":"72akU","./ThemeProvider":"4rz1S"}],"573gP":[function(require,module,exports) {
+"use strict";
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+var _classnames = _interopRequireDefault(require("classnames"));
+var _all = _interopRequireDefault(require("prop-types-extra/lib/all"));
+var _react = _interopRequireWildcard(require("react"));
+var _warning = _interopRequireDefault(require("warning"));
+var _Feedback = _interopRequireDefault(require("./Feedback"));
+var _FormContext = _interopRequireDefault(require("./FormContext"));
+var _ThemeProvider = require("./ThemeProvider");
+var FormControl = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix, bsCustomPrefix = _ref.bsCustomPrefix, type = _ref.type, size = _ref.size, htmlSize = _ref.htmlSize, id = _ref.id, className = _ref.className, _ref$isValid = _ref.isValid, isValid = _ref$isValid === void 0 ? false : _ref$isValid, _ref$isInvalid = _ref.isInvalid, isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid, plaintext = _ref.plaintext, readOnly = _ref.readOnly, custom = _ref.custom, _ref$as = _ref.as, Component = _ref$as === void 0 ? 'input' : _ref$as, props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "bsCustomPrefix", "type", "size", "htmlSize", "id", "className", "isValid", "isInvalid", "plaintext", "readOnly", "custom", "as"]);
+  var _useContext = (0, _react.useContext)(_FormContext.default), controlId = _useContext.controlId;
+  var _ref2 = custom ? [bsCustomPrefix, 'custom'] : [bsPrefix, 'form-control'], prefix = _ref2[0], defaultPrefix = _ref2[1];
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
+  var classes;
+  if (plaintext) {
+    var _classes;
+    classes = (_classes = {}, _classes[bsPrefix + "-plaintext"] = true, _classes);
+  } else if (type === 'file') {
+    var _classes2;
+    classes = (_classes2 = {}, _classes2[bsPrefix + "-file"] = true, _classes2);
+  } else if (type === 'range') {
+    var _classes3;
+    classes = (_classes3 = {}, _classes3[bsPrefix + "-range"] = true, _classes3);
+  } else if (Component === 'select' && custom) {
+    var _classes4;
+    classes = (_classes4 = {}, _classes4[bsPrefix + "-select"] = true, _classes4[bsPrefix + "-select-" + size] = size, _classes4);
+  } else {
+    var _classes5;
+    classes = (_classes5 = {}, _classes5[bsPrefix] = true, _classes5[bsPrefix + "-" + size] = size, _classes5);
+  }
+  "development" !== "production" ? (0, _warning.default)(controlId == null || !id, '`controlId` is ignored on `<FormControl>` when `id` is specified.') : void 0;
+  return (
+    /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
+      type: type,
+      size: htmlSize,
+      ref: ref,
+      readOnly: readOnly,
+      id: id || controlId,
+      className: (0, _classnames.default)(className, classes, isValid && "is-valid", isInvalid && "is-invalid")
+    }))
+  );
+});
+FormControl.displayName = 'FormControl';
+var _default = Object.assign(FormControl, {
+  Feedback: _Feedback.default
+});
+exports.default = _default;
+module.exports = exports["default"];
+
+},{"@babel/runtime/helpers/interopRequireWildcard":"28En5","@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","prop-types-extra/lib/all":"7gDS0","react":"3b2NM","warning":"5jojS","./Feedback":"40O3n","./FormContext":"72akU","./ThemeProvider":"4rz1S"}],"120iJ":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _FormContext = _interopRequireDefault(require("./FormContext"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var FormGroup = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      className = _ref.className,
+      children = _ref.children,
+      controlId = _ref.controlId,
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'div' : _ref$as,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "children", "controlId", "as"]);
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'form-group');
+  var context = (0, _react.useMemo)(function () {
+    return {
+      controlId: controlId
+    };
+  }, [controlId]);
+  return /*#__PURE__*/_react.default.createElement(_FormContext.default.Provider, {
+    value: context
+  }, /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
+    ref: ref,
+    className: (0, _classnames.default)(className, bsPrefix)
+  }), children));
+});
+
+FormGroup.displayName = 'FormGroup';
+var _default = FormGroup;
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireWildcard":"28En5","@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./FormContext":"72akU","./ThemeProvider":"4rz1S"}],"70qP9":[function(require,module,exports) {
+"use strict";
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+var _classnames = _interopRequireDefault(require("classnames"));
+var _react = _interopRequireWildcard(require("react"));
+var _warning = _interopRequireDefault(require("warning"));
+var _Col = _interopRequireDefault(require("./Col"));
+var _FormContext = _interopRequireDefault(require("./FormContext"));
+var _ThemeProvider = require("./ThemeProvider");
+var defaultProps = {
+  column: false,
+  srOnly: false
+};
+var FormLabel = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
+  var _ref$as = _ref.as, Component = _ref$as === void 0 ? 'label' : _ref$as, bsPrefix = _ref.bsPrefix, column = _ref.column, srOnly = _ref.srOnly, className = _ref.className, htmlFor = _ref.htmlFor, props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["as", "bsPrefix", "column", "srOnly", "className", "htmlFor"]);
+  var _useContext = (0, _react.useContext)(_FormContext.default), controlId = _useContext.controlId;
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'form-label');
+  var columnClass = 'col-form-label';
+  if (typeof column === 'string') columnClass = columnClass + " " + columnClass + "-" + column;
+  var classes = (0, _classnames.default)(className, bsPrefix, srOnly && 'sr-only', column && columnClass);
+  "development" !== "production" ? (0, _warning.default)(controlId == null || !htmlFor, '`controlId` is ignored on `<FormLabel>` when `htmlFor` is specified.') : void 0;
+  htmlFor = htmlFor || controlId;
+  if (column) return (
+    /*#__PURE__*/_react.default.createElement(_Col.default, (0, _extends2.default)({
+      as: "label",
+      className: classes,
+      htmlFor: htmlFor
+    }, props))
+  );
+  return (
+    /*#__PURE__*/
+    // eslint-disable-next-line jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control
+    _react.default.createElement(Component, (0, _extends2.default)({
+      ref: ref,
+      className: classes,
+      htmlFor: htmlFor
+    }, props))
+  );
+});
+FormLabel.displayName = 'FormLabel';
+FormLabel.defaultProps = defaultProps;
+var _default = FormLabel;
+exports.default = _default;
+module.exports = exports["default"];
+
+},{"@babel/runtime/helpers/interopRequireWildcard":"28En5","@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","warning":"5jojS","./Col":"2D0r8","./FormContext":"72akU","./ThemeProvider":"4rz1S"}],"2VsfR":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var FormText = /*#__PURE__*/_react.default.forwardRef( // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      className = _ref.className,
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'small' : _ref$as,
+      muted = _ref.muted,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "as", "muted"]);
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'form-text');
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
+    ref: ref,
+    className: (0, _classnames.default)(className, bsPrefix, muted && 'text-muted')
+  }));
+});
+
+FormText.displayName = 'FormText';
+var _default = FormText;
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S"}],"5DfiR":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _FormCheck = _interopRequireDefault(require("./FormCheck"));
+
+var Switch = /*#__PURE__*/_react.default.forwardRef(function (props, ref) {
+  return /*#__PURE__*/_react.default.createElement(_FormCheck.default, (0, _extends2.default)({}, props, {
+    ref: ref,
+    type: "switch"
+  }));
+});
+
+Switch.displayName = 'Switch';
+Switch.Input = _FormCheck.default.Input;
+Switch.Label = _FormCheck.default.Label;
+var _default = Switch;
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","react":"3b2NM","./FormCheck":"6WcKM"}],"2ZDTl":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -38665,7 +38090,80 @@ var FigureCaption = (0, _createWithBsPrefix.default)('figure-caption', {
 var _default = FigureCaption;
 exports.default = _default;
 module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","./createWithBsPrefix":"2oVVc"}],"1fO3T":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","./createWithBsPrefix":"2oVVc"}],"3nb5C":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var InputGroupAppend = (0, _createWithBsPrefix.default)('input-group-append');
+var InputGroupPrepend = (0, _createWithBsPrefix.default)('input-group-prepend');
+var InputGroupText = (0, _createWithBsPrefix.default)('input-group-text', {
+  Component: 'span'
+});
+
+var InputGroupCheckbox = function InputGroupCheckbox(props) {
+  return /*#__PURE__*/_react.default.createElement(InputGroupText, null, /*#__PURE__*/_react.default.createElement("input", (0, _extends2.default)({
+    type: "checkbox"
+  }, props)));
+};
+
+var InputGroupRadio = function InputGroupRadio(props) {
+  return /*#__PURE__*/_react.default.createElement(InputGroupText, null, /*#__PURE__*/_react.default.createElement("input", (0, _extends2.default)({
+    type: "radio"
+  }, props)));
+};
+
+/**
+ *
+ * @property {InputGroupAppend} Append
+ * @property {InputGroupPrepend} Prepend
+ * @property {InputGroupText} Text
+ * @property {InputGroupRadio} Radio
+ * @property {InputGroupCheckbox} Checkbox
+ */
+var InputGroup = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      size = _ref.size,
+      hasValidation = _ref.hasValidation,
+      className = _ref.className,
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'div' : _ref$as,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "size", "hasValidation", "className", "as"]);
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'input-group');
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({
+    ref: ref
+  }, props, {
+    className: (0, _classnames.default)(className, bsPrefix, size && bsPrefix + "-" + size, hasValidation && 'has-validation')
+  }));
+});
+
+InputGroup.displayName = 'InputGroup';
+var InputGroupWithExtras = (0, _extends2.default)({}, InputGroup, {
+  Text: InputGroupText,
+  Radio: InputGroupRadio,
+  Checkbox: InputGroupCheckbox,
+  Append: InputGroupAppend,
+  Prepend: InputGroupPrepend
+});
+var _default = InputGroupWithExtras;
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","@babel/runtime/helpers/extends":"3krLJ","classnames":"5aJRc","react":"3b2NM","./createWithBsPrefix":"2oVVc","./ThemeProvider":"4rz1S"}],"1fO3T":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -42329,6 +41827,536 @@ Tooltip.displayName = 'Tooltip';
 var _default = Tooltip;
 exports.default = _default;
 module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","prop-types-extra/lib/isRequiredForA11y":"4XrEc","./ThemeProvider":"4rz1S"}],"5iJih":[function() {},{}]},["1j6wU","68WUB","1DVjT"], "1DVjT", "parcelRequire0837")
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","prop-types-extra/lib/isRequiredForA11y":"4XrEc","./ThemeProvider":"4rz1S"}],"6ruyx":[function(require,module,exports) {
+"use strict";
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.Button = Button;
+  var _react = _interopRequireDefault(require("react"));
+  require("./button.scss");
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+      "default": obj
+    };
+  }
+  function Button(_ref) {
+    var label = _ref.label;
+    return (
+      /*#__PURE__*/_react["default"].createElement("button", {
+        className: "toggle-button"
+      }, label)
+    );
+  }
+  _c = Button;
+  var _c;
+  $RefreshReg$(_c, "Button");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+
+},{"react":"3b2NM","./button.scss":"579qr","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"579qr":[function() {},{}],"7gvH2":[function(require,module,exports) {
+"use strict";
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  function _typeof(obj) {
+    "@babel/helpers - typeof";
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function _typeof(obj) {
+        return typeof obj;
+      };
+    } else {
+      _typeof = function _typeof(obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+      };
+    }
+    return _typeof(obj);
+  }
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.RegistrationView = RegistrationView;
+  var _react = _interopRequireWildcard(require("react"));
+  var _loginView = require("../login-view/login-view");
+  var _propTypes = _interopRequireDefault(require("prop-types"));
+  var _Form = _interopRequireDefault(require("react-bootstrap/Form"));
+  var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
+  var _Card = _interopRequireDefault(require("react-bootstrap/Card"));
+  var _Row = _interopRequireDefault(require("react-bootstrap/Row"));
+  var _Col = _interopRequireDefault(require("react-bootstrap/Col"));
+  var _InputGroup = _interopRequireDefault(require("react-bootstrap/InputGroup"));
+  var _FormControl = _interopRequireDefault(require("react-bootstrap/FormControl"));
+  var _FormCheck = _interopRequireDefault(require("react-bootstrap/FormCheck"));
+  var _FormFile = _interopRequireDefault(require("react-bootstrap/FormFile"));
+  var _reactDom = require("react-dom");
+  var _s2 = $RefreshSig$();
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+      "default": obj
+    };
+  }
+  function _getRequireWildcardCache() {
+    if (typeof WeakMap !== "function") return null;
+    var cache = new WeakMap();
+    _getRequireWildcardCache = function _getRequireWildcardCache() {
+      return cache;
+    };
+    return cache;
+  }
+  function _interopRequireWildcard(obj) {
+    if (obj && obj.__esModule) {
+      return obj;
+    }
+    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
+      return {
+        "default": obj
+      };
+    }
+    var cache = _getRequireWildcardCache();
+    if (cache && cache.has(obj)) {
+      return cache.get(obj);
+    }
+    var newObj = {};
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for (var key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) {
+          Object.defineProperty(newObj, key, desc);
+        } else {
+          newObj[key] = obj[key];
+        }
+      }
+    }
+    newObj["default"] = obj;
+    if (cache) {
+      cache.set(obj, newObj);
+    }
+    return newObj;
+  }
+  function _slicedToArray(arr, i) {
+    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+  }
+  function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+  function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || (/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/).test(n)) return _arrayLikeToArray(o, minLen);
+  }
+  function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+    for (var i = 0, arr2 = new Array(len); i < len; i++) {
+      arr2[i] = arr[i];
+    }
+    return arr2;
+  }
+  function _iterableToArrayLimit(arr, i) {
+    if (typeof Symbol === "undefined" || !((Symbol.iterator in Object(arr)))) return;
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _e = undefined;
+    try {
+      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+        _arr.push(_s.value);
+        if (i && _arr.length === i) break;
+      }
+    } catch (err) {
+      _d = true;
+      _e = err;
+    } finally {
+      try {
+        if (!_n && _i["return"] != null) _i["return"]();
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+    return _arr;
+  }
+  function _arrayWithHoles(arr) {
+    if (Array.isArray(arr)) return arr;
+  }
+  // call useState method and set to empty string the represents values prior to login
+  function RegistrationView(props) {
+    _s2();
+    var _useState = (0, _react.useState)(''), _useState2 = _slicedToArray(_useState, 2), username = _useState2[0], setUsername = _useState2[1];
+    var _useState3 = (0, _react.useState)(''), _useState4 = _slicedToArray(_useState3, 2), password = _useState4[0], setPassword = _useState4[1];
+    var _useState5 = (0, _react.useState)(''), _useState6 = _slicedToArray(_useState5, 2), email = _useState6[0], setEmail = _useState6[1];
+    var _useState7 = (0, _react.useState)(new Date()), _useState8 = _slicedToArray(_useState7, 2), birthday = _useState8[0], setBirthday = _useState8[1];
+    // Send request to server for auth
+    var handleSubmit = function handleSubmit() {
+      e.preventDefault();
+      console.log(username, password, email, birthday);
+      props.onRegistered(username);
+    };
+    return ['Dark'].map(function (variant, idx) {
+      return (
+        /*#__PURE__*/_react["default"].createElement("div", {
+          "class": "bg-primary"
+        }, /*#__PURE__*/_react["default"].createElement(_Card["default"], {
+          bg: variant.toLowerCase(),
+          key: idx,
+          text: variant.toLowerCase() === 'light' ? 'dark' : 'white',
+          style: {
+            width: '28rem'
+          },
+          className: "justify-content-center text-center mx-auto mt-5"
+        }, /*#__PURE__*/_react["default"].createElement(_Card["default"].Body, null, /*#__PURE__*/_react["default"].createElement("div", {
+          className: "text-align-center"
+        }, /*#__PURE__*/_react["default"].createElement("h3", null, "Great to meet you!")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, null, "Creat an account"), /*#__PURE__*/_react["default"].createElement(_Form["default"], null, /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, {
+          className: "text-muted"
+        }, "We will never share your username, password, email or birthdate with a third-party."), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+          as: _Col["default"],
+          controlId: "validationCustomUsername"
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Username"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+          className: "mb-3",
+          hasValidation: true
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
+          type: "text",
+          placeholder: "Username",
+          "aria-describedby": "inputGroupPrepend",
+          required: true,
+          value: username,
+          onChange: function onChange(e) {
+            return setUsername(e.target.value);
+          }
+        }))), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+          as: _Col["default"],
+          controlId: "formBasicEmail"
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Email address"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+          hasValidation: true
+        }), /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
+          type: "email",
+          placeholder: "Enter email",
+          value: email,
+          "aria-describedby": "inputGroupPrepend",
+          onChange: function onChange(e) {
+            return setEmail(e.target.value);
+          }
+        })), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+          as: _Col["default"],
+          controlId: "formBasicPassword"
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Password"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+          hasValidation: true
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
+          required: true,
+          type: "password",
+          placeholder: "Enter your password",
+          value: password,
+          "aria-describedby": "passwordHelpBlock",
+          onChange: function onChange(e) {
+            return setPassword(e.target.value);
+          }
+        })), /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, {
+          id: "passwordHelpBlock",
+          muted: true
+        }, "Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+          as: _Col["default"],
+          controlId: "formBasicPassword"
+        }, /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+          hasValidation: true
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
+          required: true,
+          type: "password",
+          placeholder: "Enter your password again",
+          value: password,
+          "aria-describedby": "passwordHelpBlock",
+          onChange: function onChange(e) {
+            return setPassword(e.target.value);
+          }
+        }))), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+          as: _Col["default"],
+          controlId: "validationCustom01"
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Birthday"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+          hasValidation: true
+        }), /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
+          required: true,
+          type: "date",
+          value: birthday,
+          "aria-describedby": "inputGroupPrepend",
+          onChange: function onChange(e) {
+            return setBirthday(e.target.value);
+          },
+          placeholder: "Birthday"
+        }), /*#__PURE__*/_react["default"].createElement(_Form["default"].Control.Feedback, null, "Looks good!")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+          controlId: "formBasicCheckbox"
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Check, {
+          type: "checkbox",
+          label: "I agree to the myfavfilmz Terms of Serivce"
+        })), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+          variant: "primary float-right mr-5",
+          type: "submit",
+          onClick: handleSubmit
+        }, "Register"), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("p", null, "Already a member?"), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+          variant: "primary",
+          size: "sm",
+          block: true,
+          type: "button",
+          onClick: function onClick() {
+            return props.onRegistered(false);
+          }
+        }, "Click here to log in!")))))
+      );
+    });
+  }
+  _s2(RegistrationView, "Sm4/B7Ss7XpbZkZHxsTCdDKe1RI=");
+  _c = RegistrationView;
+  RegistrationView.propTypes = {
+    username: _propTypes["default"].shape({
+      FavoriteMovies: _propTypes["default"].array.isRequired,
+      Username: _propTypes["default"].string.isRequired,
+      Password: _propTypes["default"].string.isRequired,
+      Email: _propTypes["default"].string.isRequired,
+      Birthday: _propTypes["default"].instanceOf(Date)
+    }),
+    onClick: _propTypes["default"].func
+  };
+  var _c;
+  $RefreshReg$(_c, "RegistrationView");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+
+},{"react":"3b2NM","../login-view/login-view":"6M7fu","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","react-bootstrap/InputGroup":"3nb5C","react-bootstrap/FormControl":"573gP","react-bootstrap/FormCheck":"6WcKM","react-bootstrap/FormFile":"6mhKG","react-dom":"2sg1U","react-bootstrap/Card":"1CZWQ"}],"6M7fu":[function(require,module,exports) {
+"use strict";
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  function _typeof(obj) {
+    "@babel/helpers - typeof";
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function _typeof(obj) {
+        return typeof obj;
+      };
+    } else {
+      _typeof = function _typeof(obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+      };
+    }
+    return _typeof(obj);
+  }
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.LoginView = LoginView;
+  var _react = _interopRequireWildcard(require("react"));
+  var _Form = _interopRequireDefault(require("react-bootstrap/Form"));
+  var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
+  var _propTypes = _interopRequireDefault(require("prop-types"));
+  var _Card = _interopRequireDefault(require("react-bootstrap/Card"));
+  var _InputGroup = _interopRequireDefault(require("react-bootstrap/InputGroup"));
+  var _CardDeck = _interopRequireDefault(require("react-bootstrap/CardDeck"));
+  var _CardGroup = _interopRequireDefault(require("react-bootstrap/CardGroup"));
+  var _CardColumns = _interopRequireDefault(require("react-bootstrap/CardColumns"));
+  require("../../index.scss");
+  var _FormControl = _interopRequireDefault(require("react-bootstrap/FormControl"));
+  var _FormCheck = _interopRequireDefault(require("react-bootstrap/FormCheck"));
+  var _FormFile = _interopRequireDefault(require("react-bootstrap/FormFile"));
+  var _s2 = $RefreshSig$();
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+      "default": obj
+    };
+  }
+  function _getRequireWildcardCache() {
+    if (typeof WeakMap !== "function") return null;
+    var cache = new WeakMap();
+    _getRequireWildcardCache = function _getRequireWildcardCache() {
+      return cache;
+    };
+    return cache;
+  }
+  function _interopRequireWildcard(obj) {
+    if (obj && obj.__esModule) {
+      return obj;
+    }
+    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
+      return {
+        "default": obj
+      };
+    }
+    var cache = _getRequireWildcardCache();
+    if (cache && cache.has(obj)) {
+      return cache.get(obj);
+    }
+    var newObj = {};
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for (var key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) {
+          Object.defineProperty(newObj, key, desc);
+        } else {
+          newObj[key] = obj[key];
+        }
+      }
+    }
+    newObj["default"] = obj;
+    if (cache) {
+      cache.set(obj, newObj);
+    }
+    return newObj;
+  }
+  function _slicedToArray(arr, i) {
+    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+  }
+  function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+  function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || (/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/).test(n)) return _arrayLikeToArray(o, minLen);
+  }
+  function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+    for (var i = 0, arr2 = new Array(len); i < len; i++) {
+      arr2[i] = arr[i];
+    }
+    return arr2;
+  }
+  function _iterableToArrayLimit(arr, i) {
+    if (typeof Symbol === "undefined" || !((Symbol.iterator in Object(arr)))) return;
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _e = undefined;
+    try {
+      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+        _arr.push(_s.value);
+        if (i && _arr.length === i) break;
+      }
+    } catch (err) {
+      _d = true;
+      _e = err;
+    } finally {
+      try {
+        if (!_n && _i["return"] != null) _i["return"]();
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+    return _arr;
+  }
+  function _arrayWithHoles(arr) {
+    if (Array.isArray(arr)) return arr;
+  }
+  // call useState method and set to empty string the represents values prior to login
+  function LoginView(props) {
+    _s2();
+    var _useState = (0, _react.useState)(''), _useState2 = _slicedToArray(_useState, 2), username = _useState2[0], setUsername = _useState2[1];
+    var _useState3 = (0, _react.useState)(''), _useState4 = _slicedToArray(_useState3, 2), password = _useState4[0], setPassword = _useState4[1];
+    // Send request to server for auth
+    var handleSubmit = function handleSubmit(e) {
+      e.preventDefault();
+      console.log(username, password);
+      props.onLoggedIn(username);
+    };
+    return ['Dark'].map(function (variant, idx) {
+      return (
+        /*#__PURE__*/_react["default"].createElement("div", {
+          "class": "bg-primary"
+        }, /*#__PURE__*/_react["default"].createElement(_Card["default"], {
+          bg: variant.toLowerCase(),
+          key: idx,
+          text: variant.toLowerCase() === 'light' ? 'dark' : 'white',
+          style: {
+            width: '28rem'
+          },
+          className: "justify-content-center text-center mx-auto mt-5"
+        }, /*#__PURE__*/_react["default"].createElement(_Card["default"].Body, null, /*#__PURE__*/_react["default"].createElement("div", {
+          className: "text-align-center"
+        }, /*#__PURE__*/_react["default"].createElement("h3", null, "Welcome Back!")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, null, "Login into your account"), /*#__PURE__*/_react["default"].createElement(_Form["default"], null, /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+          controlId: "validationCustomUsername"
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Row, {
+          className: "align-items-left"
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Username:"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+          hasValidation: true
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
+          required: true,
+          type: "text",
+          value: username,
+          "aria-describedby": "inputGroupPrepend",
+          placeholder: "Enter username",
+          onChange: function onChange(e) {
+            return setUsername(e.target.value);
+          }
+        }))), /*#__PURE__*/_react["default"].createElement(_Form["default"].Row, {
+          className: "align-items-left"
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Check, {
+          label: "Remember me"
+        }))), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+          controlId: "formBasicPassword"
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Row, {
+          className: "align-items-left"
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, {
+          htmlFor: "inputPassword5"
+        }, "Password:"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+          hasValidation: true
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
+          required: true,
+          type: "password",
+          id: "inputPassword5",
+          placeholder: "Enter password",
+          value: password,
+          onChange: function onChange(e) {
+            return setPassword(e.target.value);
+          }
+        })))), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+          variant: "primary float-right mr-5",
+          type: "submit",
+          onClick: handleSubmit
+        }, "Login"), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("p", null, "New to myfavfilmz?"), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+          variant: "primary",
+          size: "sm",
+          block: true,
+          type: "button",
+          onClick: function onClick() {
+            return props.onRegistered(true);
+          }
+        }, "Click here to register!")))))
+      );
+    });
+  }
+  _s2(LoginView, "9FY2cPL9VBDmuhjwpF2ik6flsHs=");
+  _c = LoginView;
+  LoginView.propTypes = {
+    user: _propTypes["default"].shape({
+      Username: _propTypes["default"].string.isRequired,
+      Password: _propTypes["default"].string.isRequired
+    }).isRequired,
+    onClick: _propTypes["default"].func.isRequired
+  };
+  var _c;
+  $RefreshReg$(_c, "LoginView");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+
+},{"react":"3b2NM","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/FormControl":"573gP","react-bootstrap/FormCheck":"6WcKM","react-bootstrap/FormFile":"6mhKG","../../index.scss":"5iJih","react-bootstrap/Card":"1CZWQ","react-bootstrap/CardDeck":"4fiZs","react-bootstrap/CardGroup":"1B9U7","react-bootstrap/CardColumns":"48yv5","react-bootstrap/InputGroup":"3nb5C"}],"5iJih":[function() {},{}],"5iJih":[function() {},{}]},["1j6wU","68WUB","1DVjT"], "1DVjT", "parcelRequire0837")
 
 //# sourceMappingURL=index.02675e63.js.map
