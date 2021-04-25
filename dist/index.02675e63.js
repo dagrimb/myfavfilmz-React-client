@@ -1165,7 +1165,12 @@ try {
       value: function render() {
         return (
           /*#__PURE__*/_react["default"].createElement(_Container["default"], {
-            fluid: true
+            fluid: true,
+            className: "h-100",
+            style: {
+              paddingLeft: 0,
+              paddingRight: 0
+            }
           }, /*#__PURE__*/_react["default"].createElement(_mainView.MainView, null))
         );
       }
@@ -25774,11 +25779,7 @@ try {
         var _this$state = this.state, movies = _this$state.movies, selectedMovie = _this$state.selectedMovie, newUser = _this$state.newUser, user = _this$state.user, registerClicked = _this$state.registerClicked;
         // shortened form of const movies = this.state.movies
         // if no user signed in and button to render RegistrationView is clicked, render RegistrationView
-        if (!user && registerClicked) return (
-          /*#__PURE__*/_react["default"].createElement(_registrationView.RegistrationView, {
-            onRegistered: this.onRegistered
-          })
-        );
+        // if (!user && registerClicked) return <RegistrationView onRegistered={this.onRegistered} />;
         // if no user signed in, render LoginView
         if (!user) return (
           /*#__PURE__*/_react["default"].createElement(_loginView.LoginView, {
@@ -25805,7 +25806,7 @@ try {
           /*#__PURE__*/_react["default"].createElement(_Row["default"], {
             className: "main-view justify-content-md-center mx-3"
           }, /*#__PURE__*/_react["default"].createElement("div", {
-            "class": "w-100"
+            "class": "w-100 h-100"
           }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Navbar, {
             bg: "dark",
             variant: "dark"
@@ -42182,6 +42183,8 @@ try {
   var _FormControl = _interopRequireDefault(require("react-bootstrap/FormControl"));
   var _FormCheck = _interopRequireDefault(require("react-bootstrap/FormCheck"));
   var _FormFile = _interopRequireDefault(require("react-bootstrap/FormFile"));
+  var _Alert = _interopRequireDefault(require("react-bootstrap/Alert"));
+  var _reactBootstrap = require("react-bootstrap");
   var _s2 = $RefreshSig$();
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -42288,7 +42291,9 @@ try {
     return ['Dark'].map(function (variant, idx) {
       return (
         /*#__PURE__*/_react["default"].createElement("div", {
-          "class": "bg-primary"
+          "class": "w-100 h-100"
+        }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Col, {
+          className: "bg-primary w-100 h-100"
         }, /*#__PURE__*/_react["default"].createElement(_Card["default"], {
           bg: variant.toLowerCase(),
           key: idx,
@@ -42296,7 +42301,7 @@ try {
           style: {
             width: '28rem'
           },
-          className: "justify-content-center text-center mx-auto mt-5"
+          className: "justify-content-center text-center mx-auto"
         }, /*#__PURE__*/_react["default"].createElement(_Card["default"].Body, null, /*#__PURE__*/_react["default"].createElement("div", {
           className: "text-align-center"
         }, /*#__PURE__*/_react["default"].createElement("h3", null, "Welcome Back!")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, null, "Login into your account"), /*#__PURE__*/_react["default"].createElement(_Form["default"], null, /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
@@ -42322,14 +42327,11 @@ try {
           controlId: "formBasicPassword"
         }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Row, {
           className: "align-items-left"
-        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, {
-          htmlFor: "inputPassword5"
-        }, "Password:"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Password:"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
           hasValidation: true
         }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
           required: true,
           type: "password",
-          id: "inputPassword5",
           placeholder: "Enter password",
           value: password,
           onChange: function onChange(e) {
@@ -42347,7 +42349,7 @@ try {
           onClick: function onClick() {
             return props.onRegistered(true);
           }
-        }, "Click here to register!")))))
+        }, "Click here to register!"))))))
       );
     });
   }
@@ -42358,7 +42360,7 @@ try {
       Username: _propTypes["default"].string.isRequired,
       Password: _propTypes["default"].string.isRequired
     }).isRequired,
-    onClick: _propTypes["default"].func.isRequired
+    onClick: _propTypes["default"].func
   };
   var _c;
   $RefreshReg$(_c, "LoginView");
@@ -42368,6 +42370,6 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/FormControl":"573gP","react-bootstrap/FormCheck":"6WcKM","react-bootstrap/FormFile":"6mhKG","../../index.scss":"5iJih","react-bootstrap/Card":"1CZWQ","react-bootstrap/CardDeck":"4fiZs","react-bootstrap/CardGroup":"1B9U7","react-bootstrap/CardColumns":"48yv5","react-bootstrap/InputGroup":"3nb5C"}],"5iJih":[function() {},{}],"5iJih":[function() {},{}]},["1j6wU","68WUB","1DVjT"], "1DVjT", "parcelRequire0837")
+},{"react":"3b2NM","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/FormControl":"573gP","react-bootstrap/FormCheck":"6WcKM","react-bootstrap/FormFile":"6mhKG","../../index.scss":"5iJih","react-bootstrap/Card":"1CZWQ","react-bootstrap/CardDeck":"4fiZs","react-bootstrap/CardGroup":"1B9U7","react-bootstrap/CardColumns":"48yv5","react-bootstrap/InputGroup":"3nb5C","react-bootstrap/Alert":"1oIYX","react-bootstrap":"4n7hB"}],"5iJih":[function() {},{}],"5iJih":[function() {},{}]},["1j6wU","68WUB","1DVjT"], "1DVjT", "parcelRequire0837")
 
 //# sourceMappingURL=index.02675e63.js.map
