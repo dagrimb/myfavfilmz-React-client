@@ -34,7 +34,9 @@ export function LoginView(props) {
       'Dark',
     ].map((variant, idx) => (
       <div class="w-100 h-100">
+      
       <Col className="bg-primary w-100 h-100">
+      <p style={{ color: 'white', paddingTop: 15, paddingLeft: 0  }}>myfavfilmz</p>
       <Card
         bg={variant.toLowerCase()}
         key={idx}
