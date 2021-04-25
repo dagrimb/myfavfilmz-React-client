@@ -31808,6 +31808,7 @@ try {
   });
   exports.MovieView = void 0;
   var _react = _interopRequireDefault(require("react"));
+  var _Image = _interopRequireDefault(require("react-bootstrap/Image"));
   var _propTypes = _interopRequireDefault(require("prop-types"));
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -31927,48 +31928,43 @@ try {
           /*#__PURE__*/_react["default"].createElement("div", {
             className: "movie-view"
           }, /*#__PURE__*/_react["default"].createElement("div", {
+            className: "movie-poster",
+            fluid: true
+          }, /*#__PURE__*/_react["default"].createElement("img", {
+            src: movie.ImagePath,
+            height: "5%",
+            width: "10%"
+          })), /*#__PURE__*/_react["default"].createElement("span", {
+            className: "value"
+          }, movie.Genre.Name), /*#__PURE__*/_react["default"].createElement("div", {
+            className: "movie-title"
+          }, /*#__PURE__*/_react["default"].createElement("span", {
+            className: "value"
+          }, movie.Title)), /*#__PURE__*/_react["default"].createElement("div", {
             className: "movie-description"
           }, /*#__PURE__*/_react["default"].createElement("span", {
             className: "label"
-          }, "Description: "), /*#__PURE__*/_react["default"].createElement("span", {
+          }, "Description "), /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
-          }), ")", /*#__PURE__*/_react["default"].createElement("div", {
+          }), /*#__PURE__*/_react["default"].createElement("div", {
             className: "movie-synopsis"
           }, /*#__PURE__*/_react["default"].createElement("span", {
             className: "label"
-          }, "Synopsis: "), /*#__PURE__*/_react["default"].createElement("span", {
+          }), /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
-          }, movie.Description.Synopsis), ")"), /*#__PURE__*/_react["default"].createElement("div", {
+          }, movie.Description.Synopsis)), /*#__PURE__*/_react["default"].createElement("div", {
             className: "movie-synopsis-source"
           }, /*#__PURE__*/_react["default"].createElement("span", {
             className: "label"
           }, "Source: "), /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
           }, movie.Description.Source), ")")), /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-genre"
+            className: "movie-actors"
           }, /*#__PURE__*/_react["default"].createElement("span", {
             className: "label"
-          }, "Genre: "), /*#__PURE__*/_react["default"].createElement("span", {
+          }, "Actors: "), /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
-          }), /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-genre-name"
-          }, /*#__PURE__*/_react["default"].createElement("span", {
-            className: "label"
-          }, "Name: "), /*#__PURE__*/_react["default"].createElement("span", {
-            className: "value"
-          }, movie.Genre.Name)), /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-genre-description"
-          }, /*#__PURE__*/_react["default"].createElement("span", {
-            className: "label"
-          }, "Description: "), /*#__PURE__*/_react["default"].createElement("span", {
-            className: "value"
-          }, movie.Genre.Description)), /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-genre-source"
-          }, /*#__PURE__*/_react["default"].createElement("span", {
-            className: "label"
-          }, "Source: "), /*#__PURE__*/_react["default"].createElement("span", {
-            className: "value"
-          }, movie.Genre.Source))), /*#__PURE__*/_react["default"].createElement("div", {
+          }, movie.Actors)), /*#__PURE__*/_react["default"].createElement("div", {
             className: "movie-director"
           }, /*#__PURE__*/_react["default"].createElement("span", {
             className: "label"
@@ -31999,46 +31995,48 @@ try {
           }, "Source: "), /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
           }, movie.Director.Source))), /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-actors"
+            className: "movie-genre"
           }, /*#__PURE__*/_react["default"].createElement("span", {
             className: "label"
-          }, "Actors: "), /*#__PURE__*/_react["default"].createElement("span", {
+          }, "Genre: "), /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
-          }, movie.Actors)), /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-id"
+          }), /*#__PURE__*/_react["default"].createElement("div", {
+            className: "movie-genre-name"
           }, /*#__PURE__*/_react["default"].createElement("span", {
             className: "label"
-          }, "ID: "), /*#__PURE__*/_react["default"].createElement("span", {
+          }, "Name: "), /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
-          }, movie._id)), /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-title"
+          }, movie.Genre.Name)), /*#__PURE__*/_react["default"].createElement("div", {
+            className: "movie-genre-description"
           }, /*#__PURE__*/_react["default"].createElement("span", {
             className: "label"
-          }, "Title: "), /*#__PURE__*/_react["default"].createElement("span", {
+          }, "Description: "), /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
-          }, movie.Title)), /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-poster"
-          }, /*#__PURE__*/_react["default"].createElement("img", {
-            src: movie.ImagePath
-          })), /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-featured"
+          }, movie.Genre.Description)), /*#__PURE__*/_react["default"].createElement("div", {
+            className: "movie-genre-source"
           }, /*#__PURE__*/_react["default"].createElement("span", {
             className: "label"
-          }, "Featured: "), /*#__PURE__*/_react["default"].createElement("span", {
+          }, "Source: "), /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
-          }, movie.Featured)), /*#__PURE__*/_react["default"].createElement("div", {
+          }, movie.Genre.Source))), /*#__PURE__*/_react["default"].createElement("div", {
+            className: "movie-year"
+          }, /*#__PURE__*/_react["default"].createElement("span", {
+            className: "label"
+          }, "Year Released: "), /*#__PURE__*/_react["default"].createElement("span", {
+            className: "value"
+          }, movie.Year)), /*#__PURE__*/_react["default"].createElement("div", {
             className: "movie-score"
           }, /*#__PURE__*/_react["default"].createElement("span", {
             className: "label"
           }, "Rotten Tomatoes score: "), /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
           }, movie.Rotten_Tomatoes_score)), /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-year"
+            className: "movie-id"
           }, /*#__PURE__*/_react["default"].createElement("span", {
             className: "label"
-          }, "Year Released: "), /*#__PURE__*/_react["default"].createElement("span", {
+          }, "ID: "), /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
-          }, movie.Year)), /*#__PURE__*/_react["default"].createElement("button", {
+          }, movie._id)), /*#__PURE__*/_react["default"].createElement("button", {
             onClick: function onClick() {
               onBackClick(null);
             }
@@ -32082,7 +32080,83 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"6ruyx":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/Image":"5qrP5"}],"5qrP5":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = exports.propTypes = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var propTypes = {
+  /**
+   * @default 'img'
+   */
+  bsPrefix: _propTypes.default.string,
+
+  /**
+   * Sets image as fluid image.
+   */
+  fluid: _propTypes.default.bool,
+
+  /**
+   * Sets image shape as rounded.
+   */
+  rounded: _propTypes.default.bool,
+
+  /**
+   * Sets image shape as circle.
+   */
+  roundedCircle: _propTypes.default.bool,
+
+  /**
+   * Sets image shape as thumbnail.
+   */
+  thumbnail: _propTypes.default.bool
+};
+exports.propTypes = propTypes;
+var defaultProps = {
+  fluid: false,
+  rounded: false,
+  roundedCircle: false,
+  thumbnail: false
+};
+
+var Image = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      className = _ref.className,
+      fluid = _ref.fluid,
+      rounded = _ref.rounded,
+      roundedCircle = _ref.roundedCircle,
+      thumbnail = _ref.thumbnail,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "fluid", "rounded", "roundedCircle", "thumbnail"]);
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'img');
+  var classes = (0, _classnames.default)(fluid && bsPrefix + "-fluid", rounded && "rounded", roundedCircle && "rounded-circle", thumbnail && bsPrefix + "-thumbnail");
+  return /*#__PURE__*/_react.default.createElement("img", (0, _extends2.default)({
+    // eslint-disable-line jsx-a11y/alt-text
+    ref: ref
+  }, props, {
+    className: (0, _classnames.default)(className, classes)
+  }));
+});
+
+Image.displayName = 'Image';
+Image.defaultProps = defaultProps;
+var _default = Image;
+exports.default = _default;
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","prop-types":"4dfy5","./ThemeProvider":"4rz1S"}],"6ruyx":[function(require,module,exports) {
 "use strict";
 var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
@@ -38513,83 +38587,7 @@ DropdownButton.propTypes = propTypes;
 var _default = DropdownButton;
 exports.default = _default;
 module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireWildcard":"28En5","@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","react":"3b2NM","prop-types":"4dfy5","./Dropdown":"27PdI","./DropdownToggle":"3wlzX","./DropdownMenu":"2Ipap"}],"5qrP5":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = exports.propTypes = void 0;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _react = _interopRequireDefault(require("react"));
-
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
-var _ThemeProvider = require("./ThemeProvider");
-
-var propTypes = {
-  /**
-   * @default 'img'
-   */
-  bsPrefix: _propTypes.default.string,
-
-  /**
-   * Sets image as fluid image.
-   */
-  fluid: _propTypes.default.bool,
-
-  /**
-   * Sets image shape as rounded.
-   */
-  rounded: _propTypes.default.bool,
-
-  /**
-   * Sets image shape as circle.
-   */
-  roundedCircle: _propTypes.default.bool,
-
-  /**
-   * Sets image shape as thumbnail.
-   */
-  thumbnail: _propTypes.default.bool
-};
-exports.propTypes = propTypes;
-var defaultProps = {
-  fluid: false,
-  rounded: false,
-  roundedCircle: false,
-  thumbnail: false
-};
-
-var Image = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
-  var bsPrefix = _ref.bsPrefix,
-      className = _ref.className,
-      fluid = _ref.fluid,
-      rounded = _ref.rounded,
-      roundedCircle = _ref.roundedCircle,
-      thumbnail = _ref.thumbnail,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "fluid", "rounded", "roundedCircle", "thumbnail"]);
-  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'img');
-  var classes = (0, _classnames.default)(fluid && bsPrefix + "-fluid", rounded && "rounded", roundedCircle && "rounded-circle", thumbnail && bsPrefix + "-thumbnail");
-  return /*#__PURE__*/_react.default.createElement("img", (0, _extends2.default)({
-    // eslint-disable-line jsx-a11y/alt-text
-    ref: ref
-  }, props, {
-    className: (0, _classnames.default)(className, classes)
-  }));
-});
-
-Image.displayName = 'Image';
-Image.defaultProps = defaultProps;
-var _default = Image;
-exports.default = _default;
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","prop-types":"4dfy5","./ThemeProvider":"4rz1S"}],"2ZDTl":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireWildcard":"28En5","@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","react":"3b2NM","prop-types":"4dfy5","./Dropdown":"27PdI","./DropdownToggle":"3wlzX","./DropdownMenu":"2Ipap"}],"2ZDTl":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
