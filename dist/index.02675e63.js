@@ -25779,7 +25779,11 @@ try {
         var _this$state = this.state, movies = _this$state.movies, selectedMovie = _this$state.selectedMovie, newUser = _this$state.newUser, user = _this$state.user, registerClicked = _this$state.registerClicked;
         // shortened form of const movies = this.state.movies
         // if no user signed in and button to render RegistrationView is clicked, render RegistrationView
-        // if (!user && registerClicked) return <RegistrationView onRegistered={this.onRegistered} />;
+        if (!user && registerClicked) return (
+          /*#__PURE__*/_react["default"].createElement(_registrationView.RegistrationView, {
+            onRegistered: this.onRegistered
+          })
+        );
         // if no user signed in, render LoginView
         if (!user) return (
           /*#__PURE__*/_react["default"].createElement(_loginView.LoginView, {
@@ -42019,7 +42023,7 @@ try {
     return ['Dark'].map(function (variant, idx) {
       return (
         /*#__PURE__*/_react["default"].createElement("div", {
-          "class": "bg-primary"
+          "class": "bg-primary h-100"
         }, /*#__PURE__*/_react["default"].createElement(_Card["default"], {
           bg: variant.toLowerCase(),
           key: idx,
@@ -42027,7 +42031,7 @@ try {
           style: {
             width: '28rem'
           },
-          className: "justify-content-center text-center mx-auto mt-5"
+          className: "justify-content-center text-center mx-auto"
         }, /*#__PURE__*/_react["default"].createElement(_Card["default"].Body, null, /*#__PURE__*/_react["default"].createElement("div", {
           className: "text-align-center"
         }, /*#__PURE__*/_react["default"].createElement("h3", null, "Great to meet you!")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, null, "Creat an account"), /*#__PURE__*/_react["default"].createElement(_Form["default"], null, /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, {
