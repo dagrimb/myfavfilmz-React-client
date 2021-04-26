@@ -42,13 +42,13 @@ export function LoginView(props) {
         key={idx}
         text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
         style={{ width: '28rem' }}
-        className="justify-content-center text-center mx-auto"
+        className="justify-content-center text-center mx-auto my-5"
       >
       <Card.Body>
         <div className="text-align-center">
           <h3>Welcome Back!</h3>
         </div>
-       <Form.Text>
+       <Form.Text className="mb-4">
          Login into your account
        </Form.Text>
     <Form>
@@ -58,6 +58,7 @@ export function LoginView(props) {
           <InputGroup hasValidation>
             <Form.Control 
               required
+              className="mb-2"
               type="text" 
               value={username}
               aria-describedby="inputGroupPrepend"
@@ -84,9 +85,9 @@ export function LoginView(props) {
         </InputGroup>
         </Form.Row>
       </Form.Group>
-      <Button variant="primary float-right mr-5" type="submit" onClick={handleSubmit}>
+      <Button variant="primary my-4" type="submit" onClick={handleSubmit}>
         Login
-      </Button><br /><br /><br />  
+      </Button>
       <p>New to myfavfilmz?</p>
       <Button variant="primary" size="sm" block type="button" onClick={() => props.onRegistered(true)}>Click here to register!</Button>
     </Form>
