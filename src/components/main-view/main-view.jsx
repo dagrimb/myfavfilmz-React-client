@@ -10,11 +10,14 @@ import Col from 'react-bootstrap/Col';
 import { RegistrationView } from '../registration-view/registration-view';
 //import LoginView into file
 import { LoginView } from '../login-view/login-view';
+
+
 import { MovieCard } from '../movie-card/movie-card';
 //import MovieView into file
 import { MovieView } from '../movie-view/movie-view';
 //import Button into file
-import { Button } from '../button/button';
+//import { Button } from '../button/button';
+import Button from 'react-bootstrap/Button';
 import { Navbar,Nav,NavDropdown,Form,FormControl} from 'react-bootstrap';
 
 //import RegistrationView into file
@@ -75,9 +78,9 @@ export class MainView extends React.Component {
   render() {
     const  { movies, selectedMovie, newUser, user, registerClicked } = this.state; // shortened form of const movies = this.state.movies
     //if no user signed in and button to render RegistrationView is clicked, render RegistrationView
-    if (!user && registerClicked) return <RegistrationView onRegistered={this.onRegistered} />;
+    //if (!user && registerClicked) return <RegistrationView onRegistered={this.onRegistered} />;
     //if no user signed in, render LoginView
-    if (!user) return <LoginView onRegistered={this.onRegistered} />;
+    //if (!user) return <LoginView onRegistered={this.onRegistered} />;
     //if not clicked, access selectedMovie state (passing a function as a prop called "onMovieClick")
     if (selectedMovie) return <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />;
     //if no movies, display message stating that the list is empty
@@ -85,18 +88,19 @@ export class MainView extends React.Component {
     //else, display list of movie cards
     return (
 
-      <Row className="main-view justify-content-md-center mx-3">
-        <div class="w-100 h-100">
-          <Navbar bg="dark" variant="dark">
-            <Navbar.Brand href="#home">myfavfilmz</Navbar.Brand>
+      <Row className="main-view justify-content-md-center ml-0 h-100">
+        <div className="w-100 h-100">
+          <Navbar bg="primary" variant="dark" style={{paddingLeft: 0, paddingRight: 0 }}>
+            <Navbar.Brand className="ml-2" href="#home">myfavfilmz</Navbar.Brand>
             <Nav className="mr-auto">
               <Nav.Link href="#home">Account</Nav.Link>
               <Nav.Link href="#features">Movies</Nav.Link>
               <Nav.Link href="#pricing">About</Nav.Link>
             </Nav>
             <Form inline>
-              <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-              <Button type="button" class="btn btn-outline-info" size="lg">Search</Button>
+              <FormControl type="text" placeholder="Search" className="mr-3" />
+              <Button variant="outline-light" className="mr-5">Search</Button>
+
             </Form>
           </Navbar>
         </div>
