@@ -25618,7 +25618,7 @@ try {
   var _loginView = require("../login-view/login-view");
   var _movieCard = require("../movie-card/movie-card");
   var _movieView = require("../movie-view/movie-view");
-  var _button = require("../button/button");
+  var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
   var _reactBootstrap = require("react-bootstrap");
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -25779,17 +25779,9 @@ try {
         var _this$state = this.state, movies = _this$state.movies, selectedMovie = _this$state.selectedMovie, newUser = _this$state.newUser, user = _this$state.user, registerClicked = _this$state.registerClicked;
         // shortened form of const movies = this.state.movies
         // if no user signed in and button to render RegistrationView is clicked, render RegistrationView
-        if (!user && registerClicked) return (
-          /*#__PURE__*/_react["default"].createElement(_registrationView.RegistrationView, {
-            onRegistered: this.onRegistered
-          })
-        );
+        // if (!user && registerClicked) return <RegistrationView onRegistered={this.onRegistered} />;
         // if no user signed in, render LoginView
-        if (!user) return (
-          /*#__PURE__*/_react["default"].createElement(_loginView.LoginView, {
-            onRegistered: this.onRegistered
-          })
-        );
+        // if (!user) return <LoginView onRegistered={this.onRegistered} />;
         // if not clicked, access selectedMovie state (passing a function as a prop called "onMovieClick")
         if (selectedMovie) return (
           /*#__PURE__*/_react["default"].createElement(_movieView.MovieView, {
@@ -25808,13 +25800,18 @@ try {
         // else, display list of movie cards
         return (
           /*#__PURE__*/_react["default"].createElement(_Row["default"], {
-            className: "main-view justify-content-md-center mx-3"
+            className: "main-view justify-content-md-center ml-0 h-100"
           }, /*#__PURE__*/_react["default"].createElement("div", {
-            "class": "w-100 h-100"
+            className: "w-100 h-100"
           }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Navbar, {
-            bg: "dark",
-            variant: "dark"
+            bg: "primary",
+            variant: "dark",
+            style: {
+              paddingLeft: 0,
+              paddingRight: 0
+            }
           }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Navbar.Brand, {
+            className: "ml-2",
             href: "#home"
           }, "myfavfilmz"), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Nav, {
             className: "mr-auto"
@@ -25829,11 +25826,10 @@ try {
           }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.FormControl, {
             type: "text",
             placeholder: "Search",
-            className: "mr-sm-2"
-          }), /*#__PURE__*/_react["default"].createElement(_button.Button, {
-            type: "button",
-            "class": "btn btn-outline-info",
-            size: "lg"
+            className: "mr-3"
+          }), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+            variant: "outline-light",
+            className: "mr-5"
           }, "Search")))), selectedMovie ? /*#__PURE__*/_react["default"].createElement(_Col["default"], {
             md: 8
           }, /*#__PURE__*/_react["default"].createElement(_movieView.MovieView, {
@@ -25867,7 +25863,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","axios":"7rA65","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","../button/button":"6ruyx","../registration-view/registration-view":"7gvH2","../login-view/login-view":"6M7fu","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap":"4n7hB"}],"7rA65":[function(require,module,exports) {
+},{"react":"3b2NM","axios":"7rA65","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","../registration-view/registration-view":"7gvH2","../login-view/login-view":"6M7fu","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap":"4n7hB","react-bootstrap/Button":"1ru0l"}],"7rA65":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 },{"./lib/axios":"4qfhW"}],"4qfhW":[function(require,module,exports) {
 'use strict';
