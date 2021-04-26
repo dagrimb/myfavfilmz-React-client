@@ -52,16 +52,16 @@ export function RegistrationView(props) {
          Creat an account
        </Form.Text>
     <Form>
-      <Form.Text className="text-muted">
+      <Form.Text className="text-muted mb-4">
         We will never share your username, password, email or birthdate with a third-party.
       </Form.Text>
 
         <Form.Group as={Col} controlId="validationCustomUsername">
-          <Form.Label>Username</Form.Label>
+          <Form.Label className="float-left">Username</Form.Label>
           <InputGroup className="mb-3" hasValidation>
             <Form.Control
               type="text" 
-              placeholder="Username" 
+              placeholder="Enter your username" 
               aria-describedby="inputGroupPrepend"
               required
               value={username}
@@ -71,11 +71,11 @@ export function RegistrationView(props) {
         </Form.Group>
 
         <Form.Group as={Col} controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label className="float-left">Email address</Form.Label>
           <InputGroup hasValidation></InputGroup>
             <Form.Control 
               type="email" 
-              placeholder="Enter email"
+              placeholder="Enter your email address"
               value={email}
               aria-describedby="inputGroupPrepend"
               onChange={e => setEmail(e.target.value)}  
@@ -83,7 +83,7 @@ export function RegistrationView(props) {
         </Form.Group>
 
         <Form.Group as={Col} controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label className="float-left">Password</Form.Label>
           <InputGroup hasValidation>
             <Form.Control 
               required
@@ -115,7 +115,7 @@ export function RegistrationView(props) {
         </Form.Group>
 
         <Form.Group as={Col} controlId="validationCustom01">
-          <Form.Label>Birthday</Form.Label>
+          <Form.Label className="float-left">Birthday</Form.Label>
           <InputGroup hasValidation></InputGroup>
             <Form.Control
               required
@@ -132,7 +132,7 @@ export function RegistrationView(props) {
           <Form.Check type="checkbox" label="I agree to the myfavfilmz Terms of Serivce" />
         </Form.Group>
       
-        <Button variant="primary float-right mr-5" type="submit" onClick={handleSubmit}>Register</Button><br /><br /><br />
+        <Button variant="primary mt-1 h-5" type="submit" onClick={handleSubmit}>Register</Button><br /><br /><br />
           <p>Already a member?</p>
         
           <Button variant="primary" size="sm" block type="button" onClick={() => props.onRegistered(false)}>Click here to log in!</Button>
