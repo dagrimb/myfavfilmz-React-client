@@ -42041,16 +42041,18 @@ try {
         }, /*#__PURE__*/_react["default"].createElement(_Card["default"].Body, null, /*#__PURE__*/_react["default"].createElement("div", {
           className: "text-align-center"
         }, /*#__PURE__*/_react["default"].createElement("h3", null, "Great to meet you!")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, null, "Creat an account"), /*#__PURE__*/_react["default"].createElement(_Form["default"], null, /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, {
-          className: "text-muted"
+          className: "text-muted mb-4"
         }, "We will never share your username, password, email or birthdate with a third-party."), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
           as: _Col["default"],
           controlId: "validationCustomUsername"
-        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Username"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, {
+          className: "float-left"
+        }, "Username"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
           className: "mb-3",
           hasValidation: true
         }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
           type: "text",
-          placeholder: "Username",
+          placeholder: "Enter your username",
           "aria-describedby": "inputGroupPrepend",
           required: true,
           value: username,
@@ -42060,11 +42062,13 @@ try {
         }))), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
           as: _Col["default"],
           controlId: "formBasicEmail"
-        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Email address"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, {
+          className: "float-left"
+        }, "Email address"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
           hasValidation: true
         }), /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
           type: "email",
-          placeholder: "Enter email",
+          placeholder: "Enter your email address",
           value: email,
           "aria-describedby": "inputGroupPrepend",
           onChange: function onChange(e) {
@@ -42073,7 +42077,9 @@ try {
         })), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
           as: _Col["default"],
           controlId: "formBasicPassword"
-        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Password"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, {
+          className: "float-left"
+        }, "Password"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
           hasValidation: true
         }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
           required: true,
@@ -42104,7 +42110,9 @@ try {
         }))), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
           as: _Col["default"],
           controlId: "validationCustom01"
-        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Birthday"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
+        }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, {
+          className: "float-left"
+        }, "Birthday"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
           hasValidation: true
         }), /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
           required: true,
@@ -42121,7 +42129,7 @@ try {
           type: "checkbox",
           label: "I agree to the myfavfilmz Terms of Serivce"
         })), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
-          variant: "primary float-right mr-5",
+          variant: "primary mt-1 h-5",
           type: "submit",
           onClick: handleSubmit
         }, "Register"), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("p", null, "Already a member?"), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
@@ -42317,10 +42325,12 @@ try {
           style: {
             width: '28rem'
           },
-          className: "justify-content-center text-center mx-auto"
+          className: "justify-content-center text-center mx-auto my-5"
         }, /*#__PURE__*/_react["default"].createElement(_Card["default"].Body, null, /*#__PURE__*/_react["default"].createElement("div", {
           className: "text-align-center"
-        }, /*#__PURE__*/_react["default"].createElement("h3", null, "Welcome Back!")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, null, "Login into your account"), /*#__PURE__*/_react["default"].createElement(_Form["default"], null, /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
+        }, /*#__PURE__*/_react["default"].createElement("h3", null, "Welcome Back!")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, {
+          className: "mb-4"
+        }, "Login into your account"), /*#__PURE__*/_react["default"].createElement(_Form["default"], null, /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
           controlId: "validationCustomUsername"
         }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Row, {
           className: "align-items-left"
@@ -42328,6 +42338,7 @@ try {
           hasValidation: true
         }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
           required: true,
+          className: "mb-2",
           type: "text",
           value: username,
           "aria-describedby": "inputGroupPrepend",
@@ -42354,10 +42365,10 @@ try {
             return setPassword(e.target.value);
           }
         })))), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
-          variant: "primary float-right mr-5",
+          variant: "primary my-4",
           type: "submit",
           onClick: handleSubmit
-        }, "Login"), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("p", null, "New to myfavfilmz?"), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+        }, "Login"), /*#__PURE__*/_react["default"].createElement("p", null, "New to myfavfilmz?"), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
           variant: "primary",
           size: "sm",
           block: true,
