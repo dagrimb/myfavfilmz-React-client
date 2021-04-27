@@ -16,11 +16,9 @@ export class MovieCard extends React.Component {
     const { movie, onClick } = this.props;
 
     return (
-      <div className="bg-dark">
-     
       <CardDeck>
-        <Card style={{ width: '18rem'}}>
-          <Card.Body>
+        <Card style={{ width: '18rem', color: 'white', background: '#292b2c'}}>
+          <Card.Body class="bg-dark h-100">
             <Card.Title>{movie.Title}</Card.Title>
             <Card.Img variant="top mb-3 w-75" src={movie.ImagePath} />
             <Card.Text>{movie.Description.Synopsis}</Card.Text>
@@ -28,7 +26,7 @@ export class MovieCard extends React.Component {
           </Card.Body>
         </Card>
       </CardDeck>
-      </div>
+
     );
   }
 }
