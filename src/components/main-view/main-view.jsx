@@ -89,7 +89,7 @@ export class MainView extends React.Component {
     return (
 
       <Row className="main-view justify-content-md-center ml-0 h-100">
-        <div className="w-100 h-100">
+        <div className="w-100">
           <Navbar bg="primary" variant="dark" style={{paddingLeft: 0, paddingRight: 0 }}>
             <Navbar.Brand className="ml-2" href="#home">myfavfilmz</Navbar.Brand>
             <Nav className="mr-auto">
@@ -104,6 +104,7 @@ export class MainView extends React.Component {
             </Form>
           </Navbar>
         </div>
+        <div class="w-100 bg-dark" display="inline-block">
         {selectedMovie
           ? (
             <Col md={8}>
@@ -111,11 +112,12 @@ export class MainView extends React.Component {
             </Col>
           )
           : movies.map(movie => (
-            <Col variant="h-25" md={4} key={movie._id}>
+            <Col class="bg-dark h-100 h-25" md={2} key={movie._id}>
               <MovieCard movie={movie} onClick={movie => this.onMovieClick(movie)}/>
             </Col>
           ))
         }
+        </div>
       </Row>
     );
   }
