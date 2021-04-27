@@ -25802,7 +25802,7 @@ try {
           /*#__PURE__*/_react["default"].createElement(_Row["default"], {
             className: "main-view justify-content-md-center ml-0 h-100"
           }, /*#__PURE__*/_react["default"].createElement("div", {
-            className: "w-100 h-100"
+            className: "w-100"
           }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Navbar, {
             bg: "primary",
             variant: "dark",
@@ -25830,7 +25830,10 @@ try {
           }), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
             variant: "outline-light",
             className: "mr-5"
-          }, "Search")))), selectedMovie ? /*#__PURE__*/_react["default"].createElement(_Col["default"], {
+          }, "Search")))), /*#__PURE__*/_react["default"].createElement("div", {
+            "class": "w-100 bg-dark",
+            display: "inline-block"
+          }, selectedMovie ? /*#__PURE__*/_react["default"].createElement(_Col["default"], {
             md: 8
           }, /*#__PURE__*/_react["default"].createElement(_movieView.MovieView, {
             movie: selectedMovie,
@@ -25840,8 +25843,8 @@ try {
           })) : movies.map(function (movie) {
             return (
               /*#__PURE__*/_react["default"].createElement(_Col["default"], {
-                variant: "h-25",
-                md: 4,
+                "class": "bg-dark h-100 h-25",
+                md: 2,
                 key: movie._id
               }, /*#__PURE__*/_react["default"].createElement(_movieCard.MovieCard, {
                 movie: movie,
@@ -25850,7 +25853,7 @@ try {
                 }
               }))
             );
-          }))
+          })))
         );
       }
     }]);
@@ -27865,13 +27868,15 @@ try {
       value: function render() {
         var _this$props = this.props, movie = _this$props.movie, _onClick = _this$props.onClick;
         return (
-          /*#__PURE__*/_react["default"].createElement("div", {
-            className: "bg-dark"
-          }, /*#__PURE__*/_react["default"].createElement(_CardDeck["default"], null, /*#__PURE__*/_react["default"].createElement(_Card["default"], {
+          /*#__PURE__*/_react["default"].createElement(_CardDeck["default"], null, /*#__PURE__*/_react["default"].createElement(_Card["default"], {
             style: {
-              width: '18rem'
+              width: '18rem',
+              color: 'white',
+              background: '#292b2c'
             }
-          }, /*#__PURE__*/_react["default"].createElement(_Card["default"].Body, null, /*#__PURE__*/_react["default"].createElement(_Card["default"].Title, null, movie.Title), /*#__PURE__*/_react["default"].createElement(_Card["default"].Img, {
+          }, /*#__PURE__*/_react["default"].createElement(_Card["default"].Body, {
+            "class": "bg-dark h-100"
+          }, /*#__PURE__*/_react["default"].createElement(_Card["default"].Title, null, movie.Title), /*#__PURE__*/_react["default"].createElement(_Card["default"].Img, {
             variant: "top mb-3 w-75",
             src: movie.ImagePath
           }), /*#__PURE__*/_react["default"].createElement(_Card["default"].Text, null, movie.Description.Synopsis), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
@@ -27879,7 +27884,7 @@ try {
             onClick: function onClick() {
               return _onClick(movie);
             }
-          }, "Read More")))))
+          }, "Read More"))))
         );
       }
     }]);
