@@ -31849,7 +31849,7 @@ try {
   var _Col = _interopRequireDefault(require("react-bootstrap/Col"));
   var _propTypes = _interopRequireDefault(require("prop-types"));
   var _reactBootstrap = require("react-bootstrap");
-  var _button = require("../button/button");
+  var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
       "default": obj
@@ -31967,12 +31967,19 @@ try {
         return (
           /*#__PURE__*/_react["default"].createElement("div", {
             className: "movie-view"
-          }, /*#__PURE__*/_react["default"].createElement(_Row["default"], null, /*#__PURE__*/_react["default"].createElement("div", {
-            "class": "w-100"
+          }, /*#__PURE__*/_react["default"].createElement(_Row["default"], {
+            className: "main-view justify-content-md-center ml-0 h-100"
+          }, /*#__PURE__*/_react["default"].createElement("div", {
+            className: "w-100"
           }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Navbar, {
-            bg: "dark",
-            variant: "dark"
+            bg: "primary",
+            variant: "dark",
+            style: {
+              paddingLeft: 0,
+              paddingRight: 0
+            }
           }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Navbar.Brand, {
+            className: "ml-2",
             href: "#home"
           }, "myfavfilmz"), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Nav, {
             className: "mr-auto"
@@ -31987,15 +31994,20 @@ try {
           }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.FormControl, {
             type: "text",
             placeholder: "Search",
-            className: "mr-sm-2"
-          }), /*#__PURE__*/_react["default"].createElement(_button.Button, {
-            type: "button",
-            "class": "btn btn-outline-info",
-            size: "lg"
+            className: "mr-3"
+          }), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+            variant: "outline-light",
+            className: "mr-5"
           }, "Search"))))), /*#__PURE__*/_react["default"].createElement(_Col["default"], {
-            className: "justify-content-center text-center mx-auto mt-5"
+            className: "pt-5 bg-dark",
+            style: {
+              height: '100%',
+              width: '100%',
+              color: 'white',
+              background: '#292b2c'
+            }
           }, /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-poster mb-4",
+            className: "movie-poster mb-4 justify-content-center text-center mx-auto",
             fluid: true
           }, /*#__PURE__*/_react["default"].createElement("img", {
             src: movie.ImagePath,
@@ -32004,9 +32016,13 @@ try {
           })), /*#__PURE__*/_react["default"].createElement("div", {
             "class": "mx-auto w-50"
           }, /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-title"
-          }, /*#__PURE__*/_react["default"].createElement("span", {
-            className: "value"
+            className: "movie-title bg-dark h-100 mx-2 justify-content-center text-center mx-auto"
+          }, /*#__PURE__*/_react["default"].createElement("h5", {
+            className: "value",
+            style: {
+              marginTop: 25,
+              paddingRight: 0
+            }
           }, movie.Title)), /*#__PURE__*/_react["default"].createElement("div", {
             className: "movie-description"
           }, /*#__PURE__*/_react["default"].createElement("span", {
@@ -32103,7 +32119,8 @@ try {
             className: "label"
           }, "ID: "), /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
-          }, movie._id)), /*#__PURE__*/_react["default"].createElement("button", {
+          }, movie._id)), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+            variant: "primary",
             onClick: function onClick() {
               onBackClick(null);
             }
@@ -32147,7 +32164,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/Image":"5qrP5","react-bootstrap/Row":"3fzwD","react-bootstrap":"4n7hB","../button/button":"6ruyx","react-bootstrap/Col":"2D0r8"}],"5qrP5":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/Image":"5qrP5","react-bootstrap/Row":"3fzwD","react-bootstrap":"4n7hB","react-bootstrap/Col":"2D0r8","react-bootstrap/Button":"1ru0l"}],"5qrP5":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -41866,42 +41883,7 @@ Tooltip.displayName = 'Tooltip';
 var _default = Tooltip;
 exports.default = _default;
 module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","prop-types-extra/lib/isRequiredForA11y":"4XrEc","./ThemeProvider":"4rz1S"}],"6ruyx":[function(require,module,exports) {
-"use strict";
-var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-helpers.prelude(module);
-try {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.Button = Button;
-  var _react = _interopRequireDefault(require("react"));
-  require("./button.scss");
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-      "default": obj
-    };
-  }
-  function Button(_ref) {
-    var label = _ref.label;
-    return (
-      /*#__PURE__*/_react["default"].createElement("button", {
-        className: "toggle-button"
-      }, label)
-    );
-  }
-  _c = Button;
-  var _c;
-  $RefreshReg$(_c, "Button");
-  helpers.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-
-},{"react":"3b2NM","./button.scss":"579qr","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"579qr":[function() {},{}],"7gvH2":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","prop-types-extra/lib/isRequiredForA11y":"4XrEc","./ThemeProvider":"4rz1S"}],"7gvH2":[function(require,module,exports) {
 "use strict";
 var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
