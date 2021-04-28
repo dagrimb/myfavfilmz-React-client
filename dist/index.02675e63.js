@@ -32015,12 +32015,12 @@ try {
             height: "5%",
             width: "20%"
           })), /*#__PURE__*/_react["default"].createElement("div", {
-            "class": "mx-auto",
+            "class": "justify-content-center text-center mx-auto",
             style: {
               height: '100%'
             }
           }, /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-title bg-dark h-100 mx-2 justify-content-center text-center mx-auto"
+            className: "movie-title bg-dark h-100"
           }, /*#__PURE__*/_react["default"].createElement("h5", {
             className: "value",
             style: {
@@ -32033,13 +32033,10 @@ try {
             className: "label"
           }, "Synopsis: "), /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
-          }, movie.Description.Synopsis), /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-synopsis-source"
-          }, /*#__PURE__*/_react["default"].createElement("span", {
-            className: "label"
-          }, "Source: "), /*#__PURE__*/_react["default"].createElement("span", {
-            className: "value"
-          }, movie.Description.Source), ")")), /*#__PURE__*/_react["default"].createElement("div", {
+          }, movie.Description.Synopsis, " "), /*#__PURE__*/_react["default"].createElement("a", {
+            className: "label",
+            href: movie.Description.Source
+          }, "(source)")), /*#__PURE__*/_react["default"].createElement("div", {
             className: "movie-actors"
           }, /*#__PURE__*/_react["default"].createElement("span", {
             className: "label"
