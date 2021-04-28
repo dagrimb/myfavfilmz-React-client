@@ -59,10 +59,6 @@ export class MovieView extends React.Component {
                 <span className="value">{movie.Description.Synopsis} </span> 
                 <a className="label" href={movie.Description.Source}>(source)</a>
             </div>
-            <div className="movie-actors">
-              <span className="label">Actors: </span>
-              <span className="value">{movie.Actors}</span>
-            </div>
             <div className="movie-director">
               <span className="label">Director: </span>
               <span className="value"></span>
