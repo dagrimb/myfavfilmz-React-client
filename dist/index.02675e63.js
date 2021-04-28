@@ -32001,6 +32001,7 @@ try {
           }, "Search"))))), /*#__PURE__*/_react["default"].createElement(_Col["default"], {
             className: "pt-5 bg-dark",
             style: {
+              paddingBottom: 450,
               height: '100%',
               width: '100%',
               color: 'white',
@@ -32014,7 +32015,10 @@ try {
             height: "5%",
             width: "20%"
           })), /*#__PURE__*/_react["default"].createElement("div", {
-            "class": "mx-auto w-50"
+            "class": "mx-auto",
+            style: {
+              height: '100%'
+            }
           }, /*#__PURE__*/_react["default"].createElement("div", {
             className: "movie-title bg-dark h-100 mx-2 justify-content-center text-center mx-auto"
           }, /*#__PURE__*/_react["default"].createElement("h5", {
@@ -32027,15 +32031,9 @@ try {
             className: "movie-description"
           }, /*#__PURE__*/_react["default"].createElement("span", {
             className: "label"
-          }, "Description "), /*#__PURE__*/_react["default"].createElement("span", {
+          }, "Synopsis: "), /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
-          }), /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-synopsis"
-          }, /*#__PURE__*/_react["default"].createElement("span", {
-            className: "label"
-          }), /*#__PURE__*/_react["default"].createElement("span", {
-            className: "value"
-          }, movie.Description.Synopsis)), /*#__PURE__*/_react["default"].createElement("div", {
+          }, movie.Description.Synopsis), /*#__PURE__*/_react["default"].createElement("div", {
             className: "movie-synopsis-source"
           }, /*#__PURE__*/_react["default"].createElement("span", {
             className: "label"
@@ -32164,83 +32162,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/Image":"5qrP5","react-bootstrap/Row":"3fzwD","react-bootstrap":"4n7hB","react-bootstrap/Col":"2D0r8","react-bootstrap/Button":"1ru0l"}],"5qrP5":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = exports.propTypes = void 0;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _react = _interopRequireDefault(require("react"));
-
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
-var _ThemeProvider = require("./ThemeProvider");
-
-var propTypes = {
-  /**
-   * @default 'img'
-   */
-  bsPrefix: _propTypes.default.string,
-
-  /**
-   * Sets image as fluid image.
-   */
-  fluid: _propTypes.default.bool,
-
-  /**
-   * Sets image shape as rounded.
-   */
-  rounded: _propTypes.default.bool,
-
-  /**
-   * Sets image shape as circle.
-   */
-  roundedCircle: _propTypes.default.bool,
-
-  /**
-   * Sets image shape as thumbnail.
-   */
-  thumbnail: _propTypes.default.bool
-};
-exports.propTypes = propTypes;
-var defaultProps = {
-  fluid: false,
-  rounded: false,
-  roundedCircle: false,
-  thumbnail: false
-};
-
-var Image = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
-  var bsPrefix = _ref.bsPrefix,
-      className = _ref.className,
-      fluid = _ref.fluid,
-      rounded = _ref.rounded,
-      roundedCircle = _ref.roundedCircle,
-      thumbnail = _ref.thumbnail,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "fluid", "rounded", "roundedCircle", "thumbnail"]);
-  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'img');
-  var classes = (0, _classnames.default)(fluid && bsPrefix + "-fluid", rounded && "rounded", roundedCircle && "rounded-circle", thumbnail && bsPrefix + "-thumbnail");
-  return /*#__PURE__*/_react.default.createElement("img", (0, _extends2.default)({
-    // eslint-disable-line jsx-a11y/alt-text
-    ref: ref
-  }, props, {
-    className: (0, _classnames.default)(className, classes)
-  }));
-});
-
-Image.displayName = 'Image';
-Image.defaultProps = defaultProps;
-var _default = Image;
-exports.default = _default;
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","prop-types":"4dfy5","./ThemeProvider":"4rz1S"}],"4n7hB":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/Row":"3fzwD","react-bootstrap":"4n7hB","react-bootstrap/Col":"2D0r8","react-bootstrap/Button":"1ru0l","react-bootstrap/Image":"5qrP5"}],"4n7hB":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
@@ -38068,7 +37990,83 @@ Switch.Label = _FormCheck.default.Label;
 var _default = Switch;
 exports.default = _default;
 module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","react":"3b2NM","./FormCheck":"6WcKM"}],"2ZDTl":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","react":"3b2NM","./FormCheck":"6WcKM"}],"5qrP5":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = exports.propTypes = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var propTypes = {
+  /**
+   * @default 'img'
+   */
+  bsPrefix: _propTypes.default.string,
+
+  /**
+   * Sets image as fluid image.
+   */
+  fluid: _propTypes.default.bool,
+
+  /**
+   * Sets image shape as rounded.
+   */
+  rounded: _propTypes.default.bool,
+
+  /**
+   * Sets image shape as circle.
+   */
+  roundedCircle: _propTypes.default.bool,
+
+  /**
+   * Sets image shape as thumbnail.
+   */
+  thumbnail: _propTypes.default.bool
+};
+exports.propTypes = propTypes;
+var defaultProps = {
+  fluid: false,
+  rounded: false,
+  roundedCircle: false,
+  thumbnail: false
+};
+
+var Image = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      className = _ref.className,
+      fluid = _ref.fluid,
+      rounded = _ref.rounded,
+      roundedCircle = _ref.roundedCircle,
+      thumbnail = _ref.thumbnail,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "fluid", "rounded", "roundedCircle", "thumbnail"]);
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'img');
+  var classes = (0, _classnames.default)(fluid && bsPrefix + "-fluid", rounded && "rounded", roundedCircle && "rounded-circle", thumbnail && bsPrefix + "-thumbnail");
+  return /*#__PURE__*/_react.default.createElement("img", (0, _extends2.default)({
+    // eslint-disable-line jsx-a11y/alt-text
+    ref: ref
+  }, props, {
+    className: (0, _classnames.default)(className, classes)
+  }));
+});
+
+Image.displayName = 'Image';
+Image.defaultProps = defaultProps;
+var _default = Image;
+exports.default = _default;
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","prop-types":"4dfy5","./ThemeProvider":"4rz1S"}],"2ZDTl":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
