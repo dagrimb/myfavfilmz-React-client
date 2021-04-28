@@ -46,21 +46,19 @@ export class MovieView extends React.Component {
           </Navbar> 
           </div>
         </Row>
-        <Col className="pt-5 bg-dark" style={{ height: '100%', width: '100%', color: 'white', background: '#292b2c'}}>
+        <Col className="pt-5 bg-dark" style={{ paddingBottom: 450, height: '100%', width: '100%', color: 'white', background: '#292b2c'}}>
           <div className="movie-poster mb-4 justify-content-center text-center mx-auto" fluid>
             <img src={movie.ImagePath} height="5%" width="20%"/>
           </div>
-          <div class="mx-auto w-50" >
+          <div class="mx-auto" style={{ height: '100%' }} >
             <div className="movie-title bg-dark h-100 mx-2 justify-content-center text-center mx-auto">
               <h5 className="value" style={{marginTop: 25, paddingRight: 0 }}>{movie.Title}</h5>
             </div>  
             <div className="movie-description">
-              <span className="label">Description </span>
-              <span className="value"></span>
-              <div className="movie-synopsis">
-                <span className="label"></span>
+              <span className="label">Synopsis: </span>
+
                 <span className="value">{movie.Description.Synopsis}</span> 
-              </div>
+
               <div className="movie-synopsis-source">
                 <span className="label">Source: </span>
                 <span className="value">{movie.Description.Source}</span>) 
