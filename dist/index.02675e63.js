@@ -32017,7 +32017,8 @@ try {
           })), /*#__PURE__*/_react["default"].createElement("div", {
             "class": "justify-content-center text-center mx-auto",
             style: {
-              height: '100%'
+              height: '100%',
+              maxWidth: '60%'
             }
           }, /*#__PURE__*/_react["default"].createElement("div", {
             className: "movie-title bg-dark h-100"
@@ -32055,25 +32056,12 @@ try {
             className: "label"
           }, "Genre: "), /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
-          }), /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-genre-name"
-          }, /*#__PURE__*/_react["default"].createElement("span", {
-            className: "label"
-          }, "Name: "), /*#__PURE__*/_react["default"].createElement("span", {
+          }, movie.Genre.Name), /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
-          }, movie.Genre.Name)), /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-genre-description"
-          }, /*#__PURE__*/_react["default"].createElement("span", {
-            className: "label"
-          }, "Description: "), /*#__PURE__*/_react["default"].createElement("span", {
-            className: "value"
-          }, movie.Genre.Description)), /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-genre-source"
-          }, /*#__PURE__*/_react["default"].createElement("span", {
-            className: "label"
-          }, "Source: "), /*#__PURE__*/_react["default"].createElement("span", {
-            className: "value"
-          }, movie.Genre.Source))), /*#__PURE__*/_react["default"].createElement("div", {
+          }, " (", movie.Genre.Description, ") "), /*#__PURE__*/_react["default"].createElement("a", {
+            className: "label",
+            href: movie.Genre.Source
+          }, "(source)")), /*#__PURE__*/_react["default"].createElement("div", {
             className: "movie-year"
           }, /*#__PURE__*/_react["default"].createElement("span", {
             className: "label"
