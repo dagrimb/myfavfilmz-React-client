@@ -104,7 +104,7 @@ export class MainView extends React.Component {
             </Form>
           </Navbar>
         </div>
-        <div class="w-100 bg-dark" display="inline-block">
+      
         {selectedMovie
           ? (
             <Col md={8}>
@@ -112,12 +112,12 @@ export class MainView extends React.Component {
             </Col>
           )
           : movies.map(movie => (
-            <Col class="bg-dark h-100 h-25" md={2} key={movie._id}>
+            <Col class="bg-dark h-50" md={4} lg={3} xl={2} style={{marginTop: 0, padding: 0 }} key={movie._id}>
               <MovieCard movie={movie} onClick={movie => this.onMovieClick(movie)}/>
             </Col>
           ))
         }
-        </div>
+
       </Row>
     );
   }
