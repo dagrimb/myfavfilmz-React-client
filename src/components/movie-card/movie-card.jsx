@@ -16,12 +16,12 @@ export class MovieCard extends React.Component {
     const { movie, onClick } = this.props;
 
     return (
-      <CardDeck>
-        <Card style={{ width: '18rem', color: 'white', background: '#292b2c'}}>
-          <Card.Body class="bg-dark h-100">
-            <Card.Title>{movie.Title}</Card.Title>
-            <Card.Img variant="top mb-3 w-75" src={movie.ImagePath} />
-            <Card.Text>{movie.Description.Synopsis}</Card.Text>
+      <CardDeck variant="h-50" class="bg-dark">
+        <Card className="text-center" style={{ height: '46rem', width: '18rem', color: 'white', background: '#292b2c'}}>
+          <Card.Body class="bg-dark h-100 mx-2">
+            <Card.Title style={{marginTop: 25, paddingRight: 0 }}>{movie.Title}</Card.Title>
+            <Card.Img variant="top mb-3" style={{ height: '20rem', width: '13rem'}} src={movie.ImagePath} />
+            <Card.Text style={{ width: '100%', marginBottom: 25}}>{movie.Description.Synopsis}</Card.Text>
             <Button variant="primary" onClick={() => onClick(movie)}>Read More</Button>
           </Card.Body>
         </Card>
