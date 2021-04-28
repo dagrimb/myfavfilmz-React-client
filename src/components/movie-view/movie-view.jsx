@@ -50,7 +50,7 @@ export class MovieView extends React.Component {
           <div className="movie-poster mb-4 justify-content-center text-center mx-auto" fluid>
             <img src={movie.ImagePath} height="5%" width="20%"/>
           </div>
-          <div class="justify-content-center text-center mx-auto" style={{ height: '100%' }} >
+          <div class="justify-content-center text-center mx-auto" style={{ height: '100%', maxWidth: '60%' }} >
             <div className="movie-title bg-dark h-100">
               <h5 className="value" style={{marginTop: 25, paddingRight: 0 }}>{movie.Title}</h5>
             </div>  
@@ -68,19 +68,9 @@ export class MovieView extends React.Component {
             </div>
             <div className="movie-genre">
               <span className="label">Genre: </span>
-              <span className="value"></span>
-              <div className="movie-genre-name">
-                <span className="label">Name: </span>
                 <span className="value">{movie.Genre.Name}</span>
-              </div>
-              <div className="movie-genre-description">
-                <span className="label">Description: </span>
-                <span className="value">{movie.Genre.Description}</span>
-              </div>
-              <div className="movie-genre-source">
-                <span className="label">Source: </span>
-                <span className="value">{movie.Genre.Source}</span>
-              </div>
+                <span className="value"> ({movie.Genre.Description}) </span>
+                <a className="label" href={movie.Genre.Source}>(source)</a>
             </div>
             <div className="movie-year">
               <span className="label">Year Released: </span>
