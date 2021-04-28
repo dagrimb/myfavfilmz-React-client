@@ -32037,12 +32037,6 @@ try {
             className: "label",
             href: movie.Description.Source
           }, "(source)")), /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-actors"
-          }, /*#__PURE__*/_react["default"].createElement("span", {
-            className: "label"
-          }, "Actors: "), /*#__PURE__*/_react["default"].createElement("span", {
-            className: "value"
-          }, movie.Actors)), /*#__PURE__*/_react["default"].createElement("div", {
             className: "movie-director"
           }, /*#__PURE__*/_react["default"].createElement("span", {
             className: "label"
