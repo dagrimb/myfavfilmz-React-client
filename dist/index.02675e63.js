@@ -32042,31 +32042,14 @@ try {
             className: "label"
           }, "Director: "), /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
-          }), /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-director-name"
-          }, /*#__PURE__*/_react["default"].createElement("span", {
-            className: "label"
-          }, "Name: "), /*#__PURE__*/_react["default"].createElement("span", {
+          }, movie.Director.Name), /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
-          }, movie.Director.Name)), /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-director-bio"
-          }, /*#__PURE__*/_react["default"].createElement("span", {
-            className: "label"
-          }, "Bio: "), /*#__PURE__*/_react["default"].createElement("span", {
+          }, " (", movie.Director.Birth, "-", movie.Director.Death, "). "), /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
-          }, movie.Director.Bio)), /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-director-birth"
-          }, /*#__PURE__*/_react["default"].createElement("span", {
-            className: "label"
-          }, "Birth: "), /*#__PURE__*/_react["default"].createElement("span", {
-            className: "value"
-          }, movie.Director.Birth)), /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-director-source"
-          }, /*#__PURE__*/_react["default"].createElement("span", {
-            className: "label"
-          }, "Source: "), /*#__PURE__*/_react["default"].createElement("span", {
-            className: "value"
-          }, movie.Director.Source))), /*#__PURE__*/_react["default"].createElement("div", {
+          }, movie.Director.Bio, " "), /*#__PURE__*/_react["default"].createElement("a", {
+            className: "label",
+            href: movie.Director.Source
+          }, "(source)")), /*#__PURE__*/_react["default"].createElement("div", {
             className: "movie-genre"
           }, /*#__PURE__*/_react["default"].createElement("span", {
             className: "label"
