@@ -4,8 +4,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import PropTypes from 'prop-types';
 import { Navbar,Nav,NavDropdown,Form,FormControl} from 'react-bootstrap';
-import { Button } from '../button/button';
-
+//import { Button } from '../button/button';
+import Button from 'react-bootstrap/Button';
 
 //create MovieView component
 export class MovieView extends React.Component {
@@ -29,29 +29,30 @@ export class MovieView extends React.Component {
 
     return (
       <div className="movie-view">
-        <Row>
-          <div class="w-100">
-            <Navbar bg="dark" variant="dark">
-              <Navbar.Brand href="#home">myfavfilmz</Navbar.Brand>
-              <Nav className="mr-auto">
-                <Nav.Link href="#home">Account</Nav.Link>
-                <Nav.Link href="#features">Movies</Nav.Link>
-                <Nav.Link href="#pricing">About</Nav.Link>
-              </Nav>
-              <Form inline>
-                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                <Button type="button" class="btn btn-outline-info" size="lg">Search</Button>
-              </Form>
-            </Navbar>      
+        <Row className="main-view justify-content-md-center ml-0 h-100">
+        <div className="w-100">
+          <Navbar bg="primary" variant="dark" style={{paddingLeft: 0, paddingRight: 0 }}>
+            <Navbar.Brand className="ml-2" href="#home">myfavfilmz</Navbar.Brand>
+            <Nav className="mr-auto">
+              <Nav.Link href="#home">Account</Nav.Link>
+              <Nav.Link href="#features">Movies</Nav.Link>
+              <Nav.Link href="#pricing">About</Nav.Link>
+            </Nav>
+            <Form inline>
+              <FormControl type="text" placeholder="Search" className="mr-3" />
+              <Button variant="outline-light" className="mr-5">Search</Button>
+
+            </Form>
+          </Navbar> 
           </div>
         </Row>
-        <Col className="justify-content-center text-center mx-auto mt-5">
-          <div className="movie-poster mb-4" fluid>
-            <img src={movie.ImagePath} height="5%" width="20%" />
+        <Col className="pt-5 bg-dark" style={{ height: '100%', width: '100%', color: 'white', background: '#292b2c'}}>
+          <div className="movie-poster mb-4 justify-content-center text-center mx-auto" fluid>
+            <img src={movie.ImagePath} height="5%" width="20%"/>
           </div>
-          <div class="mx-auto w-50">
-            <div className="movie-title">
-              <span className="value">{movie.Title}</span>
+          <div class="mx-auto w-50" >
+            <div className="movie-title bg-dark h-100 mx-2 justify-content-center text-center mx-auto">
+              <h5 className="value" style={{marginTop: 25, paddingRight: 0 }}>{movie.Title}</h5>
             </div>  
             <div className="movie-description">
               <span className="label">Description </span>
@@ -117,7 +118,7 @@ export class MovieView extends React.Component {
               <span className="label">ID: </span>
               <span className="value">{movie._id}</span>
             </div>
-            <button onClick={() => { onBackClick(null); }}>Back</button>
+            <Button variant="primary" onClick={() => { onBackClick(null); }}>Back</Button>
             </div>
         </Col>
       </div>  
