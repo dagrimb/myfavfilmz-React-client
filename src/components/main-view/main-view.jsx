@@ -107,8 +107,8 @@ export class MainView extends React.Component {
       
         {selectedMovie
           ? (
-            <Col md={8}>
-              <MovieView movie={selectedMovie} onBackClick={movie => this.onMovieClick(null)} />
+            <Col md={8} class="h-100">
+              <MovieView class="h-100" movie={selectedMovie} onBackClick={movie => this.onMovieClick(null)} />
             </Col>
           )
           : movies.map(movie => (
