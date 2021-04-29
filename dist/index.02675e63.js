@@ -25831,8 +25831,10 @@ try {
             variant: "outline-light",
             className: "mr-5"
           }, "Search")))), selectedMovie ? /*#__PURE__*/_react["default"].createElement(_Col["default"], {
-            md: 8
+            md: 8,
+            "class": "h-100"
           }, /*#__PURE__*/_react["default"].createElement(_movieView.MovieView, {
+            "class": "h-100",
             movie: selectedMovie,
             onBackClick: function onBackClick(movie) {
               return _this3.onMovieClick(null);
@@ -32001,7 +32003,7 @@ try {
           }, "Search"))))), /*#__PURE__*/_react["default"].createElement(_Col["default"], {
             className: "pt-5 bg-dark",
             style: {
-              paddingBottom: 450,
+              paddingBottom: '80rem',
               height: '100%',
               width: '100%',
               color: 'white',
@@ -32015,13 +32017,13 @@ try {
             height: "5%",
             width: "20%"
           })), /*#__PURE__*/_react["default"].createElement("div", {
-            "class": "justify-content-center text-center mx-auto",
+            "class": "mx-auto",
             style: {
               height: '100%',
-              maxWidth: '60%'
+              maxWidth: '50%'
             }
           }, /*#__PURE__*/_react["default"].createElement("div", {
-            className: "movie-title bg-dark h-100"
+            className: "movie-title bg-dark h-100 text-center"
           }, /*#__PURE__*/_react["default"].createElement("h5", {
             className: "value",
             style: {
@@ -32079,12 +32081,17 @@ try {
             className: "label"
           }, "ID: "), /*#__PURE__*/_react["default"].createElement("span", {
             className: "value"
-          }, movie._id)), /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+          }, movie._id)), /*#__PURE__*/_react["default"].createElement("div", {
+            style: {
+              textAlign: 'center'
+            }
+          }, /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+            className: "mt-5",
             variant: "primary",
             onClick: function onClick() {
               onBackClick(null);
             }
-          }, "Back"))))
+          }, "Back")))))
         );
       }
     }]);
