@@ -41999,7 +41999,6 @@ try {
         }, /*#__PURE__*/_react["default"].createElement("p", {
           style: {
             color: 'white',
-            paddingTop: 15,
             paddingLeft: 15
           }
         }, "myfavfilmz"), /*#__PURE__*/_react["default"].createElement(_Card["default"], {
