@@ -46,12 +46,12 @@ export class MovieView extends React.Component {
           </Navbar> 
           </div>
         </Row>
-        <Col className="pt-5 bg-dark" style={{ paddingBottom: 450, height: '100%', width: '100%', color: 'white', background: '#292b2c'}}>
+        <Col className="pt-5 bg-dark" style={{ paddingBottom: '80rem', height: '100%', width: '100%', color: 'white', background: '#292b2c'}}>
           <div className="movie-poster mb-4 justify-content-center text-center mx-auto" fluid>
             <img src={movie.ImagePath} height="5%" width="20%"/>
           </div>
-          <div class="justify-content-center text-center mx-auto" style={{ height: '100%', maxWidth: '60%' }} >
-            <div className="movie-title bg-dark h-100">
+          <div class="mx-auto" style={{ height: '100%', maxWidth: '50%' }} >
+            <div className="movie-title bg-dark h-100 text-center">
               <h5 className="value" style={{marginTop: 25, paddingRight: 0 }}>{movie.Title}</h5>
             </div>  
             <div className="movie-description">
@@ -84,8 +84,10 @@ export class MovieView extends React.Component {
               <span className="label">ID: </span>
               <span className="value">{movie._id}</span>
             </div>
-            <Button variant="primary" onClick={() => { onBackClick(null); }}>Back</Button>
+            <div style={{ textAlign: 'center' }}>
+              <Button className="mt-5"  variant="primary" onClick={() => { onBackClick(null); }}>Back</Button>
             </div>
+          </div>
         </Col>
       </div>  
     );
