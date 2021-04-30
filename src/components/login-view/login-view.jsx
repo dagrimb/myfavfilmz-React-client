@@ -33,74 +33,69 @@ export function LoginView(props) {
     [
       'Dark',
     ].map((variant, idx) => (
-      <div class="w-100 h-100">
-      
-      <Col className="bg-primary w-100 h-100">
-      <p style={{ color: 'white', paddingTop: 15, paddingLeft: 0  }}>myfavfilmz</p>
-      <Card
-        bg={variant.toLowerCase()}
-        key={idx}
-        text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
-        style={{ width: '28rem' }}
-        className="justify-content-center text-center mx-auto my-5"
-      >
-      <Card.Body>
-        <div className="text-align-center">
-          <h3>Welcome Back!</h3>
-        </div>
-       <Form.Text className="mb-4">
-         Login into your account
-       </Form.Text>
-    <Form>
-      <Form.Group controlId="validationCustomUsername">
-        <Form.Row className="align-items-left">
-          <Form.Label>Username:</Form.Label>
-          <InputGroup hasValidation>
-            <Form.Control 
-              required
-              className="mb-2"
-              type="text" 
-              value={username}
-              aria-describedby="inputGroupPrepend"
-              placeholder="Enter username" 
-              onChange={e => setUsername(e.target.value)} 
-            />
-          </InputGroup>
-        </Form.Row>
-        <Form.Row className="align-items-left">
-        <Form.Check label="Remember me" />
-        </Form.Row>
-      </Form.Group>
-      <Form.Group controlId="formBasicPassword">
-      <Form.Row className="align-items-left">
-        <Form.Label>Password:</Form.Label>
-        <InputGroup hasValidation>
-          <Form.Control
-            required 
-            type="password" 
-            placeholder="Enter password" 
-            value={password}
-            onChange={e => setPassword(e.target.value)} 
-          />
-        </InputGroup>
-        </Form.Row>
-      </Form.Group>
-      <Button variant="primary my-4" type="submit" onClick={handleSubmit}>
-        Login
-      </Button>
-      <p>New to myfavfilmz?</p>
-      <Button variant="primary" size="sm" block type="button" onClick={() => props.onRegistered(true)}>Click here to register!</Button>
-    </Form>
-    </Card.Body>
-    </Card>
-    </Col>
+      <div class="bg-primary" style={{ height: '130rem'}}>
+        <Col className="bg-primary w-100 h-100">
+          <p style={{ color: 'white', paddingTop: 15, paddingLeft: 0  }}>myfavfilmz</p>
+          <Card
+            bg={variant.toLowerCase()}
+            key={idx}
+            text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
+            style={{ width: '28rem' }}
+            className="justify-content-center text-center mx-auto my-5"
+          >
+            <Card.Body>
+              <div className="text-align-center">
+                <h3>Welcome Back!</h3>
+              </div>
+              <Form.Text className="mb-4">
+                Login into your account
+              </Form.Text>
+              <Form>
+                <Form.Group controlId="validationCustomUsername">
+                  <Form.Row className="align-items-left">
+                    <Form.Label>Username:</Form.Label>
+                    <InputGroup hasValidation>
+                      <Form.Control 
+                        required
+                        className="mb-2"
+                        type="text" 
+                        value={username}
+                        aria-describedby="inputGroupPrepend"
+                        placeholder="Enter username" 
+                        onChange={e => setUsername(e.target.value)} 
+                      />
+                    </InputGroup>
+                  </Form.Row>
+                  <Form.Row className="align-items-left">
+                    <Form.Check label="Remember me" />
+                  </Form.Row>
+                </Form.Group>
+                <Form.Group controlId="formBasicPassword">
+                  <Form.Row className="align-items-left">
+                  <Form.Label>Password:</Form.Label>
+                  <InputGroup hasValidation>
+                    <Form.Control
+                      required 
+                      type="password" 
+                      placeholder="Enter password" 
+                      value={password}
+                      onChange={e => setPassword(e.target.value)} 
+                    />
+                  </InputGroup>
+                </Form.Row>
+              </Form.Group>
+              <Button variant="primary my-4" type="submit" onClick={handleSubmit}>
+                Login
+              </Button>
+              <p>New to myfavfilmz?</p>
+              <Button variant="primary" size="sm" block type="button" onClick={() => props.onRegistered(true)}>Click here to register!</Button>
+            </Form>
+          </Card.Body>
+        </Card>
+      </Col>
     </div>
   ))
 )}
-
-
-
-
 
 LoginView.propTypes = {
   user: PropTypes.shape({
