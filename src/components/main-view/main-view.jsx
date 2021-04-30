@@ -93,8 +93,8 @@ export class MainView extends React.Component {
           <Navbar bg="primary" variant="dark" style={{paddingLeft: 0, paddingRight: 0 }}>
             <Navbar.Brand className="ml-2" href="#home">myfavfilmz</Navbar.Brand>
             <Nav className="mr-auto">
-              <Nav.Link href="#home">Account</Nav.Link>
-              <Nav.Link href="#features">Movies</Nav.Link>
+              <Nav.Link href="#account">Account</Nav.Link>
+              <Nav.Link href="#movies">Movies</Nav.Link>
               <Nav.Link href="#pricing">About</Nav.Link>
             </Nav>
             <Form inline>
