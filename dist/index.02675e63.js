@@ -25823,9 +25823,9 @@ try {
           }, "myfavfilmz"), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Nav, {
             className: "mr-auto"
           }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Nav.Link, {
-            href: "#home"
+            href: "#account"
           }, "Account"), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Nav.Link, {
-            href: "#features"
+            href: "#movies"
           }, "Movies"), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Nav.Link, {
             href: "#pricing"
           }, "About")), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Form, {
@@ -29439,11 +29439,11 @@ try {
           }, "myfavfilmz"), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Nav, {
             className: "mr-auto"
           }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Nav.Link, {
-            href: "#home"
+            href: "#account"
           }, "Account"), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Nav.Link, {
-            href: "#features"
+            href: "#movies"
           }, "Movies"), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Nav.Link, {
-            href: "#pricing"
+            href: "#about"
           }, "About")), /*#__PURE__*/_react["default"].createElement(_reactBootstrap.Form, {
             inline: true
           }, /*#__PURE__*/_react["default"].createElement(_reactBootstrap.FormControl, {
