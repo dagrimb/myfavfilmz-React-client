@@ -78,9 +78,9 @@ export class MainView extends React.Component {
   render() {
     const  { movies, selectedMovie, newUser, user, registerClicked } = this.state; // shortened form of const movies = this.state.movies
     //if no user signed in and button to render RegistrationView is clicked, render RegistrationView
-    //if (!user && registerClicked) return <RegistrationView onRegistered={this.onRegistered} />;
+    if (!user && registerClicked) return <RegistrationView onRegistered={this.onRegistered} />;
     //if no user signed in, render LoginView
-    //if (!user) return <LoginView onRegistered={this.onRegistered} />;
+    if (!user) return <LoginView onRegistered={this.onRegistered} />;
     //if not clicked, access selectedMovie state (passing a function as a prop called "onMovieClick")
     if (selectedMovie) return <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />;
     //if no movies, display message stating that the list is empty
@@ -88,7 +88,7 @@ export class MainView extends React.Component {
     //else, display list of movie cards
     return (
 
-      <Row className="main-view justify-content-md-center ml-0 h-100">
+      <Row className="main-view justify-content-md-center ml-0">
         <div className="w-100">
           <Navbar bg="primary" variant="dark" style={{paddingLeft: 0, paddingRight: 0 }}>
             <Navbar.Brand className="ml-2" href="#home">myfavfilmz</Navbar.Brand>
@@ -104,7 +104,6 @@ export class MainView extends React.Component {
             </Form>
           </Navbar>
         </div>
-      
         {selectedMovie
           ? (
             <Col md={8} class="h-100">
@@ -117,7 +116,6 @@ export class MainView extends React.Component {
             </Col>
           ))
         }
-
       </Row>
     );
   }
