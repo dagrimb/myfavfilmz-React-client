@@ -11,7 +11,7 @@ class myfavfilmzApplication extends React.Component {
   
   render() {
     return (
-      <Container fluid className="h-100" style={{paddingLeft: 0, paddingRight: 0 }}>
+      <Container fluid style={{paddingLeft: 0, paddingRight: 0 }}>
         <MainView />
       </Container>
     );
