@@ -35,116 +35,105 @@ export function RegistrationView(props) {
     [
       'Dark',
     ].map((variant, idx) => (
-      <div class="bg-primary h-100">
-        <p style={{ color: 'white', paddingTop: 15, paddingLeft: 15  }}>myfavfilmz</p>
-      <Card
-        bg={variant.toLowerCase()}
-        key={idx}
-        text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
-        style={{ width: '28rem' }}
-        className="justify-content-center text-center mx-auto"
-      >
-      <Card.Body>
-        <div className="text-align-center">
-          <h3>Great to meet you!</h3>
-        </div>
-       <Form.Text>
-         Creat an account
-       </Form.Text>
-    <Form>
-      <Form.Text className="text-muted mb-4">
-        We will never share your username, password, email or birthdate with a third-party.
-      </Form.Text>
-
-        <Form.Group as={Col} controlId="validationCustomUsername">
-          <Form.Label className="float-left">Username</Form.Label>
-          <InputGroup className="mb-3" hasValidation>
-            <Form.Control
-              type="text" 
-              placeholder="Enter your username" 
-              aria-describedby="inputGroupPrepend"
-              required
-              value={username}
-              onChange={e => setUsername(e.target.value)}
-            />
-          </InputGroup>
-        </Form.Group>
-
-        <Form.Group as={Col} controlId="formBasicEmail">
-          <Form.Label className="float-left">Email address</Form.Label>
-          <InputGroup hasValidation></InputGroup>
-            <Form.Control 
-              type="email" 
-              placeholder="Enter your email address"
-              value={email}
-              aria-describedby="inputGroupPrepend"
-              onChange={e => setEmail(e.target.value)}  
-            />
-        </Form.Group>
-
-        <Form.Group as={Col} controlId="formBasicPassword">
-          <Form.Label className="float-left">Password</Form.Label>
-          <InputGroup hasValidation>
-            <Form.Control 
-              required
-              type="password" 
-              placeholder="Enter your password"
-              value={password}
-              aria-describedby="passwordHelpBlock"
-              onChange={e => setPassword(e.target.value)}
-            />
-          </InputGroup>
-          <Form.Text id="passwordHelpBlock" muted>
-            Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or 
-            emoji.
+      <div class="bg-primary" style={{ height: '130rem'}}>
+        <p style={{ color: 'white', paddingTop: 15, paddingLeft: 15}}>myfavfilmz</p>
+        <Card
+          bg={variant.toLowerCase()}
+          key={idx}
+          text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
+          style={{ width: '40rem', height: '55rem', marginBottom: 10}}
+          className="justify-content-center text-center mx-auto"
+        >
+        <Card.Body>
+          <div className="text-align-center">
+            <h3>Great to meet you!</h3>
+          </div>
+          <Form.Text>
+            Creat an account
           </Form.Text>
-        </Form.Group>
-
-
-        <Form.Group as={Col} controlId="formBasicPassword">
-          <InputGroup hasValidation>
-            <Form.Control 
-              required
-              type="password" 
-              placeholder="Enter your password again"
-              value={password}
-              aria-describedby="passwordHelpBlock"
-              onChange={e => setPassword(e.target.value)}
-            />
-          </InputGroup>
-        </Form.Group>
-
-        <Form.Group as={Col} controlId="validationCustom01">
-          <Form.Label className="float-left">Birthday</Form.Label>
-          <InputGroup hasValidation></InputGroup>
-            <Form.Control
-              required
-              type="date"
-              value={birthday}
-              aria-describedby="inputGroupPrepend"
-              onChange={e => setBirthday(e.target.value)}
-              placeholder="Birthday"
-            />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-        </Form.Group>
-      
-        <Form.Group controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="I agree to the myfavfilmz Terms of Serivce" />
-        </Form.Group>
-      
-        <Button variant="primary mt-1 h-5" type="submit" onClick={handleSubmit}>Register</Button><br /><br /><br />
-          <p>Already a member?</p>
-        
-          <Button variant="primary" size="sm" block type="button" onClick={() => props.onRegistered(false)}>Click here to log in!</Button>
-</Form>
-</Card.Body>
-    </Card>
+          <Form>
+            <Form.Text className="text-muted mb-4">
+              We will never share your username, password, email or birthdate with a third-party.
+            </Form.Text>
+            <Form.Group as={Col} controlId="validationCustomUsername">
+              <Form.Label className="float-left">Username</Form.Label>
+              <InputGroup className="mb-3" hasValidation>
+                <Form.Control
+                  type="text" 
+                  placeholder="Enter your username" 
+                  aria-describedby="inputGroupPrepend"
+                  required
+                  value={username}
+                  onChange={e => setUsername(e.target.value)}
+                />
+              </InputGroup>
+            </Form.Group>
+            <Form.Group as={Col} controlId="formBasicEmail">
+              <Form.Label className="float-left">Email address</Form.Label>
+              <InputGroup hasValidation></InputGroup>
+              <Form.Control 
+                type="email" 
+                placeholder="Enter your email address"
+                value={email}
+                aria-describedby="inputGroupPrepend"
+                onChange={e => setEmail(e.target.value)}  
+              />
+            </Form.Group>
+            <Form.Group as={Col} controlId="formBasicPassword">
+              <Form.Label className="float-left">Password</Form.Label>
+              <InputGroup hasValidation>
+                <Form.Control 
+                  required
+                  type="password" 
+                  placeholder="Enter your password"
+                  value={password}
+                  aria-describedby="passwordHelpBlock"
+                  onChange={e => setPassword(e.target.value)}
+                />
+              </InputGroup>
+              <Form.Text id="passwordHelpBlock" muted>
+                Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or 
+                emoji.
+              </Form.Text>
+            </Form.Group>
+            <Form.Group as={Col} controlId="formBasicPassword">
+              <InputGroup hasValidation>
+                <Form.Control 
+                  required
+                  type="password" 
+                  placeholder="Enter your password again"
+                  value={password}
+                  aria-describedby="passwordHelpBlock"
+                  onChange={e => setPassword(e.target.value)}
+                />
+              </InputGroup>
+            </Form.Group>
+            <Form.Group as={Col} controlId="validationCustom01">
+              <Form.Label className="float-left">Birthday</Form.Label>
+              <InputGroup hasValidation></InputGroup>
+              <Form.Control
+                required
+                type="date"
+                value={birthday}
+                aria-describedby="inputGroupPrepend"
+                onChange={e => setBirthday(e.target.value)}
+                placeholder="Birthday"
+              />
+              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group controlId="formBasicCheckbox">
+              <Form.Check type="checkbox" label="I agree to the myfavfilmz Terms of Serivce" />
+            </Form.Group>
+            <Button variant="primary mt-1 h-5" type="submit" onClick={handleSubmit}>Register</Button><br /><br /><br />
+            <p>Already a member?</p>
+            <Button variant="primary" size="sm" block type="button" onClick={() => props.onRegistered(false)}>Click here to log in!</Button>
+          </Form>
+        </Card.Body>
+      </Card>
     </div>
 
     ))
   )}
-
-
 
 RegistrationView.propTypes = {
   username: PropTypes.shape({
