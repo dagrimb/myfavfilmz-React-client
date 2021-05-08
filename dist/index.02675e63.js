@@ -25715,7 +25715,7 @@ try {
       var _this;
       _classCallCheck(this, MainView);
       _this = _super.call(this);
-      _this.onRegistered = function (value) {
+      _this.handleRegister = function (value) {
         _this.setState({
           registerClicked: value
         });
@@ -25726,7 +25726,7 @@ try {
         selectedMovie: null,
         // set default (pre-click event) value to null
         user: null,
-        registerClicked: true
+        registerClicked: false
       };
       return _this;
     }
@@ -25775,18 +25775,18 @@ try {
       key: "render",
       value: function render() {
         var _this3 = this;
-        var _this$state = this.state, movies = _this$state.movies, selectedMovie = _this$state.selectedMovie, newUser = _this$state.newUser, user = _this$state.user, registerClicked = _this$state.registerClicked;
+        var _this$state = this.state, movies = _this$state.movies, selectedMovie = _this$state.selectedMovie, user = _this$state.user, registerClicked = _this$state.registerClicked;
         // shortened form of const movies = this.state.movies
         // if no user signed in and button to render RegistrationView is clicked, render RegistrationView
         if (!user && registerClicked) return (
           /*#__PURE__*/_react["default"].createElement(_registrationView.RegistrationView, {
-            onRegistered: this.onRegistered
+            handleRegister: this.handleRegister
           })
         );
         // if no user signed in, render LoginView
         if (!user) return (
           /*#__PURE__*/_react["default"].createElement(_loginView.LoginView, {
-            onRegistered: this.onRegistered
+            handleRegister: this.handleRegister
           })
         );
         // if not clicked, access selectedMovie state (passing a function as a prop called "onMovieClick")
@@ -25878,7 +25878,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","axios":"7rA65","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","../registration-view/registration-view":"7gvH2","../login-view/login-view":"6M7fu","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap":"4n7hB","react-bootstrap/Button":"1ru0l"}],"7rA65":[function(require,module,exports) {
+},{"react":"3b2NM","axios":"7rA65","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","../registration-view/registration-view":"7gvH2","../login-view/login-view":"6M7fu","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/Button":"1ru0l","react-bootstrap":"4n7hB"}],"7rA65":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 },{"./lib/axios":"4qfhW"}],"4qfhW":[function(require,module,exports) {
 'use strict';
@@ -29584,7 +29584,83 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/Row":"3fzwD","react-bootstrap":"4n7hB","react-bootstrap/Col":"2D0r8","react-bootstrap/Button":"1ru0l","react-bootstrap/Image":"5qrP5"}],"4n7hB":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/Image":"5qrP5","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","react-bootstrap":"4n7hB","react-bootstrap/Button":"1ru0l"}],"5qrP5":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = exports.propTypes = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var propTypes = {
+  /**
+   * @default 'img'
+   */
+  bsPrefix: _propTypes.default.string,
+
+  /**
+   * Sets image as fluid image.
+   */
+  fluid: _propTypes.default.bool,
+
+  /**
+   * Sets image shape as rounded.
+   */
+  rounded: _propTypes.default.bool,
+
+  /**
+   * Sets image shape as circle.
+   */
+  roundedCircle: _propTypes.default.bool,
+
+  /**
+   * Sets image shape as thumbnail.
+   */
+  thumbnail: _propTypes.default.bool
+};
+exports.propTypes = propTypes;
+var defaultProps = {
+  fluid: false,
+  rounded: false,
+  roundedCircle: false,
+  thumbnail: false
+};
+
+var Image = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      className = _ref.className,
+      fluid = _ref.fluid,
+      rounded = _ref.rounded,
+      roundedCircle = _ref.roundedCircle,
+      thumbnail = _ref.thumbnail,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "fluid", "rounded", "roundedCircle", "thumbnail"]);
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'img');
+  var classes = (0, _classnames.default)(fluid && bsPrefix + "-fluid", rounded && "rounded", roundedCircle && "rounded-circle", thumbnail && bsPrefix + "-thumbnail");
+  return /*#__PURE__*/_react.default.createElement("img", (0, _extends2.default)({
+    // eslint-disable-line jsx-a11y/alt-text
+    ref: ref
+  }, props, {
+    className: (0, _classnames.default)(className, classes)
+  }));
+});
+
+Image.displayName = 'Image';
+Image.defaultProps = defaultProps;
+var _default = Image;
+exports.default = _default;
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","prop-types":"4dfy5","./ThemeProvider":"4rz1S"}],"4n7hB":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
@@ -37330,83 +37406,7 @@ Switch.Label = _FormCheck.default.Label;
 var _default = Switch;
 exports.default = _default;
 module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","react":"3b2NM","./FormCheck":"6WcKM"}],"5qrP5":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = exports.propTypes = void 0;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _react = _interopRequireDefault(require("react"));
-
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
-var _ThemeProvider = require("./ThemeProvider");
-
-var propTypes = {
-  /**
-   * @default 'img'
-   */
-  bsPrefix: _propTypes.default.string,
-
-  /**
-   * Sets image as fluid image.
-   */
-  fluid: _propTypes.default.bool,
-
-  /**
-   * Sets image shape as rounded.
-   */
-  rounded: _propTypes.default.bool,
-
-  /**
-   * Sets image shape as circle.
-   */
-  roundedCircle: _propTypes.default.bool,
-
-  /**
-   * Sets image shape as thumbnail.
-   */
-  thumbnail: _propTypes.default.bool
-};
-exports.propTypes = propTypes;
-var defaultProps = {
-  fluid: false,
-  rounded: false,
-  roundedCircle: false,
-  thumbnail: false
-};
-
-var Image = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
-  var bsPrefix = _ref.bsPrefix,
-      className = _ref.className,
-      fluid = _ref.fluid,
-      rounded = _ref.rounded,
-      roundedCircle = _ref.roundedCircle,
-      thumbnail = _ref.thumbnail,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "fluid", "rounded", "roundedCircle", "thumbnail"]);
-  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'img');
-  var classes = (0, _classnames.default)(fluid && bsPrefix + "-fluid", rounded && "rounded", roundedCircle && "rounded-circle", thumbnail && bsPrefix + "-thumbnail");
-  return /*#__PURE__*/_react.default.createElement("img", (0, _extends2.default)({
-    // eslint-disable-line jsx-a11y/alt-text
-    ref: ref
-  }, props, {
-    className: (0, _classnames.default)(className, classes)
-  }));
-});
-
-Image.displayName = 'Image';
-Image.defaultProps = defaultProps;
-var _default = Image;
-exports.default = _default;
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","prop-types":"4dfy5","./ThemeProvider":"4rz1S"}],"2ZDTl":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","react":"3b2NM","./FormCheck":"6WcKM"}],"2ZDTl":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -41995,7 +41995,7 @@ try {
     var handleSubmit = function handleSubmit() {
       e.preventDefault();
       console.log(username, password, email, birthday);
-      props.onRegistered(username);
+      props.handleRegister(username);
     };
     return ['Dark'].map(function (variant, idx) {
       return (
@@ -42012,7 +42012,7 @@ try {
           }
         }, "myfavfilmz"), /*#__PURE__*/_react["default"].createElement(_Card["default"], {
           bg: variant.toLowerCase(),
-          key: idx,
+          /*key={user._id}*/
           text: variant.toLowerCase() === 'light' ? 'dark' : 'white',
           style: {
             width: '40rem',
@@ -42120,7 +42120,7 @@ try {
           block: true,
           type: "button",
           onClick: function onClick() {
-            return props.onRegistered(false);
+            return props.handleRegister(false);
           }
         }, "Click here to log in!")))))
       );
@@ -42146,7 +42146,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","../login-view/login-view":"6M7fu","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","react-bootstrap/InputGroup":"3nb5C","react-bootstrap/FormControl":"573gP","react-bootstrap/FormCheck":"6WcKM","react-bootstrap/FormFile":"6mhKG","react-dom":"2sg1U","react-bootstrap/Card":"1CZWQ"}],"6M7fu":[function(require,module,exports) {
+},{"react":"3b2NM","../login-view/login-view":"6M7fu","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap/Card":"1CZWQ","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","react-bootstrap/InputGroup":"3nb5C","react-bootstrap/FormControl":"573gP","react-bootstrap/FormCheck":"6WcKM","react-bootstrap/FormFile":"6mhKG","react-dom":"2sg1U"}],"6M7fu":[function(require,module,exports) {
 "use strict";
 var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
@@ -42176,15 +42176,9 @@ try {
   var _propTypes = _interopRequireDefault(require("prop-types"));
   var _Card = _interopRequireDefault(require("react-bootstrap/Card"));
   var _InputGroup = _interopRequireDefault(require("react-bootstrap/InputGroup"));
-  var _CardDeck = _interopRequireDefault(require("react-bootstrap/CardDeck"));
-  var _CardGroup = _interopRequireDefault(require("react-bootstrap/CardGroup"));
-  var _CardColumns = _interopRequireDefault(require("react-bootstrap/CardColumns"));
   require("../../index.scss");
-  var _FormControl = _interopRequireDefault(require("react-bootstrap/FormControl"));
-  var _FormCheck = _interopRequireDefault(require("react-bootstrap/FormCheck"));
-  var _FormFile = _interopRequireDefault(require("react-bootstrap/FormFile"));
-  var _Alert = _interopRequireDefault(require("react-bootstrap/Alert"));
   var _reactBootstrap = require("react-bootstrap");
+  var _axios = _interopRequireDefault(require("axios"));
   var _s2 = $RefreshSig$();
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -42284,9 +42278,20 @@ try {
     var _useState3 = (0, _react.useState)(''), _useState4 = _slicedToArray(_useState3, 2), password = _useState4[0], setPassword = _useState4[1];
     // Send request to server for auth
     var handleSubmit = function handleSubmit(e) {
+      // prevent default behavior of submitting form
       e.preventDefault();
       console.log(username, password);
-      props.onLoggedIn(username);
+      // Send a request to the server for authentication by passing username and password
+      _axios["default"].post('https://myfavfilmz.herokuapp.com/login', {
+        Username: username,
+        Password: password
+      }).then(function (response) {
+        var data = response.data;
+        // call props.onLoggedIn(username), which provides the username to our parent component (child to parent communication)
+        props.onLoggedIn(data);
+      })["catch"](function (e) {
+        console.log('no such user');
+      });
     };
     return ['Dark'].map(function (variant, idx) {
       return (
@@ -42305,7 +42310,7 @@ try {
           }
         }, "myfavfilmz"), /*#__PURE__*/_react["default"].createElement(_Card["default"], {
           bg: variant.toLowerCase(),
-          key: idx,
+          /*key={user._id}*/
           text: variant.toLowerCase() === 'light' ? 'dark' : 'white',
           style: {
             width: '28rem'
@@ -42316,13 +42321,12 @@ try {
         }, /*#__PURE__*/_react["default"].createElement("h3", null, "Welcome Back!")), /*#__PURE__*/_react["default"].createElement(_Form["default"].Text, {
           className: "mb-4"
         }, "Login into your account"), /*#__PURE__*/_react["default"].createElement(_Form["default"], null, /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
-          controlId: "validationCustomUsername"
+          controlId: "fromUsername"
         }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Row, {
           className: "align-items-left"
         }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Username:"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
           hasValidation: true
         }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Control, {
-          required: true,
           className: "mb-2",
           type: "text",
           value: username,
@@ -42336,7 +42340,7 @@ try {
         }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Check, {
           label: "Remember me"
         }))), /*#__PURE__*/_react["default"].createElement(_Form["default"].Group, {
-          controlId: "formBasicPassword"
+          controlId: "formPassword"
         }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Row, {
           className: "align-items-left"
         }, /*#__PURE__*/_react["default"].createElement(_Form["default"].Label, null, "Password:"), /*#__PURE__*/_react["default"].createElement(_InputGroup["default"], {
@@ -42359,7 +42363,7 @@ try {
           block: true,
           type: "button",
           onClick: function onClick() {
-            return props.onRegistered(true);
+            return props.handleRegister(true);
           }
         }, "Click here to register!"))))))
       );
@@ -42382,6 +42386,6 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/FormControl":"573gP","react-bootstrap/FormCheck":"6WcKM","react-bootstrap/FormFile":"6mhKG","../../index.scss":"5iJih","react-bootstrap/Card":"1CZWQ","react-bootstrap/CardDeck":"4fiZs","react-bootstrap/CardGroup":"1B9U7","react-bootstrap/CardColumns":"48yv5","react-bootstrap/InputGroup":"3nb5C","react-bootstrap/Alert":"1oIYX","react-bootstrap":"4n7hB"}],"5iJih":[function() {},{}],"5iJih":[function() {},{}]},["1j6wU","68WUB","1DVjT"], "1DVjT", "parcelRequire0837")
+},{"react":"3b2NM","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","prop-types":"4dfy5","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/Card":"1CZWQ","react-bootstrap/InputGroup":"3nb5C","../../index.scss":"5iJih","react-bootstrap":"4n7hB","axios":"7rA65"}],"5iJih":[function() {},{}],"5iJih":[function() {},{}]},["1j6wU","68WUB","1DVjT"], "1DVjT", "parcelRequire0837")
 
 //# sourceMappingURL=index.02675e63.js.map
