@@ -33,7 +33,7 @@ export class MainView extends React.Component {
       movies: null,
       selectedMovie: null,//set default (pre-click event) value to null
       user: null,
-      registerClicked: true
+      registerClicked: false
     };
   }
 
@@ -71,16 +71,16 @@ export class MainView extends React.Component {
     });
   }
 
-  onRegistered = (value) => {
+  handleRegister = (value) => {
     this.setState({ registerClicked: value });
   }
 
   render() {
-    const  { movies, selectedMovie, newUser, user, registerClicked } = this.state; // shortened form of const movies = this.state.movies
+    const  { movies, selectedMovie, user, registerClicked } = this.state; // shortened form of const movies = this.state.movies
     //if no user signed in and button to render RegistrationView is clicked, render RegistrationView
-    if (!user && registerClicked) return <RegistrationView onRegistered={this.onRegistered} />;
+    if (!user && registerClicked) return <RegistrationView handleRegister={this.handleRegister} />;
     //if no user signed in, render LoginView
-    if (!user) return <LoginView onRegistered={this.onRegistered} />;
+    if (!user) return <LoginView handleRegister={this.handleRegister} />;
     //if not clicked, access selectedMovie state (passing a function as a prop called "onMovieClick")
     if (selectedMovie) return <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />;
     //if no movies, display message stating that the list is empty
