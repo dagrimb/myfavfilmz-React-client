@@ -25,10 +25,8 @@ export function RegistrationView(props) {
   const handleSubmit = () => {
     e.preventDefault();
     console.log(username, password, email, birthday);
-    props.onRegistered(username);
+    props.handleRegister(username);
   };
-
-
 
   return (
 
@@ -39,7 +37,7 @@ export function RegistrationView(props) {
         <p style={{ color: 'white', paddingTop: 15, paddingLeft: 15}}>myfavfilmz</p>
         <Card
           bg={variant.toLowerCase()}
-          key={idx}
+          //key={user._id}
           text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
           style={{ width: '40rem', height: '55rem', marginBottom: 10}}
           className="justify-content-center text-center mx-auto"
@@ -126,7 +124,7 @@ export function RegistrationView(props) {
             </Form.Group>
             <Button variant="primary mt-1 h-5" type="submit" onClick={handleSubmit}>Register</Button><br /><br /><br />
             <p>Already a member?</p>
-            <Button variant="primary" size="sm" block type="button" onClick={() => props.onRegistered(false)}>Click here to log in!</Button>
+            <Button variant="primary" size="sm" block type="button" onClick={() => props.handleRegister(false)}>Click here to log in!</Button>
           </Form>
         </Card.Body>
       </Card>
