@@ -5,16 +5,9 @@ import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import InputGroup from 'react-bootstrap/InputGroup';
-import CardDeck from 'react-bootstrap/CardDeck'
-import CardGroup from 'react-bootstrap/CardGroup'
-import CardColumns from 'react-bootstrap/CardColumns'
 import '../../index.scss';
-//import { MDBCol, MDBRow } from 'mdb-react-ui-kit';
-import FormControl from 'react-bootstrap/FormControl';
-import FormCheck from 'react-bootstrap/FormCheck';
-import FormFile from 'react-bootstrap/FormFile';
-import Alert from 'react-bootstrap/Alert';
 import { Col } from 'react-bootstrap';
+import axios from 'axios';
 
 
 //call useState method and set to empty string the represents values prior to login
@@ -24,10 +17,23 @@ export function LoginView(props) {
 
   //Send request to server for auth
   const handleSubmit = (e) => {
+    //prevent default behavior of submitting form
     e.preventDefault();
     console.log(username, password);
-    props.onLoggedIn(username);
-  };
+    // Send a request to the server for authentication by passing username and password
+      axios.post('https://myfavfilmz.herokuapp.com/login', {
+        Username: username,
+        Password: password
+      })
+      .then(response => {
+        const data = response.data;
+        //call props.onLoggedIn(username), which provides the username to our parent component (child to parent communication)
+        props.onLoggedIn(data);
+      })
+      .catch(e => {
+        console.log('no such user')
+      });
+    };
 
   return (
     [
@@ -38,7 +44,7 @@ export function LoginView(props) {
           <p style={{ color: 'white', paddingTop: 15, paddingLeft: 0  }}>myfavfilmz</p>
           <Card
             bg={variant.toLowerCase()}
-            key={idx}
+           // key={user._id}
             text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
             style={{ width: '28rem' }}
             className="justify-content-center text-center mx-auto my-5"
@@ -51,12 +57,11 @@ export function LoginView(props) {
                 Login into your account
               </Form.Text>
               <Form>
-                <Form.Group controlId="validationCustomUsername">
+                <Form.Group controlId="fromUsername">
                   <Form.Row className="align-items-left">
                     <Form.Label>Username:</Form.Label>
                     <InputGroup hasValidation>
                       <Form.Control 
-                        required
                         className="mb-2"
                         type="text" 
                         value={username}
@@ -70,7 +75,7 @@ export function LoginView(props) {
                     <Form.Check label="Remember me" />
                   </Form.Row>
                 </Form.Group>
-                <Form.Group controlId="formBasicPassword">
+                <Form.Group controlId="formPassword">
                   <Form.Row className="align-items-left">
                   <Form.Label>Password:</Form.Label>
                   <InputGroup hasValidation>
@@ -88,7 +93,7 @@ export function LoginView(props) {
                 Login
               </Button>
               <p>New to myfavfilmz?</p>
-              <Button variant="primary" size="sm" block type="button" onClick={() => props.onRegistered(true)}>Click here to register!</Button>
+              <Button variant="primary" size="sm" block type="button" onClick={() => props.handleRegister(true)}>Click here to register!</Button>
             </Form>
           </Card.Body>
         </Card>
