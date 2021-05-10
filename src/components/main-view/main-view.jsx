@@ -94,6 +94,14 @@ export class MainView extends React.Component {
     });
   }
 
+  onLoggedOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.setState({
+      user: null
+    });
+  }
+
   render() {
     const  { movies, selectedMovie, user, registerClicked } = this.state; // shortened form of const movies = this.state.movies
     //if no user signed in and button to render RegistrationView is clicked, render RegistrationView
