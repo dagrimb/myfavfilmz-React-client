@@ -25796,6 +25796,15 @@ try {
         });
       }
     }, {
+      key: "onLoggedOut",
+      value: function onLoggedOut() {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        this.setState({
+          user: null
+        });
+      }
+    }, {
       key: "render",
       value: function render() {
         var _this3 = this;
