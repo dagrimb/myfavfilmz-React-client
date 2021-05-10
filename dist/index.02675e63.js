@@ -25734,16 +25734,13 @@ try {
       key: "componentDidMount",
       value: // Fetch the list of movies from your database with MainView is mounted
       function componentDidMount() {
-        var _this2 = this;
-        _axios["default"].get('https://myfavfilmz.herokuapp.com/movies').// use Axios to fetch the movies
-        then(function (response) {
-          _this2.setState({
-            // set the state of movies to the data received
-            movies: response.data
+        var accessToken = localStorage.getItem('token');
+        if (accessToken !== null) {
+          this.setState({
+            user: localStorage.getItem('user')
           });
-        })["catch"](function (error) {
-          console.log(error);
-        });
+          this.getMovies(accessToken);
+        }
       }
     }, {
       key: "onMovieClick",
@@ -25780,7 +25777,7 @@ try {
     }, {
       key: "getMovies",
       value: function getMovies(token) {
-        var _this3 = this;
+        var _this2 = this;
         _axios["default"].get('https://myfavfilmz.herokuapp.com/movies', {
           // use axios to make GET request to movies endpoint of Node.js API
           headers: {
@@ -25789,7 +25786,7 @@ try {
         }).// authenticated request to the API
         then(function (response) {
           // Assign the result to the state
-          _this3.setState({
+          _this2.setState({
             movies: response.data
           });
         })["catch"](function (error) {
@@ -25799,7 +25796,7 @@ try {
     }, {
       key: "render",
       value: function render() {
-        var _this4 = this;
+        var _this3 = this;
         var _this$state = this.state, movies = _this$state.movies, selectedMovie = _this$state.selectedMovie, user = _this$state.user, registerClicked = _this$state.registerClicked;
         // shortened form of const movies = this.state.movies
         // if no user signed in and button to render RegistrationView is clicked, render RegistrationView
@@ -25819,7 +25816,7 @@ try {
           /*#__PURE__*/_react["default"].createElement(_movieView.MovieView, {
             movie: selectedMovie,
             onBackClick: function onBackClick(newSelectedMovie) {
-              _this4.setSelectedMovie(newSelectedMovie);
+              _this3.setSelectedMovie(newSelectedMovie);
             }
           })
         );
@@ -25869,7 +25866,7 @@ try {
             "class": "h-100",
             movie: selectedMovie,
             onBackClick: function onBackClick(movie) {
-              return _this4.onMovieClick(null);
+              return _this3.onMovieClick(null);
             }
           })) : movies.map(function (movie) {
             return (
@@ -25886,7 +25883,7 @@ try {
               }, /*#__PURE__*/_react["default"].createElement(_movieCard.MovieCard, {
                 movie: movie,
                 onClick: function onClick(movie) {
-                  return _this4.onMovieClick(movie);
+                  return _this3.onMovieClick(movie);
                 }
               }))
             );
