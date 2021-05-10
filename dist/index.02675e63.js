@@ -25722,7 +25722,7 @@ try {
       };
       // initialize component state
       _this.state = {
-        movies: null,
+        movies: [],
         selectedMovie: null,
         // set default (pre-click event) value to null
         user: null,
@@ -25757,10 +25757,14 @@ try {
     }, {
       key: "onLoggedIn",
       value: // Upon successful login, this method will update the user property with specific user
-      function onLoggedIn(user) {
+      function onLoggedIn(authData) {
+        console.log(authData);
         this.setState({
-          user: user
+          user: authData.user.Username
         });
+        localStorage.setItem('token', authData.token);
+        localStorage.setItem('user', authData.user.Username);
+        this.getMovies(authData.token);
       }
     }, {
       key: "setSelectedMovie",
@@ -42012,7 +42016,6 @@ try {
           }
         }, "myfavfilmz"), /*#__PURE__*/_react["default"].createElement(_Card["default"], {
           bg: variant.toLowerCase(),
-          /*key={user._id}*/
           text: variant.toLowerCase() === 'light' ? 'dark' : 'white',
           style: {
             width: '40rem',
@@ -42310,7 +42313,6 @@ try {
           }
         }, "myfavfilmz"), /*#__PURE__*/_react["default"].createElement(_Card["default"], {
           bg: variant.toLowerCase(),
-          /*key={user._id}*/
           text: variant.toLowerCase() === 'light' ? 'dark' : 'white',
           style: {
             width: '28rem'
