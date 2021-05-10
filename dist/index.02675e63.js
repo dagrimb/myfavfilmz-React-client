@@ -25758,10 +25758,12 @@ try {
       key: "onLoggedIn",
       value: // Upon successful login, this method will update the user property with specific user
       function onLoggedIn(authData) {
+        // authData allows us to use both the user and the token; this is triggered when the user logs in...
         console.log(authData);
         this.setState({
           user: authData.user.Username
         });
+        // auth info (token, user) received from handleSubmit method is saved in localStorage
         localStorage.setItem('token', authData.token);
         localStorage.setItem('user', authData.user.Username);
         this.getMovies(authData.token);
