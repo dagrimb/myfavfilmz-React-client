@@ -82,9 +82,9 @@ export class MainView extends React.Component {
   }
 
   getMovies(token) {
-    axios.get('https://myfavfilmz.herokuapp.com/movies', {
-      headers: { Authorization: `Bearer ${token}`}
-    })
+    axios.get('https://myfavfilmz.herokuapp.com/movies', {  // use axios to make GET request to movies endpoint of Node.js API
+      headers: { Authorization: `Bearer ${token}`}  // pass bearer authorization in the header of GET request allowing you to make an 
+    })                                              // authenticated request to the API
     .then(response => {
       // Assign the result to the state
       this.setState({
