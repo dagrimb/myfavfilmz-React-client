@@ -30,7 +30,7 @@ export class MainView extends React.Component {
   constructor(){
     super(); //initialize component state
     this.state = {
-      movies: null,
+      movies: [],
       selectedMovie: null,//set default (pre-click event) value to null
       user: null,
       registerClicked: false
@@ -59,10 +59,15 @@ export class MainView extends React.Component {
   }
 
   //Upon successful login, this method will update the user property with specific user
-  onLoggedIn(user) {
+  onLoggedIn(authData) {
+    console.log(authData);
     this.setState({
-      user
+      user: authData.user.Username
     });
+
+    localStorage.setItem('token', authData.token);
+    localStorage.setItem('user', authData.user.Username);
+    this.getMovies(authData.token);
   }
 
   setSelectedMovie(newSelectedMovie) { //setSelectedMovie is a custom component method
