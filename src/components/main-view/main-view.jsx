@@ -81,6 +81,21 @@ export class MainView extends React.Component {
     this.setState({ registerClicked: value });
   }
 
+  getMovies(token) {
+    axios.get('https://myfavfilmz.herokuapp.com/movies', {
+      headers: { Authorization: `Bearer ${token}`}
+    })
+    .then(response => {
+      // Assign the result to the state
+      this.setState({
+        movies: response.data
+      });
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
   render() {
     const  { movies, selectedMovie, user, registerClicked } = this.state; // shortened form of const movies = this.state.movies
     //if no user signed in and button to render RegistrationView is clicked, render RegistrationView
