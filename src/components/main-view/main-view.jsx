@@ -39,16 +39,14 @@ export class MainView extends React.Component {
 
   //Fetch the list of movies from your database with MainView is mounted
   componentDidMount(){
-    axios.get('https://myfavfilmz.herokuapp.com/movies') //use Axios to fetch the movies
-      .then(response => {
-        this.setState({ //set the state of movies to the data received
-          movies: response.data
-        });
+    let accessToken = localStorage.getItem('token'); // get the value of the token from localStorage
+    if (accessToken !== null) {   // access token being present (i.e. "!==null") means that user is already logged in
+      this.setState({
+        user: localStorage.getItem('user')
       })
-      .catch(error => {
-        console.log(error);
-      });
-  }
+      this.getMovies(accessToken);  // getMovies method is executed and a GET request to the movies endpoint
+      }
+    }
 
   //a method later passed as a prop to LoginView (below). When user clicks movie, the function updates
   //state of the selectedMovie property with that movie
