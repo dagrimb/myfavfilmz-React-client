@@ -57,7 +57,7 @@ export function LoginView(props) {
                 Login into your account
               </Form.Text>
               <Form>
-                <Form.Group controlId="fromUsername">
+                <Form.Group controlId="formUsername">
                   <Form.Row className="align-items-left">
                     <Form.Label>Username:</Form.Label>
                     <InputGroup hasValidation>
