@@ -39,12 +39,11 @@ export function LoginView(props) {
     [
       'Dark',
     ].map((variant, idx) => (
-      <div class="bg-primary" style={{ height: '130rem'}}>
+      <div class="bg-primary" style={{ height: '130rem'}} /*key={user._id}*/>
         <Col className="bg-primary w-100 h-100">
           <p style={{ color: 'white', paddingTop: 15, paddingLeft: 0  }}>myfavfilmz</p>
           <Card
             bg={variant.toLowerCase()}
-           // key={user._id}
             text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
             style={{ width: '28rem' }}
             className="justify-content-center text-center mx-auto my-5"
