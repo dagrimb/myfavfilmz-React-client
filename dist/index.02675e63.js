@@ -25735,7 +25735,9 @@ try {
       value: // Fetch the list of movies from your database with MainView is mounted
       function componentDidMount() {
         var accessToken = localStorage.getItem('token');
+        // get the value of the token from localStorage
         if (accessToken !== null) {
+          // access token being present (i.e. "!==null") means that user is already logged in
           this.setState({
             user: localStorage.getItem('user')
           });
