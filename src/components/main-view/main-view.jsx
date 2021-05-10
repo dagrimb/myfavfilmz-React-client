@@ -59,15 +59,16 @@ export class MainView extends React.Component {
   }
 
   //Upon successful login, this method will update the user property with specific user
-  onLoggedIn(authData) {
+  onLoggedIn(authData) { // authData allows us to use both the user and the token; this is triggered when the user logs in...
     console.log(authData);
     this.setState({
-      user: authData.user.Username
+      user: authData.user.Username // ...updates the state with the logged in authData (the user's username is saved in the user state)
     });
 
+    //auth info (token, user) received from handleSubmit method is saved in localStorage
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.Username);
-    this.getMovies(authData.token);
+    this.getMovies(authData.token); // is called and gets movies from API once user is logged in
   }
 
   setSelectedMovie(newSelectedMovie) { //setSelectedMovie is a custom component method
