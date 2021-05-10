@@ -25782,10 +25782,12 @@ try {
       value: function getMovies(token) {
         var _this3 = this;
         _axios["default"].get('https://myfavfilmz.herokuapp.com/movies', {
+          // use axios to make GET request to movies endpoint of Node.js API
           headers: {
             Authorization: ("Bearer ").concat(token)
           }
-        }).then(function (response) {
+        }).// authenticated request to the API
+        then(function (response) {
           // Assign the result to the state
           _this3.setState({
             movies: response.data
