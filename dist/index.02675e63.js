@@ -25778,9 +25778,26 @@ try {
         });
       }
     }, {
+      key: "getMovies",
+      value: function getMovies(token) {
+        var _this3 = this;
+        _axios["default"].get('https://myfavfilmz.herokuapp.com/movies', {
+          headers: {
+            Authorization: ("Bearer ").concat(token)
+          }
+        }).then(function (response) {
+          // Assign the result to the state
+          _this3.setState({
+            movies: response.data
+          });
+        })["catch"](function (error) {
+          console.log(error);
+        });
+      }
+    }, {
       key: "render",
       value: function render() {
-        var _this3 = this;
+        var _this4 = this;
         var _this$state = this.state, movies = _this$state.movies, selectedMovie = _this$state.selectedMovie, user = _this$state.user, registerClicked = _this$state.registerClicked;
         // shortened form of const movies = this.state.movies
         // if no user signed in and button to render RegistrationView is clicked, render RegistrationView
@@ -25800,7 +25817,7 @@ try {
           /*#__PURE__*/_react["default"].createElement(_movieView.MovieView, {
             movie: selectedMovie,
             onBackClick: function onBackClick(newSelectedMovie) {
-              _this3.setSelectedMovie(newSelectedMovie);
+              _this4.setSelectedMovie(newSelectedMovie);
             }
           })
         );
@@ -25850,7 +25867,7 @@ try {
             "class": "h-100",
             movie: selectedMovie,
             onBackClick: function onBackClick(movie) {
-              return _this3.onMovieClick(null);
+              return _this4.onMovieClick(null);
             }
           })) : movies.map(function (movie) {
             return (
@@ -25867,7 +25884,7 @@ try {
               }, /*#__PURE__*/_react["default"].createElement(_movieCard.MovieCard, {
                 movie: movie,
                 onClick: function onClick(movie) {
-                  return _this3.onMovieClick(movie);
+                  return _this4.onMovieClick(movie);
                 }
               }))
             );
