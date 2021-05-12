@@ -119,5 +119,5 @@ MovieView.propTypes = {
     Rotten_Tomatoes_score: PropTypes.string.isRequired,
     Year: PropTypes.string.isRequired
   }).isRequired,
-  onClick: PropTypes.func
+  onBackClick: PropTypes.func
 };
