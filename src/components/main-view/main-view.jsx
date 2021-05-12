@@ -110,6 +110,7 @@ export class MainView extends React.Component {
         </Col>
       </Row>
       if (movies.length === 0) return <div className="main-view" />;
+
       return (
         <Router>
           <Row className="main-view justify-content-md-center ml-0">
@@ -124,6 +125,7 @@ export class MainView extends React.Component {
                 <Form inline>
                   <FormControl type="text" placeholder="Search" className="mr-3" />
                   <Button variant="outline-light" className="mr-5">Search</Button>
+                  <button onClick={() => { this.onLoggedOut() }}>Logout</button>
                 </Form>
               </Navbar>
             </div>
@@ -142,6 +144,7 @@ export class MainView extends React.Component {
           </Row>
         </Router>
       );
+
     }
   }
 
