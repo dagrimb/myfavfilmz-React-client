@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
+import { Link } from 'react-router-dom';
 
 //import { IoArrowForwardCircle } from 'react-icons/io';
 // Wanted to use  <div><IoArrowForwardCircle /> </div> to create arrow button in movies mockup
@@ -11,7 +12,7 @@ import CardDeck from 'react-bootstrap/CardDeck';
 //create MovieCard component
 export class MovieCard extends React.Component {
   render() {
-    const { movie, onClick } = this.props;
+    const { movie } = this.props;
 
     return (
       <CardDeck variant="h-50" class="bg-dark">
@@ -20,7 +21,9 @@ export class MovieCard extends React.Component {
             <Card.Title style={{marginTop: 25, paddingRight: 0 }}>{movie.Title}</Card.Title>
             <Card.Img variant="top mb-3" style={{ height: '20rem', width: '13rem'}} src={movie.ImagePath} />
             <Card.Text style={{ width: '100%', marginBottom: 25}}>{movie.Description.Synopsis}</Card.Text>
-            <Button variant="primary" onClick={() => onClick(movie)}>Read More</Button>
+            <Link to={`/movies/${movie._id}`}>
+              <Button variant="primary">Read More</Button>
+            </Link>
           </Card.Body>
         </Card>
       </CardDeck>
@@ -52,6 +55,5 @@ MovieCard.propTypes = {
     Featured: PropTypes.bool.isRequired,
     Rotten_Tomatoes_score: PropTypes.string.isRequired,
     Year: PropTypes.string.isRequired
-  }).isRequired,
-  onClick: PropTypes.func.isRequired
+  }).isRequired
 };
