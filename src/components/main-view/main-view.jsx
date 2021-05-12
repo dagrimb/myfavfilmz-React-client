@@ -2,27 +2,24 @@
 import React from 'react';
 //import Axios info file
 import axios from 'axios';
-//import Container into file
-//import Container from 'react-bootstrap/Container';
+//import Route and BrowserRouter
+import { BrowserRouter as Router, Route} from "react-router-dom";
 //import MovieCard into file
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import { RegistrationView } from '../registration-view/registration-view';
-//import LoginView into file
-import { LoginView } from '../login-view/login-view';
-
-
 import { MovieCard } from '../movie-card/movie-card';
 //import MovieView into file
 import { MovieView } from '../movie-view/movie-view';
+//import LoginView into file
+import { LoginView } from '../login-view/login-view';
+//import Registrationview into file
+import { RegistrationView } from '../registration-view/registration-view';
+
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 //import Button into file
 //import { Button } from '../button/button';
 import Button from 'react-bootstrap/Button';
 import { Navbar,Nav,NavDropdown,Form,FormControl} from 'react-bootstrap';
-
-//import RegistrationView into file
-
-
 
 //create MainView component as a class component by using React.Component template
 export class MainView extends React.Component {
@@ -35,6 +32,21 @@ export class MainView extends React.Component {
       user: null,
       registerClicked: false
     };
+  }
+
+  getMovies(token) {
+    axios.get('https://myfavfilmz.herokuapp.com/movies', {  // use axios to make GET request to movies endpoint of Node.js API
+      headers: { Authorization: `Bearer ${token}`}  // pass bearer authorization in the header of GET request allowing you to make an 
+    })                                              // authenticated request to the API
+    .then(response => {
+      // Assign the result to the state
+      this.setState({
+        movies: response.data
+      });
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
   //Fetch the list of movies from your database with MainView is mounted
@@ -79,20 +91,7 @@ export class MainView extends React.Component {
     this.setState({ registerClicked: value });
   }
 
-  getMovies(token) {
-    axios.get('https://myfavfilmz.herokuapp.com/movies', {  // use axios to make GET request to movies endpoint of Node.js API
-      headers: { Authorization: `Bearer ${token}`}  // pass bearer authorization in the header of GET request allowing you to make an 
-    })                                              // authenticated request to the API
-    .then(response => {
-      // Assign the result to the state
-      this.setState({
-        movies: response.data
-      });
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  }
+ 
 
   onLoggedOut() {
     localStorage.removeItem('token');
@@ -103,47 +102,50 @@ export class MainView extends React.Component {
   }
 
   render() {
-    const  { movies, selectedMovie, user, registerClicked } = this.state; // shortened form of const movies = this.state.movies
+    const  { movies, user } = this.state; // shortened form of const movies = this.state.movies
     //if no user signed in and button to render RegistrationView is clicked, render RegistrationView
-    if (!user && registerClicked) return <RegistrationView handleRegister={this.handleRegister} />;
-    //if no user signed in, render LoginView
-    if (!user) return <LoginView handleRegister={this.handleRegister} />;
-    //if not clicked, access selectedMovie state (passing a function as a prop called "onMovieClick")
-    if (selectedMovie) return <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />;
-    //if no movies, display message stating that the list is empty
-    if (!movies || movies.length === 0) return <div className="main-view" />;
-    //else, display list of movie cards
-    return (
-
-      <Row className="main-view justify-content-md-center ml-0">
-        <div className="w-100">
-          <Navbar bg="primary" variant="dark" style={{paddingLeft: 0, paddingRight: 0 }}>
-            <Navbar.Brand className="ml-2" href="#home">myfavfilmz</Navbar.Brand>
-            <Nav className="mr-auto">
-              <Nav.Link href="#account">Account</Nav.Link>
-              <Nav.Link href="#movies">Movies</Nav.Link>
-              <Nav.Link href="#pricing">About</Nav.Link>
-            </Nav>
-            <Form inline>
-              <FormControl type="text" placeholder="Search" className="mr-3" />
-              <Button variant="outline-light" className="mr-5">Search</Button>
-
-            </Form>
-          </Navbar>
-        </div>
-        {selectedMovie
-          ? (
-            <Col md={8} class="h-100">
-              <MovieView class="h-100" movie={selectedMovie} onBackClick={movie => this.onMovieClick(null)} />
-            </Col>
-          )
-          : movies.map(movie => (
-            <Col class="bg-dark h-50" md={4} lg={3} xl={2} style={{marginTop: 0, padding: 0 }} key={movie._id}>
-              <MovieCard movie={movie} onClick={movie => this.onMovieClick(movie)}/>
-            </Col>
-          ))
-        }
+    if (!user) return 
+      <Row>
+        <Col>
+          <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+        </Col>
       </Row>
-    );
+      if (movies.length === 0) return <div className="main-view" />;
+      return (
+        <Router>
+          <Row className="main-view justify-content-md-center ml-0">
+            <div className="w-100">
+              <Navbar bg="primary" variant="dark" style={{paddingLeft: 0, paddingRight: 0 }}>
+                <Navbar.Brand className="ml-2" href="#home">myfavfilmz</Navbar.Brand>
+                <Nav className="mr-auto">
+                  <Nav.Link href="#account">Account</Nav.Link>
+                  <Nav.Link href="#movies">Movies</Nav.Link>
+                  <Nav.Link href="#pricing">About</Nav.Link>
+                </Nav>
+                <Form inline>
+                  <FormControl type="text" placeholder="Search" className="mr-3" />
+                  <Button variant="outline-light" className="mr-5">Search</Button>
+                </Form>
+              </Navbar>
+            </div>
+            <Route exact path="/" render={() => { // Route component tells React Router the mainview routes and what to render if path and URL entered match
+              return movies.map(m => (
+                <Col md={3} key={m._id}>
+                  <MovieCard movie={m} />
+                </Col>
+              ))
+            }} />
+            <Route path="/movies/:movieId" render={({ match }) => { // this path will display a single movie
+              return <Col md={8}>
+                <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
+              </Col>
+            }} />
+          </Row>
+        </Router>
+      );
+    }
   }
-}
+
+
+
+
