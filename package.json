@@ -3,15 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "parcel src/index.html"
+    "dev": "parcel src/index.html"
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
+    "postcss": "^8.2.15",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^16.14.0",
-    "react-icons": "^4.2.0"
+    "react-icons": "^4.2.0",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.15",
@@ -24,6 +26,17 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "parcel": "next"
-  }
+    "parcel": "^2.0.0-beta.1"
+  },
+  "main": "src/index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dagrimb/myfavfilmz-client.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dagrimb/myfavfilmz-client/issues"
+  },
+  "homepage": "https://github.com/dagrimb/myfavfilmz-client#readme"
 }
