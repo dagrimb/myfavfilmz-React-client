@@ -104,8 +104,7 @@ export class MainView extends React.Component {
   render() {
     const  { movies, user } = this.state; // shortened form of const movies = this.state.movies
     //if no user signed in and button to render RegistrationView is clicked, render RegistrationView
-    if (!user) return 
-      <Row>
+    if (!user) return <Row>
         <Col>
           <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
         </Col>
@@ -135,9 +134,9 @@ export class MainView extends React.Component {
                 </Col>
               ))
             }} />
-            <Route path="/movies/:movieId" render={({ match }) => { // this path will display a single movie
+            <Route path="/movies/:movieId" render={({ match, history }) => { // this path will display a single movie
               return <Col md={8}>
-                <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
+                <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()}/>
               </Col>
             }} />
           </Row>
