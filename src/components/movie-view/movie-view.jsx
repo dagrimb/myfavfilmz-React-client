@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 import { Navbar,Nav,NavDropdown,Form,FormControl} from 'react-bootstrap';
 //import { Button } from '../button/button';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
+
 
 //create MovieView component
 export class MovieView extends React.Component {
