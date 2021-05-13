@@ -12,6 +12,7 @@ import FormControl from 'react-bootstrap/FormControl';
 import FormCheck from 'react-bootstrap/FormCheck';
 import FormFile from 'react-bootstrap/FormFile';
 import { render } from 'react-dom';
+import axios from 'axios';
 
 
 //call useState method and set to empty string the represents values prior to login
@@ -25,6 +26,21 @@ export function RegistrationView(props) {
   const handleSubmit = () => {
     e.preventDefault();
     console.log(username, password, email, birthday);
+    axios.post('https://myfavfilmz.herokuapp.com/users', {
+      Username: username,
+      Password: password,
+      Email: email,
+      Birthday: birthday
+    })
+    .then(response => { // if previous backend validation successful...
+      const data = response.data;
+      console.log(data); // ... data logged to console
+      window.open('/', '_self'); // '_self' argument opens current tab (user is being re-directed to 
+                                 // main view)
+    })
+    .catch(e => {
+      console.log('error registering the user')
+    });
     props.handleRegister(username);
   };
 
