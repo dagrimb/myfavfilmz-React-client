@@ -9,7 +9,7 @@ import { MovieCard } from '../movie-card/movie-card';
 //import MovieView into file
 import { MovieView } from '../movie-view/movie-view';
 //import DirectorView into file
-//import { DirectorView } from '../director-view/director-view';
+import { DirectorView } from '../director-view/director-view';
 //import GenreView into file
 //import { GenreView } from '../genre-view/genre-view';
 //import LoginView into file
