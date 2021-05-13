@@ -129,7 +129,7 @@ export class MainView extends React.Component {
                 </Form>
               </Navbar>
             </div>
-            <Route exact path="/" render={() => { // Route component tells React Router the mainview routes and what to render if path and URL entered match
+            <Route exact path="/" render={/* welcome */ () => { // Route component tells React Router the mainview routes and what to render if path and URL entered match
               return movies.map(m => (
                 <Col md={3} key={m._id}>
                   <MovieCard movie={m} />
@@ -139,6 +139,13 @@ export class MainView extends React.Component {
             <Route path="/movies/:movieId" render={({ match, history }) => { // this path will display a single movie
               return <Col md={8}>
                 <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()}/>
+              </Col>
+            }} />
+            <Route path="/genres/:name" render={/* genre view */ ({ match, history})} />
+            <Route path="/directors/:name" render={/* director view */ ({ match, history }) => { // this path will display a single movie
+              if (movies.length === 0) return <div className="main-view" />;
+              return <Col md={8}>
+                <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()}/>
               </Col>
             }} />
           </Row>
