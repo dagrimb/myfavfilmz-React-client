@@ -22,7 +22,7 @@ export class MovieCard extends React.Component {
             <Card.Img variant="top mb-3" style={{ height: '20rem', width: '13rem'}} src={movie.ImagePath} />
             <Card.Text style={{ width: '100%', marginBottom: 25}}>{movie.Description.Synopsis}</Card.Text>
             <Link to={`/movies/${movie._id}`}>
-              <Button variant="primary">Read More</Button>
+              <Button variant="primary-link">Read More</Button>
             </Link>
           </Card.Body>
         </Card>
