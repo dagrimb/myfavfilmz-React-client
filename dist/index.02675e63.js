@@ -25522,7 +25522,7 @@ try {
       });
     }
     render() {
-      const {movies, user, director} = this.state;
+      const {movies, user} = this.state;
       // shortened form of const movies = this.state.movies
       // if no user signed in and button to render RegistrationView is clicked, render RegistrationView
       return (
