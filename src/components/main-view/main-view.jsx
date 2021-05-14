@@ -107,8 +107,11 @@ export class MainView extends React.Component {
   }
 
   render() {
-    const  { movies, user } = this.state; // shortened form of const movies = this.state.movies
+    const  { movies, user, registerClicked } = this.state; // shortened form of const movies = this.state.movies
     //if no user signed in and button to render RegistrationView is clicked, render RegistrationView
+    if (!user && registerClicked) return <RegistrationView handleRegister={this.handleRegister} onRegistered={this.onRegistered} />;
+    //if no user signed in, render LoginView
+    if (!user) return <LoginView handleRegister={this.handleRegister} onLoggedIn={this.onLoggedIn} />
       return (
         <Router>
           <Row className="main-view justify-content-md-center ml-0">
