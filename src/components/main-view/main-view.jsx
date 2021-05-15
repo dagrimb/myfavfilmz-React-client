@@ -4,6 +4,8 @@ import React from 'react';
 import axios from 'axios';
 //import Route and BrowserRouter
 import { BrowserRouter as Router, Route, Redirect} from "react-router-dom";
+//import LoginView into file
+import { LoginView } from '../login-view/login-view';
 //import MovieCard into file
 import { MovieCard } from '../movie-card/movie-card';
 //import MovieView into file
@@ -12,8 +14,6 @@ import { MovieView } from '../movie-view/movie-view';
 import { DirectorView } from '../director-view/director-view';
 //import GenreView into file
 import { GenreView } from '../genre-view/genre-view';
-//import LoginView into file
-import { LoginView } from '../login-view/login-view';
 //import Registrationview into file
 import { RegistrationView } from '../registration-view/registration-view';
 
@@ -111,7 +111,7 @@ export class MainView extends React.Component {
     //if no user signed in and button to render RegistrationView is clicked, render RegistrationView
     if (!user && registerClicked) return <RegistrationView handleRegister={this.handleRegister} onRegistered={this.onRegistered} />;
     //if no user signed in, render LoginView
-    if (!user) return <LoginView handleRegister={this.handleRegister} onLoggedIn={this.onLoggedIn} />
+    //if (!user) return <LoginView handleRegister={this.handleRegister}/>
       return (
         <Router>
           <Row className="main-view justify-content-md-center ml-0">
@@ -132,7 +132,7 @@ export class MainView extends React.Component {
             </div>
             <Route exact path="/" render={/* welcome */ () => { // Route component tells React Router the mainview routes and what to render if path and URL entered match
               if (!user) return <Col>
-                <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
               </Col>
               if (movies.length === 0) return <div className="main-view" />;
               return movies.map(m => (
@@ -149,7 +149,7 @@ export class MainView extends React.Component {
             }} />
             <Route path="/movies/:movieId" render={({ match, history }) => { // this path will display a single movie
               if (!user) return <Col>
-                <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
               </Col>
               if (movies.length === 0) return <div className="main-view" />;  
               return <Col md={8}>
@@ -158,7 +158,7 @@ export class MainView extends React.Component {
             }} />
             <Route path="/directors/:name" render={({ match, history }) => { // this path will display a single movie
               if (!user) return <Col>
-                <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister} />
               </Col>
               if (movies.length === 0) return <div className="main-view" />; 
               return <Col md={8}>
@@ -167,7 +167,7 @@ export class MainView extends React.Component {
             }} />
             <Route path="/genres/:name" render={({ match, history}) => {
               if (!user) return <Col>
-                <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
               </Col>
               if (movies.length === 0) return <div className="main-view" />;
               return <Col md={8}>
