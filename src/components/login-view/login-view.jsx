@@ -31,6 +31,7 @@ export function LoginView(props) {
         //call props.onLoggedIn(username), which provides the username to our parent component (child to parent communication)
         props.onLoggedIn(data); //will trigger onLoggedIn method of main-view.jsx; passed to the LoginView and triggers the function 
         //onLoggedIn(authData) in MainView when the user logs in
+        console.log(data);
       })
       .catch(e => {
         console.log('no such user')
