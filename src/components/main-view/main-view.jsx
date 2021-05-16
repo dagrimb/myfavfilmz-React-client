@@ -3,7 +3,7 @@ import React from 'react';
 //import Axios info file
 import axios from 'axios';
 //import Route and BrowserRouter
-import { BrowserRouter as Router, Route, Redirect} from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect, Link} from "react-router-dom";
 //import LoginView into file
 import { LoginView } from '../login-view/login-view';
 //import MovieCard into file
@@ -16,6 +16,8 @@ import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 //import Registrationview into file
 import { RegistrationView } from '../registration-view/registration-view';
+//import ProfileView into file
+import { ProfileView } from '../registration-view/registration-view';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -33,7 +35,7 @@ export class MainView extends React.Component {
     this.state = {
       movies: [],
       selectedMovie: null,//set default (pre-click event) value to null
-      user: null,
+      user: "",
       registerClicked: false
     };
   }
@@ -64,6 +66,7 @@ export class MainView extends React.Component {
       });
     }
 
+
   //a method later passed as a prop to LoginView (below). When user clicks movie, the function updates
   //state of the selectedMovie property with that movie
   /*onMovieClick(movie) {
@@ -91,6 +94,9 @@ export class MainView extends React.Component {
       selectedMovie: newSelectedMovie
     });
   }*/
+
+
+
 
   handleRegister = (value) => {
     this.setState({ registerClicked: value });
@@ -126,6 +132,9 @@ export class MainView extends React.Component {
                 <Form inline>
                   <FormControl type="text" placeholder="Search" className="mr-3" />
                   <Button variant="outline-light" className="mr-5">Search</Button>
+                  <Link to={`/users/${user.Username}`}>
+                    <Button variant="link-white">{user.Username}</Button>
+                  </Link>
                   <button onClick={() => { this.onLoggedOut() }}>Logout</button>
                 </Form>
               </Navbar>
@@ -172,6 +181,14 @@ export class MainView extends React.Component {
               if (movies.length === 0) return <div className="main-view" />;
               return <Col md={8}>
                 <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()}/>
+              </Col>
+            }} />
+            <Route path="/users/:Username" render={({ match, history}) => {
+              if (!user) return <Col>
+                <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
+              </Col>
+              return <Col md={8}>
+                <ProfileView user={users.find(u => u.userId === match.params.userId).user} onBackClick={() => history.goBack()}/>
               </Col>
             }} />
           </Row>
