@@ -23,7 +23,7 @@ export function RegistrationView(props) {
   const [ birthday, setBirthday ] = useState(new Date());
 
   //Send request to server for auth
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log(username, password, email, birthday);
     axios.post('https://myfavfilmz.herokuapp.com/users', {
@@ -108,18 +108,6 @@ export function RegistrationView(props) {
                 Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or 
                 emoji.
               </Form.Text>
-            </Form.Group>
-            <Form.Group as={Col} controlId="formBasicPassword">
-              <InputGroup hasValidation>
-                <Form.Control 
-                  required
-                  type="password" 
-                  placeholder="Enter your password again"
-                  value={password}
-                  aria-describedby="passwordHelpBlock"
-                  onChange={e => setPassword(e.target.value)}
-                />
-              </InputGroup>
             </Form.Group>
             <Form.Group as={Col} controlId="validationCustom01">
               <Form.Label className="float-left">Birthday</Form.Label>
