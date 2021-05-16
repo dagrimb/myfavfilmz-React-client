@@ -43,7 +43,6 @@ export class MovieView extends React.Component {
             <Form inline>
               <FormControl type="text" placeholder="Search" className="mr-3" />
               <Button variant="outline-light" className="mr-5">Search</Button>
-
             </Form>
           </Navbar> 
           </div>
@@ -52,7 +51,7 @@ export class MovieView extends React.Component {
           <div className="movie-poster mb-4 justify-content-center text-center mx-auto" fluid>
             <img src={movie.ImagePath} height="5%" width="20%"/>
           </div>
-          <div class="mx-auto" style={{ height: '100%', maxWidth: '50%' }} >
+          <div class="mx-auto" style={{ height: '1 00%', maxWidth: '50%' }} >
             <div className="movie-title bg-dark h-100 text-center">
               <h5 className="value" style={{marginTop: 25, paddingRight: 0 }}>{movie.Title}</h5>
             </div>  
