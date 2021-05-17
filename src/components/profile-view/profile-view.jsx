@@ -86,8 +86,10 @@ export class ProfileView extends React.Component {
               <span className="value">{user.Username}</span>
               <span className="value"> {user.Email}</span>
               <span className="value">{user.Birthday} </span>
+              <span className="value">{user.FavoriteMovies}</span>
             </div>
             <div style={{ textAlign: 'center' }}>
+              <Button className="mt-5"  variant="primary" onClick={() => { onBackClick(null); }}>Edit Profile</Button>
               <Button className="mt-5"  variant="primary" onClick={() => { onBackClick(null); }}>Back</Button>
             </div>
           </div>
