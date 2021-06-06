@@ -18,6 +18,7 @@ import { GenreView } from '../genre-view/genre-view';
 import { RegistrationView } from '../registration-view/registration-view';
 //import ProfileView into file
 import { ProfileView } from '../profile-view/profile-view';
+import { ProfileEdit } from '../profile-edit/profile-edit';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -25,7 +26,7 @@ import Col from 'react-bootstrap/Col';
 //import Button into file
 //import { Button } from '../button/button';
 import Button from 'react-bootstrap/Button';
-import { Navbar,Nav,NavDropdown,Form,FormControl} from 'react-bootstrap';
+import { Navbar,Nav, Form,FormControl} from 'react-bootstrap';
 
 //create MainView component as a class component by using React.Component template
 export class MainView extends React.Component {
@@ -34,10 +35,11 @@ export class MainView extends React.Component {
     super(); //initialize component state
     this.state = {
       movies: [],
-      selectedMovie: null,//set default (pre-click event) value to null
-      user: null,
-      registerClicked: false,
-      isLoggedIn: false
+      //selectedMovie: null,//set default (pre-click event) value to null
+      user: null
+      //registerClicked: false,
+      //isLoggedIn: false,
+      //profileEditClicked: false
     };
   }
 
@@ -80,6 +82,7 @@ export class MainView extends React.Component {
         console.log(error);
       });
     }
+
   //a method later passed as a prop to LoginView (below). When user clicks movie, the function updates
   //state of the selectedMovie property with that movie
   /*onMovieClick(movie) {
@@ -115,7 +118,9 @@ export class MainView extends React.Component {
     this.setState({ registerClicked: value });
   }
 
- 
+  handleEdit = (value) => {
+    this.setState({ profileEditClicked: value });
+  }
 
   onLoggedOut() {
     localStorage.removeItem('token');
@@ -126,13 +131,14 @@ export class MainView extends React.Component {
   }
 
   render() {
-    const  { isLoggedIn, movies, user, registerClicked } = this.state; // shortened form of const movies = this.state.movies
+    const  { movies, user, registerClicked} = this.state; // shortened form of const movies = this.state.movies
     //if no user signed in and button to render RegistrationView is clicked, render RegistrationView
     if (!user && registerClicked) return <RegistrationView handleRegister={this.handleRegister} onRegistered={this.onRegistered} />;
+    //if user is logged in but not on user profile...
+    //if (isLoggedIn && !user) return <div>Loading...</div>
     //if no user signed in, render LoginView
-    if (isLoggedIn && !user) return <div>Loading...</div>
-    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleReigster={this.handleReigster}/>
-
+    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
+    //if (user && profileEditClicked) return <ProfileEdit handleEdit={this.handleEdit} onRegistered={this.onRegistered} />;
       return (
         <Router>
           <Row className="main-view justify-content-md-center ml-0">
@@ -176,7 +182,7 @@ export class MainView extends React.Component {
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
               </Col>
               if (movies.length === 0) return <div className="main-view" />;  
-              return <Col md={8}>
+              return <Col md={8} key={m._id}>
                 <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()}/>
               </Col>
             }} />
@@ -185,7 +191,7 @@ export class MainView extends React.Component {
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister} />
               </Col>
               if (movies.length === 0) return <div className="main-view" />; 
-              return <Col md={8}>
+              return <Col md={8} key={m._id}>
                 <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()}/>
               </Col>
             }} />
@@ -194,17 +200,17 @@ export class MainView extends React.Component {
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
               </Col>
               if (movies.length === 0) return <div className="main-view" />;
-              return <Col md={8}>
+              return <Col md={8} key={m._id}>
                 <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()}/>
               </Col>
             }} />
             <Route path="/users/:Username" render={({ match, history}) => {
-              if (!user) return <Col>
+              if (!user) return <Col key={u._id}>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
               </Col>
               return <Col md={8}>
                 <ProfileView user={user} onBackClick={() => history.goBack()}/>
-              </Col>
+              </Col>  
             }} />
           </Row>
         </Router>
