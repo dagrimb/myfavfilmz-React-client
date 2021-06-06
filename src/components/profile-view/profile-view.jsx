@@ -55,7 +55,7 @@ export class ProfileView extends React.Component {
 
 */
   render() {
-    const { onBackClick, user } = this.props;
+    const { onBackClick, user, handleEdit } = this.props;
     console.log("ProfileView", user);
 
     return (
@@ -80,7 +80,7 @@ export class ProfileView extends React.Component {
         <Col className="pt-5 bg-dark" style={{ paddingBottom: '80rem', height: '100%', width: '100%', color: 'white', background: '#292b2c'}}>
           <div class="mx-auto" style={{ height: '100%', maxWidth: '50%' }} >
             <div className="movie-director" style={{ color: 'white' }}>
-            <div className="movie-poster mb-4 justify-content-center text-center mx-auto" fluid>
+            <div className="movie-poster mb-4 justify-content-center text-center mx-auto">
               <img src={user.ImagePath} height="5%" width="20%"/>
             </div>
               <span className="value">{user.Username}</span>
@@ -89,7 +89,7 @@ export class ProfileView extends React.Component {
               <span className="value">{user.FavoriteMovies}</span>
             </div>
             <div style={{ textAlign: 'center' }}>
-              <Button className="mt-5"  variant="primary" onClick={() => { onBackClick(null); }}>Edit Profile</Button>
+              <Button className="mt-5"  size="sm" variant="primary" onClick={() => this.handleEdit(true)}>Edit Profile</Button>
               <Button className="mt-5"  variant="primary" onClick={() => { onBackClick(null); }}>Back</Button>
             </div>
           </div>
