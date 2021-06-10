@@ -26017,7 +26017,11 @@ try {
             );
             return (
               /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
-                md: 8,
+                md: 12,
+                style: {
+                  paddingLeft: 0,
+                  paddingRight: 0
+                },
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
@@ -47023,13 +47027,12 @@ try {
   var _reactDefault = _parcelHelpers.interopDefault(_react);
   require('react-bootstrap/Image');
   require('axios');
-  var _reactBootstrapRow = require('react-bootstrap/Row');
-  var _reactBootstrapRowDefault = _parcelHelpers.interopDefault(_reactBootstrapRow);
+  require('react-bootstrap/Row');
   var _reactBootstrapCol = require('react-bootstrap/Col');
   var _reactBootstrapColDefault = _parcelHelpers.interopDefault(_reactBootstrapCol);
   var _propTypes = require('prop-types');
   var _propTypesDefault = _parcelHelpers.interopDefault(_propTypes);
-  var _reactBootstrap = require('react-bootstrap');
+  require('react-bootstrap');
   var _reactBootstrapButton = require('react-bootstrap/Button');
   var _reactBootstrapButtonDefault = _parcelHelpers.interopDefault(_reactBootstrapButton);
   require('react-router-dom');
@@ -47083,104 +47086,7 @@ try {
             lineNumber: 59,
             columnNumber: 7
           }
-        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
-          className: "main-view justify-content-md-center ml-0 h-100",
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 60,
-            columnNumber: 9
-          }
-        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
-          className: "w-100",
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 61,
-            columnNumber: 9
-          }
-        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Navbar, {
-          bg: "primary",
-          variant: "dark",
-          style: {
-            paddingLeft: 0,
-            paddingRight: 0
-          },
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 62,
-            columnNumber: 11
-          }
-        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Navbar.Brand, {
-          className: "ml-2",
-          href: "#home",
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 63,
-            columnNumber: 13
-          }
-        }, "myfavfilmz"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Nav, {
-          className: "mr-auto",
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 64,
-            columnNumber: 13
-          }
-        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Nav.Link, {
-          href: "#account",
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 65,
-            columnNumber: 15
-          }
-        }, "Account"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Nav.Link, {
-          href: "#movies",
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 66,
-            columnNumber: 15
-          }
-        }, "Movies"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Nav.Link, {
-          href: "#about",
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 67,
-            columnNumber: 15
-          }
-        }, "About")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Form, {
-          inline: true,
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 69,
-            columnNumber: 13
-          }
-        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.FormControl, {
-          type: "text",
-          placeholder: "Search",
-          className: "mr-3",
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 70,
-            columnNumber: 15
-          }
-        }), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
-          variant: "outline-light",
-          className: "mr-5",
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 71,
-            columnNumber: 15
-          }
-        }, "Search"))))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
           className: "pt-5 bg-dark",
           style: {
             paddingBottom: '80rem',
@@ -47192,11 +47098,11 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 77,
+            lineNumber: 60,
             columnNumber: 9
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("div", {
-          class: "mx-auto",
+          className: "mx-auto",
           style: {
             height: '100%',
             maxWidth: '50%'
@@ -47204,7 +47110,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 78,
+            lineNumber: 61,
             columnNumber: 11
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -47215,16 +47121,15 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 79,
+            lineNumber: 62,
             columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("div", {
           className: "movie-poster mb-4 justify-content-center text-center mx-auto",
-          fluid: true,
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 80,
+            lineNumber: 63,
             columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("img", {
@@ -47234,7 +47139,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 81,
+            lineNumber: 64,
             columnNumber: 15
           }
         })), /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -47242,7 +47147,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 83,
+            lineNumber: 66,
             columnNumber: 15
           }
         }, user.Username), /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -47250,7 +47155,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 84,
+            lineNumber: 67,
             columnNumber: 15
           }
         }, " ", user.Email), /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -47258,7 +47163,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 85,
+            lineNumber: 68,
             columnNumber: 15
           }
         }, user.Birthday, " ")), /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -47268,7 +47173,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 87,
+            lineNumber: 70,
             columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
@@ -47280,7 +47185,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 88,
+            lineNumber: 71,
             columnNumber: 15
           }
         }, "Back")))))
