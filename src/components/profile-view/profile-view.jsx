@@ -19,9 +19,12 @@ export class ProfileView extends React.Component {
     console.log(event.key);
   }
 
-  /*
+  
   //Fetch the appropriate profile from your database with MainView is mounted
   componentDidMount(){
+    document.addEventListener('keypress', this.keypressCallback);
+  }
+  /*
     let accessToken = localStorage.getItem('token'); // get the value of the token from localStorage
     if (accessToken !== null) {   // access token being present (i.e. "!==null") means that user is already logged in
       this.setState({
@@ -30,7 +33,7 @@ export class ProfileView extends React.Component {
       this.getProfile(accessToken);  // getMovies method is executed and a GET request to the movies endpoint
       }
     }
-
+*/
   componentWillUnmount() {
     document.removeEventListener('keypress', this.keypressCallback);
   }
@@ -52,10 +55,10 @@ export class ProfileView extends React.Component {
     // always executed
   }); 
 }
-
 */
+
   render() {
-    const { onBackClick, user, handleEdit } = this.props;
+    const { onBackClick, user } = this.props;
     console.log("ProfileView", user);
 
     return (
@@ -78,7 +81,7 @@ export class ProfileView extends React.Component {
           </div>
         </Row>
         <Col className="pt-5 bg-dark" style={{ paddingBottom: '80rem', height: '100%', width: '100%', color: 'white', background: '#292b2c'}}>
-          <div class="mx-auto" style={{ height: '100%', maxWidth: '50%' }} >
+          <div className="mx-auto" style={{ height: '100%', maxWidth: '50%' }} >
             <div className="movie-director" style={{ color: 'white' }}>
             <div className="movie-poster mb-4 justify-content-center text-center mx-auto">
               <img src={user.ImagePath} height="5%" width="20%"/>
