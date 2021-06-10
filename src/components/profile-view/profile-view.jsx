@@ -19,12 +19,9 @@ export class ProfileView extends React.Component {
     console.log(event.key);
   }
 
-  
+  /*
   //Fetch the appropriate profile from your database with MainView is mounted
   componentDidMount(){
-    document.addEventListener('keypress', this.keypressCallback);
-  }
-  /*
     let accessToken = localStorage.getItem('token'); // get the value of the token from localStorage
     if (accessToken !== null) {   // access token being present (i.e. "!==null") means that user is already logged in
       this.setState({
@@ -33,11 +30,9 @@ export class ProfileView extends React.Component {
       this.getProfile(accessToken);  // getMovies method is executed and a GET request to the movies endpoint
       }
     }
-*/
   componentWillUnmount() {
     document.removeEventListener('keypress', this.keypressCallback);
   }
-
   /*getProfile(token) {
     axios.get('https://myfavfilmz.herokuapp.com//users', {
       headers: { Authorization: `Bearer ${token}`},
@@ -56,7 +51,6 @@ export class ProfileView extends React.Component {
   }); 
 }
 */
-
   render() {
     const { onBackClick, user } = this.props;
     console.log("ProfileView", user);
@@ -81,18 +75,16 @@ export class ProfileView extends React.Component {
           </div>
         </Row>
         <Col className="pt-5 bg-dark" style={{ paddingBottom: '80rem', height: '100%', width: '100%', color: 'white', background: '#292b2c'}}>
-          <div className="mx-auto" style={{ height: '100%', maxWidth: '50%' }} >
+          <div class="mx-auto" style={{ height: '100%', maxWidth: '50%' }} >
             <div className="movie-director" style={{ color: 'white' }}>
-            <div className="movie-poster mb-4 justify-content-center text-center mx-auto">
+            <div className="movie-poster mb-4 justify-content-center text-center mx-auto" fluid>
               <img src={user.ImagePath} height="5%" width="20%"/>
             </div>
               <span className="value">{user.Username}</span>
               <span className="value"> {user.Email}</span>
               <span className="value">{user.Birthday} </span>
-              <span className="value">{user.FavoriteMovies}</span>
             </div>
             <div style={{ textAlign: 'center' }}>
-              <Button className="mt-5"  size="sm" variant="primary" onClick={() => this.handleEdit(true)}>Edit Profile</Button>
               <Button className="mt-5"  variant="primary" onClick={() => { onBackClick(null); }}>Back</Button>
             </div>
           </div>
