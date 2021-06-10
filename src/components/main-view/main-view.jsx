@@ -208,7 +208,7 @@ export class MainView extends React.Component {
               if (!user) return <Col key={u._id}>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
               </Col>
-              return <Col md={8}>
+              return <Col md={12} style={{paddingLeft: 0, paddingRight: 0 }}>
                 <ProfileView user={user} onBackClick={() => history.goBack()}/>
               </Col>  
             }} />
