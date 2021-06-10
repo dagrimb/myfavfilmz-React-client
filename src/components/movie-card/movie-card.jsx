@@ -15,9 +15,9 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     return (
-      <CardDeck variant="h-50" class="bg-dark">
+      <CardDeck variant="h-50" className="bg-dark">
         <Card className="text-center" style={{ height: '46rem', width: '18rem', color: 'white', background: '#292b2c'}}>
-          <Card.Body class="bg-dark h-100 mx-2">
+          <Card.Body className="bg-dark h-100 mx-2">
             <Card.Title style={{marginTop: 25, paddingRight: 0 }}>{movie.Title}</Card.Title>
             <Card.Img variant="top mb-3" style={{ height: '20rem', width: '13rem'}} src={movie.ImagePath} />
             <Card.Text style={{ width: '100%', marginBottom: 25}}>{movie.Description.Synopsis}</Card.Text>
