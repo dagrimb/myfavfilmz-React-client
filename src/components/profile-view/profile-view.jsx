@@ -58,10 +58,10 @@ export class ProfileView extends React.Component {
     return (
       <div className="profile-view">
         <Col className="pt-5 bg-dark" style={{ paddingBottom: '80rem', height: '100%', width: '100%', color: 'white', background: '#292b2c'}}>
-          <div className="mx-auto" style={{ height: '100%', maxWidth: '100%' }} >
+          <div style={{ height: '100%', maxWidth: '100%' }} >
             <div className="user-profile" style={{ color: 'white' }}>
-              <div className="user-intro mb-4 justify-content-center text-left mx-auto">
-                <h3>my profile</h3>
+              <div className="user-intro mb-4 justify-content-left text-left mx-auto">
+                <h2>my profile</h2>
                 <img src={user.ImagePath} height="5%" width="20%"/>
               </div>
                 <div>
@@ -87,6 +87,7 @@ export class ProfileView extends React.Component {
             </div>
             <div style={{ textAlign: 'center' }}>
               <Button className="mt-5"  variant="primary" onClick={() => { onBackClick(null); }}>Back</Button>
+              <h4 className="text-left mt-5">{user.Username}'s fav filmz</h4>
             </div>
           </div>
         </Col>
