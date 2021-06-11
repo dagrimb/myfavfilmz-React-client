@@ -160,7 +160,8 @@ export class MainView extends React.Component {
                 </Form>
               </Navbar>
             </div>
-            <Route exact path="/" render={/* welcome */ () => { // Route component tells React Router the mainview routes and what to render if path and URL entered match
+
+            <Route exact path="/" render={() => { // Route component tells React Router the mainview routes and what to render if path and URL entered match
               if (!user) return <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
               </Col>
@@ -171,12 +172,14 @@ export class MainView extends React.Component {
                 </Col>
               ))
             }} />
+
             <Route path="/register" render={() => {
               if (user) return <Redirect to="/" />
               return <Col>
                 <RegistrationView />
               </Col> 
             }} />
+
             <Route path="/movies/:movieId" render={({ match, history }) => { // this path will display a single movie
               if (!user) return <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
