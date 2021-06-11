@@ -143,12 +143,12 @@ export class MainView extends React.Component {
         <Router>
           <Row className="main-view justify-content-md-center ml-0">
             <div className="w-100">
-              <Navbar bg="primary" variant="dark" style={{paddingLeft: 0, paddingRight: 0 }}>
+              <Navbar bg="primary" variant="dark">
                 <Navbar.Brand className="ml-2" href="#home">myfavfilmz</Navbar.Brand>
                 <Nav className="mr-auto">
                   <Nav.Link href="#account">Account</Nav.Link>
                   <Nav.Link href="#movies">Movies</Nav.Link>
-                  <Nav.Link href="#pricing">About</Nav.Link>
+                  <Nav.Link href="aboutus">About</Nav.Link>
                 </Nav>
                 <Form inline>
                   <FormControl type="text" placeholder="Search" className="mr-3" />
@@ -182,7 +182,7 @@ export class MainView extends React.Component {
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
               </Col>
               if (movies.length === 0) return <div className="main-view" />;  
-              return <Col md={8} key={m._id}>
+              return <Col md={12} style={{paddingLeft: 0, paddingRight: 0 }}>
                 <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()}/>
               </Col>
             }} />
@@ -191,7 +191,7 @@ export class MainView extends React.Component {
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister} />
               </Col>
               if (movies.length === 0) return <div className="main-view" />; 
-              return <Col md={8} key={m._id}>
+              return <Col md={12} style={{paddingLeft: 0, paddingRight: 0 }}>
                 <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()}/>
               </Col>
             }} />
@@ -200,12 +200,12 @@ export class MainView extends React.Component {
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
               </Col>
               if (movies.length === 0) return <div className="main-view" />;
-              return <Col md={8} key={m._id}>
+              return <Col md={12} style={{paddingLeft: 0, paddingRight: 0 }}>
                 <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()}/>
               </Col>
             }} />
             <Route path="/users/:Username" render={({ match, history}) => {
-              if (!user) return <Col key={u._id}>
+              if (!user) return <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
               </Col>
               return <Col md={12} style={{paddingLeft: 0, paddingRight: 0 }}>
