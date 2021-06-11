@@ -25707,15 +25707,14 @@ try {
         }, "Logout")))), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
           exact: true,
           path: "/",
-          render: /*welcome*/
-          () => {
+          render: () => {
             // Route component tells React Router the mainview routes and what to render if path and URL entered match
             if (!user) return (
               /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 164,
+                  lineNumber: 165,
                   columnNumber: 33
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_loginViewLoginView.LoginView, {
@@ -25724,7 +25723,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 165,
+                  lineNumber: 166,
                   columnNumber: 17
                 }
               }))
@@ -25735,7 +25734,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 167,
+                  lineNumber: 168,
                   columnNumber: 47
                 }
               })
@@ -25746,7 +25745,7 @@ try {
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 169,
+                lineNumber: 170,
                 columnNumber: 17
               }
             }, /*#__PURE__*/_reactDefault.default.createElement(_movieCardMovieCard.MovieCard, {
@@ -25754,7 +25753,7 @@ try {
               __self: this,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 170,
+                lineNumber: 171,
                 columnNumber: 19
               }
             })));
@@ -25762,7 +25761,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 163,
+            lineNumber: 164,
             columnNumber: 13
           }
         }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -25774,7 +25773,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 175,
+                  lineNumber: 177,
                   columnNumber: 32
                 }
               })
@@ -25784,14 +25783,14 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 176,
+                  lineNumber: 178,
                   columnNumber: 22
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_registrationViewRegistrationView.RegistrationView, {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 177,
+                  lineNumber: 179,
                   columnNumber: 17
                 }
               }))
@@ -25800,7 +25799,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 174,
+            lineNumber: 176,
             columnNumber: 13
           }
         }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -25812,7 +25811,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 181,
+                  lineNumber: 184,
                   columnNumber: 33
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_loginViewLoginView.LoginView, {
@@ -25821,7 +25820,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 182,
+                  lineNumber: 185,
                   columnNumber: 17
                 }
               }))
@@ -25832,7 +25831,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 184,
+                  lineNumber: 187,
                   columnNumber: 47
                 }
               })
@@ -25847,7 +25846,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 185,
+                  lineNumber: 188,
                   columnNumber: 22
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
@@ -25856,7 +25855,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 186,
+                  lineNumber: 189,
                   columnNumber: 17
                 }
               }))
@@ -25865,7 +25864,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 180,
+            lineNumber: 183,
             columnNumber: 13
           }
         }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -25877,7 +25876,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 190,
+                  lineNumber: 193,
                   columnNumber: 33
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_loginViewLoginView.LoginView, {
@@ -25886,7 +25885,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 191,
+                  lineNumber: 194,
                   columnNumber: 17
                 }
               }))
@@ -25897,7 +25896,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 193,
+                  lineNumber: 196,
                   columnNumber: 47
                 }
               })
@@ -25912,7 +25911,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 194,
+                  lineNumber: 197,
                   columnNumber: 22
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_directorViewDirectorView.DirectorView, {
@@ -25921,7 +25920,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 195,
+                  lineNumber: 198,
                   columnNumber: 17
                 }
               }))
@@ -25930,7 +25929,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 189,
+            lineNumber: 192,
             columnNumber: 13
           }
         }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -25941,7 +25940,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 199,
+                  lineNumber: 202,
                   columnNumber: 33
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_loginViewLoginView.LoginView, {
@@ -25950,7 +25949,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 200,
+                  lineNumber: 203,
                   columnNumber: 17
                 }
               }))
@@ -25961,7 +25960,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 202,
+                  lineNumber: 205,
                   columnNumber: 47
                 }
               })
@@ -25976,7 +25975,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 203,
+                  lineNumber: 206,
                   columnNumber: 22
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_genreViewGenreView.GenreView, {
@@ -25985,7 +25984,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 204,
+                  lineNumber: 207,
                   columnNumber: 17
                 }
               }))
@@ -25994,7 +25993,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 198,
+            lineNumber: 201,
             columnNumber: 13
           }
         }), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -26005,7 +26004,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 208,
+                  lineNumber: 211,
                   columnNumber: 33
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_loginViewLoginView.LoginView, {
@@ -26014,7 +26013,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 209,
+                  lineNumber: 212,
                   columnNumber: 17
                 }
               }))
@@ -26029,7 +26028,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 211,
+                  lineNumber: 214,
                   columnNumber: 22
                 }
               }, /*#__PURE__*/_reactDefault.default.createElement(_profileViewProfileView.ProfileView, {
@@ -26038,7 +26037,7 @@ try {
                 __self: this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 212,
+                  lineNumber: 215,
                   columnNumber: 17
                 }
               }))
@@ -26047,7 +26046,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 207,
+            lineNumber: 210,
             columnNumber: 13
           }
         })))
@@ -26060,7 +26059,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","axios":"7rA65","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","../login-view/login-view":"6M7fu","../registration-view/registration-view":"7gvH2","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","react-bootstrap/Button":"1ru0l","react-bootstrap":"4n7hB","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-router-dom":"1PMSK","../director-view/director-view":"7HF27","../genre-view/genre-view":"6FLqj","../profile-view/profile-view":"3CncI","../profile-edit/profile-edit":"1jaAx"}],"7rA65":[function(require,module,exports) {
+},{"react":"3b2NM","axios":"7rA65","react-router-dom":"1PMSK","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","../login-view/login-view":"6M7fu","../registration-view/registration-view":"7gvH2","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","react-bootstrap/Button":"1ru0l","react-bootstrap":"4n7hB","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","../director-view/director-view":"7HF27","../genre-view/genre-view":"6FLqj","../profile-view/profile-view":"3CncI","../profile-edit/profile-edit":"1jaAx"}],"7rA65":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 },{"./lib/axios":"4qfhW"}],"4qfhW":[function(require,module,exports) {
 'use strict';
@@ -27805,1318 +27804,7 @@ module.exports = function isAxiosError(payload) {
   return (typeof payload === 'object') && (payload.isAxiosError === true);
 };
 
-},{}],"7v6h3":[function(require,module,exports) {
-var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-helpers.prelude(module);
-try {
-  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
-  _parcelHelpers.defineInteropFlag(exports);
-  _parcelHelpers.export(exports, "MovieCard", function () {
-    return MovieCard;
-  });
-  var _react = require('react');
-  var _reactDefault = _parcelHelpers.interopDefault(_react);
-  var _propTypes = require('prop-types');
-  var _propTypesDefault = _parcelHelpers.interopDefault(_propTypes);
-  var _reactBootstrapButton = require('react-bootstrap/Button');
-  var _reactBootstrapButtonDefault = _parcelHelpers.interopDefault(_reactBootstrapButton);
-  var _reactBootstrapCard = require('react-bootstrap/Card');
-  var _reactBootstrapCardDefault = _parcelHelpers.interopDefault(_reactBootstrapCard);
-  var _reactBootstrapCardDeck = require('react-bootstrap/CardDeck');
-  var _reactBootstrapCardDeckDefault = _parcelHelpers.interopDefault(_reactBootstrapCardDeck);
-  var _reactRouterDom = require('react-router-dom');
-  var _jsxFileName = "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-card/movie-card.jsx";
-  class MovieCard extends _reactDefault.default.Component {
-    render() {
-      const {movie} = this.props;
-      return (
-        /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDeckDefault.default, {
-          variant: "h-50",
-          className: "bg-dark",
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 18,
-            columnNumber: 7
-          }
-        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default, {
-          className: "text-center",
-          style: {
-            height: '46rem',
-            width: '18rem',
-            color: 'white',
-            background: '#292b2c'
-          },
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 19,
-            columnNumber: 9
-          }
-        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default.Body, {
-          className: "bg-dark h-100 mx-2",
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 20,
-            columnNumber: 11
-          }
-        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default.Title, {
-          style: {
-            marginTop: 25,
-            paddingRight: 0
-          },
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 21,
-            columnNumber: 13
-          }
-        }, movie.Title), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default.Img, {
-          variant: "top mb-3",
-          style: {
-            height: '20rem',
-            width: '13rem'
-          },
-          src: movie.ImagePath,
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 22,
-            columnNumber: 13
-          }
-        }), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default.Text, {
-          style: {
-            width: '100%',
-            marginBottom: 25
-          },
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 23,
-            columnNumber: 13
-          }
-        }, movie.Description.Synopsis), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Link, {
-          to: `/movies/${movie._id}`,
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 24,
-            columnNumber: 13
-          }
-        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
-          variant: "link",
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 25,
-            columnNumber: 15
-          }
-        }, "Read More")))))
-      );
-    }
-  }
-  MovieCard.propTypes = {
-    movie: _propTypesDefault.default.shape({
-      Description: _propTypesDefault.default.shape({
-        Synopsis: _propTypesDefault.default.string.isRequired,
-        Source: _propTypesDefault.default.string.isRequired
-      }),
-      Genre: _propTypesDefault.default.shape({
-        Name: _propTypesDefault.default.string.isRequired,
-        Description: _propTypesDefault.default.string.isRequired,
-        Source: _propTypesDefault.default.string.isRequired
-      }),
-      Director: _propTypesDefault.default.shape({
-        Name: _propTypesDefault.default.string.isRequired,
-        Bio: _propTypesDefault.default.string.isRequired,
-        Birth: _propTypesDefault.default.string.isRequired,
-        Source: _propTypesDefault.default.string.isRequired
-      }),
-      Actors: _propTypesDefault.default.array.isRequired,
-      _id: _propTypesDefault.default.string.isRequired,
-      Title: _propTypesDefault.default.string.isRequired,
-      ImagePath: _propTypesDefault.default.string.isRequired,
-      Featured: _propTypesDefault.default.bool.isRequired,
-      Rotten_Tomatoes_score: _propTypesDefault.default.string.isRequired,
-      Year: _propTypesDefault.default.string.isRequired
-    }).isRequired
-  };
-  helpers.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-
-},{"react":"3b2NM","prop-types":"4dfy5","react-bootstrap/Button":"1ru0l","react-bootstrap/Card":"1CZWQ","react-bootstrap/CardDeck":"4fiZs","react-router-dom":"1PMSK","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"4dfy5":[function(require,module,exports) {
-/**
-* Copyright (c) 2013-present, Facebook, Inc.
-*
-* This source code is licensed under the MIT license found in the
-* LICENSE file in the root directory of this source tree.
-*/
-if ("development" !== 'production') {
-  var ReactIs = require('react-is');
-  // By explicitly using `prop-types` you are opting into new development behavior.
-  // http://fb.me/prop-types-in-prod
-  var throwOnDirectAccess = true;
-  module.exports = require('./factoryWithTypeCheckers')(ReactIs.isElement, throwOnDirectAccess);
-} else {
-  // By explicitly using `prop-types` you are opting into new production behavior.
-  // http://fb.me/prop-types-in-prod
-  module.exports = require('./factoryWithThrowingShims')();
-}
-
-},{"react-is":"68QIU","./factoryWithTypeCheckers":"1PVBO"}],"68QIU":[function(require,module,exports) {
-"use strict";
-if ("development" === 'production') {
-  module.exports = require('./cjs/react-is.production.min.js');
-} else {
-  module.exports = require('./cjs/react-is.development.js');
-}
-
-},{"./cjs/react-is.development.js":"2onCQ"}],"2onCQ":[function(require,module,exports) {
-/** @license React v16.13.1
-* react-is.development.js
-*
-* Copyright (c) Facebook, Inc. and its affiliates.
-*
-* This source code is licensed under the MIT license found in the
-* LICENSE file in the root directory of this source tree.
-*/
-"use strict";
-if ("development" !== "production") {
-  (function () {
-    "use strict";
-    // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
-    // nor polyfill, then a plain number is used for performance.
-    var hasSymbol = typeof Symbol === 'function' && Symbol.for;
-    var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
-    var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
-    var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
-    var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
-    var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
-    var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
-    var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace;
-    // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
-    // (unstable) APIs that have been removed. Can we remove the symbols?
-    var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
-    var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
-    var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
-    var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
-    var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
-    var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
-    var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
-    var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
-    var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
-    var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
-    var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
-    function isValidElementType(type) {
-      return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
-      type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
-    }
-    function typeOf(object) {
-      if (typeof object === 'object' && object !== null) {
-        var $$typeof = object.$$typeof;
-        switch ($$typeof) {
-          case REACT_ELEMENT_TYPE:
-            var type = object.type;
-            switch (type) {
-              case REACT_ASYNC_MODE_TYPE:
-              case REACT_CONCURRENT_MODE_TYPE:
-              case REACT_FRAGMENT_TYPE:
-              case REACT_PROFILER_TYPE:
-              case REACT_STRICT_MODE_TYPE:
-              case REACT_SUSPENSE_TYPE:
-                return type;
-              default:
-                var $$typeofType = type && type.$$typeof;
-                switch ($$typeofType) {
-                  case REACT_CONTEXT_TYPE:
-                  case REACT_FORWARD_REF_TYPE:
-                  case REACT_LAZY_TYPE:
-                  case REACT_MEMO_TYPE:
-                  case REACT_PROVIDER_TYPE:
-                    return $$typeofType;
-                  default:
-                    return $$typeof;
-                }
-            }
-          case REACT_PORTAL_TYPE:
-            return $$typeof;
-        }
-      }
-      return undefined;
-    }
-    // AsyncMode is deprecated along with isAsyncMode
-    var AsyncMode = REACT_ASYNC_MODE_TYPE;
-    var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
-    var ContextConsumer = REACT_CONTEXT_TYPE;
-    var ContextProvider = REACT_PROVIDER_TYPE;
-    var Element = REACT_ELEMENT_TYPE;
-    var ForwardRef = REACT_FORWARD_REF_TYPE;
-    var Fragment = REACT_FRAGMENT_TYPE;
-    var Lazy = REACT_LAZY_TYPE;
-    var Memo = REACT_MEMO_TYPE;
-    var Portal = REACT_PORTAL_TYPE;
-    var Profiler = REACT_PROFILER_TYPE;
-    var StrictMode = REACT_STRICT_MODE_TYPE;
-    var Suspense = REACT_SUSPENSE_TYPE;
-    var hasWarnedAboutDeprecatedIsAsyncMode = false;
-    // AsyncMode should be deprecated
-    function isAsyncMode(object) {
-      {
-        if (!hasWarnedAboutDeprecatedIsAsyncMode) {
-          hasWarnedAboutDeprecatedIsAsyncMode = true;
-          // Using console['warn'] to evade Babel and ESLint
-          console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
-        }
-      }
-      return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
-    }
-    function isConcurrentMode(object) {
-      return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
-    }
-    function isContextConsumer(object) {
-      return typeOf(object) === REACT_CONTEXT_TYPE;
-    }
-    function isContextProvider(object) {
-      return typeOf(object) === REACT_PROVIDER_TYPE;
-    }
-    function isElement(object) {
-      return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
-    }
-    function isForwardRef(object) {
-      return typeOf(object) === REACT_FORWARD_REF_TYPE;
-    }
-    function isFragment(object) {
-      return typeOf(object) === REACT_FRAGMENT_TYPE;
-    }
-    function isLazy(object) {
-      return typeOf(object) === REACT_LAZY_TYPE;
-    }
-    function isMemo(object) {
-      return typeOf(object) === REACT_MEMO_TYPE;
-    }
-    function isPortal(object) {
-      return typeOf(object) === REACT_PORTAL_TYPE;
-    }
-    function isProfiler(object) {
-      return typeOf(object) === REACT_PROFILER_TYPE;
-    }
-    function isStrictMode(object) {
-      return typeOf(object) === REACT_STRICT_MODE_TYPE;
-    }
-    function isSuspense(object) {
-      return typeOf(object) === REACT_SUSPENSE_TYPE;
-    }
-    exports.AsyncMode = AsyncMode;
-    exports.ConcurrentMode = ConcurrentMode;
-    exports.ContextConsumer = ContextConsumer;
-    exports.ContextProvider = ContextProvider;
-    exports.Element = Element;
-    exports.ForwardRef = ForwardRef;
-    exports.Fragment = Fragment;
-    exports.Lazy = Lazy;
-    exports.Memo = Memo;
-    exports.Portal = Portal;
-    exports.Profiler = Profiler;
-    exports.StrictMode = StrictMode;
-    exports.Suspense = Suspense;
-    exports.isAsyncMode = isAsyncMode;
-    exports.isConcurrentMode = isConcurrentMode;
-    exports.isContextConsumer = isContextConsumer;
-    exports.isContextProvider = isContextProvider;
-    exports.isElement = isElement;
-    exports.isForwardRef = isForwardRef;
-    exports.isFragment = isFragment;
-    exports.isLazy = isLazy;
-    exports.isMemo = isMemo;
-    exports.isPortal = isPortal;
-    exports.isProfiler = isProfiler;
-    exports.isStrictMode = isStrictMode;
-    exports.isSuspense = isSuspense;
-    exports.isValidElementType = isValidElementType;
-    exports.typeOf = typeOf;
-  })();
-}
-
-},{}],"1PVBO":[function(require,module,exports) {
-/**
-* Copyright (c) 2013-present, Facebook, Inc.
-*
-* This source code is licensed under the MIT license found in the
-* LICENSE file in the root directory of this source tree.
-*/
-"use strict";
-var ReactIs = require('react-is');
-var assign = require('object-assign');
-var ReactPropTypesSecret = require('./lib/ReactPropTypesSecret');
-var checkPropTypes = require('./checkPropTypes');
-var has = Function.call.bind(Object.prototype.hasOwnProperty);
-var printWarning = function () {};
-if ("development" !== 'production') {
-  printWarning = function (text) {
-    var message = 'Warning: ' + text;
-    if (typeof console !== 'undefined') {
-      console.error(message);
-    }
-    try {
-      // --- Welcome to debugging React ---
-      // This error was thrown as a convenience so that you can use this stack
-      // to find the callsite that caused this warning to fire.
-      throw new Error(message);
-    } catch (x) {}
-  };
-}
-function emptyFunctionThatReturnsNull() {
-  return null;
-}
-module.exports = function (isValidElement, throwOnDirectAccess) {
-  /*global Symbol*/
-  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
-  var FAUX_ITERATOR_SYMBOL = '@@iterator';
-  // Before Symbol spec.
-  /**
-  * Returns the iterator method function contained on the iterable object.
-  *
-  * Be sure to invoke the function with the iterable as context:
-  *
-  *     var iteratorFn = getIteratorFn(myIterable);
-  *     if (iteratorFn) {
-  *       var iterator = iteratorFn.call(myIterable);
-  *       ...
-  *     }
-  *
-  * @param {?object} maybeIterable
-  * @return {?function}
-  */
-  function getIteratorFn(maybeIterable) {
-    var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
-    if (typeof iteratorFn === 'function') {
-      return iteratorFn;
-    }
-  }
-  /**
-  * Collection of methods that allow declaration and validation of props that are
-  * supplied to React components. Example usage:
-  *
-  *   var Props = require('ReactPropTypes');
-  *   var MyArticle = React.createClass({
-  *     propTypes: {
-  *       // An optional string prop named "description".
-  *       description: Props.string,
-  *
-  *       // A required enum prop named "category".
-  *       category: Props.oneOf(['News','Photos']).isRequired,
-  *
-  *       // A prop named "dialog" that requires an instance of Dialog.
-  *       dialog: Props.instanceOf(Dialog).isRequired
-  *     },
-  *     render: function() { ... }
-  *   });
-  *
-  * A more formal specification of how these methods are used:
-  *
-  *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
-  *   decl := ReactPropTypes.{type}(.isRequired)?
-  *
-  * Each and every declaration produces a function with the same signature. This
-  * allows the creation of custom validation functions. For example:
-  *
-  *  var MyLink = React.createClass({
-  *    propTypes: {
-  *      // An optional string or URI prop named "href".
-  *      href: function(props, propName, componentName) {
-  *        var propValue = props[propName];
-  *        if (propValue != null && typeof propValue !== 'string' &&
-  *            !(propValue instanceof URI)) {
-  *          return new Error(
-  *            'Expected a string or an URI for ' + propName + ' in ' +
-  *            componentName
-  *          );
-  *        }
-  *      }
-  *    },
-  *    render: function() {...}
-  *  });
-  *
-  * @internal
-  */
-  var ANONYMOUS = '<<anonymous>>';
-  // Important!
-  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
-  var ReactPropTypes = {
-    array: createPrimitiveTypeChecker('array'),
-    bool: createPrimitiveTypeChecker('boolean'),
-    func: createPrimitiveTypeChecker('function'),
-    number: createPrimitiveTypeChecker('number'),
-    object: createPrimitiveTypeChecker('object'),
-    string: createPrimitiveTypeChecker('string'),
-    symbol: createPrimitiveTypeChecker('symbol'),
-    any: createAnyTypeChecker(),
-    arrayOf: createArrayOfTypeChecker,
-    element: createElementTypeChecker(),
-    elementType: createElementTypeTypeChecker(),
-    instanceOf: createInstanceTypeChecker,
-    node: createNodeChecker(),
-    objectOf: createObjectOfTypeChecker,
-    oneOf: createEnumTypeChecker,
-    oneOfType: createUnionTypeChecker,
-    shape: createShapeTypeChecker,
-    exact: createStrictShapeTypeChecker
-  };
-  /**
-  * inlined Object.is polyfill to avoid requiring consumers ship their own
-  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
-  */
-  /*eslint-disable no-self-compare*/
-  function is(x, y) {
-    // SameValue algorithm
-    if (x === y) {
-      // Steps 1-5, 7-10
-      // Steps 6.b-6.e: +0 != -0
-      return x !== 0 || 1 / x === 1 / y;
-    } else {
-      // Step 6.a: NaN == NaN
-      return x !== x && y !== y;
-    }
-  }
-  /*eslint-enable no-self-compare*/
-  /**
-  * We use an Error-like object for backward compatibility as people may call
-  * PropTypes directly and inspect their output. However, we don't use real
-  * Errors anymore. We don't inspect their stack anyway, and creating them
-  * is prohibitively expensive if they are created too often, such as what
-  * happens in oneOfType() for any type before the one that matched.
-  */
-  function PropTypeError(message) {
-    this.message = message;
-    this.stack = '';
-  }
-  // Make `instanceof Error` still work for returned errors.
-  PropTypeError.prototype = Error.prototype;
-  function createChainableTypeChecker(validate) {
-    if ("development" !== 'production') {
-      var manualPropTypeCallCache = {};
-      var manualPropTypeWarningCount = 0;
-    }
-    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
-      componentName = componentName || ANONYMOUS;
-      propFullName = propFullName || propName;
-      if (secret !== ReactPropTypesSecret) {
-        if (throwOnDirectAccess) {
-          // New behavior only for users of `prop-types` package
-          var err = new Error('Calling PropTypes validators directly is not supported by the `prop-types` package. ' + 'Use `PropTypes.checkPropTypes()` to call them. ' + 'Read more at http://fb.me/use-check-prop-types');
-          err.name = 'Invariant Violation';
-          throw err;
-        } else if ("development" !== 'production' && typeof console !== 'undefined') {
-          // Old behavior for people using React.PropTypes
-          var cacheKey = componentName + ':' + propName;
-          if (!manualPropTypeCallCache[cacheKey] && // Avoid spamming the console because they are often not actionable except for lib authors
-          manualPropTypeWarningCount < 3) {
-            printWarning('You are manually calling a React.PropTypes validation ' + 'function for the `' + propFullName + '` prop on `' + componentName + '`. This is deprecated ' + 'and will throw in the standalone `prop-types` package. ' + 'You may be seeing this warning due to a third-party PropTypes ' + 'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.');
-            manualPropTypeCallCache[cacheKey] = true;
-            manualPropTypeWarningCount++;
-          }
-        }
-      }
-      if (props[propName] == null) {
-        if (isRequired) {
-          if (props[propName] === null) {
-            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
-          }
-          return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
-        }
-        return null;
-      } else {
-        return validate(props, propName, componentName, location, propFullName);
-      }
-    }
-    var chainedCheckType = checkType.bind(null, false);
-    chainedCheckType.isRequired = checkType.bind(null, true);
-    return chainedCheckType;
-  }
-  function createPrimitiveTypeChecker(expectedType) {
-    function validate(props, propName, componentName, location, propFullName, secret) {
-      var propValue = props[propName];
-      var propType = getPropType(propValue);
-      if (propType !== expectedType) {
-        // `propValue` being instance of, say, date/regexp, pass the 'object'
-        // check, but we can offer a more precise error message here rather than
-        // 'of type `object`'.
-        var preciseType = getPreciseType(propValue);
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'));
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-  function createAnyTypeChecker() {
-    return createChainableTypeChecker(emptyFunctionThatReturnsNull);
-  }
-  function createArrayOfTypeChecker(typeChecker) {
-    function validate(props, propName, componentName, location, propFullName) {
-      if (typeof typeChecker !== 'function') {
-        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
-      }
-      var propValue = props[propName];
-      if (!Array.isArray(propValue)) {
-        var propType = getPropType(propValue);
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
-      }
-      for (var i = 0; i < propValue.length; i++) {
-        var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
-        if (error instanceof Error) {
-          return error;
-        }
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-  function createElementTypeChecker() {
-    function validate(props, propName, componentName, location, propFullName) {
-      var propValue = props[propName];
-      if (!isValidElement(propValue)) {
-        var propType = getPropType(propValue);
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-  function createElementTypeTypeChecker() {
-    function validate(props, propName, componentName, location, propFullName) {
-      var propValue = props[propName];
-      if (!ReactIs.isValidElementType(propValue)) {
-        var propType = getPropType(propValue);
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement type.'));
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-  function createInstanceTypeChecker(expectedClass) {
-    function validate(props, propName, componentName, location, propFullName) {
-      if (!(props[propName] instanceof expectedClass)) {
-        var expectedClassName = expectedClass.name || ANONYMOUS;
-        var actualClassName = getClassName(props[propName]);
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-  function createEnumTypeChecker(expectedValues) {
-    if (!Array.isArray(expectedValues)) {
-      if ("development" !== 'production') {
-        if (arguments.length > 1) {
-          printWarning('Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' + 'A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).');
-        } else {
-          printWarning('Invalid argument supplied to oneOf, expected an array.');
-        }
-      }
-      return emptyFunctionThatReturnsNull;
-    }
-    function validate(props, propName, componentName, location, propFullName) {
-      var propValue = props[propName];
-      for (var i = 0; i < expectedValues.length; i++) {
-        if (is(propValue, expectedValues[i])) {
-          return null;
-        }
-      }
-      var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
-        var type = getPreciseType(value);
-        if (type === 'symbol') {
-          return String(value);
-        }
-        return value;
-      });
-      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + String(propValue) + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
-    }
-    return createChainableTypeChecker(validate);
-  }
-  function createObjectOfTypeChecker(typeChecker) {
-    function validate(props, propName, componentName, location, propFullName) {
-      if (typeof typeChecker !== 'function') {
-        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
-      }
-      var propValue = props[propName];
-      var propType = getPropType(propValue);
-      if (propType !== 'object') {
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
-      }
-      for (var key in propValue) {
-        if (has(propValue, key)) {
-          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
-          if (error instanceof Error) {
-            return error;
-          }
-        }
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-  function createUnionTypeChecker(arrayOfTypeCheckers) {
-    if (!Array.isArray(arrayOfTypeCheckers)) {
-      "development" !== 'production' ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
-      return emptyFunctionThatReturnsNull;
-    }
-    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
-      var checker = arrayOfTypeCheckers[i];
-      if (typeof checker !== 'function') {
-        printWarning('Invalid argument supplied to oneOfType. Expected an array of check functions, but ' + 'received ' + getPostfixForTypeWarning(checker) + ' at index ' + i + '.');
-        return emptyFunctionThatReturnsNull;
-      }
-    }
-    function validate(props, propName, componentName, location, propFullName) {
-      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
-        var checker = arrayOfTypeCheckers[i];
-        if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret) == null) {
-          return null;
-        }
-      }
-      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));
-    }
-    return createChainableTypeChecker(validate);
-  }
-  function createNodeChecker() {
-    function validate(props, propName, componentName, location, propFullName) {
-      if (!isNode(props[propName])) {
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-  function createShapeTypeChecker(shapeTypes) {
-    function validate(props, propName, componentName, location, propFullName) {
-      var propValue = props[propName];
-      var propType = getPropType(propValue);
-      if (propType !== 'object') {
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
-      }
-      for (var key in shapeTypes) {
-        var checker = shapeTypes[key];
-        if (!checker) {
-          continue;
-        }
-        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
-        if (error) {
-          return error;
-        }
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-  function createStrictShapeTypeChecker(shapeTypes) {
-    function validate(props, propName, componentName, location, propFullName) {
-      var propValue = props[propName];
-      var propType = getPropType(propValue);
-      if (propType !== 'object') {
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
-      }
-      // We need to check all keys in case some are required but missing from
-      // props.
-      var allKeys = assign({}, props[propName], shapeTypes);
-      for (var key in allKeys) {
-        var checker = shapeTypes[key];
-        if (!checker) {
-          return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' + '\nBad object: ' + JSON.stringify(props[propName], null, '  ') + '\nValid keys: ' + JSON.stringify(Object.keys(shapeTypes), null, '  '));
-        }
-        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
-        if (error) {
-          return error;
-        }
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-  function isNode(propValue) {
-    switch (typeof propValue) {
-      case 'number':
-      case 'string':
-      case 'undefined':
-        return true;
-      case 'boolean':
-        return !propValue;
-      case 'object':
-        if (Array.isArray(propValue)) {
-          return propValue.every(isNode);
-        }
-        if (propValue === null || isValidElement(propValue)) {
-          return true;
-        }
-        var iteratorFn = getIteratorFn(propValue);
-        if (iteratorFn) {
-          var iterator = iteratorFn.call(propValue);
-          var step;
-          if (iteratorFn !== propValue.entries) {
-            while (!(step = iterator.next()).done) {
-              if (!isNode(step.value)) {
-                return false;
-              }
-            }
-          } else {
-            // Iterator will provide entry [k,v] tuples rather than values.
-            while (!(step = iterator.next()).done) {
-              var entry = step.value;
-              if (entry) {
-                if (!isNode(entry[1])) {
-                  return false;
-                }
-              }
-            }
-          }
-        } else {
-          return false;
-        }
-        return true;
-      default:
-        return false;
-    }
-  }
-  function isSymbol(propType, propValue) {
-    // Native Symbol.
-    if (propType === 'symbol') {
-      return true;
-    }
-    // falsy value can't be a Symbol
-    if (!propValue) {
-      return false;
-    }
-    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
-    if (propValue['@@toStringTag'] === 'Symbol') {
-      return true;
-    }
-    // Fallback for non-spec compliant Symbols which are polyfilled.
-    if (typeof Symbol === 'function' && propValue instanceof Symbol) {
-      return true;
-    }
-    return false;
-  }
-  // Equivalent of `typeof` but with special handling for array and regexp.
-  function getPropType(propValue) {
-    var propType = typeof propValue;
-    if (Array.isArray(propValue)) {
-      return 'array';
-    }
-    if (propValue instanceof RegExp) {
-      // Old webkits (at least until Android 4.0) return 'function' rather than
-      // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
-      // passes PropTypes.object.
-      return 'object';
-    }
-    if (isSymbol(propType, propValue)) {
-      return 'symbol';
-    }
-    return propType;
-  }
-  // This handles more types than `getPropType`. Only used for error messages.
-  // See `createPrimitiveTypeChecker`.
-  function getPreciseType(propValue) {
-    if (typeof propValue === 'undefined' || propValue === null) {
-      return '' + propValue;
-    }
-    var propType = getPropType(propValue);
-    if (propType === 'object') {
-      if (propValue instanceof Date) {
-        return 'date';
-      } else if (propValue instanceof RegExp) {
-        return 'regexp';
-      }
-    }
-    return propType;
-  }
-  // Returns a string that is postfixed to a warning about an invalid type.
-  // For example, "undefined" or "of type array"
-  function getPostfixForTypeWarning(value) {
-    var type = getPreciseType(value);
-    switch (type) {
-      case 'array':
-      case 'object':
-        return 'an ' + type;
-      case 'boolean':
-      case 'date':
-      case 'regexp':
-        return 'a ' + type;
-      default:
-        return type;
-    }
-  }
-  // Returns class name of the object, if any.
-  function getClassName(propValue) {
-    if (!propValue.constructor || !propValue.constructor.name) {
-      return ANONYMOUS;
-    }
-    return propValue.constructor.name;
-  }
-  ReactPropTypes.checkPropTypes = checkPropTypes;
-  ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
-  ReactPropTypes.PropTypes = ReactPropTypes;
-  return ReactPropTypes;
-};
-
-},{"react-is":"68QIU","object-assign":"3eM6x","./lib/ReactPropTypesSecret":"3OVnw","./checkPropTypes":"R8SC7"}],"1ru0l":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _react = _interopRequireDefault(require("react"));
-
-var _ThemeProvider = require("./ThemeProvider");
-
-var _SafeAnchor = _interopRequireDefault(require("./SafeAnchor"));
-
-var defaultProps = {
-  variant: 'primary',
-  active: false,
-  disabled: false
-};
-
-var Button = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
-  var bsPrefix = _ref.bsPrefix,
-      variant = _ref.variant,
-      size = _ref.size,
-      active = _ref.active,
-      className = _ref.className,
-      block = _ref.block,
-      type = _ref.type,
-      as = _ref.as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "variant", "size", "active", "className", "block", "type", "as"]);
-  var prefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'btn');
-  var classes = (0, _classnames.default)(className, prefix, active && 'active', variant && prefix + "-" + variant, block && prefix + "-block", size && prefix + "-" + size);
-
-  if (props.href) {
-    return /*#__PURE__*/_react.default.createElement(_SafeAnchor.default, (0, _extends2.default)({}, props, {
-      as: as,
-      ref: ref,
-      className: (0, _classnames.default)(classes, props.disabled && 'disabled')
-    }));
-  }
-
-  if (ref) {
-    props.ref = ref;
-  }
-
-  if (type) {
-    props.type = type;
-  } else if (!as) {
-    props.type = 'button';
-  }
-
-  var Component = as || 'button';
-  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
-    className: classes
-  }));
-});
-
-Button.displayName = 'Button';
-Button.defaultProps = defaultProps;
-var _default = Button;
-exports.default = _default;
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S","./SafeAnchor":"5VP5o"}],"5VP5o":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-
-var _react = _interopRequireDefault(require("react"));
-
-var _createChainedFunction = _interopRequireDefault(require("./createChainedFunction"));
-
-function isTrivialHref(href) {
-  return !href || href.trim() === '#';
-}
-/**
- * There are situations due to browser quirks or Bootstrap CSS where
- * an anchor tag is needed, when semantically a button tag is the
- * better choice. SafeAnchor ensures that when an anchor is used like a
- * button its accessible. It also emulates input `disabled` behavior for
- * links, which is usually desirable for Buttons, NavItems, DropdownItems, etc.
- */
-
-
-var SafeAnchor = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
-  var _ref$as = _ref.as,
-      Component = _ref$as === void 0 ? 'a' : _ref$as,
-      disabled = _ref.disabled,
-      onKeyDown = _ref.onKeyDown,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["as", "disabled", "onKeyDown"]);
-
-  var handleClick = function handleClick(event) {
-    var href = props.href,
-        onClick = props.onClick;
-
-    if (disabled || isTrivialHref(href)) {
-      event.preventDefault();
-    }
-
-    if (disabled) {
-      event.stopPropagation();
-      return;
-    }
-
-    if (onClick) {
-      onClick(event);
-    }
-  };
-
-  var handleKeyDown = function handleKeyDown(event) {
-    if (event.key === ' ') {
-      event.preventDefault();
-      handleClick(event);
-    }
-  };
-
-  if (isTrivialHref(props.href)) {
-    props.role = props.role || 'button'; // we want to make sure there is a href attribute on the node
-    // otherwise, the cursor incorrectly styled (except with role='button')
-
-    props.href = props.href || '#';
-  }
-
-  if (disabled) {
-    props.tabIndex = -1;
-    props['aria-disabled'] = true;
-  }
-
-  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({
-    ref: ref
-  }, props, {
-    onClick: handleClick,
-    onKeyDown: (0, _createChainedFunction.default)(handleKeyDown, onKeyDown)
-  }));
-});
-
-SafeAnchor.displayName = 'SafeAnchor';
-var _default = SafeAnchor;
-exports.default = _default;
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","react":"3b2NM","./createChainedFunction":"4RHiz"}],"4RHiz":[function(require,module,exports) {
-"use strict";
-
-exports.__esModule = true;
-exports.default = void 0;
-
-/**
- * Safe chained function
- *
- * Will only create a new function if needed,
- * otherwise will pass back existing functions or null.
- *
- * @param {function} functions to chain
- * @returns {function|null}
- */
-function createChainedFunction() {
-  for (var _len = arguments.length, funcs = new Array(_len), _key = 0; _key < _len; _key++) {
-    funcs[_key] = arguments[_key];
-  }
-
-  return funcs.filter(function (f) {
-    return f != null;
-  }).reduce(function (acc, f) {
-    if (typeof f !== 'function') {
-      throw new Error('Invalid Argument Type, must only provide functions, undefined, or null.');
-    }
-
-    if (acc === null) return f;
-    return function chainedFunction() {
-      for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-        args[_key2] = arguments[_key2];
-      }
-
-      // @ts-ignore
-      acc.apply(this, args); // @ts-ignore
-
-      f.apply(this, args);
-    };
-  }, null);
-}
-
-var _default = createChainedFunction;
-exports.default = _default;
-module.exports = exports["default"];
-},{}],"1CZWQ":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _ThemeProvider = require("./ThemeProvider");
-
-var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
-
-var _divWithClassName = _interopRequireDefault(require("./divWithClassName"));
-
-var _CardContext = _interopRequireDefault(require("./CardContext"));
-
-var _CardImg = _interopRequireDefault(require("./CardImg"));
-
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-var DivStyledAsH5 = (0, _divWithClassName.default)('h5');
-var DivStyledAsH6 = (0, _divWithClassName.default)('h6');
-var CardBody = (0, _createWithBsPrefix.default)('card-body');
-var CardTitle = (0, _createWithBsPrefix.default)('card-title', {
-  Component: DivStyledAsH5
-});
-var CardSubtitle = (0, _createWithBsPrefix.default)('card-subtitle', {
-  Component: DivStyledAsH6
-});
-var CardLink = (0, _createWithBsPrefix.default)('card-link', {
-  Component: 'a'
-});
-var CardText = (0, _createWithBsPrefix.default)('card-text', {
-  Component: 'p'
-});
-var CardHeader = (0, _createWithBsPrefix.default)('card-header');
-var CardFooter = (0, _createWithBsPrefix.default)('card-footer');
-var CardImgOverlay = (0, _createWithBsPrefix.default)('card-img-overlay');
-var defaultProps = {
-  body: false
-};
-
-var Card = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
-  var bsPrefix = _ref.bsPrefix,
-      className = _ref.className,
-      bg = _ref.bg,
-      text = _ref.text,
-      border = _ref.border,
-      body = _ref.body,
-      children = _ref.children,
-      _ref$as = _ref.as,
-      Component = _ref$as === void 0 ? 'div' : _ref$as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "bg", "text", "border", "body", "children", "as"]);
-  var prefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'card');
-  var cardContext = (0, _react.useMemo)(function () {
-    return {
-      cardHeaderBsPrefix: prefix + "-header"
-    };
-  }, [prefix]);
-  return /*#__PURE__*/_react.default.createElement(_CardContext.default.Provider, {
-    value: cardContext
-  }, /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({
-    ref: ref
-  }, props, {
-    className: (0, _classnames.default)(className, prefix, bg && "bg-" + bg, text && "text-" + text, border && "border-" + border)
-  }), body ?
-  /*#__PURE__*/
-  // @ts-ignore
-  _react.default.createElement(CardBody, null, children) : children));
-});
-
-Card.displayName = 'Card';
-Card.defaultProps = defaultProps;
-Card.Img = _CardImg.default;
-Card.Title = CardTitle;
-Card.Subtitle = CardSubtitle;
-Card.Body = CardBody;
-Card.Link = CardLink;
-Card.Text = CardText;
-Card.Header = CardHeader;
-Card.Footer = CardFooter;
-Card.ImgOverlay = CardImgOverlay;
-var _default = Card;
-exports.default = _default;
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S","./createWithBsPrefix":"2oVVc","./divWithClassName":"27J3S","./CardContext":"71yot","./CardImg":"68LPL"}],"2oVVc":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = createWithBsPrefix;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _camelize = _interopRequireDefault(require("dom-helpers/camelize"));
-
-var _react = _interopRequireDefault(require("react"));
-
-var _ThemeProvider = require("./ThemeProvider");
-
-var pascalCase = function pascalCase(str) {
-  return str[0].toUpperCase() + (0, _camelize.default)(str).slice(1);
-};
-
-// TODO: emstricten & fix the typing here! `createWithBsPrefix<TElementType>...`
-function createWithBsPrefix(prefix, _temp) {
-  var _ref = _temp === void 0 ? {} : _temp,
-      _ref$displayName = _ref.displayName,
-      displayName = _ref$displayName === void 0 ? pascalCase(prefix) : _ref$displayName,
-      Component = _ref.Component,
-      defaultProps = _ref.defaultProps;
-
-  var BsComponent = /*#__PURE__*/_react.default.forwardRef(function (_ref2, ref) {
-    var className = _ref2.className,
-        bsPrefix = _ref2.bsPrefix,
-        _ref2$as = _ref2.as,
-        Tag = _ref2$as === void 0 ? Component || 'div' : _ref2$as,
-        props = (0, _objectWithoutPropertiesLoose2.default)(_ref2, ["className", "bsPrefix", "as"]);
-    var resolvedPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, prefix);
-    return /*#__PURE__*/_react.default.createElement(Tag, (0, _extends2.default)({
-      ref: ref,
-      className: (0, _classnames.default)(className, resolvedPrefix)
-    }, props));
-  });
-
-  BsComponent.defaultProps = defaultProps;
-  BsComponent.displayName = displayName;
-  return BsComponent;
-}
-
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","dom-helpers/camelize":"7AXwA","react":"3b2NM","./ThemeProvider":"4rz1S"}],"7AXwA":[function(require,module,exports) {
-"use strict";
-
-exports.__esModule = true;
-exports.default = camelize;
-var rHyphen = /-(.)/g;
-
-function camelize(string) {
-  return string.replace(rHyphen, function (_, chr) {
-    return chr.toUpperCase();
-  });
-}
-
-module.exports = exports["default"];
-},{}],"27J3S":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
-var _react = _interopRequireDefault(require("react"));
-
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _default = function _default(className) {
-  return /*#__PURE__*/_react.default.forwardRef(function (p, ref) {
-    return /*#__PURE__*/_react.default.createElement("div", (0, _extends2.default)({}, p, {
-      ref: ref,
-      className: (0, _classnames.default)(p.className, className)
-    }));
-  });
-};
-
-exports.default = _default;
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","react":"3b2NM","classnames":"5aJRc"}],"71yot":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var context = /*#__PURE__*/_react.default.createContext(null);
-
-context.displayName = 'CardContext';
-var _default = context;
-exports.default = _default;
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","react":"3b2NM"}],"68LPL":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-
-var _classnames = _interopRequireDefault(require("classnames"));
-
-var _react = _interopRequireDefault(require("react"));
-
-var _ThemeProvider = require("./ThemeProvider");
-
-var defaultProps = {
-  variant: null
-};
-
-var CardImg = /*#__PURE__*/_react.default.forwardRef( // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-function (_ref, ref) {
-  var bsPrefix = _ref.bsPrefix,
-      className = _ref.className,
-      variant = _ref.variant,
-      _ref$as = _ref.as,
-      Component = _ref$as === void 0 ? 'img' : _ref$as,
-      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "variant", "as"]);
-  var prefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'card-img');
-  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({
-    ref: ref,
-    className: (0, _classnames.default)(variant ? prefix + "-" + variant : prefix, className)
-  }, props));
-});
-
-CardImg.displayName = 'CardImg';
-CardImg.defaultProps = defaultProps;
-var _default = CardImg;
-exports.default = _default;
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S"}],"4fiZs":[function(require,module,exports) {
-"use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-exports.__esModule = true;
-exports.default = void 0;
-
-var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
-
-var _default = (0, _createWithBsPrefix.default)('card-deck');
-
-exports.default = _default;
-module.exports = exports["default"];
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","./createWithBsPrefix":"2oVVc"}],"1PMSK":[function(require,module,exports) {
+},{}],"1PMSK":[function(require,module,exports) {
 "use strict";
 if ("development" === "production") {
   module.exports = require("./cjs/react-router-dom.min.js");
@@ -30402,7 +29090,720 @@ exports.useParams = useParams;
 exports.useRouteMatch = useRouteMatch;
 exports.withRouter = withRouter;
 
-},{"react":"3b2NM","prop-types":"4dfy5","history":"RV0qD","tiny-warning":"3B527","mini-create-react-context":"g8cqP","tiny-invariant":"4v3Kg","path-to-regexp":"5CMSM","react-is":"68QIU","hoist-non-react-statics":"3nUHV"}],"RV0qD":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","history":"RV0qD","tiny-warning":"3B527","mini-create-react-context":"g8cqP","tiny-invariant":"4v3Kg","path-to-regexp":"5CMSM","react-is":"68QIU","hoist-non-react-statics":"3nUHV"}],"4dfy5":[function(require,module,exports) {
+/**
+* Copyright (c) 2013-present, Facebook, Inc.
+*
+* This source code is licensed under the MIT license found in the
+* LICENSE file in the root directory of this source tree.
+*/
+if ("development" !== 'production') {
+  var ReactIs = require('react-is');
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = require('./factoryWithTypeCheckers')(ReactIs.isElement, throwOnDirectAccess);
+} else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = require('./factoryWithThrowingShims')();
+}
+
+},{"react-is":"68QIU","./factoryWithTypeCheckers":"1PVBO"}],"68QIU":[function(require,module,exports) {
+"use strict";
+if ("development" === 'production') {
+  module.exports = require('./cjs/react-is.production.min.js');
+} else {
+  module.exports = require('./cjs/react-is.development.js');
+}
+
+},{"./cjs/react-is.development.js":"2onCQ"}],"2onCQ":[function(require,module,exports) {
+/** @license React v16.13.1
+* react-is.development.js
+*
+* Copyright (c) Facebook, Inc. and its affiliates.
+*
+* This source code is licensed under the MIT license found in the
+* LICENSE file in the root directory of this source tree.
+*/
+"use strict";
+if ("development" !== "production") {
+  (function () {
+    "use strict";
+    // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+    // nor polyfill, then a plain number is used for performance.
+    var hasSymbol = typeof Symbol === 'function' && Symbol.for;
+    var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
+    var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
+    var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
+    var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
+    var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
+    var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
+    var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace;
+    // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+    // (unstable) APIs that have been removed. Can we remove the symbols?
+    var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
+    var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
+    var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
+    var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
+    var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
+    var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+    var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
+    var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
+    var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
+    var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
+    function isValidElementType(type) {
+      return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+      type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+    }
+    function typeOf(object) {
+      if (typeof object === 'object' && object !== null) {
+        var $$typeof = object.$$typeof;
+        switch ($$typeof) {
+          case REACT_ELEMENT_TYPE:
+            var type = object.type;
+            switch (type) {
+              case REACT_ASYNC_MODE_TYPE:
+              case REACT_CONCURRENT_MODE_TYPE:
+              case REACT_FRAGMENT_TYPE:
+              case REACT_PROFILER_TYPE:
+              case REACT_STRICT_MODE_TYPE:
+              case REACT_SUSPENSE_TYPE:
+                return type;
+              default:
+                var $$typeofType = type && type.$$typeof;
+                switch ($$typeofType) {
+                  case REACT_CONTEXT_TYPE:
+                  case REACT_FORWARD_REF_TYPE:
+                  case REACT_LAZY_TYPE:
+                  case REACT_MEMO_TYPE:
+                  case REACT_PROVIDER_TYPE:
+                    return $$typeofType;
+                  default:
+                    return $$typeof;
+                }
+            }
+          case REACT_PORTAL_TYPE:
+            return $$typeof;
+        }
+      }
+      return undefined;
+    }
+    // AsyncMode is deprecated along with isAsyncMode
+    var AsyncMode = REACT_ASYNC_MODE_TYPE;
+    var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+    var ContextConsumer = REACT_CONTEXT_TYPE;
+    var ContextProvider = REACT_PROVIDER_TYPE;
+    var Element = REACT_ELEMENT_TYPE;
+    var ForwardRef = REACT_FORWARD_REF_TYPE;
+    var Fragment = REACT_FRAGMENT_TYPE;
+    var Lazy = REACT_LAZY_TYPE;
+    var Memo = REACT_MEMO_TYPE;
+    var Portal = REACT_PORTAL_TYPE;
+    var Profiler = REACT_PROFILER_TYPE;
+    var StrictMode = REACT_STRICT_MODE_TYPE;
+    var Suspense = REACT_SUSPENSE_TYPE;
+    var hasWarnedAboutDeprecatedIsAsyncMode = false;
+    // AsyncMode should be deprecated
+    function isAsyncMode(object) {
+      {
+        if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+          hasWarnedAboutDeprecatedIsAsyncMode = true;
+          // Using console['warn'] to evade Babel and ESLint
+          console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+        }
+      }
+      return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+    }
+    function isConcurrentMode(object) {
+      return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+    }
+    function isContextConsumer(object) {
+      return typeOf(object) === REACT_CONTEXT_TYPE;
+    }
+    function isContextProvider(object) {
+      return typeOf(object) === REACT_PROVIDER_TYPE;
+    }
+    function isElement(object) {
+      return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+    }
+    function isForwardRef(object) {
+      return typeOf(object) === REACT_FORWARD_REF_TYPE;
+    }
+    function isFragment(object) {
+      return typeOf(object) === REACT_FRAGMENT_TYPE;
+    }
+    function isLazy(object) {
+      return typeOf(object) === REACT_LAZY_TYPE;
+    }
+    function isMemo(object) {
+      return typeOf(object) === REACT_MEMO_TYPE;
+    }
+    function isPortal(object) {
+      return typeOf(object) === REACT_PORTAL_TYPE;
+    }
+    function isProfiler(object) {
+      return typeOf(object) === REACT_PROFILER_TYPE;
+    }
+    function isStrictMode(object) {
+      return typeOf(object) === REACT_STRICT_MODE_TYPE;
+    }
+    function isSuspense(object) {
+      return typeOf(object) === REACT_SUSPENSE_TYPE;
+    }
+    exports.AsyncMode = AsyncMode;
+    exports.ConcurrentMode = ConcurrentMode;
+    exports.ContextConsumer = ContextConsumer;
+    exports.ContextProvider = ContextProvider;
+    exports.Element = Element;
+    exports.ForwardRef = ForwardRef;
+    exports.Fragment = Fragment;
+    exports.Lazy = Lazy;
+    exports.Memo = Memo;
+    exports.Portal = Portal;
+    exports.Profiler = Profiler;
+    exports.StrictMode = StrictMode;
+    exports.Suspense = Suspense;
+    exports.isAsyncMode = isAsyncMode;
+    exports.isConcurrentMode = isConcurrentMode;
+    exports.isContextConsumer = isContextConsumer;
+    exports.isContextProvider = isContextProvider;
+    exports.isElement = isElement;
+    exports.isForwardRef = isForwardRef;
+    exports.isFragment = isFragment;
+    exports.isLazy = isLazy;
+    exports.isMemo = isMemo;
+    exports.isPortal = isPortal;
+    exports.isProfiler = isProfiler;
+    exports.isStrictMode = isStrictMode;
+    exports.isSuspense = isSuspense;
+    exports.isValidElementType = isValidElementType;
+    exports.typeOf = typeOf;
+  })();
+}
+
+},{}],"1PVBO":[function(require,module,exports) {
+/**
+* Copyright (c) 2013-present, Facebook, Inc.
+*
+* This source code is licensed under the MIT license found in the
+* LICENSE file in the root directory of this source tree.
+*/
+"use strict";
+var ReactIs = require('react-is');
+var assign = require('object-assign');
+var ReactPropTypesSecret = require('./lib/ReactPropTypesSecret');
+var checkPropTypes = require('./checkPropTypes');
+var has = Function.call.bind(Object.prototype.hasOwnProperty);
+var printWarning = function () {};
+if ("development" !== 'production') {
+  printWarning = function (text) {
+    var message = 'Warning: ' + text;
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+}
+function emptyFunctionThatReturnsNull() {
+  return null;
+}
+module.exports = function (isValidElement, throwOnDirectAccess) {
+  /*global Symbol*/
+  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+  var FAUX_ITERATOR_SYMBOL = '@@iterator';
+  // Before Symbol spec.
+  /**
+  * Returns the iterator method function contained on the iterable object.
+  *
+  * Be sure to invoke the function with the iterable as context:
+  *
+  *     var iteratorFn = getIteratorFn(myIterable);
+  *     if (iteratorFn) {
+  *       var iterator = iteratorFn.call(myIterable);
+  *       ...
+  *     }
+  *
+  * @param {?object} maybeIterable
+  * @return {?function}
+  */
+  function getIteratorFn(maybeIterable) {
+    var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+    if (typeof iteratorFn === 'function') {
+      return iteratorFn;
+    }
+  }
+  /**
+  * Collection of methods that allow declaration and validation of props that are
+  * supplied to React components. Example usage:
+  *
+  *   var Props = require('ReactPropTypes');
+  *   var MyArticle = React.createClass({
+  *     propTypes: {
+  *       // An optional string prop named "description".
+  *       description: Props.string,
+  *
+  *       // A required enum prop named "category".
+  *       category: Props.oneOf(['News','Photos']).isRequired,
+  *
+  *       // A prop named "dialog" that requires an instance of Dialog.
+  *       dialog: Props.instanceOf(Dialog).isRequired
+  *     },
+  *     render: function() { ... }
+  *   });
+  *
+  * A more formal specification of how these methods are used:
+  *
+  *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+  *   decl := ReactPropTypes.{type}(.isRequired)?
+  *
+  * Each and every declaration produces a function with the same signature. This
+  * allows the creation of custom validation functions. For example:
+  *
+  *  var MyLink = React.createClass({
+  *    propTypes: {
+  *      // An optional string or URI prop named "href".
+  *      href: function(props, propName, componentName) {
+  *        var propValue = props[propName];
+  *        if (propValue != null && typeof propValue !== 'string' &&
+  *            !(propValue instanceof URI)) {
+  *          return new Error(
+  *            'Expected a string or an URI for ' + propName + ' in ' +
+  *            componentName
+  *          );
+  *        }
+  *      }
+  *    },
+  *    render: function() {...}
+  *  });
+  *
+  * @internal
+  */
+  var ANONYMOUS = '<<anonymous>>';
+  // Important!
+  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+  var ReactPropTypes = {
+    array: createPrimitiveTypeChecker('array'),
+    bool: createPrimitiveTypeChecker('boolean'),
+    func: createPrimitiveTypeChecker('function'),
+    number: createPrimitiveTypeChecker('number'),
+    object: createPrimitiveTypeChecker('object'),
+    string: createPrimitiveTypeChecker('string'),
+    symbol: createPrimitiveTypeChecker('symbol'),
+    any: createAnyTypeChecker(),
+    arrayOf: createArrayOfTypeChecker,
+    element: createElementTypeChecker(),
+    elementType: createElementTypeTypeChecker(),
+    instanceOf: createInstanceTypeChecker,
+    node: createNodeChecker(),
+    objectOf: createObjectOfTypeChecker,
+    oneOf: createEnumTypeChecker,
+    oneOfType: createUnionTypeChecker,
+    shape: createShapeTypeChecker,
+    exact: createStrictShapeTypeChecker
+  };
+  /**
+  * inlined Object.is polyfill to avoid requiring consumers ship their own
+  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+  */
+  /*eslint-disable no-self-compare*/
+  function is(x, y) {
+    // SameValue algorithm
+    if (x === y) {
+      // Steps 1-5, 7-10
+      // Steps 6.b-6.e: +0 != -0
+      return x !== 0 || 1 / x === 1 / y;
+    } else {
+      // Step 6.a: NaN == NaN
+      return x !== x && y !== y;
+    }
+  }
+  /*eslint-enable no-self-compare*/
+  /**
+  * We use an Error-like object for backward compatibility as people may call
+  * PropTypes directly and inspect their output. However, we don't use real
+  * Errors anymore. We don't inspect their stack anyway, and creating them
+  * is prohibitively expensive if they are created too often, such as what
+  * happens in oneOfType() for any type before the one that matched.
+  */
+  function PropTypeError(message) {
+    this.message = message;
+    this.stack = '';
+  }
+  // Make `instanceof Error` still work for returned errors.
+  PropTypeError.prototype = Error.prototype;
+  function createChainableTypeChecker(validate) {
+    if ("development" !== 'production') {
+      var manualPropTypeCallCache = {};
+      var manualPropTypeWarningCount = 0;
+    }
+    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+      componentName = componentName || ANONYMOUS;
+      propFullName = propFullName || propName;
+      if (secret !== ReactPropTypesSecret) {
+        if (throwOnDirectAccess) {
+          // New behavior only for users of `prop-types` package
+          var err = new Error('Calling PropTypes validators directly is not supported by the `prop-types` package. ' + 'Use `PropTypes.checkPropTypes()` to call them. ' + 'Read more at http://fb.me/use-check-prop-types');
+          err.name = 'Invariant Violation';
+          throw err;
+        } else if ("development" !== 'production' && typeof console !== 'undefined') {
+          // Old behavior for people using React.PropTypes
+          var cacheKey = componentName + ':' + propName;
+          if (!manualPropTypeCallCache[cacheKey] && // Avoid spamming the console because they are often not actionable except for lib authors
+          manualPropTypeWarningCount < 3) {
+            printWarning('You are manually calling a React.PropTypes validation ' + 'function for the `' + propFullName + '` prop on `' + componentName + '`. This is deprecated ' + 'and will throw in the standalone `prop-types` package. ' + 'You may be seeing this warning due to a third-party PropTypes ' + 'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.');
+            manualPropTypeCallCache[cacheKey] = true;
+            manualPropTypeWarningCount++;
+          }
+        }
+      }
+      if (props[propName] == null) {
+        if (isRequired) {
+          if (props[propName] === null) {
+            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
+          }
+          return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
+        }
+        return null;
+      } else {
+        return validate(props, propName, componentName, location, propFullName);
+      }
+    }
+    var chainedCheckType = checkType.bind(null, false);
+    chainedCheckType.isRequired = checkType.bind(null, true);
+    return chainedCheckType;
+  }
+  function createPrimitiveTypeChecker(expectedType) {
+    function validate(props, propName, componentName, location, propFullName, secret) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== expectedType) {
+        // `propValue` being instance of, say, date/regexp, pass the 'object'
+        // check, but we can offer a more precise error message here rather than
+        // 'of type `object`'.
+        var preciseType = getPreciseType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+  function createAnyTypeChecker() {
+    return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+  }
+  function createArrayOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
+      }
+      var propValue = props[propName];
+      if (!Array.isArray(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
+      }
+      for (var i = 0; i < propValue.length; i++) {
+        var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
+        if (error instanceof Error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+  function createElementTypeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      if (!isValidElement(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+  function createElementTypeTypeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      if (!ReactIs.isValidElementType(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement type.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+  function createInstanceTypeChecker(expectedClass) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!(props[propName] instanceof expectedClass)) {
+        var expectedClassName = expectedClass.name || ANONYMOUS;
+        var actualClassName = getClassName(props[propName]);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+  function createEnumTypeChecker(expectedValues) {
+    if (!Array.isArray(expectedValues)) {
+      if ("development" !== 'production') {
+        if (arguments.length > 1) {
+          printWarning('Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' + 'A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).');
+        } else {
+          printWarning('Invalid argument supplied to oneOf, expected an array.');
+        }
+      }
+      return emptyFunctionThatReturnsNull;
+    }
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      for (var i = 0; i < expectedValues.length; i++) {
+        if (is(propValue, expectedValues[i])) {
+          return null;
+        }
+      }
+      var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
+        var type = getPreciseType(value);
+        if (type === 'symbol') {
+          return String(value);
+        }
+        return value;
+      });
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + String(propValue) + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
+    }
+    return createChainableTypeChecker(validate);
+  }
+  function createObjectOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
+      }
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
+      }
+      for (var key in propValue) {
+        if (has(propValue, key)) {
+          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+          if (error instanceof Error) {
+            return error;
+          }
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+  function createUnionTypeChecker(arrayOfTypeCheckers) {
+    if (!Array.isArray(arrayOfTypeCheckers)) {
+      "development" !== 'production' ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
+      return emptyFunctionThatReturnsNull;
+    }
+    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+      var checker = arrayOfTypeCheckers[i];
+      if (typeof checker !== 'function') {
+        printWarning('Invalid argument supplied to oneOfType. Expected an array of check functions, but ' + 'received ' + getPostfixForTypeWarning(checker) + ' at index ' + i + '.');
+        return emptyFunctionThatReturnsNull;
+      }
+    }
+    function validate(props, propName, componentName, location, propFullName) {
+      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+        var checker = arrayOfTypeCheckers[i];
+        if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret) == null) {
+          return null;
+        }
+      }
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));
+    }
+    return createChainableTypeChecker(validate);
+  }
+  function createNodeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!isNode(props[propName])) {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+  function createShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      for (var key in shapeTypes) {
+        var checker = shapeTypes[key];
+        if (!checker) {
+          continue;
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+  function createStrictShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      // We need to check all keys in case some are required but missing from
+      // props.
+      var allKeys = assign({}, props[propName], shapeTypes);
+      for (var key in allKeys) {
+        var checker = shapeTypes[key];
+        if (!checker) {
+          return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' + '\nBad object: ' + JSON.stringify(props[propName], null, '  ') + '\nValid keys: ' + JSON.stringify(Object.keys(shapeTypes), null, '  '));
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+  function isNode(propValue) {
+    switch (typeof propValue) {
+      case 'number':
+      case 'string':
+      case 'undefined':
+        return true;
+      case 'boolean':
+        return !propValue;
+      case 'object':
+        if (Array.isArray(propValue)) {
+          return propValue.every(isNode);
+        }
+        if (propValue === null || isValidElement(propValue)) {
+          return true;
+        }
+        var iteratorFn = getIteratorFn(propValue);
+        if (iteratorFn) {
+          var iterator = iteratorFn.call(propValue);
+          var step;
+          if (iteratorFn !== propValue.entries) {
+            while (!(step = iterator.next()).done) {
+              if (!isNode(step.value)) {
+                return false;
+              }
+            }
+          } else {
+            // Iterator will provide entry [k,v] tuples rather than values.
+            while (!(step = iterator.next()).done) {
+              var entry = step.value;
+              if (entry) {
+                if (!isNode(entry[1])) {
+                  return false;
+                }
+              }
+            }
+          }
+        } else {
+          return false;
+        }
+        return true;
+      default:
+        return false;
+    }
+  }
+  function isSymbol(propType, propValue) {
+    // Native Symbol.
+    if (propType === 'symbol') {
+      return true;
+    }
+    // falsy value can't be a Symbol
+    if (!propValue) {
+      return false;
+    }
+    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+    if (propValue['@@toStringTag'] === 'Symbol') {
+      return true;
+    }
+    // Fallback for non-spec compliant Symbols which are polyfilled.
+    if (typeof Symbol === 'function' && propValue instanceof Symbol) {
+      return true;
+    }
+    return false;
+  }
+  // Equivalent of `typeof` but with special handling for array and regexp.
+  function getPropType(propValue) {
+    var propType = typeof propValue;
+    if (Array.isArray(propValue)) {
+      return 'array';
+    }
+    if (propValue instanceof RegExp) {
+      // Old webkits (at least until Android 4.0) return 'function' rather than
+      // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+      // passes PropTypes.object.
+      return 'object';
+    }
+    if (isSymbol(propType, propValue)) {
+      return 'symbol';
+    }
+    return propType;
+  }
+  // This handles more types than `getPropType`. Only used for error messages.
+  // See `createPrimitiveTypeChecker`.
+  function getPreciseType(propValue) {
+    if (typeof propValue === 'undefined' || propValue === null) {
+      return '' + propValue;
+    }
+    var propType = getPropType(propValue);
+    if (propType === 'object') {
+      if (propValue instanceof Date) {
+        return 'date';
+      } else if (propValue instanceof RegExp) {
+        return 'regexp';
+      }
+    }
+    return propType;
+  }
+  // Returns a string that is postfixed to a warning about an invalid type.
+  // For example, "undefined" or "of type array"
+  function getPostfixForTypeWarning(value) {
+    var type = getPreciseType(value);
+    switch (type) {
+      case 'array':
+      case 'object':
+        return 'an ' + type;
+      case 'boolean':
+      case 'date':
+      case 'regexp':
+        return 'a ' + type;
+      default:
+        return type;
+    }
+  }
+  // Returns class name of the object, if any.
+  function getClassName(propValue) {
+    if (!propValue.constructor || !propValue.constructor.name) {
+      return ANONYMOUS;
+    }
+    return propValue.constructor.name;
+  }
+  ReactPropTypes.checkPropTypes = checkPropTypes;
+  ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
+  ReactPropTypes.PropTypes = ReactPropTypes;
+  return ReactPropTypes;
+};
+
+},{"react-is":"68QIU","object-assign":"3eM6x","./lib/ReactPropTypesSecret":"3OVnw","./checkPropTypes":"R8SC7"}],"RV0qD":[function(require,module,exports) {
 "use strict";
 if ("development" === 'production') {
   module.exports = require('./cjs/history.min.js');
@@ -32242,7 +31643,605 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
 
 module.exports = hoistNonReactStatics;
 
-},{"react-is":"68QIU"}],"5gA8y":[function(require,module,exports) {
+},{"react-is":"68QIU"}],"7v6h3":[function(require,module,exports) {
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "MovieCard", function () {
+    return MovieCard;
+  });
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _propTypes = require('prop-types');
+  var _propTypesDefault = _parcelHelpers.interopDefault(_propTypes);
+  var _reactBootstrapButton = require('react-bootstrap/Button');
+  var _reactBootstrapButtonDefault = _parcelHelpers.interopDefault(_reactBootstrapButton);
+  var _reactBootstrapCard = require('react-bootstrap/Card');
+  var _reactBootstrapCardDefault = _parcelHelpers.interopDefault(_reactBootstrapCard);
+  var _reactBootstrapCardDeck = require('react-bootstrap/CardDeck');
+  var _reactBootstrapCardDeckDefault = _parcelHelpers.interopDefault(_reactBootstrapCardDeck);
+  var _reactRouterDom = require('react-router-dom');
+  var _jsxFileName = "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-card/movie-card.jsx";
+  class MovieCard extends _reactDefault.default.Component {
+    render() {
+      const {movie} = this.props;
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDeckDefault.default, {
+          variant: "h-50",
+          className: "bg-dark",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 18,
+            columnNumber: 7
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default, {
+          className: "text-center",
+          style: {
+            height: '46rem',
+            width: '18rem',
+            color: 'white',
+            background: '#292b2c'
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default.Body, {
+          className: "bg-dark h-100 mx-2",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 20,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default.Title, {
+          style: {
+            marginTop: 25,
+            paddingRight: 0
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 21,
+            columnNumber: 13
+          }
+        }, movie.Title), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default.Img, {
+          variant: "top mb-3",
+          style: {
+            height: '20rem',
+            width: '13rem'
+          },
+          src: movie.ImagePath,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 22,
+            columnNumber: 13
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default.Text, {
+          style: {
+            width: '100%',
+            marginBottom: 25
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23,
+            columnNumber: 13
+          }
+        }, movie.Description.Synopsis), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Link, {
+          to: `/movies/${movie._id}`,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
+          variant: "link",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 25,
+            columnNumber: 15
+          }
+        }, "Read More")))))
+      );
+    }
+  }
+  MovieCard.propTypes = {
+    movie: _propTypesDefault.default.shape({
+      Description: _propTypesDefault.default.shape({
+        Synopsis: _propTypesDefault.default.string.isRequired,
+        Source: _propTypesDefault.default.string.isRequired
+      }),
+      Genre: _propTypesDefault.default.shape({
+        Name: _propTypesDefault.default.string.isRequired,
+        Description: _propTypesDefault.default.string.isRequired,
+        Source: _propTypesDefault.default.string.isRequired
+      }),
+      Director: _propTypesDefault.default.shape({
+        Name: _propTypesDefault.default.string.isRequired,
+        Bio: _propTypesDefault.default.string.isRequired,
+        Birth: _propTypesDefault.default.string.isRequired,
+        Source: _propTypesDefault.default.string.isRequired
+      }),
+      Actors: _propTypesDefault.default.array.isRequired,
+      _id: _propTypesDefault.default.string.isRequired,
+      Title: _propTypesDefault.default.string.isRequired,
+      ImagePath: _propTypesDefault.default.string.isRequired,
+      Featured: _propTypesDefault.default.bool.isRequired,
+      Rotten_Tomatoes_score: _propTypesDefault.default.string.isRequired,
+      Year: _propTypesDefault.default.string.isRequired
+    }).isRequired
+  };
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+
+},{"react":"3b2NM","prop-types":"4dfy5","react-bootstrap/Button":"1ru0l","react-bootstrap/Card":"1CZWQ","react-bootstrap/CardDeck":"4fiZs","react-router-dom":"1PMSK","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"1ru0l":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var _SafeAnchor = _interopRequireDefault(require("./SafeAnchor"));
+
+var defaultProps = {
+  variant: 'primary',
+  active: false,
+  disabled: false
+};
+
+var Button = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      variant = _ref.variant,
+      size = _ref.size,
+      active = _ref.active,
+      className = _ref.className,
+      block = _ref.block,
+      type = _ref.type,
+      as = _ref.as,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "variant", "size", "active", "className", "block", "type", "as"]);
+  var prefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'btn');
+  var classes = (0, _classnames.default)(className, prefix, active && 'active', variant && prefix + "-" + variant, block && prefix + "-block", size && prefix + "-" + size);
+
+  if (props.href) {
+    return /*#__PURE__*/_react.default.createElement(_SafeAnchor.default, (0, _extends2.default)({}, props, {
+      as: as,
+      ref: ref,
+      className: (0, _classnames.default)(classes, props.disabled && 'disabled')
+    }));
+  }
+
+  if (ref) {
+    props.ref = ref;
+  }
+
+  if (type) {
+    props.type = type;
+  } else if (!as) {
+    props.type = 'button';
+  }
+
+  var Component = as || 'button';
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
+    className: classes
+  }));
+});
+
+Button.displayName = 'Button';
+Button.defaultProps = defaultProps;
+var _default = Button;
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S","./SafeAnchor":"5VP5o"}],"5VP5o":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _createChainedFunction = _interopRequireDefault(require("./createChainedFunction"));
+
+function isTrivialHref(href) {
+  return !href || href.trim() === '#';
+}
+/**
+ * There are situations due to browser quirks or Bootstrap CSS where
+ * an anchor tag is needed, when semantically a button tag is the
+ * better choice. SafeAnchor ensures that when an anchor is used like a
+ * button its accessible. It also emulates input `disabled` behavior for
+ * links, which is usually desirable for Buttons, NavItems, DropdownItems, etc.
+ */
+
+
+var SafeAnchor = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
+  var _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'a' : _ref$as,
+      disabled = _ref.disabled,
+      onKeyDown = _ref.onKeyDown,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["as", "disabled", "onKeyDown"]);
+
+  var handleClick = function handleClick(event) {
+    var href = props.href,
+        onClick = props.onClick;
+
+    if (disabled || isTrivialHref(href)) {
+      event.preventDefault();
+    }
+
+    if (disabled) {
+      event.stopPropagation();
+      return;
+    }
+
+    if (onClick) {
+      onClick(event);
+    }
+  };
+
+  var handleKeyDown = function handleKeyDown(event) {
+    if (event.key === ' ') {
+      event.preventDefault();
+      handleClick(event);
+    }
+  };
+
+  if (isTrivialHref(props.href)) {
+    props.role = props.role || 'button'; // we want to make sure there is a href attribute on the node
+    // otherwise, the cursor incorrectly styled (except with role='button')
+
+    props.href = props.href || '#';
+  }
+
+  if (disabled) {
+    props.tabIndex = -1;
+    props['aria-disabled'] = true;
+  }
+
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({
+    ref: ref
+  }, props, {
+    onClick: handleClick,
+    onKeyDown: (0, _createChainedFunction.default)(handleKeyDown, onKeyDown)
+  }));
+});
+
+SafeAnchor.displayName = 'SafeAnchor';
+var _default = SafeAnchor;
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","react":"3b2NM","./createChainedFunction":"4RHiz"}],"4RHiz":[function(require,module,exports) {
+"use strict";
+
+exports.__esModule = true;
+exports.default = void 0;
+
+/**
+ * Safe chained function
+ *
+ * Will only create a new function if needed,
+ * otherwise will pass back existing functions or null.
+ *
+ * @param {function} functions to chain
+ * @returns {function|null}
+ */
+function createChainedFunction() {
+  for (var _len = arguments.length, funcs = new Array(_len), _key = 0; _key < _len; _key++) {
+    funcs[_key] = arguments[_key];
+  }
+
+  return funcs.filter(function (f) {
+    return f != null;
+  }).reduce(function (acc, f) {
+    if (typeof f !== 'function') {
+      throw new Error('Invalid Argument Type, must only provide functions, undefined, or null.');
+    }
+
+    if (acc === null) return f;
+    return function chainedFunction() {
+      for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        args[_key2] = arguments[_key2];
+      }
+
+      // @ts-ignore
+      acc.apply(this, args); // @ts-ignore
+
+      f.apply(this, args);
+    };
+  }, null);
+}
+
+var _default = createChainedFunction;
+exports.default = _default;
+module.exports = exports["default"];
+},{}],"1CZWQ":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
+
+var _divWithClassName = _interopRequireDefault(require("./divWithClassName"));
+
+var _CardContext = _interopRequireDefault(require("./CardContext"));
+
+var _CardImg = _interopRequireDefault(require("./CardImg"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var DivStyledAsH5 = (0, _divWithClassName.default)('h5');
+var DivStyledAsH6 = (0, _divWithClassName.default)('h6');
+var CardBody = (0, _createWithBsPrefix.default)('card-body');
+var CardTitle = (0, _createWithBsPrefix.default)('card-title', {
+  Component: DivStyledAsH5
+});
+var CardSubtitle = (0, _createWithBsPrefix.default)('card-subtitle', {
+  Component: DivStyledAsH6
+});
+var CardLink = (0, _createWithBsPrefix.default)('card-link', {
+  Component: 'a'
+});
+var CardText = (0, _createWithBsPrefix.default)('card-text', {
+  Component: 'p'
+});
+var CardHeader = (0, _createWithBsPrefix.default)('card-header');
+var CardFooter = (0, _createWithBsPrefix.default)('card-footer');
+var CardImgOverlay = (0, _createWithBsPrefix.default)('card-img-overlay');
+var defaultProps = {
+  body: false
+};
+
+var Card = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      className = _ref.className,
+      bg = _ref.bg,
+      text = _ref.text,
+      border = _ref.border,
+      body = _ref.body,
+      children = _ref.children,
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'div' : _ref$as,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "bg", "text", "border", "body", "children", "as"]);
+  var prefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'card');
+  var cardContext = (0, _react.useMemo)(function () {
+    return {
+      cardHeaderBsPrefix: prefix + "-header"
+    };
+  }, [prefix]);
+  return /*#__PURE__*/_react.default.createElement(_CardContext.default.Provider, {
+    value: cardContext
+  }, /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({
+    ref: ref
+  }, props, {
+    className: (0, _classnames.default)(className, prefix, bg && "bg-" + bg, text && "text-" + text, border && "border-" + border)
+  }), body ?
+  /*#__PURE__*/
+  // @ts-ignore
+  _react.default.createElement(CardBody, null, children) : children));
+});
+
+Card.displayName = 'Card';
+Card.defaultProps = defaultProps;
+Card.Img = _CardImg.default;
+Card.Title = CardTitle;
+Card.Subtitle = CardSubtitle;
+Card.Body = CardBody;
+Card.Link = CardLink;
+Card.Text = CardText;
+Card.Header = CardHeader;
+Card.Footer = CardFooter;
+Card.ImgOverlay = CardImgOverlay;
+var _default = Card;
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S","./createWithBsPrefix":"2oVVc","./divWithClassName":"27J3S","./CardContext":"71yot","./CardImg":"68LPL"}],"2oVVc":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = createWithBsPrefix;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _camelize = _interopRequireDefault(require("dom-helpers/camelize"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var pascalCase = function pascalCase(str) {
+  return str[0].toUpperCase() + (0, _camelize.default)(str).slice(1);
+};
+
+// TODO: emstricten & fix the typing here! `createWithBsPrefix<TElementType>...`
+function createWithBsPrefix(prefix, _temp) {
+  var _ref = _temp === void 0 ? {} : _temp,
+      _ref$displayName = _ref.displayName,
+      displayName = _ref$displayName === void 0 ? pascalCase(prefix) : _ref$displayName,
+      Component = _ref.Component,
+      defaultProps = _ref.defaultProps;
+
+  var BsComponent = /*#__PURE__*/_react.default.forwardRef(function (_ref2, ref) {
+    var className = _ref2.className,
+        bsPrefix = _ref2.bsPrefix,
+        _ref2$as = _ref2.as,
+        Tag = _ref2$as === void 0 ? Component || 'div' : _ref2$as,
+        props = (0, _objectWithoutPropertiesLoose2.default)(_ref2, ["className", "bsPrefix", "as"]);
+    var resolvedPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, prefix);
+    return /*#__PURE__*/_react.default.createElement(Tag, (0, _extends2.default)({
+      ref: ref,
+      className: (0, _classnames.default)(className, resolvedPrefix)
+    }, props));
+  });
+
+  BsComponent.defaultProps = defaultProps;
+  BsComponent.displayName = displayName;
+  return BsComponent;
+}
+
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","dom-helpers/camelize":"7AXwA","react":"3b2NM","./ThemeProvider":"4rz1S"}],"7AXwA":[function(require,module,exports) {
+"use strict";
+
+exports.__esModule = true;
+exports.default = camelize;
+var rHyphen = /-(.)/g;
+
+function camelize(string) {
+  return string.replace(rHyphen, function (_, chr) {
+    return chr.toUpperCase();
+  });
+}
+
+module.exports = exports["default"];
+},{}],"27J3S":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _default = function _default(className) {
+  return /*#__PURE__*/_react.default.forwardRef(function (p, ref) {
+    return /*#__PURE__*/_react.default.createElement("div", (0, _extends2.default)({}, p, {
+      ref: ref,
+      className: (0, _classnames.default)(p.className, className)
+    }));
+  });
+};
+
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","react":"3b2NM","classnames":"5aJRc"}],"71yot":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var context = /*#__PURE__*/_react.default.createContext(null);
+
+context.displayName = 'CardContext';
+var _default = context;
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","react":"3b2NM"}],"68LPL":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var defaultProps = {
+  variant: null
+};
+
+var CardImg = /*#__PURE__*/_react.default.forwardRef( // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      className = _ref.className,
+      variant = _ref.variant,
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'img' : _ref$as,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "variant", "as"]);
+  var prefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'card-img');
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({
+    ref: ref,
+    className: (0, _classnames.default)(variant ? prefix + "-" + variant : prefix, className)
+  }, props));
+});
+
+CardImg.displayName = 'CardImg';
+CardImg.defaultProps = defaultProps;
+var _default = CardImg;
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S"}],"4fiZs":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
+
+var _default = (0, _createWithBsPrefix.default)('card-deck');
+
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","./createWithBsPrefix":"2oVVc"}],"5gA8y":[function(require,module,exports) {
 "use strict";
 
 exports.interopDefault = function (a) {
@@ -45761,7 +45760,7 @@ try {
       });
     };
     return ['Dark'].map((variant, idx) => /*#__PURE__*/_reactDefault.default.createElement("div", {
-      className: "bg-primary",
+      class: "bg-primary",
       style: {
         height: '130rem'
       },
@@ -46412,7 +46411,7 @@ try {
   var _propTypes = require('prop-types');
   var _propTypesDefault = _parcelHelpers.interopDefault(_propTypes);
   require('../movie-view/movie-view');
-  require('react-bootstrap');
+  var _reactBootstrap = require('react-bootstrap');
   var _reactBootstrapButton = require('react-bootstrap/Button');
   var _reactBootstrapButtonDefault = _parcelHelpers.interopDefault(_reactBootstrapButton);
   require('react-router-dom');
@@ -46455,7 +46454,88 @@ try {
             lineNumber: 35,
             columnNumber: 9
           }
-        })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Navbar, {
+          bg: "primary",
+          variant: "dark",
+          style: {
+            paddingLeft: 0,
+            paddingRight: 0
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36,
+            columnNumber: 11
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Navbar.Brand, {
+          className: "ml-2",
+          href: "#home",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 37,
+            columnNumber: 13
+          }
+        }, "myfavfilmz"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Nav, {
+          className: "mr-auto",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 38,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Nav.Link, {
+          href: "#account",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 39,
+            columnNumber: 15
+          }
+        }, "Account"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Nav.Link, {
+          href: "#movies",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 40,
+            columnNumber: 15
+          }
+        }, "Movies"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Nav.Link, {
+          href: "#about",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 41,
+            columnNumber: 15
+          }
+        }, "About")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Form, {
+          inline: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 43,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.FormControl, {
+          type: "text",
+          placeholder: "Search",
+          className: "mr-3",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 44,
+            columnNumber: 15
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
+          variant: "outline-light",
+          className: "mr-5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 45,
+            columnNumber: 15
+          }
+        }, "Search"))))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
           className: "pt-5 bg-dark",
           style: {
             paddingBottom: '80rem',
@@ -46467,7 +46547,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38,
+            lineNumber: 51,
             columnNumber: 9
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -46479,7 +46559,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39,
+            lineNumber: 52,
             columnNumber: 11
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -46490,7 +46570,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 40,
+            lineNumber: 53,
             columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -46499,7 +46579,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 41,
+            lineNumber: 54,
             columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("img", {
@@ -46509,7 +46589,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 42,
+            lineNumber: 55,
             columnNumber: 15
           }
         })), /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -46517,7 +46597,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 44,
+            lineNumber: 57,
             columnNumber: 15
           }
         }, director.Name), /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -46525,7 +46605,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 45,
+            lineNumber: 58,
             columnNumber: 15
           }
         }, " (", director.Birth, "-", director.Death, "). "), /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -46533,7 +46613,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 46,
+            lineNumber: 59,
             columnNumber: 15
           }
         }, director.Bio, " "), /*#__PURE__*/_reactDefault.default.createElement("a", {
@@ -46542,7 +46622,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 47,
+            lineNumber: 60,
             columnNumber: 15
           }
         }, "(source)")), /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -46552,7 +46632,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 49,
+            lineNumber: 62,
             columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
@@ -46564,7 +46644,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 50,
+            lineNumber: 63,
             columnNumber: 15
           }
         }, "Back")))))
@@ -46587,7 +46667,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","react-bootstrap/Image":"5qrP5","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","prop-types":"4dfy5","../movie-view/movie-view":"3xBbr","react-bootstrap":"4n7hB","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"6FLqj":[function(require,module,exports) {
+},{"react":"3b2NM","react-bootstrap/Image":"5qrP5","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","prop-types":"4dfy5","react-bootstrap":"4n7hB","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","../movie-view/movie-view":"3xBbr"}],"6FLqj":[function(require,module,exports) {
 var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -46608,7 +46688,7 @@ try {
   var _propTypes = require('prop-types');
   var _propTypesDefault = _parcelHelpers.interopDefault(_propTypes);
   require('../movie-view/movie-view');
-  require('react-bootstrap');
+  var _reactBootstrap = require('react-bootstrap');
   var _reactBootstrapButton = require('react-bootstrap/Button');
   var _reactBootstrapButtonDefault = _parcelHelpers.interopDefault(_reactBootstrapButton);
   require('react-router-dom');
@@ -46649,9 +46729,90 @@ try {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 35,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Navbar, {
+          bg: "primary",
+          variant: "dark",
+          style: {
+            paddingLeft: 0,
+            paddingRight: 0
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36,
             columnNumber: 11
           }
-        })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Navbar.Brand, {
+          className: "ml-2",
+          href: "#home",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 37,
+            columnNumber: 13
+          }
+        }, "myfavfilmz"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Nav, {
+          className: "mr-auto",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 38,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Nav.Link, {
+          href: "#account",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 39,
+            columnNumber: 15
+          }
+        }, "Account"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Nav.Link, {
+          href: "#movies",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 40,
+            columnNumber: 15
+          }
+        }, "Movies"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Nav.Link, {
+          href: "#about",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 41,
+            columnNumber: 15
+          }
+        }, "About")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.Form, {
+          inline: true,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 43,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrap.FormControl, {
+          type: "text",
+          placeholder: "Search",
+          className: "mr-3",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 44,
+            columnNumber: 15
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
+          variant: "outline-light",
+          className: "mr-5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 45,
+            columnNumber: 15
+          }
+        }, "Search"))))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
           className: "pt-5 bg-dark",
           style: {
             paddingBottom: '80rem',
@@ -46663,31 +46824,30 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38,
+            lineNumber: 51,
             columnNumber: 9
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("div", {
           class: "mx-auto",
           style: {
             height: '100%',
-            maxWidth: '100%'
+            maxWidth: '50%'
           },
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39,
+            lineNumber: 52,
             columnNumber: 11
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("div", {
           className: "movie-genre",
           style: {
-            color: 'white',
-            textAlign: 'center'
+            color: 'white'
           },
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 40,
+            lineNumber: 53,
             columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -46696,7 +46856,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 41,
+            lineNumber: 54,
             columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("img", {
@@ -46706,7 +46866,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 42,
+            lineNumber: 55,
             columnNumber: 15
           }
         })), /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -46714,7 +46874,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 44,
+            lineNumber: 57,
             columnNumber: 15
           }
         }, genre.Name), /*#__PURE__*/_reactDefault.default.createElement("span", {
@@ -46722,7 +46882,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 45,
+            lineNumber: 58,
             columnNumber: 15
           }
         }, " (", genre.Description), /*#__PURE__*/_reactDefault.default.createElement("a", {
@@ -46731,7 +46891,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 46,
+            lineNumber: 59,
             columnNumber: 15
           }
         }, "(source)")), /*#__PURE__*/_reactDefault.default.createElement("div", {
@@ -46741,7 +46901,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 48,
+            lineNumber: 61,
             columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
@@ -46753,7 +46913,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 49,
+            lineNumber: 62,
             columnNumber: 15
           }
         }, "Back")))))
@@ -46867,7 +47027,7 @@ try {
           className: "mx-auto",
           style: {
             height: '100%',
-            maxWidth: '50%'
+            maxWidth: '100%'
           },
           __self: this,
           __source: {
@@ -46876,7 +47036,7 @@ try {
             columnNumber: 11
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("div", {
-          className: "movie-director",
+          className: "user-profile",
           style: {
             color: 'white'
           },
@@ -46887,55 +47047,191 @@ try {
             columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("div", {
-          className: "movie-poster mb-4 justify-content-center text-center mx-auto",
+          className: "user-intro mb-4 justify-content-center text-left mx-auto",
           __self: this,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 63,
-            columnNumber: 13
+            columnNumber: 15
           }
-        }, /*#__PURE__*/_reactDefault.default.createElement("img", {
+        }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 64,
+            columnNumber: 17
+          }
+        }, "my profile"), /*#__PURE__*/_reactDefault.default.createElement("img", {
           src: user.ImagePath,
           height: "5%",
           width: "20%",
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 64,
-            columnNumber: 15
+            lineNumber: 65,
+            columnNumber: 17
           }
-        })), /*#__PURE__*/_reactDefault.default.createElement("span", {
-          className: "value",
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 66,
-            columnNumber: 15
-          }
-        }, user.Username), /*#__PURE__*/_reactDefault.default.createElement("span", {
-          className: "value",
+        })), /*#__PURE__*/_reactDefault.default.createElement("div", {
           __self: this,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 67,
-            columnNumber: 15
+            columnNumber: 17
           }
-        }, " ", user.Email), /*#__PURE__*/_reactDefault.default.createElement("span", {
-          className: "value",
+        }, /*#__PURE__*/_reactDefault.default.createElement("div", {
+          style: {
+            display: 'inline-flex',
+            marginLeft: '10rem'
+          },
           __self: this,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 68,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h5", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 69,
+            columnNumber: 19
+          }
+        }, "Username"), /*#__PURE__*/_reactDefault.default.createElement("span", {
+          className: "value ml-5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 70,
+            columnNumber: 19
+          }
+        }, user.Username)), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 71,
+            columnNumber: 23
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          style: {
+            display: 'inline-flex',
+            marginLeft: '10rem'
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 72,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h5", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 73,
+            columnNumber: 19
+          }
+        }, "Password"), /*#__PURE__*/_reactDefault.default.createElement("p", {
+          className: "ml-5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 74,
+            columnNumber: 19
+          }
+        }, " ********** ")), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 75,
+            columnNumber: 23
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          style: {
+            display: 'inline-flex',
+            marginLeft: '10rem'
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 76,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h5", {
+          className: "value mr-4",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 77,
+            columnNumber: 19
+          }
+        }, "E-mail"), /*#__PURE__*/_reactDefault.default.createElement("span", {
+          className: "value ml-5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 78,
+            columnNumber: 19
+          }
+        }, " ", user.Email)), /*#__PURE__*/_reactDefault.default.createElement("br", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 79,
+            columnNumber: 23
+          }
+        }), /*#__PURE__*/_reactDefault.default.createElement("div", {
+          style: {
+            display: 'inline-flex',
+            marginLeft: '10rem'
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 80,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("h5", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 81,
+            columnNumber: 19
+          }
+        }, "Date of Birth"), /*#__PURE__*/_reactDefault.default.createElement("span", {
+          className: "value ml-4",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 82,
+            columnNumber: 19
+          }
+        }, user.Birthday, " ")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
+          className: "mt-5",
+          variant: "primary",
+          onClick: () => props.handleEdit(true),
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 84,
             columnNumber: 15
           }
-        }, user.Birthday, " ")), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        }, "All Movies"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
+          className: "mt-5",
+          variant: "primary",
+          onClick: () => props.handleEdit(true),
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 85,
+            columnNumber: 15
+          }
+        }, "Edit Profile"))), /*#__PURE__*/_reactDefault.default.createElement("div", {
           style: {
             textAlign: 'center'
           },
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 70,
+            lineNumber: 88,
             columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
@@ -46947,7 +47243,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 71,
+            lineNumber: 89,
             columnNumber: 15
           }
         }, "Back")))))
@@ -46970,7 +47266,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","axios":"7rA65","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","react-bootstrap":"4n7hB","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","react-bootstrap/Image":"5qrP5","prop-types":"4dfy5"}],"1jaAx":[function(require,module,exports) {
+},{"react":"3b2NM","react-bootstrap/Image":"5qrP5","axios":"7rA65","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","prop-types":"4dfy5","react-bootstrap":"4n7hB","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"1jaAx":[function(require,module,exports) {
 var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
