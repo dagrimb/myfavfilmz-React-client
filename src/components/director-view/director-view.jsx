@@ -33,19 +33,6 @@ export class DirectorView extends React.Component {
       <div className="director-view">
         <Row className="main-view justify-content-md-center ml-0 h-100">
         <div className="w-100">
-          <Navbar bg="primary" variant="dark" style={{paddingLeft: 0, paddingRight: 0 }}>
-            <Navbar.Brand className="ml-2" href="#home">myfavfilmz</Navbar.Brand>
-            <Nav className="mr-auto">
-              <Nav.Link href="#account">Account</Nav.Link>
-              <Nav.Link href="#movies">Movies</Nav.Link>
-              <Nav.Link href="#about">About</Nav.Link>
-            </Nav>
-            <Form inline>
-              <FormControl type="text" placeholder="Search" className="mr-3" />
-              <Button variant="outline-light" className="mr-5">Search</Button>
-
-            </Form>
-          </Navbar> 
           </div>
         </Row>
         <Col className="pt-5 bg-dark" style={{ paddingBottom: '80rem', height: '100%', width: '100%', color: 'white', background: '#292b2c'}}>
