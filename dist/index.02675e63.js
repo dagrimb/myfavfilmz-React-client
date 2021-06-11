@@ -47024,7 +47024,6 @@ try {
             columnNumber: 9
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("div", {
-          className: "mx-auto",
           style: {
             height: '100%',
             maxWidth: '100%'
@@ -47047,14 +47046,14 @@ try {
             columnNumber: 13
           }
         }, /*#__PURE__*/_reactDefault.default.createElement("div", {
-          className: "user-intro mb-4 justify-content-center text-left mx-auto",
+          className: "user-intro mb-4 justify-content-left text-left mx-auto",
           __self: this,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 63,
             columnNumber: 15
           }
-        }, /*#__PURE__*/_reactDefault.default.createElement("h3", {
+        }, /*#__PURE__*/_reactDefault.default.createElement("h2", {
           __self: this,
           __source: {
             fileName: _jsxFileName,
@@ -47246,7 +47245,15 @@ try {
             lineNumber: 89,
             columnNumber: 15
           }
-        }, "Back")))))
+        }, "Back"), /*#__PURE__*/_reactDefault.default.createElement("h4", {
+          className: "text-left mt-5",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 90,
+            columnNumber: 15
+          }
+        }, user.Username, "'s fav filmz")))))
       );
     }
   }
