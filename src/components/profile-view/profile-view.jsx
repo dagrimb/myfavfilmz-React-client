@@ -58,14 +58,32 @@ export class ProfileView extends React.Component {
     return (
       <div className="profile-view">
         <Col className="pt-5 bg-dark" style={{ paddingBottom: '80rem', height: '100%', width: '100%', color: 'white', background: '#292b2c'}}>
-          <div className="mx-auto" style={{ height: '100%', maxWidth: '50%' }} >
-            <div className="movie-director" style={{ color: 'white' }}>
-            <div className="movie-poster mb-4 justify-content-center text-center mx-auto">
-              <img src={user.ImagePath} height="5%" width="20%"/>
-            </div>
-              <span className="value">{user.Username}</span>
-              <span className="value"> {user.Email}</span>
-              <span className="value">{user.Birthday} </span>
+          <div className="mx-auto" style={{ height: '100%', maxWidth: '100%' }} >
+            <div className="user-profile" style={{ color: 'white' }}>
+              <div className="user-intro mb-4 justify-content-center text-left mx-auto">
+                <h3>my profile</h3>
+                <img src={user.ImagePath} height="5%" width="20%"/>
+              </div>
+                <div>
+                <div style={{ display: 'inline-flex', marginLeft: '10rem'}}>
+                  <h5>Username</h5>
+                  <span className="value ml-5">{user.Username}</span>
+                </div><br/>
+                <div style={{ display: 'inline-flex', marginLeft: '10rem'}}>
+                  <h5>Password</h5>
+                  <p className="ml-5"> ********** </p>
+                </div><br/>
+                <div style={{ display: 'inline-flex', marginLeft: '10rem'}}>
+                  <h5 className="value mr-4">E-mail</h5>
+                  <span className="value ml-5"> {user.Email}</span>
+                </div><br/>
+                <div style={{ display: 'inline-flex', marginLeft: '10rem'}}>
+                  <h5>Date of Birth</h5>
+                  <span className="value ml-4">{user.Birthday} </span>
+              </div>
+              <Button className="mt-5" variant="primary" onClick={() => props.handleEdit(true)}>All Movies</Button> 
+              <Button className="mt-5" variant="primary" onClick={() => props.handleEdit(true)}>Edit Profile</Button> 
+              </div>
             </div>
             <div style={{ textAlign: 'center' }}>
               <Button className="mt-5"  variant="primary" onClick={() => { onBackClick(null); }}>Back</Button>
