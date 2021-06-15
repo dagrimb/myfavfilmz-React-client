@@ -47080,19 +47080,23 @@ try {
             lineNumber: 84,
             columnNumber: 19
           }
-        }, user.Birthday, " ")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
-          className: "mt-5",
+        }, user.Birthday, " "))), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
+          className: "mt-4",
+          style: {
+            marginLeft: '10rem'
+          },
           variant: "primary",
           onClick: () => props.handleEdit(true),
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 86,
+            lineNumber: 87,
             columnNumber: 15
           }
-        }, "Edit Profile or Unregister"))), /*#__PURE__*/_reactDefault.default.createElement("div", {
+        }, "Edit Profile or Unregister")), /*#__PURE__*/_reactDefault.default.createElement("div", {
           style: {
-            textAlign: 'center'
+            textAlign: 'right',
+            marginRight: '2rem'
           },
           __self: this,
           __source: {
@@ -47102,6 +47106,9 @@ try {
           }
         }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
           className: "mt-5",
+          style: {
+            display: 'float-right'
+          },
           variant: "primary",
           onClick: () => {
             onBackClick(null);
