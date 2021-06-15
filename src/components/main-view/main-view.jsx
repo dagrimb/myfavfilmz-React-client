@@ -50,6 +50,7 @@ export class MainView extends React.Component {
       this.setState( { isLoggedIn: !!accessToken }); // transform string to boolean 
       this.getUser(localStorage.getItem('userID'), accessToken)
       this.getMovies(accessToken);  // getMovies method is executed and a GET request to the movies endpoint
+      this.getFavoriteFilms(localStorage.getItem('userID'), accessToken)
       }
     }
 
@@ -83,6 +84,24 @@ export class MainView extends React.Component {
       });
     }
 
+    getFavoriteFilms(userID, token) {
+      axios.get('https://myfavfilmz.herokuapp.com/users/' + userID + '/Movies', {  // use axios to make GET request to movies endpoint of Node.js API
+        headers: { Authorization: `Bearer ${token}`}  // pass bearer authorization in the header of GET request allowing you to make an 
+      })                                              // authenticated request to the API
+      .then(response => {
+        // Assign the result to the state
+        this.setState({
+          FavoriteMovies: response.data
+          //findFavorites: FavoriteMovies.map(id => movies.find(m => m._id === id))
+        })
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    }
+
+
+
   //a method later passed as a prop to LoginView (below). When user clicks movie, the function updates
   //state of the selectedMovie property with that movie
   /*onMovieClick(movie) {
@@ -111,7 +130,10 @@ export class MainView extends React.Component {
     });
   }*/
 
-
+  /*
+  findFavorites = (FavoriteMovies) => {
+    this.setState({ FavoriteMovies: FavoriteMovies.map(id => movies.find(m => m._id === id))});
+  }*/
 
 
   handleRegister = (value) => {
@@ -131,7 +153,7 @@ export class MainView extends React.Component {
   }
 
   render() {
-    const  { movies, user, registerClicked} = this.state; // shortened form of const movies = this.state.movies
+    const  { movies, user, registerClicked, FavoriteMovies } = this.state; // shortened form of const movies = this.state.movies
     //if no user signed in and button to render RegistrationView is clicked, render RegistrationView
     if (!user && registerClicked) return <RegistrationView handleRegister={this.handleRegister} onRegistered={this.onRegistered} />;
     //if user is logged in but not on user profile...
@@ -211,13 +233,23 @@ export class MainView extends React.Component {
               if (!user) return <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
               </Col>
+              if (movies.length === 0) return <div className="main-view" />;
               return <Col md={12} style={{paddingLeft: 0, paddingRight: 0 }}>
-                <ProfileView user={user} onBackClick={() => history.goBack()}/>
+                  <ProfileView movie={FavoriteMovies} user={user} onBackClick={() => history.goBack()}/>
+                </Col>       
+              /*
+              return FavoriteMovies.map(m => (
+              <Col key={m._id} md={12} style={{paddingLeft: 0, paddingRight: 0 }}>
+                <ProfileView movie={m} user={user} onBackClick={() => history.goBack()}/>
               </Col>  
-            }} />
+                ))
+              */
+              }} />
           </Row>
         </Router>
       );
-
     }
   }
+
+
+  
