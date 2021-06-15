@@ -58,7 +58,8 @@ export function ProfileEdit(props) {
           className="justify-content-center text-center mx-auto"
         >
         <Card.Body>
-          <div className="text-align-center">
+          <div className="text-align-center" >
+          <span className="value">{user._id}</span>
             <h3>Great to meet you!</h3>
           </div>
           <Form.Text>
