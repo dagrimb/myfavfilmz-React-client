@@ -9,7 +9,8 @@ import { Navbar,Nav,NavDropdown,Form,FormControl} from 'react-bootstrap';
 //import { Button } from '../button/button';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
-
+import Card from 'react-bootstrap/Card';
+import CardDeck from 'react-bootstrap/CardDeck';
 
 //create MovieView component
 export class ProfileView extends React.Component {
@@ -52,8 +53,9 @@ export class ProfileView extends React.Component {
 }
 */
   render() {
-    const { onBackClick, user } = this.props;
+    const { onBackClick, user, movie } = this.props;
     console.log("ProfileView", user);
+    console.log("FavoriteMovies", movie);
 
     return (
       <div className="profile-view">
@@ -81,29 +83,32 @@ export class ProfileView extends React.Component {
                   <h5>Date of Birth</h5>
                   <span className="value ml-4">{user.Birthday} </span>
               </div>
-              <Button className="mt-5" variant="primary" onClick={() => props.handleEdit(true)}>All Movies</Button> 
-              <Button className="mt-5" variant="primary" onClick={() => props.handleEdit(true)}>Edit Profile</Button> 
+              <Button className="mt-5" variant="primary" onClick={() => props.handleEdit(true)}>Edit Profile or Unregister</Button> 
               </div>
             </div>
             <div style={{ textAlign: 'center' }}>
-              <Button className="mt-5"  variant="primary" onClick={() => { onBackClick(null); }}>Back</Button>
+              <Button className="mt-5"  variant="primary" onClick={() => { onBackClick(null); }}>Back to All Movies</Button>
               <h4 className="text-left mt-5">{user.Username}'s fav filmz</h4>
             </div>
+            <CardDeck variant="h-50" className="bg-dark">
+              {movie.map(m => ( 
+              <Card key={m._id} className="text-center" style={{ height: '46rem', width: '18rem', color: 'white', background: '#292b2c'}}>
+                
+                <Card.Body movie={m} className="bg-dark h-100 mx-2">
+                  <Card.Title  style={{marginTop: 25, paddingRight: 0 }}>{m.Title}</Card.Title>
+                  <Card.Img variant="top mb-3" style={{ height: '20rem', width: '13rem'}} src={m.ImagePath} />
+                  <Link to={`/movies/${m._id}`}>
+                    <Button variant="link">Read More</Button>
+                    <button onClick={() => { this.removeFilm() }}>Remove</button>
+                  </Link>
+                </Card.Body>
+              </Card>
+              ))}
+            </CardDeck>
           </div>
         </Col>
+        
       </div>  
     );
   }
 }
-
-
-ProfileView.propTypes = {
-  User: PropTypes.shape({
-    FavoriteMovies: PropTypes.array,    
-    Username: PropTypes.string.isRequired,
-    Password: PropTypes.string.isRequired,
-    Email: PropTypes.string.isRequired,
-    Birthday: PropTypes.instanceOf(Date).isRequired
-  }),
-  onClick: PropTypes.func
-};
