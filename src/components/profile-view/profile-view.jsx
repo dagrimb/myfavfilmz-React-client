@@ -83,11 +83,11 @@ export class ProfileView extends React.Component {
                   <h5>Date of Birth</h5>
                   <span className="value ml-4">{user.Birthday} </span>
               </div>
-              <Button className="mt-5" variant="primary" onClick={() => props.handleEdit(true)}>Edit Profile or Unregister</Button> 
               </div>
+              <Button className="mt-4" style={{ marginLeft: '10rem'}} variant="primary" onClick={() => props.handleEdit(true)}>Edit Profile or Unregister</Button> 
             </div>
-            <div style={{ textAlign: 'center' }}>
-              <Button className="mt-5"  variant="primary" onClick={() => { onBackClick(null); }}>Back to All Movies</Button>
+            <div style={{ textAlign: 'right', marginRight: '2rem' }}>
+              <Button className="mt-5" style={{display: 'float-right'}} variant="primary" onClick={() => { onBackClick(null); }}>Back to All Movies</Button>
               <h4 className="text-left mt-5">{user.Username}'s fav filmz</h4>
             </div>
             <CardDeck variant="h-50" className="bg-dark">
