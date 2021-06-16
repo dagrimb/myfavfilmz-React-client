@@ -21,6 +21,7 @@ export function ProfileEdit(props) {
   const [ password, setPassword ] = useState('');
   const [ email, setEmail ] = useState('');
   const [ birthday, setBirthday ] = useState(new Date());
+  const [ user, setUser ] = useState(props.user);
 
   //Send request to server for auth
   const handleSubmit = (e) => {
@@ -42,39 +43,37 @@ export function ProfileEdit(props) {
       console.log('error updating user info')
     });
     props.handleEdit(username);
+    const user = props.user;
   };
 
+  
   return (
 
     [
       'Dark',
     ].map((variant, idx) => (
-      <div class="bg-primary" style={{ height: '130rem'}} /*key={user._id}*/>
-        <p style={{ color: 'white', paddingTop: 15, paddingLeft: 15}}>myfavfilmz</p>
+      <div class="profile-edit bg-dark" style={{ height: '130rem'}} /*key={user._id}*/>
+        <div style={{ color: 'white', paddingTop: 15, paddingLeft: 15}}></div>
         <Card
-          bg={variant.toLowerCase()}
+          bg="primary" variant="toLowerCase()"
           text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
-          style={{ width: '40rem', height: '55rem', marginBottom: 10}}
-          className="justify-content-center text-center mx-auto"
+          style={{ width: '60rem', height: '55rem', marginBottom: 10, marginTop: '10rem', marginLeft: '10rem'}}
+          className="justify-content-center bg-primary"
         >
         <Card.Body>
           <div className="text-align-center" >
-          <span className="value">{user._id}</span>
-            <h3>Great to meet you!</h3>
+            <h3>Update your account information</h3>
           </div>
-          <Form.Text>
-            Creat an account
+          <Form.Text style={{ marginTop:'0rem'}}>
+            Enter your desired new information in the appropriate fields below
           </Form.Text>
           <Form>
-            <Form.Text className="text-muted mb-4">
-              We will never share your username, password, email or birthdate with a third-party.
-            </Form.Text>
-            <Form.Group as={Col} controlId="validationCustomUsername">
-              <Form.Label className="float-left">Username</Form.Label>
+            <Form.Group as={Col} controlId="validationCustomUsername" style={{ marginTop: '3rem', display: 'inline-flex'}}>
+              <Form.Label className="float-left mr-3">Username</Form.Label>
               <InputGroup className="mb-3" hasValidation>
                 <Form.Control
-                  type="text" 
-                  placeholder="Enter your username" 
+                  type="text"
+                  placeholder={user.Username}
                   aria-describedby="inputGroupPrepend"
                   required
                   value={username}
@@ -82,53 +81,59 @@ export function ProfileEdit(props) {
                 />
               </InputGroup>
             </Form.Group>
-            <Form.Group as={Col} controlId="formBasicEmail">
-              <Form.Label className="float-left">Email address</Form.Label>
-              <InputGroup hasValidation></InputGroup>
-              <Form.Control 
-                type="email" 
-                placeholder="Enter your email address"
-                value={email}
-                aria-describedby="inputGroupPrepend"
-                onChange={e => setEmail(e.target.value)}  
-              />
-            </Form.Group>
-            <Form.Group as={Col} controlId="formBasicPassword">
-              <Form.Label className="float-left">Password</Form.Label>
+            <Form.Group as={Col} controlId="formBasicPassword" style={{ marginTop: '2rem', paddingBottom: '0rem', display: 'inline-flex'}}>
+              <Form.Label className="float-left mr-4">Password</Form.Label>
               <InputGroup hasValidation>
                 <Form.Control 
+                  style={{ width: '49rem'}}
                   required
                   type="password" 
-                  placeholder="Enter your password"
+                  placeholder="***********"
                   value={password}
                   aria-describedby="passwordHelpBlock"
                   onChange={e => setPassword(e.target.value)}
                 />
               </InputGroup>
-              <Form.Text id="passwordHelpBlock" muted>
+            </Form.Group>
+            <Form.Text style={{ marginLeft: '6rem', marginTop:'0rem'}}>
                 Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or 
                 emoji.
               </Form.Text>
+            <Form.Group as={Col} controlId="formBasicEmail" style={{ marginTop: '2rem', display: 'inline-flex'}}>
+              <Form.Label className="float-left">Email address</Form.Label>
+              <InputGroup hasValidation>
+              <Form.Control 
+                style={{ width: '49rem'}}
+                type="email" 
+                placeholder={user.Email}
+                value={email}
+                aria-describedby="inputGroupPrepend"
+                onChange={e => setEmail(e.target.value)}  
+              />
+              </InputGroup>
             </Form.Group>
-            <Form.Group as={Col} controlId="validationCustom01">
-              <Form.Label className="float-left">Birthday</Form.Label>
-              <InputGroup hasValidation></InputGroup>
+            
+            <Form.Group as={Col} controlId="validationCustom01" style={{ marginTop: '2rem', display: 'inline-flex'}}>
+              <Form.Label className="float-left mr-4">Birthday</Form.Label>
+              <InputGroup hasValidation>
               <Form.Control
                 required
                 type="date"
                 value={birthday}
                 aria-describedby="inputGroupPrepend"
                 onChange={e => setBirthday(e.target.value)}
-                placeholder="Birthday"
-              />
+                placeholder={user.Birthday}
+                />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              </InputGroup>
             </Form.Group>
-            <Form.Group controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="I agree to the myfavfilmz Terms of Serivce" />
-            </Form.Group>
-            <Button variant="primary mt-1 h-5" type="submit" onClick={handleSubmit}>Register</Button><br /><br /><br />
-            <p>Already a member?</p>
-            <Button variant="primary" size="sm" block type="button" onClick={() => props.handleEdit(false)}>Click here to log in!</Button>
+            <div style={{ textAlign: "center" }}>
+            <Button variant="dark mt-5 h-5" type="submit" onClick={handleSubmit}>Update Account</Button><br/><br/>
+            <button className="mt-4" onClick={() => { this.deleteUser() }}>Delete Account</button>
+            <Form.Text style={{ marginTop:'0rem'}}>
+                WARNING: This action cannot be reversed!
+              </Form.Text>
+            </div>
           </Form>
         </Card.Body>
       </Card>
