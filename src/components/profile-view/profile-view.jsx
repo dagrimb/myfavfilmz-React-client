@@ -84,7 +84,8 @@ export class ProfileView extends React.Component {
                   <span className="value ml-4">{user.Birthday} </span>
               </div>
               </div>
-              <Link to={`/users/${user._id}/edit_profile`}>
+      
+              <Link to={`/users/${user.Username}/edit_profile`}>
               <Button className="mt-4" style={{ marginLeft: '10rem'}} variant="primary">Edit Profile or Unregister</Button> 
               </Link>
             </div>
