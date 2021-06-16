@@ -73,6 +73,9 @@ export class MovieView extends React.Component {
               <span className="value">{movie._id}</span>
             </div>
             <div style={{ textAlign: 'center' }}>
+              <Button className="mt-1"  variant="primary" onClick={() => { onBackClick(null); }}>Add to Favorites</Button>
+            </div>
+            <div style={{ textAlign: 'center' }}>
               <Button className="mt-5"  variant="primary" onClick={() => { onBackClick(null); }}>Back</Button>
             </div>
           </div>
