@@ -229,7 +229,7 @@ export class MainView extends React.Component {
                 <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()}/>
               </Col>
             }} />
-            <Route path="/users/:Username" render={({ match, history}) => {
+            <Route exact path="/users/:Username" render={({ match, history}) => {
               if (!user) return <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
               </Col>
@@ -245,15 +245,14 @@ export class MainView extends React.Component {
                 ))
               */
               }} />
-            <Route path="/users/:userId/edit_profile" render={({ match, history }) => { // this path will display a single movie
+            <Route exact path="/users/:Username/edit_profile" render={({ match, history }) => { // this path will display a single movie
               if (!user) return <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
               </Col>
-              if (users.length === 0) return <div className="main-view" />;  
               return <Col md={12} style={{paddingLeft: 0, paddingRight: 0 }}>
-                  <ProfileEdit user={users.find(u => u._id === match.params.userId)} onBackClick={() => history.goBack()}/>
-                </Col>
-              }} />
+                <ProfileEdit user={user} onBackClick={() => history.goBack()}/>
+              </Col>
+            }} />
           </Row>
         </Router>
       );
