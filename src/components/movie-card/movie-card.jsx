@@ -24,6 +24,9 @@ export class MovieCard extends React.Component {
             <Link to={`/movies/${movie._id}`}>
               <Button variant="link">Read More</Button>
             </Link>
+            <div>
+            <Button className="mt-1"  variant="primary" onClick={() => { onBackClick(null); }}>Add to Favorites</Button>
+            </div>
           </Card.Body>
         </Card>
       </CardDeck>
