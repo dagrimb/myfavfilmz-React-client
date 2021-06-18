@@ -7,6 +7,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Link } from 'react-router-dom';
+
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import FormCheck from 'react-bootstrap/FormCheck';
@@ -17,35 +19,11 @@ import axios from 'axios';
 
 //call useState method and set to empty string the represents values prior to login
 export function ProfileEdit(props) {
-  const [ username, setUsername ] = useState('');
-  const [ password, setPassword ] = useState('');
-  const [ email, setEmail ] = useState('');
-  const [ birthday, setBirthday ] = useState(new Date());
-  const [ user, setUser ] = useState(props.user);
-
-  //Send request to server for auth
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(username, password, email, birthday);
-    axios.post('https://myfavfilmz.herokuapp.com/users' + userID, {
-      Username: username,
-      Password: password,
-      Email: email,
-      Birthday: birthday
-    })
-    .then(response => { // if previous backend validation successful...
-      const data = response.data;
-      console.log(data); // ... data logged to console
-      window.open('/', '_self'); // '_self' argument opens current tab (user is being re-directed to 
-                                 // main view)
-    })
-    .catch(e => {
-      console.log('error updating user info')
-    });
-    props.handleEdit(username);
-    const user = props.user;
-  };
-
+  const [ username, setUsername ] = useState(props.Username);
+  const [ password, setPassword ] = useState(props.Password);
+  const [ email, setEmail ] = useState(props.Email);
+  const [ birthday, setBirthday ] = useState(props.Birthday);
+  const [ user, setNewUser ] = useState(props.user);
   
   return (
 
@@ -53,7 +31,11 @@ export function ProfileEdit(props) {
       'Dark',
     ].map((variant, idx) => (
       <div class="profile-edit bg-dark" style={{ height: '130rem'}} /*key={user._id}*/>
-        <div style={{ color: 'white', paddingTop: 15, paddingLeft: 15}}></div>
+        <div style={{ color: 'white', paddingTop: 15, paddingLeft: 15}}>
+        <Link to={`/users/${user.Username}`}>
+            <Button className="mt-5" style={{display: 'float-right'}} variant="primary"> Back to Your Profile</Button>
+          </Link>
+        </div>
         <Card
           bg="primary" variant="toLowerCase()"
           text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
@@ -73,11 +55,12 @@ export function ProfileEdit(props) {
               <InputGroup className="mb-3" hasValidation>
                 <Form.Control
                   type="text"
+                  name="newUsername"
+                  value={user.Username}
                   placeholder={user.Username}
                   aria-describedby="inputGroupPrepend"
-                  required
-                  value={username}
-                  onChange={e => setUsername(e.target.value)}
+                  //value={username}
+                  onChange={this.inputChange}
                 />
               </InputGroup>
             </Form.Group>
@@ -86,12 +69,13 @@ export function ProfileEdit(props) {
               <InputGroup hasValidation>
                 <Form.Control 
                   style={{ width: '49rem'}}
-                  required
                   type="password" 
+                  name="newPassword"
+                  value={user.password}
                   placeholder="***********"
-                  value={password}
+                  //value={password}
                   aria-describedby="passwordHelpBlock"
-                  onChange={e => setPassword(e.target.value)}
+                  onChange={this.inputChange}
                 />
               </InputGroup>
             </Form.Group>
@@ -105,10 +89,12 @@ export function ProfileEdit(props) {
               <Form.Control 
                 style={{ width: '49rem'}}
                 type="email" 
+                name="newEmail"
+                value={user.Email}
                 placeholder={user.Email}
-                value={email}
+                //value={Email}
                 aria-describedby="inputGroupPrepend"
-                onChange={e => setEmail(e.target.value)}  
+                onChange={this.inputChange}  
               />
               </InputGroup>
             </Form.Group>
@@ -117,20 +103,21 @@ export function ProfileEdit(props) {
               <Form.Label className="float-left mr-4">Birthday</Form.Label>
               <InputGroup hasValidation>
               <Form.Control
-                required
                 type="date"
-                value={birthday}
+                name="newBirthday"
+                //value={user.Birthday}
+                //value={Birthday}
                 aria-describedby="inputGroupPrepend"
                 onChange={e => setBirthday(e.target.value)}
-                placeholder={user.Birthday}
+                //placeholder={user.Birthday}
                 />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               </InputGroup>
             </Form.Group>
             <div style={{ textAlign: "center" }}>
-            <Button variant="dark mt-5 h-5" type="submit" onClick={handleSubmit}>Update Account</Button><br/><br/>
+            <Button variant="dark mt-5 h-5" type="submit" onClick={props.handleEdit}>Update Account</Button><br/><br/>
             <button className="mt-4" onClick={() => { this.deleteUser() }}>Delete Account</button>
-            <Form.Text style={{ marginTop:'0rem'}}>
+            <Form.Text style={{ marginTop:'rem'}}>
                 WARNING: This action cannot be reversed!
               </Form.Text>
             </div>
