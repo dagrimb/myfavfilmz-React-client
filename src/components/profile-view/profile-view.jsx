@@ -53,7 +53,7 @@ export class ProfileView extends React.Component {
 }
 */
   render() {
-    const { onBackClick, user, movie } = this.props;
+    const { onBackClick, user, movie, birthday } = this.props;
     console.log("ProfileView", user);
     console.log("FavoriteMovies", movie);
 
@@ -81,7 +81,7 @@ export class ProfileView extends React.Component {
                 </div><br/>
                 <div style={{ display: 'inline-flex', marginLeft: '10rem'}}>
                   <h5>Date of Birth</h5>
-                  <span className="value ml-4">{user.Birthday} </span>
+                  <span className="value ml-4">{birthday} </span>
               </div>
               </div>
       
@@ -89,10 +89,12 @@ export class ProfileView extends React.Component {
               <Button className="mt-4" style={{ marginLeft: '10rem'}} variant="primary">Edit Profile or Unregister</Button> 
               </Link>
             </div>
-            <div style={{ textAlign: 'right', marginRight: '2rem' }}>
-              <Button className="mt-5" style={{display: 'float-right'}} variant="primary" onClick={() => { onBackClick(null); }}>Back to All Movies</Button>
+              <div style={{ textAlign: 'right', marginRight: '2rem' }}>
+                <Link to={`/`}>
+                  <Button className="mt-5" style={{display: 'float-right'}} variant="primary">Back to All Movies</Button>
+                </Link>
+              </div>
               <h4 className="text-left mt-5">{user.Username}'s fav filmz</h4>
-            </div>
             <CardDeck variant="h-50" className="bg-dark">
               {movie.map(m => ( 
               <Card key={m._id} className="text-center" style={{ height: '46rem', width: '18rem', color: 'white', background: '#292b2c'}}>
