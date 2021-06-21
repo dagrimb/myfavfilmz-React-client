@@ -53,7 +53,7 @@ export class ProfileView extends React.Component {
 }
 */
   render() {
-    const { onBackClick, user, movie, birthday } = this.props;
+    const { onBackClick, user, movie, birthday, removeFavoriteFilm } = this.props;
     console.log("ProfileView", user);
     console.log("FavoriteMovies", movie);
 
@@ -104,12 +104,15 @@ export class ProfileView extends React.Component {
                   <Card.Img variant="top mb-3" style={{ height: '20rem', width: '13rem'}} src={m.ImagePath} />
                   <Link to={`/movies/${m._id}`}>
                     <Button variant="link">Read More</Button>
-                    <button onClick={() => { this.removeFilm() }}>Remove</button>
+                    <button onClick={ () => removeFavoriteFilm(movie)}>Remove</button>
                   </Link>
                 </Card.Body>
               </Card>
               ))}
             </CardDeck>
+            <Link to={`/users/${user.Username}/Movies`}>
+                  <Button className="mt-5" style={{display: 'float-right'}} variant="primary">See All</Button>
+                </Link>
           </div>
         </Col>
         
