@@ -9,10 +9,16 @@ import { Link } from 'react-router-dom';
 // Wanted to use  <div><IoArrowForwardCircle /> </div> to create arrow button in movies mockup
 
 
+
 //create MovieCard component
 export class MovieCard extends React.Component {
+  constructor(props) {
+    super();
+  };
+
+
   render() {
-    const { movie } = this.props;
+    const { movie, addFavorite } = this.props;
 
     return (
       <CardDeck variant="h-50" className="bg-dark">
@@ -25,7 +31,7 @@ export class MovieCard extends React.Component {
               <Button variant="link">Read More</Button>
             </Link>
             <div>
-            <Button className="mt-1"  variant="primary" onClick={() => { onBackClick(null); }}>Add to Favorites</Button>
+            <Button className="mt-1"  variant="primary" onClick={ () => addFavorite(movie)}>Add to Favorites</Button>
             </div>
           </Card.Body>
         </Card>
