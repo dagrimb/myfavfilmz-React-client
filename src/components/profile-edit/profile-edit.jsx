@@ -52,7 +52,7 @@ export function ProfileEdit(props) {
           <Form>
             <Form.Group as={Col} controlId="validationCustomUsername" style={{ marginTop: '3rem', display: 'inline-flex'}}>
               <Form.Label className="float-left mr-3">Username</Form.Label>
-              <InputGroup className="mb-3" hasValidation>
+              <InputGroup className="mb-3" id="username" hasValidation>
                 <Form.Control
                   type="text"
                   name="newUsername"
@@ -66,7 +66,7 @@ export function ProfileEdit(props) {
             </Form.Group>
             <Form.Group as={Col} controlId="formBasicPassword" style={{ marginTop: '2rem', paddingBottom: '0rem', display: 'inline-flex'}}>
               <Form.Label className="float-left mr-4">Password</Form.Label>
-              <InputGroup hasValidation>
+              <InputGroup id="password" hasValidation>
                 <Form.Control 
                   style={{ width: '49rem'}}
                   type="password" 
@@ -85,7 +85,7 @@ export function ProfileEdit(props) {
               </Form.Text>
             <Form.Group as={Col} controlId="formBasicEmail" style={{ marginTop: '2rem', display: 'inline-flex'}}>
               <Form.Label className="float-left">Email address</Form.Label>
-              <InputGroup hasValidation>
+              <InputGroup id="email" hasValidation>
               <Form.Control 
                 style={{ width: '49rem'}}
                 type="email" 
@@ -101,7 +101,7 @@ export function ProfileEdit(props) {
             
             <Form.Group as={Col} controlId="validationCustom01" style={{ marginTop: '2rem', display: 'inline-flex'}}>
               <Form.Label className="float-left mr-4">Birthday</Form.Label>
-              <InputGroup hasValidation>
+              <InputGroup id="birthday" hasValidation>
               <Form.Control
                 type="date"
                 name="newBirthday"
@@ -116,7 +116,7 @@ export function ProfileEdit(props) {
             </Form.Group>
             <div style={{ textAlign: "center" }}>
             <Button variant="dark mt-5 h-5" type="submit" onClick={props.handleEdit}>Update Account</Button><br/><br/>
-            <button className="mt-4" onClick={() => { this.deleteUser() }}>Delete Account</button>
+            <button className="mt-4" onClick={() => { this.removeUser() }}>Delete Account</button>
             <Form.Text style={{ marginTop:'rem'}}>
                 WARNING: This action cannot be reversed!
               </Form.Text>
