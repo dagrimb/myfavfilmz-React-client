@@ -13,12 +13,14 @@ import { Link } from 'react-router-dom';
 //create MovieCard component
 export class MovieCard extends React.Component {
   constructor(props) {
-    super();
+    super(props);
   };
 
 
   render() {
     const { movie, addFavorite } = this.props;
+
+    console.log("Render MovieCard", movie)
 
     return (
       <CardDeck variant="h-50" className="bg-dark">
@@ -31,7 +33,7 @@ export class MovieCard extends React.Component {
               <Button variant="link">Read More</Button>
             </Link>
             <div>
-            <Button className="mt-1"  variant="primary" onClick={ () => addFavorite(movie)}>Add to Favorites</Button>
+            <Button data-id={movie._id} type="submit" className="mt-1"  variant="primary" onClick={addFavorite}>Add to Favorites</Button>
             </div>
           </Card.Body>
         </Card>
