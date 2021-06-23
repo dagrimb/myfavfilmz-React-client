@@ -19,18 +19,24 @@ import axios from 'axios';
 
 //call useState method and set to empty string the represents values prior to login
 export function ProfileEdit(props) {
-  const [ username, setUsername ] = useState(props.Username);
-  const [ password, setPassword ] = useState(props.Password);
-  const [ email, setEmail ] = useState(props.Email);
-  const [ birthday, setBirthday ] = useState(props.Birthday);
-  const [ user, setNewUser ] = useState(props.user);
+  const { updateUserInfo, removeUser, user, onBackClick} = props;
+  const [ username, setUsername ] = useState(user.Username);
+  const [ password, setPassword ] = useState("");
+  const [ email, setEmail ] = useState(user.Email);
+  const [ birthday, setBirthday ] = useState(user.Birthday);
   
+  console.log("Render ProfileEdit", username);
+
   return (
 
     [
       'Dark',
     ].map((variant, idx) => (
       <div class="profile-edit bg-dark" style={{ height: '130rem'}} /*key={user._id}*/>
+        <h1>Hello, {user.Username}</h1>  {/*Test */}
+        <h2>Your password is {user.Password}</h2>  {/*Test */}
+        <h3>Email you have on file is {user.Email}</h3>  {/*Test */}
+        <h4>Your birthday is {user.Birthday}</h4>  {/*Test */}
         <div style={{ color: 'white', paddingTop: 15, paddingLeft: 15}}>
         <Link to={`/users/${user.Username}`}>
             <Button className="mt-5" style={{display: 'float-right'}} variant="primary"> Back to Your Profile</Button>
@@ -56,11 +62,11 @@ export function ProfileEdit(props) {
                 <Form.Control
                   type="text"
                   name="newUsername"
-                  value={user.Username}
-                  placeholder={user.Username}
+                  value={username}
+                  placeholder="Please input new username"
                   aria-describedby="inputGroupPrepend"
                   //value={username}
-                  onChange={this.inputChange}
+                  onChange={e => setUsername(e.target.value)}
                 />
               </InputGroup>
             </Form.Group>
@@ -71,11 +77,11 @@ export function ProfileEdit(props) {
                   style={{ width: '49rem'}}
                   type="password" 
                   name="newPassword"
-                  value={user.password}
+                  value={password}
                   placeholder="***********"
                   //value={password}
                   aria-describedby="passwordHelpBlock"
-                  onChange={this.inputChange}
+                  onChange={e => setPassword(e.target.value)}
                 />
               </InputGroup>
             </Form.Group>
@@ -90,11 +96,11 @@ export function ProfileEdit(props) {
                 style={{ width: '49rem'}}
                 type="email" 
                 name="newEmail"
-                value={user.Email}
-                placeholder={user.Email}
+                value={email}
+                placeholder="Please input new email"
                 //value={Email}
                 aria-describedby="inputGroupPrepend"
-                onChange={this.inputChange}  
+                onChange={e => setEmail(e.target.value)}  
               />
               </InputGroup>
             </Form.Group>
@@ -106,7 +112,7 @@ export function ProfileEdit(props) {
                 type="date"
                 name="newBirthday"
                 //value={user.Birthday}
-                //value={Birthday}
+                value={birthday}
                 aria-describedby="inputGroupPrepend"
                 onChange={e => setBirthday(e.target.value)}
                 //placeholder={user.Birthday}
@@ -115,8 +121,8 @@ export function ProfileEdit(props) {
               </InputGroup>
             </Form.Group>
             <div style={{ textAlign: "center" }}>
-            <Button variant="dark mt-5 h-5" type="submit" onClick={props.handleEdit}>Update Account</Button><br/><br/>
-            <button className="mt-4" onClick={() => { this.removeUser() }}>Delete Account</button>
+            <Button variant="dark mt-5 h-5" type="submit" onClick={updateUserInfo}>Update Account</Button><br/><br/>
+            <button className="mt-4" onClick={removeUser}>Delete Account</button>
             <Form.Text style={{ marginTop:'rem'}}>
                 WARNING: This action cannot be reversed!
               </Form.Text>
