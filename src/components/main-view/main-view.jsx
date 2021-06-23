@@ -104,33 +104,37 @@ export class MainView extends React.Component {
       });
     }
 
-    updateUserInfo(userID, token) {
-      const newUsername = document.getElementById('username');
-      const newPassword = document.getElementById('password');
-      const newEmail = document.getElementById('email');
-      const newBirthday = document.getElementById('birthday');
+    updateUserInfo(event) {
+      event.preventDefault();
+      const newUsername = document.querySelector('#username input');
+      const newPassword = document.querySelector('#password input');
+      const newEmail = document.querySelector('#email input');
+      const newBirthday = document.querySelector('#birthday input');
       
       const updatedUsername = newUsername.value;
       const updatedPassword = newPassword.value;
       const updatedEmail = newEmail.value;
       const updatedBirthday = newBirthday.value;
 
+      const token = localStorage.getItem('token');
+      const userID = localStorage.getItem('userID');
+
+      console.log("update User", updatedUsername, updatedPassword, updatedEmail, updatedBirthday);
+
         axios.put('https://myfavfilmz.herokuapp.com/users/' + userID, {
-            updates: {
               Username: updatedUsername, 
               Password: updatedPassword, 
               Email: updatedEmail, 
               Birthday: updatedBirthday 
-            }
           },
           { 
             headers: { Authorization: `Bearer ${token}`}
           })
-          .then( user => {
+          .then( response => {
             this.setState({
-              user: updates
+              user: response.data
             })
-            console.log(user);
+            console.log(response);
           })
           .catch (err => {
             console.log(err);
@@ -138,11 +142,22 @@ export class MainView extends React.Component {
         }
       
 
-    addNewFilm (userID, token, movie) {
-      axios.post('https://myfavfilmz.herokuapp.com/users/' + userID + '/Movies' + movie._id, {}, {
-        headers: { Auhorization: `Bearer ${token}`}
+    addNewFilm(e) {
+      e.preventDefault();
+      //console.log(user, movie);
+      const movieID = e.currentTarget.dataset.id;
+      const token = localStorage.getItem('token');
+      const userID = localStorage.getItem('userID');
+
+      console.log("update Favorite Film", userID, movieID);
+
+      axios.post('https://myfavfilmz.herokuapp.com/users/' + userID + '/Movies/' + movieID, {}, {
+        headers: { Authorization: `Bearer ${token}`}
       })
       .then(response => {
+        this.setState({
+          movie: response.data
+        })
         console.log(response);
       })
       .catch (error => {
@@ -150,25 +165,44 @@ export class MainView extends React.Component {
       })
     }
 
+    removeFavoriteFilm(e) {
+      e.preventDefault();
 
+      const movieID = e.currentTarget.dataset.id;
+      const token = localStorage.getItem('token');
+      const userID = localStorage.getItem('userID');
 
-    removeFavoriteFilm(userID, token, movie) {
-      axios.delete('https://myfavfilmz.herokuapp.com/users/' + userID + '/Movies' + movie._id, {
-        headers: { Auhorization: `Bearer ${token}`},
+      console.log("update Favorite Film", userID, movieID);
+
+      axios.delete('https://myfavfilmz.herokuapp.com/users/' + userID + '/Movies/' + movieID, {
+        headers: { Authorization: `Bearer ${token}`},
     })
-      .then(response => {
-        console.log(response);
+    .then(response => {
+      this.setState({
+        movie: null
       })
-      .catch(response => {
-        console.log(response);
-      })
-    }
+      console.log(response);
+    })
+    .catch (error => {
+      console.log(error);
+    })
+  }
 
-    removeUser = (userID, token) => {
+    removeUser(event) {
+      event.preventDefault();
+
+      const token = localStorage.getItem('token');
+      const userID = localStorage.getItem('userID');
+
+      console.log("delete user", 'userID');
+
       axios.delete('https://myfavfilmz.herokuapp.com/users/' + userID, {
-          headers: { Auhorization: `Bearer ${token}`}      
+          headers: { Authorization: `Bearer ${token}`}      
         })
         .then(response => {
+          this.setState({
+            user: null
+          })
           console.log(response);
         })
         .catch(response => {
@@ -267,18 +301,17 @@ export class MainView extends React.Component {
               </Navbar>
             </div>
 
-            <Route exact path="/" render={() => { // Route component tells React Router the mainview routes and what to render if path and URL entered match
+            <Route exact path="/" render={( match, history ) => { // Route component tells React Router the mainview routes and what to render if path and URL entered match
               if (!user) return <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
               </Col>
               if (movies.length === 0) return <div className="main-view" />;
               return movies.map(m => (
                 <Col md={3} key={m._id}>
-                  <MovieCard movie={m} addFavorite={this.addNewFilm}/>
+                  <MovieCard movie={m} addFavorite={movie => this.addNewFilm(movie)}/>
                 </Col>
               ))
             }} />
-
             <Route path="/register" render={() => {
               if (user) return <Redirect to="/" />
               return <Col>
@@ -292,7 +325,7 @@ export class MainView extends React.Component {
               </Col>
               if (movies.length === 0) return <div className="main-view" />;  
               return <Col md={12} style={{paddingLeft: 0, paddingRight: 0 }}>
-                <MovieView movie={movies.find(m => m._id === match.params.movieId)} addFavorite={this.addNewFilm} onBackClick={() => history.goBack()}/>
+                <MovieView movie={movies.find(m => m._id === match.params.movieId)} addFavorite={movie => this.addNewFilm(movie)} addFavorite={this.addNewFilm} onBackClick={() => history.goBack()}/>
               </Col>
             }} />
             <Route path="/directors/:name" render={({ match, history }) => { // this path will display a single movie
@@ -327,7 +360,7 @@ export class MainView extends React.Component {
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
               </Col>
               return <Col md={12} style={{paddingLeft: 0, paddingRight: 0 }}>
-                <ProfileEdit removeUser={this.removeUser} user={user} onBackClick={() => history.goBack()}/>
+                <ProfileEdit updateUserInfo={e => this.updateUserInfo(e)} removeUser={e => this.removeUser(e)} user={user} onBackClick={() => history.goBack()}/>
               </Col>
             }} />
             <Route exact path="/users/:Username/Movies" render={({ match, history}) => {
