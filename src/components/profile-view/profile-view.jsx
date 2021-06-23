@@ -104,7 +104,7 @@ export class ProfileView extends React.Component {
                   <Card.Img variant="top mb-3" style={{ height: '20rem', width: '13rem'}} src={m.ImagePath} />
                   <Link to={`/movies/${m._id}`}>
                     <Button variant="link">Read More</Button>
-                    <button onClick={ () => removeFavoriteFilm(movie)}>Remove</button>
+                    <button data-id={m._id} type="submit" onClick={removeFavoriteFilm}>Remove</button>
                   </Link>
                 </Card.Body>
               </Card>
