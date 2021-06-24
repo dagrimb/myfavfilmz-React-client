@@ -41,8 +41,12 @@ export class MainView extends React.Component {
       //registerClicked: false,
       //isLoggedIn: false,
       //profileEditClicked: false
-    };
+    }
+    this.addNewFilm = this.addNewFilm.bind(this);
+    //this.getFavoriteFilms = this.getFavoriteFilms(this);
   }
+
+
 
   //Fetch the list of movies from your database with MainView is mounted
   componentDidMount(){
@@ -104,6 +108,7 @@ export class MainView extends React.Component {
       });
     }
 
+
     updateUserInfo(event) {
       event.preventDefault();
       const newUsername = document.querySelector('#username input');
@@ -145,13 +150,16 @@ export class MainView extends React.Component {
       
 
     addNewFilm(e) {
-      //console.log(user, movie);
+      const favoriteMovies = this.state.FavoriteMovies;
       const movieID = e.currentTarget.dataset.id;
       const token = localStorage.getItem('token');
       const userID = localStorage.getItem('userID');
 
-      console.log("update Favorite Film", userID, movieID);
+      console.log("update Favorite Film", userID, movieID, favoriteMovies);
 
+      if ( this.state.user.FavoriteMovies.indexOf( movieID ) >= 0 ) {
+        alert("This movie is already in your favorites.");
+      } else {
       axios.post('https://myfavfilmz.herokuapp.com/users/' + userID + '/Movies/' + movieID, {}, {
         headers: { Authorization: `Bearer ${token}`}
       })
@@ -159,13 +167,14 @@ export class MainView extends React.Component {
         this.setState({
           movie: response.data
         })
-        console.log(response);
+        window.location.reload();
         alert("Your favorite movie list has been updated.");
       })
       .catch (error => {
         console.log(error);
       })
     }
+  }
 
     removeFavoriteFilm(e) {
       e.preventDefault();
@@ -184,6 +193,7 @@ export class MainView extends React.Component {
         movie: null
       })
       console.log(response);
+      window.location.reload();
       alert("Your favorite movie list has been updated");
     })
     .catch (error => {
@@ -312,7 +322,21 @@ export class MainView extends React.Component {
               if (movies.length === 0) return <div className="main-view" />;
               return movies.map(m => (
                 <Col md={3} key={m._id}>
-                  <MovieCard movie={m} addFavorite={movie => this.addNewFilm(movie)}/>
+                  <MovieCard 
+                    movie={m} 
+              /*
+                    {...FavoriteMovies.includes(movie) ? (
+                      alert("This movie is already in your favorites")
+                    ) : (*/
+                    addFavorite={
+                      /*this.state.FavoriteMovies.includes(movie)
+                        ? alert ("This movie is already in your favorites")
+                        :*/ movie => this.addNewFilm(movie)
+                      }
+                    /*)}
+             */
+                    />
+               
                 </Col>
               ))
             }} />
@@ -329,7 +353,7 @@ export class MainView extends React.Component {
               </Col>
               if (movies.length === 0) return <div className="main-view" />;  
               return <Col md={12} style={{paddingLeft: 0, paddingRight: 0 }}>
-                <MovieView movie={movies.find(m => m._id === match.params.movieId)} addFavorite={movie => this.addNewFilm(movie)} addFavorite={this.addNewFilm} onBackClick={() => history.goBack()}/>
+                <MovieView movie={movies.find(m => m._id === match.params.movieId)} addFavorite={this.addNewFilm} onBackClick={() => history.goBack()}/>
               </Col>
             }} />
             <Route path="/directors/:name" render={({ match, history }) => { // this path will display a single movie
@@ -356,7 +380,7 @@ export class MainView extends React.Component {
               </Col>
               if (movies.length === 0) return <div className="main-view" />;
               return <Col md={12} style={{paddingLeft: 0, paddingRight: 0 }}>
-                  <ProfileView movie={FavoriteMovies} user={user} removeFavoriteFilm={this.removeFavoriteFilm} onBackClick={() => history.goBack()}/>
+                  <ProfileView movie={FavoriteMovies} user={user} removeFavoriteFilm={movie => this.removeFavoriteFilm(movie)} onBackClick={() => history.goBack()}/>
                 </Col>       
               }} />
             <Route exact path="/users/:Username/edit_profile" render={({ match, history }) => { // this path will display a single movie
