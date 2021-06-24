@@ -135,15 +135,16 @@ export class MainView extends React.Component {
               user: response.data
             })
             console.log(response);
+            alert("Your information has been updated");
           })
           .catch (err => {
             console.log(err);
+            alert("Something went wrong. Did you fill out the entire form?")
           })
         }
       
 
     addNewFilm(e) {
-      e.preventDefault();
       //console.log(user, movie);
       const movieID = e.currentTarget.dataset.id;
       const token = localStorage.getItem('token');
@@ -159,6 +160,7 @@ export class MainView extends React.Component {
           movie: response.data
         })
         console.log(response);
+        alert("Your favorite movie list has been updated.");
       })
       .catch (error => {
         console.log(error);
@@ -182,6 +184,7 @@ export class MainView extends React.Component {
         movie: null
       })
       console.log(response);
+      alert("Your favorite movie list has been updated");
     })
     .catch (error => {
       console.log(error);
@@ -204,6 +207,7 @@ export class MainView extends React.Component {
             user: null
           })
           console.log(response);
+          alert("Your account has been deleted");
         })
         .catch(response => {
           console.log(response);
