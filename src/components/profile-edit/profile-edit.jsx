@@ -53,7 +53,7 @@ export function ProfileEdit(props) {
             <h3>Update your account information</h3>
           </div>
           <Form.Text style={{ marginTop:'0rem'}}>
-            Enter your desired new information in the appropriate fields below
+            Complete all fields, including whatever you would like to change, below.
           </Form.Text>
           <Form>
             <Form.Group as={Col} controlId="validationCustomUsername" style={{ marginTop: '3rem', display: 'inline-flex'}}>
@@ -62,8 +62,7 @@ export function ProfileEdit(props) {
                 <Form.Control
                   type="text"
                   name="newUsername"
-                  value={username}
-                  placeholder="Please input new username"
+                  placeholder="Enter current or desired username"
                   aria-describedby="inputGroupPrepend"
                   //value={username}
                   onChange={e => setUsername(e.target.value)}
@@ -77,8 +76,8 @@ export function ProfileEdit(props) {
                   style={{ width: '49rem'}}
                   type="password" 
                   name="newPassword"
-                  value={password}
-                  placeholder="***********"
+                  //value={password}
+                  placeholder="Enter current or desired password"
                   //value={password}
                   aria-describedby="passwordHelpBlock"
                   onChange={e => setPassword(e.target.value)}
@@ -96,8 +95,8 @@ export function ProfileEdit(props) {
                 style={{ width: '49rem'}}
                 type="email" 
                 name="newEmail"
-                value={email}
-                placeholder="Please input new email"
+                //value={email}
+                placeholder="Enter current or desired email address"
                 //value={Email}
                 aria-describedby="inputGroupPrepend"
                 onChange={e => setEmail(e.target.value)}  
@@ -112,10 +111,9 @@ export function ProfileEdit(props) {
                 type="date"
                 name="newBirthday"
                 //value={user.Birthday}
-                value={birthday}
+                //value={birthday}
                 aria-describedby="inputGroupPrepend"
                 onChange={e => setBirthday(e.target.value)}
-                //placeholder={user.Birthday}
                 />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               </InputGroup>
