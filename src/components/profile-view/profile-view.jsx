@@ -1,4 +1,6 @@
-import React from 'react'; 
+import React, {Fragment} from 'react'; 
+import { FaveMovies } from '../fave-movies/fave-movies';
+
 import Image from 'react-bootstrap/Image';
 import axios from 'axios';
 
@@ -53,16 +55,14 @@ export class ProfileView extends React.Component {
 }
 */
   render() {
-    const { onBackClick, user, movie, birthday, removeFavoriteFilm } = this.props;
-    console.log("ProfileView", user);
-    console.log("FavoriteMovies", movie);
+    const { onBackClick, user } = this.props;
+    //console.log("ProfileView", user);
 
     return (
-      <div className="profile-view">
-        <Col className="pt-5 bg-dark" style={{ paddingBottom: '80rem', height: '100%', width: '100%', color: 'white', background: '#292b2c'}}>
+        <div className="profile-view pt-5 bg-dark" style={{ paddingBottom: '1rem', width: '100%', color: 'white', background: '#292b2c'}}>
           <div style={{ height: '100%', maxWidth: '100%' }} >
             <div className="user-profile" style={{ color: 'white' }}>
-              <div className="user-intro mb-4 justify-content-left text-left mx-auto">
+              <div className="user-intro mb-4 justify-content-left text-left ml-3">
                 <h2>my profile</h2>
                 <img src={user.ImagePath} height="5%" width="20%"/>
               </div>
@@ -81,10 +81,9 @@ export class ProfileView extends React.Component {
                 </div><br/>
                 <div style={{ display: 'inline-flex', marginLeft: '10rem'}}>
                   <h5>Date of Birth</h5>
-                  <span className="value ml-4">{birthday} </span>
+                  <span className="value ml-4">{ (new Date(user.Birthday)).toLocaleDateString() } </span>
               </div>
               </div>
-      
               <Link to={`/users/${user.Username}/edit_profile`}>
               <Button className="mt-4" style={{ marginLeft: '10rem'}} variant="primary">Edit Profile or Unregister</Button> 
               </Link>
@@ -94,29 +93,9 @@ export class ProfileView extends React.Component {
                   <Button className="mt-5" style={{display: 'float-right'}} variant="primary">Back to All Movies</Button>
                 </Link>
               </div>
-              <h4 className="text-left mt-5">{user.Username}'s fav filmz</h4>
-            <CardDeck variant="h-50" className="bg-dark">
-              {movie.map(m => ( 
-              <Card key={m._id} className="text-center" style={{ height: '46rem', width: '18rem', color: 'white', background: '#292b2c'}}>
-                
-                <Card.Body movie={m} className="bg-dark h-100 mx-2">
-                  <Card.Title  style={{marginTop: 25, paddingRight: 0 }}>{m.Title}</Card.Title>
-                  <Card.Img variant="top mb-3" style={{ height: '20rem', width: '13rem'}} src={m.ImagePath} />
-                  <Link to={`/movies/${m._id}`}>
-                    <Button variant="link">Read More</Button>
-                    <button data-id={m._id} type="submit" onClick={removeFavoriteFilm}>Remove</button>
-                  </Link>
-                </Card.Body>
-              </Card>
-              ))}
-            </CardDeck>
-            <Link to={`/users/${user.Username}/Movies`}>
-                  <Button className="mt-5" style={{display: 'float-right'}} variant="primary">See All</Button>
-                </Link>
-          </div>
-        </Col>
-        
-      </div>  
-    );
-  }
-}
+              <h4 className="text-left mt-5 ml-3">{user.Username}'s fav filmz</h4>
+              </div>
+              </div>            
+          );
+        }
+      }
