@@ -53,34 +53,24 @@ export class FaveMovies extends React.Component {
 }
 */
   render() {
-    const { onBackClick, user, movie, birthday, removeFavoriteFilm } = this.props;
+    const { user, movie, removeFavoriteFilm } = this.props;
     console.log("ProfileView", user);
-    console.log("FavoriteMovies", movie);
+   console.log("FavoriteMovies", movie);
 
     return (
-      <div className="fave-movies">
-        <Col className="pt-5 bg-dark" style={{ paddingBottom: '80rem', height: '100%', width: '100%', color: 'white', background: '#292b2c'}}>
-          <div style={{ height: '100%', maxWidth: '100%' }} >
-              </div>
-              <h4 className="text-left mt-5">{user.Username}'s fav filmz</h4>
-            <CardDeck variant="h-50" className="bg-dark">
-              {movie.map(m => ( 
-              <Card key={m._id} className="text-center" style={{ height: '46rem', width: '18rem', color: 'white', background: '#292b2c'}}>
-                
-                <Card.Body movie={m} className="bg-dark h-100 mx-2">
-                  <Card.Title  style={{marginTop: 25, paddingRight: 0 }}>{m.Title}</Card.Title>
-                  <Card.Img variant="top mb-3" style={{ height: '20rem', width: '13rem'}} src={m.ImagePath} />
-                  <Link to={`/movies/${m._id}`}>
-                    <Button variant="link">Read More</Button>
-                    <button onClick={ () => removeFavoriteFilm(movie)}>Remove</button>
-                  </Link>
-                </Card.Body>
-              </Card>
-              ))}
-            </CardDeck>
-        </Col>
-        
-      </div>  
+      <CardDeck  variant="h-50" className=" fave-movies bg-dark">
+      <Card className="text-center" style={{ height: '35rem', width: '18rem', color: 'white', background: '#292b2c'}}>
+        <Card.Body className="bg-dark h-100 mx-2">
+          <Card.Title style={{marginTop: 25, paddingRight: 0 }}>{movie.Title}</Card.Title>
+          <Card.Img variant="top mb-3" style={{ height: '20rem', width: '13rem', textAlign: 'center'}} src={movie.ImagePath} /><br/>
+          <Link to={`/movies/${movie._id}`}>
+            <Button style={{ marginBottom: 25 }} variant="link">Read More</Button>
+          </Link>
+          <button data-id={movie._id} type="submit" style={{ display: 'block', margin: 'auto' }} onClick={removeFavoriteFilm}>Remove</button>
+        </Card.Body>
+      </Card>
+    </CardDeck>   
     );
   }
 }
+
