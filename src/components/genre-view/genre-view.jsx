@@ -35,7 +35,7 @@ export class GenreView extends React.Component {
           <div className="w-100">
           </div>
         </Row>
-        <Col className="pt-5 bg-dark" style={{ paddingBottom: '80rem', height: '100%', width: '100%', color: 'white', background: '#292b2c'}}>
+        <Col className="pt-5 bg-dark" style={{ paddingBottom: '105rem', height: '100%', width: '100%', color: 'white', background: '#292b2c'}}>
           <div class="mx-auto" style={{ height: '100%', maxWidth: '100%' }} >
             <div className="movie-genre" style={{ color: 'white', textAlign: 'center' }}>
             <div className="movie-poster mb-4 justify-content-center text-center mx-auto" fluid>
