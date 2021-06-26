@@ -24,7 +24,7 @@ export class MovieCard extends React.Component {
 
     return (
       <CardDeck variant="h-50" className="bg-dark">
-        <Card className="text-center" style={{ height: '46rem', width: '18rem', color: 'white', background: '#292b2c'}}>
+        <Card className="text-center" style={{ height: '55rem', width: '18rem', color: 'white', background: '#292b2c'}}>
           <Card.Body className="bg-dark h-100 mx-2">
             <Card.Title style={{marginTop: 25, paddingRight: 0 }}>{movie.Title}</Card.Title>
             <Card.Img variant="top mb-3" style={{ height: '20rem', width: '13rem'}} src={movie.ImagePath} />
@@ -33,7 +33,7 @@ export class MovieCard extends React.Component {
               <Button variant="link">Read More</Button>
             </Link>
             <div>
-            <Button data-id={movie._id} type="submit" className="mt-1"  variant="primary" onClick={addFavorite}>Add to Favorites</Button>
+            <Button data-id={movie._id} type="submit" className="mt-5 mb-1"  variant="primary" onClick={addFavorite}>Add to Favorites</Button>
             </div>
           </Card.Body>
         </Card>
