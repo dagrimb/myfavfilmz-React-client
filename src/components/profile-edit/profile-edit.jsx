@@ -33,10 +33,6 @@ export function ProfileEdit(props) {
       'Dark',
     ].map((variant, idx) => (
       <div class="profile-edit bg-dark" style={{ height: '130rem'}} /*key={user._id}*/>
-        <h1>Hello, {user.Username}</h1>  {/*Test */}
-        <h2>Your password is {user.Password}</h2>  {/*Test */}
-        <h3>Email you have on file is {user.Email}</h3>  {/*Test */}
-        <h4>Your birthday is {user.Birthday}</h4>  {/*Test */}
         <div style={{ color: 'white', paddingTop: 15, paddingLeft: 15}}>
         <Link to={`/users/${user.Username}`}>
             <Button className="mt-5" style={{display: 'float-right'}} variant="primary"> Back to Your Profile</Button>
@@ -45,7 +41,7 @@ export function ProfileEdit(props) {
         <Card
           bg="primary" variant="toLowerCase()"
           text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
-          style={{ width: '60rem', height: '55rem', marginBottom: 10, marginTop: '10rem', marginLeft: '10rem'}}
+          style={{ width: '50rem', height: '55rem', marginBottom: 10, marginTop: '10rem', marginLeft: '5rem'}}
           className="justify-content-center bg-primary"
         >
         <Card.Body>
@@ -73,7 +69,7 @@ export function ProfileEdit(props) {
               <Form.Label className="float-left mr-4">Password</Form.Label>
               <InputGroup id="password" hasValidation>
                 <Form.Control 
-                  style={{ width: '49rem'}}
+                  style={{ width: '40rem'}}
                   type="password" 
                   name="newPassword"
                   //value={password}
@@ -92,7 +88,7 @@ export function ProfileEdit(props) {
               <Form.Label className="float-left">Email address</Form.Label>
               <InputGroup id="email" hasValidation>
               <Form.Control 
-                style={{ width: '49rem'}}
+                style={{ width: '40rem'}}
                 type="email" 
                 name="newEmail"
                 //value={email}
