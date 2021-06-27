@@ -49,7 +49,7 @@ export function ProfileEdit(props) {
             <h3>Update your account information</h3>
           </div>
           <Form.Text style={{ marginTop:'0rem'}}>
-            Complete all fields, including whatever you would like to change, below.
+            Please complete ALL fields, including whatever you would like to change, below.
           </Form.Text>
           <Form>
             <Form.Group as={Col} controlId="validationCustomUsername" style={{ marginTop: '3rem', display: 'inline-flex'}}>
