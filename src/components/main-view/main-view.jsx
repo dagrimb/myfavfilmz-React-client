@@ -3,7 +3,8 @@ import React from 'react';
 //import Axios info file
 import axios from 'axios';
 //import Route and BrowserRouter
-import { BrowserRouter as Router, Route, Redirect, Link} from "react-router-dom";
+import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+import { Redirect } from 'react-router-dom';
 //import LoginView into file
 import { LoginView } from '../login-view/login-view';
 //import MovieCard into file
@@ -230,15 +231,7 @@ export class MainView extends React.Component {
     });
   }*/
 
-  inputChange(e) {
-    const target = e.target;
-    const value = target.value;
-    const name = target.name;
 
-    this.setState({
-      [name]: value
-    });
-  }
 
   //Upon successful login, this method will update the user property with specific user
   onLoggedIn(authData) { // authData allows us to use both the user and the token; this is triggered when the user logs in...
@@ -312,57 +305,60 @@ export class MainView extends React.Component {
                 </Form>
               </Navbar>
             </div>
-
-            <Route exact path="/" render={( match, history ) => { // Route component tells React Router the mainview routes and what to render if path and URL entered match
-              if (!user) return <Col>
-                <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
-              </Col>
-              if (movies.length === 0) return <div className="main-view" />;
-              return movies.map(m => (
-                <Col xs={12} sm={8} md={6} lg={4} xl={2} key={m._id}>
-                  <MovieCard movie={m} addFavorite={movie => this.addNewFilm(movie)}/>
+              <Route exact path="/" render={() => {
+                if(!user) return <Col>
+                  <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
                 </Col>
-              ))
-            }} />
+                if (movies.length === 0) return <div className="main-view" />
+                return movies.map(m => (
+                  <Col xs={12} sm={8} md={6} lg={4} xl={2} key={m._id}>
+                    <MovieCard movie={m} addFavorite={movie => this.addNewFilm(movie)}/>
+                  </Col>
+                ))
+              }} />
+        
             <Route path="/register" render={() => {
               if (user) return <Redirect to="/" />
-              return <Col>
-                <RegistrationView />
-              </Col> 
+              if (!user && registerClicked) return <Col>
+                <RegistrationView handleRegister={this.handleRegister} onRegistered={this.onRegistered}/>
+              </Col>
             }} />
 
             <Route path="/movies/:movieId" render={({ match, history }) => { // this path will display a single movie
               if (!user) return <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
-              </Col>
-              if (movies.length === 0) return <div className="main-view" />;  
+              </Col>              
+              if (movies.length === 0) return <div className="main-view" />  
               return <Col md={12} style={{paddingLeft: 0, paddingRight: 0 }}>
                 <MovieView movie={movies.find(m => m._id === match.params.movieId)} addFavorite={this.addNewFilm} onBackClick={() => history.goBack()}/>
               </Col>
             }} />
+
             <Route path="/directors/:name" render={({ match, history }) => { // this path will display a single movie
               if (!user) return <Col>
-                <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister} />
-              </Col>
-              if (movies.length === 0) return <div className="main-view" />; 
+                <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
+              </Col>              
+              if (movies.length === 0) return <div className="main-view" /> 
               return <Col md={12} style={{paddingLeft: 0, paddingRight: 0 }}>
                 <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()}/>
               </Col>
             }} />
+
             <Route path="/genres/:name" render={({ match, history}) => {
               if (!user) return <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
-              </Col>
-              if (movies.length === 0) return <div className="main-view" />;
+              </Col>             
+              if (movies.length === 0) return <div className="main-view" />
               return <Col md={12} style={{paddingLeft: 0, paddingRight: 0 }}>
                 <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()}/>
               </Col>
             }} />
+
             <Route exact path="/users/:Username" render={({ match, history}) => {
-              if (!user) return <Col>
-                <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
-              </Col>
-              if (movies.length === 0) return <div className="main-view" />;
+             if (!user) return <Col>
+              <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
+              </Col>              
+              if (movies.length === 0) return <div className="main-view" />
               return (
                 <>
                   <ProfileView user={user} onBackClick={() => history.goBack()}/>
@@ -374,6 +370,7 @@ export class MainView extends React.Component {
                 </>
               )
             }} />
+
             <Route exact path="/users/:Username/edit_profile" render={({ match, history }) => { // this path will display a single movie
               if (!user) return <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
