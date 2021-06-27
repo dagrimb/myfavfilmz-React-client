@@ -22,41 +22,8 @@ export class ProfileView extends React.Component {
     console.log(event.key);
   }
 
-  /*
-  //Fetch the appropriate profile from your database with MainView is mounted
-  componentDidMount(){
-    let accessToken = localStorage.getItem('token'); // get the value of the token from localStorage
-    if (accessToken !== null) {   // access token being present (i.e. "!==null") means that user is already logged in
-      this.setState({
-        user: localStorage.getItem('user')
-      });
-      this.getProfile(accessToken);  // getMovies method is executed and a GET request to the movies endpoint
-      }
-    }
-  componentWillUnmount() {
-    document.removeEventListener('keypress', this.keypressCallback);
-  }
-  /*getProfile(token) {
-    axios.get('https://myfavfilmz.herokuapp.com//users', {
-      headers: { Authorization: `Bearer ${token}`},
-      params: { 
-        ID: match.params.userId,
-      }
-  })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  })
-  .then(function () {
-    // always executed
-  }); 
-}
-*/
   render() {
     const { onBackClick, user } = this.props;
-    //console.log("ProfileView", user);
 
     return (
         <div className="profile-view pt-5 bg-dark" style={{ paddingBottom: '1rem', width: '100%', color: 'white', background: '#292b2c'}}>
