@@ -214,6 +214,8 @@ export class MainView extends React.Component {
           this.setState({
             user: null
           })
+          localStorage.removeItem('token');
+          localStorage.removeItem('userID');
           console.log(response);
           alert("Your account has been deleted");
         })
