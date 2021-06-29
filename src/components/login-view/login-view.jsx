@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import InputGroup from 'react-bootstrap/InputGroup';
+import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+
 import '../../index.scss';
 import { Col } from 'react-bootstrap';
 import axios from 'axios';
@@ -94,8 +96,12 @@ export function LoginView(props) {
               <Button variant="primary my-4" type="submit" onClick={handleSubmit}>
                 Login
               </Button>
-              <p>New to myfavfilmz?</p>
-              <Button variant="primary" size="sm" block type="button" onClick={() => props.handleRegister(true)}>Click here to register!</Button>
+              <p>New to myfavfilmz?</p>            
+              <Link to={`/register`}>
+                <Button variant="primary" size="sm" block type="button">Click here to log in!</Button> 
+              </Link>
+            
+            
             </Form>
           </Card.Body>
         </Card>
@@ -108,6 +114,6 @@ LoginView.propTypes = {
   user: PropTypes.shape({
     Username: PropTypes.string.isRequired,
     Password: PropTypes.string.isRequired,
-  }).isRequired,
+  }),
   onClick: PropTypes.func
 };
