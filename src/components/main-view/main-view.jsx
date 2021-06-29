@@ -21,6 +21,7 @@ import { RegistrationView } from '../registration-view/registration-view';
 import { ProfileView } from '../profile-view/profile-view';
 import { ProfileEdit } from '../profile-edit/profile-edit';
 import { FaveMovies } from '../fave-movies/fave-movies';
+import { NavigationBar } from '../navigation-bar/navigation-bar';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -280,60 +281,48 @@ export class MainView extends React.Component {
     const  { movies, user, registerClicked, FavoriteMovies, birthday } = this.state; // shortened form of const movies = this.state.movies
     //if no user signed in and button to render RegistrationView is clicked, render RegistrationView
     //<FaveMovies movie={FavoriteMovies} user={user} removeFavoriteFilm={movie => this.removeFavoriteFilm(movie)} />
-    if (!user && registerClicked) return <RegistrationView handleRegister={this.handleRegister} onRegistered={this.onRegistered} />;
+    //if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister} />
+    //if (!user && registerClicked) return <RegistrationView handleRegister={this.handleRegister} onRegistered={this.onRegistered} />;
+    //if (user) return <NavigationBar user={user} onClick={user => this.onLoggedOut(user)} />
     //if user is logged in but not on user profile...
     //if (isLoggedIn && !user) return <div>Loading...</div>
     //if no user signed in, render LoginView
-    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
+
     //if (user && profileEditClicked) return <ProfileEdit handleEdit={this.handleEdit} onRegistered={this.onRegistered} />;
       return (
         <Router>
           <Row className="main-view justify-content-md-center ml-0 w-100 bg-dark">
-            <div className="w-100">
-              <Navbar bg="primary" variant="dark">
-                <Navbar.Brand className="ml-2" href="#home">myfavfilmz</Navbar.Brand>
-                <Nav className="mr-auto">
-                  <Nav.Link href="#account">Account</Nav.Link>
-                  <Nav.Link href="#movies">Movies</Nav.Link>
-                  <Nav.Link href="aboutus">About</Nav.Link>
-                </Nav>
-                <Form inline>
-                  <FormControl type="text" placeholder="Search" className="mr-3" />
-                  <Button variant="outline-light" className="mr-5">Search</Button>
-                  <Link to={`/users/${user.Username}`}>
-                    <Button variant="link-white">{user.Username}</Button>
-                  </Link>
-                  <button onClick={() => { this.onLoggedOut() }}>Logout</button>
-                </Form>
-              </Navbar>
-            </div>
               <Route exact path="/" render={() => {
-                if(!user) return <Col>
-                  <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
-                </Col>
+                if(!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister} onLoggedOut={user => this.onLoggedOut(user)}/>
                 if (movies.length === 0) return <div className="main-view" />
-                return movies.map(m => (
-                  <Col xs={12} sm={8} md={6} lg={4} xl={2} key={m._id}>
-                    <MovieCard movie={m} addFavorite={movie => this.addNewFilm(movie)}/>
-                  </Col>
-                ))
-              }} />
-        
-            <Route path="/register" render={() => {
+                return ( 
+                  <>
+                    <NavigationBar user={user} onLoggedIn={user => this.onLoggedIn(user)} onLoggedOut={user => this.onLoggedOut(user)} />
+                    {movies.map(m => (
+                      <Col xs={12} sm={8} md={6} lg={4} xl={2} key={m._id}>
+                        <MovieCard movie={m} addFavorite={movie => this.addNewFilm(movie)}/>
+                      </Col>
+                    ))}
+                  </>
+                 ) 
+                }} 
+              />
+            <Route exact path="/register" render={() => {
               if (user) return <Redirect to="/" />
-              if (!user && registerClicked) return <Col>
-                <RegistrationView handleRegister={this.handleRegister} onRegistered={this.onRegistered}/>
-              </Col>
-            }} />
-
+              if (!user) return <RegistrationView handleRegister={value => this.handleRegister(value)} onRegistered={this.onRegistered}/>}} />
             <Route path="/movies/:movieId" render={({ match, history }) => { // this path will display a single movie
               if (!user) return <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
               </Col>              
               if (movies.length === 0) return <div className="main-view" />  
-              return <Col md={12} style={{paddingLeft: 0, paddingRight: 0 }}>
-                <MovieView movie={movies.find(m => m._id === match.params.movieId)} addFavorite={this.addNewFilm} onBackClick={() => history.goBack()}/>
-              </Col>
+              return (
+                <>
+                  <NavigationBar user={user} onLoggedIn={user => this.onLoggedIn(user)} onLoggedOut={user => this.onLoggedOut(user)} />
+                  <Col md={12} style={{paddingLeft: 0, paddingRight: 0 }}>
+                    <MovieView movie={movies.find(m => m._id === match.params.movieId)} addFavorite={this.addNewFilm} onBackClick={() => history.goBack()}/>
+                  </Col>
+                </>
+              )  
             }} />
 
             <Route path="/directors/:name" render={({ match, history }) => { // this path will display a single movie
@@ -341,9 +330,14 @@ export class MainView extends React.Component {
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
               </Col>              
               if (movies.length === 0) return <div className="main-view" /> 
-              return <Col md={12} style={{paddingLeft: 0, paddingRight: 0 }}>
-                <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()}/>
-              </Col>
+              return (
+                <>
+                  <NavigationBar user={user} onLoggedIn={user => this.onLoggedIn(user)} onLoggedOut={user => this.onLoggedOut(user)} />
+                  <Col md={12} style={{paddingLeft: 0, paddingRight: 0 }}>
+                    <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()}/>
+                  </Col>
+                </>
+              )
             }} />
 
             <Route path="/genres/:name" render={({ match, history}) => {
@@ -351,9 +345,14 @@ export class MainView extends React.Component {
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
               </Col>             
               if (movies.length === 0) return <div className="main-view" />
-              return <Col md={12} style={{paddingLeft: 0, paddingRight: 0 }}>
-                <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()}/>
-              </Col>
+              return (
+                <>
+                  <NavigationBar user={user} onLoggedIn={user => this.onLoggedIn(user)} onLoggedOut={user => this.onLoggedOut(user)} />
+                  <Col md={12} style={{paddingLeft: 0, paddingRight: 0 }}>
+                    <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()}/>
+                </Col>
+                </>
+              )
             }} />
 
             <Route exact path="/users/:Username" render={({ match, history}) => {
@@ -363,12 +362,13 @@ export class MainView extends React.Component {
               if (movies.length === 0) return <div className="main-view" />
               return (
                 <>
+                  <NavigationBar user={user} onLoggedIn={user => this.onLoggedIn(user)} onLoggedOut={user => this.onLoggedOut(user)} />
                   <ProfileView user={user} onBackClick={() => history.goBack()}/>
-                    {FavoriteMovies.map(fm => (
-                      <Col xs={12} sm={8} md={6} lg={4} xl={2} key={fm._id}  style={{paddingLeft: 0, paddingRight: 0 }}>
-                        <FaveMovies movie={fm} user={user} removeFavoriteFilm={movie => this.removeFavoriteFilm(movie)} />
-                      </Col>
-                      ))}
+                  {FavoriteMovies.map(fm => (
+                    <Col xs={12} sm={8} md={6} lg={4} xl={2} key={fm._id}  style={{paddingLeft: 0}}>
+                      <FaveMovies movie={fm} user={user} removeFavoriteFilm={movie => this.removeFavoriteFilm(movie)} />
+                    </Col>
+                  ))}
                 </>
               )
             }} />
@@ -377,9 +377,15 @@ export class MainView extends React.Component {
               if (!user) return <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
               </Col>
-              return <Col xs={12} sm={8} md={12} lg={12} xl={10} style={{paddingLeft: 0, paddingRight: 0 }}>
-                <ProfileEdit updateUserInfo={e => this.updateUserInfo(e)} removeUser={e => this.removeUser(e)} user={user} onBackClick={() => history.goBack()}/>
-              </Col>
+              return (
+                <>
+                  <NavigationBar user={user} onLoggedIn={user => this.onLoggedIn(user)} onLoggedOut={user => this.onLoggedOut(user)} />
+                    <Col xs={12} sm={8} md={12} lg={12} xl={10} style={{paddingLeft: 0, paddingRight: 0 }}>
+                      <ProfileEdit updateUserInfo={e => this.updateUserInfo(e)} removeUser={e => this.removeUser(e)} user={user} onBackClick={() => history.goBack()}/>
+                    </Col>
+                    ))
+                </>
+              )
             }} />
           </Row>
         </Router>
