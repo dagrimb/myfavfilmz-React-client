@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -127,7 +129,9 @@ export function RegistrationView(props) {
             </Form.Group>
             <Button variant="primary mt-1 h-5" type="submit" onClick={handleSubmit}>Register</Button><br /><br /><br />
             <p>Already a member?</p>
-            <Button variant="primary" size="sm" block type="button" onClick={() => props.handleRegister(false)}>Click here to log in!</Button>
+            <Link to={`/`}>
+              <Button variant="primary" size="sm" block type="button">Click here to log in!</Button> 
+            </Link>
           </Form>
         </Card.Body>
       </Card>
