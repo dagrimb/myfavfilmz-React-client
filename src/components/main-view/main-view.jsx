@@ -242,6 +242,7 @@ export class MainView extends React.Component {
     this.setState({
       user: authData.user // ...updates the state with the logged in authData (the user's username is saved in the user state)
     });
+    
 
     //auth info (token, user) received from handleSubmit method is saved in localStorage
     localStorage.setItem('token', authData.token);
@@ -275,6 +276,7 @@ export class MainView extends React.Component {
     this.setState({
       user: null
     });
+    window.location.href = '/'
   }
 
   render() {
@@ -285,7 +287,7 @@ export class MainView extends React.Component {
     //if (!user && registerClicked) return <RegistrationView handleRegister={this.handleRegister} onRegistered={this.onRegistered} />;
     //if (user) return <NavigationBar user={user} onClick={user => this.onLoggedOut(user)} />
     //if user is logged in but not on user profile...
-    //if (isLoggedIn && !user) return <div>Loading...</div>
+    //if (user && !!movies) return <div>Loading...</div>
     //if no user signed in, render LoginView
 
     //if (user && profileEditClicked) return <ProfileEdit handleEdit={this.handleEdit} onRegistered={this.onRegistered} />;
@@ -311,9 +313,7 @@ export class MainView extends React.Component {
               if (user) return <Redirect to="/" />
               if (!user) return <RegistrationView handleRegister={value => this.handleRegister(value)} onRegistered={this.onRegistered}/>}} />
             <Route path="/movies/:movieId" render={({ match, history }) => { // this path will display a single movie
-              if (!user) return <Col>
-                <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
-              </Col>              
+              if (!user) return <div>Loading...</div>             
               if (movies.length === 0) return <div className="main-view" />  
               return (
                 <>
@@ -326,9 +326,7 @@ export class MainView extends React.Component {
             }} />
 
             <Route path="/directors/:name" render={({ match, history }) => { // this path will display a single movie
-              if (!user) return <Col>
-                <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
-              </Col>              
+              if (!user) return <div>Loading...</div>              
               if (movies.length === 0) return <div className="main-view" /> 
               return (
                 <>
@@ -341,9 +339,7 @@ export class MainView extends React.Component {
             }} />
 
             <Route path="/genres/:name" render={({ match, history}) => {
-              if (!user) return <Col>
-                <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
-              </Col>             
+              if (!user) return <div>Loading...</div>             
               if (movies.length === 0) return <div className="main-view" />
               return (
                 <>
@@ -356,9 +352,7 @@ export class MainView extends React.Component {
             }} />
 
             <Route exact path="/users/:Username" render={({ match, history}) => {
-             if (!user) return <Col>
-              <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
-              </Col>              
+             if (!user) return <div>Loading...</div>            
               if (movies.length === 0) return <div className="main-view" />
               return (
                 <>
@@ -374,9 +368,7 @@ export class MainView extends React.Component {
             }} />
 
             <Route exact path="/users/:Username/edit_profile" render={({ match, history }) => { // this path will display a single movie
-              if (!user) return <Col>
-                <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister}/>
-              </Col>
+              if (!user) return <div>Loading...</div>
               return (
                 <>
                   <NavigationBar user={user} onLoggedIn={user => this.onLoggedIn(user)} onLoggedOut={user => this.onLoggedOut(user)} />
