@@ -43,7 +43,7 @@ export class NavigationBar extends React.Component {
               <FormControl type="text" placeholder="Search" className="mr-3" />
               <Button variant="outline-light" className="mr-5">Search</Button>
               <Link to={`/users/${user.Username}`}>
-                <Button variant="link-white">{user.Username}</Button>
+                <Button variant="link-white" onClick="window.location.reload()">{user.Username}</Button>
               </Link>
               <button onClick={onLoggedOut}>Logout</button>
             </Form>
