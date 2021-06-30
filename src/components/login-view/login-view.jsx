@@ -44,7 +44,7 @@ export function LoginView(props) {
     [
       'Dark',
     ].map((variant, idx) => (
-      <div className="bg-primary" style={{ height: '130rem'}} /*key={user._id}*/>
+      <div className="bg-primary" style={{ width: '100%', height: '130rem'}} /*key={user._id}*/>
         <Col className="bg-primary w-100 h-100">
           <p style={{ color: 'white', paddingTop: 15, paddingLeft: 0  }}>myfavfilmz</p>
           <Card
@@ -98,7 +98,7 @@ export function LoginView(props) {
               </Button>
               <p>New to myfavfilmz?</p>            
               <Link to={`/register`}>
-                <Button variant="primary" size="sm" block type="button">Click here to log in!</Button> 
+                <Button variant="primary" size="sm" block type="button">Click here to register!</Button> 
               </Link>
             
             
