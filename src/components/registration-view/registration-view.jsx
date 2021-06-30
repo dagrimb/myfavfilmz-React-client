@@ -51,7 +51,7 @@ export function RegistrationView(props) {
     [
       'Dark',
     ].map((variant, idx) => (
-      <div class="bg-primary" style={{ height: '130rem'}} /*key={user._id}*/>
+      <div class="bg-primary" style={{ width: '100%', height: '130rem'}} /*key={user._id}*/>
         <p style={{ color: 'white', paddingTop: 15, paddingLeft: 15}}>myfavfilmz</p>
         <Card
           bg={variant.toLowerCase()}
