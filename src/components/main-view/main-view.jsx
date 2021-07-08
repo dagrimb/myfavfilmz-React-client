@@ -2,8 +2,15 @@
 import React from 'react';
 //import Axios info file
 import axios from 'axios';
+import { connect } from 'react-redux';
 //import Route and BrowserRouter
-import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+import { BrowserRouter as Router, Route} from "react-router-dom";
+
+// #0
+import { setMovies } from '../../actions/actions';
+
+import MoviesList from '../movies-list/movies-list';
+
 import { Redirect } from 'react-router-dom';
 //import LoginView into file
 import { LoginView } from '../login-view/login-view';
@@ -21,7 +28,7 @@ import { RegistrationView } from '../registration-view/registration-view';
 import { ProfileView } from '../profile-view/profile-view';
 import { ProfileEdit } from '../profile-edit/profile-edit';
 import { FaveMovies } from '../fave-movies/fave-movies';
-import { NavigationBar } from '../navigation-bar/navigation-bar';
+import NavigationBar  from '../navigation-bar/navigation-bar';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -31,19 +38,21 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { Navbar,Nav, Form,FormControl} from 'react-bootstrap';
 
+
+
 //create MainView component as a class component by using React.Component template
-export class MainView extends React.Component {
+class MainView extends React.Component {
   //add movies state that will hold list of movies
   constructor(){
     super(); //initialize component state
     this.state = {
-      movies: [],
+      //movies: [],
       //selectedMovie: null,//set default (pre-click event) value to null
       user: null
       //registerClicked: false,
       //isLoggedIn: false,
       //profileEditClicked: false
-    }
+    };
     this.addNewFilm = this.addNewFilm.bind(this);
     //this.getFavoriteFilms = this.getFavoriteFilms(this);
   }
@@ -61,15 +70,15 @@ export class MainView extends React.Component {
       }
     }
 
+
+
     getMovies(token) {
       axios.get('https://myfavfilmz.herokuapp.com/movies', {  // use axios to make GET request to movies endpoint of Node.js API
         headers: { Authorization: `Bearer ${token}`}  // pass bearer authorization in the header of GET request allowing you to make an 
       })                                              // authenticated request to the API
       .then(response => {
         // Assign the result to the state
-        this.setState({
-          movies: response.data
-        });
+        this.props.setMovies(response.data); // passed to the props via the connect() function
       })
       .catch(function (error) {
         console.log(error);
@@ -280,7 +289,9 @@ export class MainView extends React.Component {
   }
 
   render() {
-    const  { movies, user, registerClicked, FavoriteMovies, birthday } = this.state; // shortened form of const movies = this.state.movies
+    let { movies } = this.props; // movies is extracted from this.props rather than this.state
+    let { user } = this.state;    
+    
     //if no user signed in and button to render RegistrationView is clicked, render RegistrationView
     //<FaveMovies movie={FavoriteMovies} user={user} removeFavoriteFilm={movie => this.removeFavoriteFilm(movie)} />
     //if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister} />
@@ -295,16 +306,12 @@ export class MainView extends React.Component {
         <Router>
           <Row className="main-view justify-content-md-center ml-0 w-100 bg-dark">
               <Route exact path="/" render={() => {
-                if(!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister} onLoggedOut={user => this.onLoggedOut(user)}/>
+                if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister} onLoggedOut={user => this.onLoggedOut(user)}/>
                 if (movies.length === 0) return <div className="main-view" />
                 return ( 
                   <>
-                    <NavigationBar user={user} onLoggedIn={user => this.onLoggedIn(user)} onLoggedOut={user => this.onLoggedOut(user)} />
-                    {movies.map(m => (
-                      <Col xs={12} sm={8} md={6} lg={4} xl={2} key={m._id}>
-                        <MovieCard movie={m} addFavorite={movie => this.addNewFilm(movie)}/>
-                      </Col>
-                    ))}
+                    <NavigationBar movies={movies} user={user} onLoggedIn={user => this.onLoggedIn(user)} onLoggedOut={user => this.onLoggedOut(user)} />
+                    <MoviesList movies={movies} addFavorite={movie => this.addNewFilm(movie)}/>
                   </>
                  ) 
                 }} 
@@ -385,5 +392,8 @@ export class MainView extends React.Component {
     }
   }
 
+let mapStateToProps = state => {
+  return { movies: state.movies }
+}
 
-  
+export default connect(mapStateToProps, { setMovies })(MainView);
