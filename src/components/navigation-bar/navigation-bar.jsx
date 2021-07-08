@@ -1,6 +1,16 @@
 import React, {Fragment} from 'react'; 
 import { FaveMovies } from '../fave-movies/fave-movies';
 
+import { connect } from 'react-redux';
+
+import VisibilityFilterInput from '../visibility-filter-input/visibility-filter-input';
+
+const mapStateToProps = state => {
+  const { visibilityFilter } = state;
+  return { visibilityFilter };
+};
+
+
 import Image from 'react-bootstrap/Image';
 import axios from 'axios';
 
@@ -18,15 +28,10 @@ import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
 
 //create MovieView component
-export class NavigationBar extends React.Component {
+function NavigationBar(props) {
+  const { movies, user, onLoggedOut, visibilityFilter } = props;
 
-  //function for both adding and removing event listener
-  keypressCallback(event) {
-    console.log(event.key);
-  }
 
-  render() {
-    const { user, onLoggedOut } = this.props;
 
     return (
       <Router>
@@ -40,8 +45,7 @@ export class NavigationBar extends React.Component {
               <Nav.Link href="aboutus">About</Nav.Link>
             </Nav>
             <Form inline>
-              <FormControl type="text" placeholder="Search" className="mr-3" />
-              <Button variant="outline-light" className="mr-5">Search</Button>
+            <VisibilityFilterInput visibilityFilter={visibilityFilter} />
               <Link to={`/users/${user.Username}`}>
                 <Button variant="link-white" onClick="window.location.reload()">{user.Username}</Button>
               </Link>
@@ -53,4 +57,6 @@ export class NavigationBar extends React.Component {
         </Router>            
           );
         }
-      }
+      
+
+      export default connect(mapStateToProps)(NavigationBar);
