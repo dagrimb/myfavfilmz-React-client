@@ -33,8 +33,6 @@
   "bugs": {
     "url": "https://github.com/dagrimb/myfavfilmz-client/issues"
   },
-  "homepage": "https://github.com/dagrimb/myfavfilmz-client#readme",
-  "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.0-beta.3.1"
+  "homepage": "https://github.com/dagrimb/myfavfilmz-client#readme"
   }
-}
+
