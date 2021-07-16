@@ -5,17 +5,11 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 //import Route and BrowserRouter
 import { BrowserRouter as Router, Route} from "react-router-dom";
-
-// #0
 import { setMovies, setUser, updateInfo, setFavorites, addFavorite, removeFavorite } from '../../actions/actions';
-
 import MoviesList from '../movies-list/movies-list';
-
 import { Redirect } from 'react-router-dom';
 //import LoginView into file
 import { LoginView } from '../login-view/login-view';
-//import MovieCard into file
-import { MovieCard } from '../movie-card/movie-card';
 //import MovieView into file
 import { MovieView } from '../movie-view/movie-view';
 //import DirectorView into file
@@ -27,17 +21,11 @@ import { RegistrationView } from '../registration-view/registration-view';
 //import ProfileView into file
 import ProfileView from '../profile-view/profile-view';
 import { ProfileEdit } from '../profile-edit/profile-edit';
-import FaveMovies from '../fave-movies/fave-movies';
 import NavigationBar  from '../navigation-bar/navigation-bar';
+import { UnderConstruction } from '../under-construction/under-construction';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
-//import Button into file
-//import { Button } from '../button/button';
-import Button from 'react-bootstrap/Button';
-import { Navbar,Nav, Form,FormControl} from 'react-bootstrap';
-
 
 
 //create MainView component as a class component by using React.Component template
@@ -46,18 +34,11 @@ class MainView extends React.Component {
   constructor(){
     super(); //initialize component state
     this.state = {
-      //movies: [],
-      //selectedMovie: null,//set default (pre-click event) value to null
       user: null
-      //registerClicked: false,
-      //isLoggedIn: false,
-      //profileEditClicked: false
     };
     this.addNewFilm = this.addNewFilm.bind(this);
     //this.getFavoriteFilms = this.getFavoriteFilms(this);
   }
-
-
 
   //Fetch the list of movies from your database with MainView is mounted
   componentDidMount(){
@@ -69,8 +50,6 @@ class MainView extends React.Component {
       this.getFavoriteFilms(localStorage.getItem('userID'), accessToken);
       }
     }
-
-
 
     getMovies(token) {
       axios.get('https://myfavfilmz.herokuapp.com/movies', {  // use axios to make GET request to movies endpoint of Node.js API
@@ -87,24 +66,7 @@ class MainView extends React.Component {
       });
     }
 
-    /*getUser(userID, token) {
-
-      axios.get('https://myfavfilmz.herokuapp.com/users/' + userID, {  
-        headers: { Authorization: `Bearer ${token}`}  
-      })                                              
-      .then(response => {
-        // Assign the result to the state
-        this.setState({
-          user: response.data
-        });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    }*/
-
     getUser(userID, token) {
-
       axios.get('https://myfavfilmz.herokuapp.com/users/' + userID, {  
         headers: { Authorization: `Bearer ${token}`}  
       })                                              
@@ -131,91 +93,53 @@ class MainView extends React.Component {
           FavoriteMovies: response.data,
         })
         const data = response.data;
-        console.log(data);
+        //console.log(data);
       })
       .catch(function (error) {
         console.log(error);
       });
     }
 
-
-   /* updateUserInfo(event) {
+    updateUserInfo(event) {
       event.preventDefault();
+
       const newUsername = document.querySelector('#username input');
       const newPassword = document.querySelector('#password input');
       const newEmail = document.querySelector('#email input');
       const newBirthday = document.querySelector('#birthday input');
-      
+          
       const updatedUsername = newUsername.value;
       const updatedPassword = newPassword.value;
       const updatedEmail = newEmail.value;
       const updatedBirthday = newBirthday.value;
-
+    
       const token = localStorage.getItem('token');
       const userID = localStorage.getItem('userID');
-
+    
       console.log("update User", updatedUsername, updatedPassword, updatedEmail, updatedBirthday);
-
-        axios.put('https://myfavfilmz.herokuapp.com/users/' + userID, {
-              Username: updatedUsername, 
-              Password: updatedPassword, 
-              Email: updatedEmail, 
-              Birthday: updatedBirthday 
-          },
-          { 
-            headers: { Authorization: `Bearer ${token}`}
-          })
-          .then(response => {
-            this.props.updateInfo(response.data)
-            console.log(response);
-            alert("Your information has been updated");
-          })
-          .catch (err => {
-            console.log(err);
-            alert("Something went wrong. Did you fill out the entire form?")
-          })
-        }*/
-
-        updateUserInfo(event) {
-          event.preventDefault();
-          const newUsername = document.querySelector('#username input');
-          const newPassword = document.querySelector('#password input');
-          const newEmail = document.querySelector('#email input');
-          const newBirthday = document.querySelector('#birthday input');
-          
-          const updatedUsername = newUsername.value;
-          const updatedPassword = newPassword.value;
-          const updatedEmail = newEmail.value;
-          const updatedBirthday = newBirthday.value;
     
-          const token = localStorage.getItem('token');
-          const userID = localStorage.getItem('userID');
-    
-          console.log("update User", updatedUsername, updatedPassword, updatedEmail, updatedBirthday);
-    
-            axios.put('https://myfavfilmz.herokuapp.com/users/' + userID, {
-                  Username: updatedUsername, 
-                  Password: updatedPassword, 
-                  Email: updatedEmail, 
-                  Birthday: updatedBirthday 
-              },
-              { 
-                headers: { Authorization: `Bearer ${token}`}
-              })
-              .then( response => {
-                this.setState({
-                  user: response.data
-                })
-                console.log(response);
-                alert("Your information has been updated");
-              })
-              .catch (err => {
-                console.log(err);
-                alert("Something went wrong. Did you fill out the entire form?")
-              })
-            }
+      axios.put('https://myfavfilmz.herokuapp.com/users/' + userID, {
+        Username: updatedUsername, 
+        Password: updatedPassword, 
+        Email: updatedEmail, 
+        Birthday: updatedBirthday 
+      },
+      { 
+        headers: { Authorization: `Bearer ${token}`}
+      })
+      .then( response => {
+        this.setState({
+          user: response.data
+        })
+        console.log(response);
+        alert("Your information has been updated");
+        })
+        .catch (err => {
+          console.log(err);
+          alert("Something went wrong. Did you fill out the entire form?")
+        })
+      }
       
-
     addNewFilm(e) {
       const favoriteMovies = this.state.FavoriteMovies;
       const movieID = e.currentTarget.dataset.id;
@@ -289,17 +213,6 @@ class MainView extends React.Component {
           })
         }
 
-
-  //a method later passed as a prop to LoginView (below). When user clicks movie, the function updates
-  //state of the selectedMovie property with that movie
-  /*onMovieClick(movie) {
-    this.setState({
-      selectedMovie: movie
-    });
-  }*/
-
-
-
   //Upon successful login, this method will update the user property with specific user
   onLoggedIn(authData) { // authData allows us to use both the user and the token; this is triggered when the user logs in...
     //console.log("LOGIN", authData);
@@ -308,26 +221,11 @@ class MainView extends React.Component {
       user: authData.user // ...updates the state with the logged in authData (the user's username is saved in the user state)
     });
     
-
     //auth info (token, user) received from handleSubmit method is saved in localStorage
     localStorage.setItem('token', authData.token);
     localStorage.setItem('userID', authData.user._id);
     this.getMovies(authData.token); // is called and gets movies from API once user is logged in
   }
-
-
-
-  /*setSelectedMovie(newSelectedMovie) { //setSelectedMovie is a custom component method
-    this.setState({ //to change the state of the MainView
-      selectedMovie: newSelectedMovie
-    });
-  }*/
-
-  /*
-  findFavorites = (FavoriteMovies) => {
-    this.setState({ FavoriteMovies: FavoriteMovies.map(id => movies.find(m => m._id === id))});
-  }*/
-
   
   handleRegister = (value) => {
     this.setState({ registerClicked: value });
@@ -342,30 +240,17 @@ class MainView extends React.Component {
     window.location.href = '/'
   }
 
-  
+
   render() {
-    //console.log(this.props.user.FavoriteMovies)
     const { movies } = this.props; // movies is extracted from this.props rather than this.state
     let { FavoriteMovies, user } = this.state;
     //console.log(FavoriteMovies);
-   console.log(movies);
-    console.log(user);
-    //if no user signed in and button to render RegistrationView is clicked, render RegistrationView
-    //<FaveMovies movie={FavoriteMovies} user={user} removeFavoriteFilm={movie => this.removeFavoriteFilm(movie)} />
-    //if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister} />
-    //if (!user && registerClicked) return <RegistrationView handleRegister={this.handleRegister} onRegistered={this.onRegistered} />;
-    //if (user) return <NavigationBar user={user} onClick={user => this.onLoggedOut(user)} />
-    //if user is logged in but not on user profile...
-   // if (user && !!movies) return <div>Loading...</div>
-    //if no user signed in, render LoginView
 
-    //if (user && profileEditClicked) return <ProfileEdit handleEdit={this.handleEdit} onRegistered={this.onRegistered} />;
       return (
         <Router>
-          <Row className="main-view justify-content-md-center ml-0 w-100 bg-dark">
+          <Row className="main-view justify-content-center ml-0 mr-0 w-100 bg-dark">
               <Route exact path="/" render={() => {
                 if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister} onLoggedOut={user => this.onLoggedOut(user)}/>
-                if (movies.length === 0) return <div className="main-view" />
                 return ( 
                   <>
                     <NavigationBar movies={movies} user={user} onLoggedIn={user => this.onLoggedIn(user)} onLoggedOut={user => this.onLoggedOut(user)} />
@@ -389,7 +274,6 @@ class MainView extends React.Component {
                 </>
               )  
             }} />
-
             <Route path="/directors/:name" render={({ match, history }) => { // this path will display a single movie
               if (!user) return <div>Loading...</div>              
               if (movies.length === 0) return <div className="main-view" /> 
@@ -402,7 +286,6 @@ class MainView extends React.Component {
                 </>
               )
             }} />
-
             <Route path="/genres/:name" render={({ match, history}) => {
               if (!user) return <div>Loading...</div>             
               if (movies.length === 0) return <div className="main-view" />
@@ -415,7 +298,6 @@ class MainView extends React.Component {
                 </>
               )
             }} />
-
             <Route exact path="/users/:Username" render={({ match, history}) => {
              //if (!user) return <div>Loading...</div>            
               if (movies.length === 0) return <div className="main-view" />
@@ -426,7 +308,6 @@ class MainView extends React.Component {
                 </>
               )
             }} />
-
             <Route exact path="/users/:Username/edit_profile" render={({ match, history }) => { // this path will display a single movie
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister} onLoggedOut={user => this.onLoggedOut(user)}/>
                 return (
@@ -439,6 +320,12 @@ class MainView extends React.Component {
                 </>
               )
             }} />
+            <Route path="/account" render={({ match, history }) => { 
+                return <UnderConstruction />
+              }} />
+            <Route path="/about" render={({ match, history }) => { 
+                return <UnderConstruction />
+              }} />
           </Row>
         </Router>
       );
