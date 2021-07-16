@@ -1,13 +1,8 @@
 import React from 'react'; 
-import Image from 'react-bootstrap/Image';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import PropTypes from 'prop-types';
-import { Navbar,Nav,NavDropdown,Form,FormControl} from 'react-bootstrap';
-//import { Button } from '../button/button';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
-
 
 //create MovieView component
 export class MovieView extends React.Component {
@@ -31,15 +26,11 @@ export class MovieView extends React.Component {
 
     return (
       <div className="movie-view">
-        <Row className="main-view justify-content-md-center ml-0 h-100">
-          <div className="w-100">
-          </div>
-        </Row>
-        <Col className="pt-5 bg-dark" style={{ paddingBottom: '80rem', height: '100%', width: '100%', color: 'white', background: '#292b2c'}}>
+        <Col xs={12} sm={8} md={6} lg={4} xl={3} className="pt-5 bg-dark mx-auto" style={{ paddingBottom: '20rem', height: '100%', width: '100%', color: 'white', background: '#292b2c'}}>
           <div className="movie-poster mb-4 justify-content-center text-center mx-auto" fluid>
-            <img src={movie.ImagePath} height="5%" width="20%"/>
+            <img src={movie.ImagePath} height="100%" width="80%"/>
           </div>
-          <div class="mx-auto" style={{ height: '100%', maxWidth: '50%' }} >
+          <div className="mx-auto" style={{ height: '100%', width: '100%' }} >
             <div className="movie-title bg-dark h-100 text-center">
               <h5 className="value" style={{marginTop: 25, paddingRight: 0 }}>{movie.Title}</h5>
             </div>  
@@ -73,7 +64,7 @@ export class MovieView extends React.Component {
               <span className="value">{movie._id}</span>
             </div>
             <div style={{ textAlign: 'center' }}>
-              <Button data-id={movie._id} type="submit" className="mt-1"  variant="primary" onClick={addFavorite}>Add to Favorites</Button>
+              <Button data-id={movie._id} type="submit" className="mt-5"  variant="primary" onClick={addFavorite}>Add to Favorites</Button>
 
             </div>
             <div style={{ textAlign: 'center' }}>

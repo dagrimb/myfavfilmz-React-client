@@ -1,59 +1,48 @@
 //Import React and useState hook
 import React, { useState } from 'react';
-import { LoginView } from '../login-view/login-view';
 import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
 
 import InputGroup from 'react-bootstrap/InputGroup';
-import FormControl from 'react-bootstrap/FormControl';
-import FormCheck from 'react-bootstrap/FormCheck';
-import FormFile from 'react-bootstrap/FormFile';
-import { render } from 'react-dom';
-import axios from 'axios';
-
 
 //call useState method and set to empty string the represents values prior to login
 export function ProfileEdit(props) {
-  const { updateUserInfo, removeUser, user, onBackClick} = props;
+  const { updateUserInfo, removeUser, user} = props;
   const [ username, setUsername ] = useState(user.Username);
-  const [ password, setPassword ] = useState("");
-  const [ email, setEmail ] = useState(user.Email);
-  const [ birthday, setBirthday ] = useState(user.Birthday);
   
   console.log("Render ProfileEdit", username);
 
   return (
-
     [
       'Dark',
     ].map((variant, idx) => (
-      <div class="profile-edit bg-dark" style={{ height: '130rem'}} /*key={user._id}*/>
+      <div className="profile-edit bg-dark" style={{ width: '100%', height: '80%'}} /*key={user._id}*/>
         <div style={{ color: 'white', paddingTop: 15, paddingLeft: 15}}>
         <Link to={`/users/${user.Username}`}>
-            <Button className="mt-5" style={{display: 'float-right'}} variant="primary"> Back to Your Profile</Button>
+            <Button className="m-5" style={{display: 'float-right'}} variant="primary"> Back to Your Profile</Button>
           </Link>
         </div>
+        <Col className="bg-dark w-100 h-100" xs={12} sm={12} md={10} lg={10} xl={8}>
         <Card
           bg="primary" variant="toLowerCase()"
           text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
-          style={{ width: '50rem', height: '55rem', marginBottom: 10, marginTop: '10rem', marginLeft: '5rem'}}
-          className="justify-content-center bg-primary"
+          style={{ maxWidth: '95%', marginBottom: 5}}
+          className="justify-content-center text-center mx-auto"
         >
         <Card.Body>
           <div className="text-align-center" >
             <h3>Update your account information</h3>
           </div>
-          <Form.Text style={{ marginTop:'0rem'}}>
+          <Form.Text className="mb-4 mt-3 w-100">
             Please complete ALL fields, including whatever you would like to change, below.
           </Form.Text>
           <Form>
-            <Form.Group as={Col} controlId="validationCustomUsername" style={{ marginTop: '3rem', display: 'inline-flex'}}>
-              <Form.Label className="float-left mr-3">Username</Form.Label>
+            <Form.Group as={Col} controlId="validationCustomUsername" style={{ marginTop: '3rem'}}>
+              <Form.Label className="float-left mr-3">Username</Form.Label><br></br>
               <InputGroup className="mb-3" id="username" hasValidation>
                 <Form.Control
                   type="text"
@@ -65,7 +54,7 @@ export function ProfileEdit(props) {
                 />
               </InputGroup>
             </Form.Group>
-            <Form.Group as={Col} controlId="formBasicPassword" style={{ marginTop: '2rem', paddingBottom: '0rem', display: 'inline-flex'}}>
+            <Form.Group as={Col} controlId="formBasicPassword" style={{ marginTop: '2rem', paddingBottom: '0rem'}}>
               <Form.Label className="float-left mr-4">Password</Form.Label>
               <InputGroup id="password" hasValidation>
                 <Form.Control 
@@ -80,11 +69,11 @@ export function ProfileEdit(props) {
                 />
               </InputGroup>
             </Form.Group>
-            <Form.Text style={{ marginLeft: '6rem', marginTop:'0rem'}}>
+            <Form.Text className="mx-auto" style={{ marginLeft: '6rem', marginTop:'0rem'}}>
                 Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or 
                 emoji.
               </Form.Text>
-            <Form.Group as={Col} controlId="formBasicEmail" style={{ marginTop: '2rem', display: 'inline-flex'}}>
+            <Form.Group as={Col} controlId="formBasicEmail" style={{ marginTop: '3rem' }}>
               <Form.Label className="float-left">Email address</Form.Label>
               <InputGroup id="email" hasValidation>
               <Form.Control 
@@ -100,7 +89,7 @@ export function ProfileEdit(props) {
               </InputGroup>
             </Form.Group>
             
-            <Form.Group as={Col} controlId="validationCustom01" style={{ marginTop: '2rem', display: 'inline-flex'}}>
+            <Form.Group as={Col} controlId="validationCustom01" style={{ marginTop: '2rem' }}>
               <Form.Label className="float-left mr-4">Birthday</Form.Label>
               <InputGroup id="birthday" hasValidation>
               <Form.Control
@@ -124,8 +113,8 @@ export function ProfileEdit(props) {
           </Form>
         </Card.Body>
       </Card>
+      </Col>
     </div>
-
     ))
   )}
 

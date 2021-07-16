@@ -2,13 +2,14 @@
 import React from 'react';
 //import Axios info file
 import axios from 'axios';
+import { connect } from 'react-redux';
 //import Route and BrowserRouter
-import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+import { BrowserRouter as Router, Route} from "react-router-dom";
+import { setMovies, setUser, updateInfo, setFavorites, addFavorite, removeFavorite } from '../../actions/actions';
+import MoviesList from '../movies-list/movies-list';
 import { Redirect } from 'react-router-dom';
 //import LoginView into file
 import { LoginView } from '../login-view/login-view';
-//import MovieCard into file
-import { MovieCard } from '../movie-card/movie-card';
 //import MovieView into file
 import { MovieView } from '../movie-view/movie-view';
 //import DirectorView into file
@@ -18,37 +19,26 @@ import { GenreView } from '../genre-view/genre-view';
 //import Registrationview into file
 import { RegistrationView } from '../registration-view/registration-view';
 //import ProfileView into file
-import { ProfileView } from '../profile-view/profile-view';
+import ProfileView from '../profile-view/profile-view';
 import { ProfileEdit } from '../profile-edit/profile-edit';
-import { FaveMovies } from '../fave-movies/fave-movies';
-import { NavigationBar } from '../navigation-bar/navigation-bar';
+import NavigationBar  from '../navigation-bar/navigation-bar';
+import { UnderConstruction } from '../under-construction/under-construction';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-//import Button into file
-//import { Button } from '../button/button';
-import Button from 'react-bootstrap/Button';
-import { Navbar,Nav, Form,FormControl} from 'react-bootstrap';
 
 //create MainView component as a class component by using React.Component template
-export class MainView extends React.Component {
+class MainView extends React.Component {
   //add movies state that will hold list of movies
   constructor(){
     super(); //initialize component state
     this.state = {
-      movies: [],
-      //selectedMovie: null,//set default (pre-click event) value to null
       user: null
-      //registerClicked: false,
-      //isLoggedIn: false,
-      //profileEditClicked: false
-    }
+    };
     this.addNewFilm = this.addNewFilm.bind(this);
     //this.getFavoriteFilms = this.getFavoriteFilms(this);
   }
-
-
 
   //Fetch the list of movies from your database with MainView is mounted
   componentDidMount(){
@@ -67,9 +57,9 @@ export class MainView extends React.Component {
       })                                              // authenticated request to the API
       .then(response => {
         // Assign the result to the state
-        this.setState({
-          movies: response.data
-        });
+        this.props.setMovies(response.data); // passed to the props via the connect() function
+        const data = response.data;
+        console.log(data);
       })
       .catch(function (error) {
         console.log(error);
@@ -77,15 +67,16 @@ export class MainView extends React.Component {
     }
 
     getUser(userID, token) {
-
       axios.get('https://myfavfilmz.herokuapp.com/users/' + userID, {  
         headers: { Authorization: `Bearer ${token}`}  
       })                                              
       .then(response => {
-        // Assign the result to the state
+        this.props.setUser(response.data); 
         this.setState({
           user: response.data
-        });
+        }) 
+        const data = response.data;
+        console.log(data);        
       })
       .catch(function (error) {
         console.log(error);
@@ -97,57 +88,58 @@ export class MainView extends React.Component {
         headers: { Authorization: `Bearer ${token}`}   
       })                                              
       .then(response => {
-        // Assign the result to the state
+       this.props.setFavorites(response.data);
         this.setState({
-          FavoriteMovies: response.data
+          FavoriteMovies: response.data,
         })
+        const data = response.data;
+        //console.log(data);
       })
       .catch(function (error) {
         console.log(error);
       });
     }
 
-
     updateUserInfo(event) {
       event.preventDefault();
+
       const newUsername = document.querySelector('#username input');
       const newPassword = document.querySelector('#password input');
       const newEmail = document.querySelector('#email input');
       const newBirthday = document.querySelector('#birthday input');
-      
+          
       const updatedUsername = newUsername.value;
       const updatedPassword = newPassword.value;
       const updatedEmail = newEmail.value;
       const updatedBirthday = newBirthday.value;
-
+    
       const token = localStorage.getItem('token');
       const userID = localStorage.getItem('userID');
-
+    
       console.log("update User", updatedUsername, updatedPassword, updatedEmail, updatedBirthday);
-
-        axios.put('https://myfavfilmz.herokuapp.com/users/' + userID, {
-              Username: updatedUsername, 
-              Password: updatedPassword, 
-              Email: updatedEmail, 
-              Birthday: updatedBirthday 
-          },
-          { 
-            headers: { Authorization: `Bearer ${token}`}
-          })
-          .then( response => {
-            this.setState({
-              user: response.data
-            })
-            console.log(response);
-            alert("Your information has been updated");
-          })
-          .catch (err => {
-            console.log(err);
-            alert("Something went wrong. Did you fill out the entire form?")
-          })
-        }
+    
+      axios.put('https://myfavfilmz.herokuapp.com/users/' + userID, {
+        Username: updatedUsername, 
+        Password: updatedPassword, 
+        Email: updatedEmail, 
+        Birthday: updatedBirthday 
+      },
+      { 
+        headers: { Authorization: `Bearer ${token}`}
+      })
+      .then( response => {
+        this.setState({
+          user: response.data
+        })
+        console.log(response);
+        alert("Your information has been updated");
+        })
+        .catch (err => {
+          console.log(err);
+          alert("Something went wrong. Did you fill out the entire form?")
+        })
+      }
       
-
     addNewFilm(e) {
       const favoriteMovies = this.state.FavoriteMovies;
       const movieID = e.currentTarget.dataset.id;
@@ -163,9 +155,7 @@ export class MainView extends React.Component {
         headers: { Authorization: `Bearer ${token}`}
       })
       .then(response => {
-        this.setState({
-          movie: response.data
-        })
+        this.props.addFavorite(response.data);
         window.location.reload();
         alert("Your favorite movie list has been updated.");
       })
@@ -188,9 +178,7 @@ export class MainView extends React.Component {
         headers: { Authorization: `Bearer ${token}`},
     })
     .then(response => {
-      this.setState({
-        movie: null
-      })
+      this.props.removeFavorite(response);
       console.log(response);
       window.location.reload();
       alert("Your favorite movie list has been updated");
@@ -225,50 +213,23 @@ export class MainView extends React.Component {
           })
         }
 
-
-  //a method later passed as a prop to LoginView (below). When user clicks movie, the function updates
-  //state of the selectedMovie property with that movie
-  /*onMovieClick(movie) {
-    this.setState({
-      selectedMovie: movie
-    });
-  }*/
-
-
-
   //Upon successful login, this method will update the user property with specific user
   onLoggedIn(authData) { // authData allows us to use both the user and the token; this is triggered when the user logs in...
-    console.log("LOGIN", authData);
+    //console.log("LOGIN", authData);
+    //this.props.setUser(authData);
     this.setState({
       user: authData.user // ...updates the state with the logged in authData (the user's username is saved in the user state)
     });
     
-
     //auth info (token, user) received from handleSubmit method is saved in localStorage
     localStorage.setItem('token', authData.token);
     localStorage.setItem('userID', authData.user._id);
     this.getMovies(authData.token); // is called and gets movies from API once user is logged in
   }
-
-
-
-  /*setSelectedMovie(newSelectedMovie) { //setSelectedMovie is a custom component method
-    this.setState({ //to change the state of the MainView
-      selectedMovie: newSelectedMovie
-    });
-  }*/
-
-  /*
-  findFavorites = (FavoriteMovies) => {
-    this.setState({ FavoriteMovies: FavoriteMovies.map(id => movies.find(m => m._id === id))});
-  }*/
-
   
   handleRegister = (value) => {
     this.setState({ registerClicked: value });
   }
-
-  
 
   onLoggedOut() {
     localStorage.removeItem('token');
@@ -279,32 +240,21 @@ export class MainView extends React.Component {
     window.location.href = '/'
   }
 
-  render() {
-    const  { movies, user, registerClicked, FavoriteMovies, birthday } = this.state; // shortened form of const movies = this.state.movies
-    //if no user signed in and button to render RegistrationView is clicked, render RegistrationView
-    //<FaveMovies movie={FavoriteMovies} user={user} removeFavoriteFilm={movie => this.removeFavoriteFilm(movie)} />
-    //if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister} />
-    //if (!user && registerClicked) return <RegistrationView handleRegister={this.handleRegister} onRegistered={this.onRegistered} />;
-    //if (user) return <NavigationBar user={user} onClick={user => this.onLoggedOut(user)} />
-    //if user is logged in but not on user profile...
-    //if (user && !!movies) return <div>Loading...</div>
-    //if no user signed in, render LoginView
 
-    //if (user && profileEditClicked) return <ProfileEdit handleEdit={this.handleEdit} onRegistered={this.onRegistered} />;
+  render() {
+    const { movies } = this.props; // movies is extracted from this.props rather than this.state
+    let { FavoriteMovies, user } = this.state;
+    //console.log(FavoriteMovies);
+
       return (
         <Router>
-          <Row className="main-view justify-content-md-center ml-0 w-100 bg-dark">
+          <Row className="main-view justify-content-center ml-0 mr-0 w-100 bg-dark">
               <Route exact path="/" render={() => {
-                if(!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister} onLoggedOut={user => this.onLoggedOut(user)}/>
-                if (movies.length === 0) return <div className="main-view" />
+                if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister} onLoggedOut={user => this.onLoggedOut(user)}/>
                 return ( 
                   <>
-                    <NavigationBar user={user} onLoggedIn={user => this.onLoggedIn(user)} onLoggedOut={user => this.onLoggedOut(user)} />
-                    {movies.map(m => (
-                      <Col xs={12} sm={8} md={6} lg={4} xl={2} key={m._id}>
-                        <MovieCard movie={m} addFavorite={movie => this.addNewFilm(movie)}/>
-                      </Col>
-                    ))}
+                    <NavigationBar movies={movies} user={user} onLoggedIn={user => this.onLoggedIn(user)} onLoggedOut={user => this.onLoggedOut(user)} />
+                    <MoviesList movies={movies} addFavorite={movie => this.addNewFilm(movie)}/>
                   </>
                  ) 
                 }} 
@@ -324,7 +274,6 @@ export class MainView extends React.Component {
                 </>
               )  
             }} />
-
             <Route path="/directors/:name" render={({ match, history }) => { // this path will display a single movie
               if (!user) return <div>Loading...</div>              
               if (movies.length === 0) return <div className="main-view" /> 
@@ -337,7 +286,6 @@ export class MainView extends React.Component {
                 </>
               )
             }} />
-
             <Route path="/genres/:name" render={({ match, history}) => {
               if (!user) return <div>Loading...</div>             
               if (movies.length === 0) return <div className="main-view" />
@@ -350,40 +298,43 @@ export class MainView extends React.Component {
                 </>
               )
             }} />
-
             <Route exact path="/users/:Username" render={({ match, history}) => {
-             if (!user) return <div>Loading...</div>            
+             //if (!user) return <div>Loading...</div>            
               if (movies.length === 0) return <div className="main-view" />
               return (
                 <>
-                  <NavigationBar user={user} onLoggedIn={user => this.onLoggedIn(user)} onLoggedOut={user => this.onLoggedOut(user)} />
-                  <ProfileView user={user} onBackClick={() => history.goBack()}/>
-                  {FavoriteMovies.map(fm => (
-                    <Col xs={12} sm={8} md={6} lg={4} xl={2} key={fm._id}  style={{paddingLeft: 0}}>
-                      <FaveMovies movie={fm} user={user} removeFavoriteFilm={movie => this.removeFavoriteFilm(movie)} />
-                    </Col>
-                  ))}
+                  <NavigationBar FavoriteMovie={FavoriteMovies} user={user} onLoggedIn={user => this.onLoggedIn(user)} onLoggedOut={user => this.onLoggedOut(user)} />
+                  <ProfileView FavoriteMovie={FavoriteMovies} user={user} removeFavoriteFilm={movie => this.removeFavoriteFilm(movie)} onBackClick={() => history.goBack()}/>
                 </>
               )
             }} />
-
             <Route exact path="/users/:Username/edit_profile" render={({ match, history }) => { // this path will display a single movie
-              if (!user) return <div>Loading...</div>
-              return (
+            if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister} onLoggedOut={user => this.onLoggedOut(user)}/>
+                return (
                 <>
                   <NavigationBar user={user} onLoggedIn={user => this.onLoggedIn(user)} onLoggedOut={user => this.onLoggedOut(user)} />
                     <Col xs={12} sm={8} md={12} lg={12} xl={10} style={{paddingLeft: 0, paddingRight: 0 }}>
-                      <ProfileEdit updateUserInfo={e => this.updateUserInfo(e)} removeUser={e => this.removeUser(e)} user={user} onBackClick={() => history.goBack()}/>
+                      <ProfileEdit movies={movies} updateUserInfo={e => this.updateUserInfo(e)} removeUser={e => this.removeUser(e)} user={user} onBackClick={() => history.goBack()}/>
                     </Col>
                     ))
                 </>
               )
             }} />
+            <Route path="/account" render={({ match, history }) => { 
+                return <UnderConstruction />
+              }} />
+            <Route path="/about" render={({ match, history }) => { 
+                return <UnderConstruction />
+              }} />
           </Row>
         </Router>
       );
     }
   }
 
+let mapStateToProps = state => {
+  return { movies: state.movies, user: state.user, favoriteMovies: state.favoriteMovies }
+}
 
-  
+export default connect(mapStateToProps, { setMovies, setUser, updateInfo, setFavorites, addFavorite, removeFavorite })(MainView);
+

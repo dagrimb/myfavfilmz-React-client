@@ -1,56 +1,58 @@
-import React, {Fragment} from 'react'; 
-import { FaveMovies } from '../fave-movies/fave-movies';
+import React from 'react'; 
 
-import Image from 'react-bootstrap/Image';
-import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import VisibilityFilterInput from '../visibility-filter-input/visibility-filter-input';
+
+const mapStateToProps = state => {
+  const { visibilityFilter } = state;
+  return { visibilityFilter };
+};
 
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import PropTypes from 'prop-types';
-import { Navbar,Nav,NavDropdown,Form,FormControl} from 'react-bootstrap';
-import { ProfileView } from '../profile-view/profile-view';
-
-import { BrowserRouter as Router, Route, Link} from "react-router-dom";
-
-//import { Button } from '../button/button';
+import { Navbar,Nav,Form} from 'react-bootstrap';
+import { BrowserRouter as Router, Link} from "react-router-dom";
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import CardDeck from 'react-bootstrap/CardDeck';
+
 
 //create MovieView component
-export class NavigationBar extends React.Component {
-
-  //function for both adding and removing event listener
-  keypressCallback(event) {
-    console.log(event.key);
-  }
-
-  render() {
-    const { user, onLoggedOut } = this.props;
+function NavigationBar(props) {
+  const { user, onLoggedOut, visibilityFilter } = props;
 
     return (
       <Router>
-      <Row className="main-view justify-content-md-center ml-0 w-100 bg-dark">
-        <div className="w-100">
-          <Navbar bg="primary" variant="dark">
-            <Navbar.Brand className="ml-2" href="#home">myfavfilmz</Navbar.Brand>
-            <Nav className="mr-auto">
-              <Nav.Link href="#account">Account</Nav.Link>
-              <Nav.Link href="#movies">Movies</Nav.Link>
-              <Nav.Link href="aboutus">About</Nav.Link>
-            </Nav>
-            <Form inline>
-              <FormControl type="text" placeholder="Search" className="mr-3" />
-              <Button variant="outline-light" className="mr-5">Search</Button>
-              <Link to={`/users/${user.Username}`}>
-                <Button variant="link-white" onClick="window.location.reload()">{user.Username}</Button>
-              </Link>
-              <button onClick={onLoggedOut}>Logout</button>
-            </Form>
-          </Navbar>
-        </div>
+        <Row className="main-view justify-content-md-center mx-auto w-100 bg-dark" >
+          <div className="w-100">
+            <Navbar collapseOnSelect bg="primary" variant="dark" expand="xl" className="w-100">
+              <Navbar.Brand as={Link} to="/">myfavfilmz</Navbar.Brand>
+              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              <Navbar.Collapse id="responsive-navbar-nav" className="w-90">
+                <Nav style={{ marginLeft: '1rem', width: '30%' }}>
+                  <Nav.Link as={Link} to="/account" variant="transparent" className="ml-1">
+                    <Button>Account</Button>
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/about" variant="transparent">
+                    <Button>About</Button>
+                  </Nav.Link>
+                </Nav>
+                <Form style={{ width: '100%', textAlign: 'center' }} className="w-sm-100">
+                  <div className="my-4">
+                    <VisibilityFilterInput className="mt-4" visibilityFilter={visibilityFilter} />
+                  </div>
+                  <div className="my-4 mx-auto">           
+                  <Link to={`/users/${user.Username}`}>
+                    <Button className="mx-4 " variant="link-white" onClick="window.location.reload()">{user.Username}'s profile</Button>
+                  </Link>
+                  <button style={{ marginRight: '0' }} onClick={onLoggedOut}>Logout</button>
+                  </div>  
+                </Form>
+              </Navbar.Collapse>
+            </Navbar>
+          </div>
         </Row>
-        </Router>            
-          );
-        }
-      }
+      </Router>            
+      );
+    }
+      
+  export default connect(mapStateToProps)(NavigationBar);

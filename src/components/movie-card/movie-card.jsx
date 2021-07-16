@@ -5,27 +5,20 @@ import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
 import { Link } from 'react-router-dom';
 
-//import { IoArrowForwardCircle } from 'react-icons/io';
-// Wanted to use  <div><IoArrowForwardCircle /> </div> to create arrow button in movies mockup
-
-
-
 //create MovieCard component
 export class MovieCard extends React.Component {
   constructor(props) {
     super(props);
   };
 
-
   render() {
     const { movie, addFavorite } = this.props;
-
-    console.log("Render MovieCard", movie)
+    //console.log("Render MovieCard", movie)
 
     return (
-      <CardDeck variant="h-50" className="bg-dark">
-        <Card className="text-center" style={{ height: '55rem', width: '18rem', color: 'white', background: '#292b2c'}}>
-          <Card.Body className="bg-dark h-100 mx-2">
+      <CardDeck variant="h-50" className="bg-dark" style={{ height: '100%', color: 'white', background: '#292b2c'}}>
+        <Card className="text-center bg-dark h-100 mx-2" >
+          <Card.Body >
             <Card.Title style={{marginTop: 25, paddingRight: 0 }}>{movie.Title}</Card.Title>
             <Card.Img variant="top mb-3" style={{ height: '20rem', width: '13rem'}} src={movie.ImagePath} />
             <Card.Text style={{ width: '100%', marginBottom: 25}}>{movie.Description.Synopsis}</Card.Text>
@@ -41,6 +34,8 @@ export class MovieCard extends React.Component {
     );
   }
 }
+
+
 
 MovieCard.propTypes = {
   movie: PropTypes.shape({

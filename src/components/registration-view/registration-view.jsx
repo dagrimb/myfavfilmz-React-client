@@ -1,19 +1,13 @@
 //Import React and useState hook
 import React, { useState } from 'react';
-import { LoginView } from '../login-view/login-view';
 import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+import { Link} from "react-router-dom";
 
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
-import FormControl from 'react-bootstrap/FormControl';
-import FormCheck from 'react-bootstrap/FormCheck';
-import FormFile from 'react-bootstrap/FormFile';
-import { render } from 'react-dom';
 import axios from 'axios';
 
 
@@ -42,21 +36,22 @@ export function RegistrationView(props) {
     })
     .catch(e => {
       console.log('error registering the user')
+      alert("Registration failed. Please check your information and try again.");
     });
     props.handleRegister(username);
   };
 
   return (
-
     [
       'Dark',
     ].map((variant, idx) => (
-      <div class="bg-primary" style={{ width: '100%', height: '130rem'}} /*key={user._id}*/>
+      <div className="bg-primary" style={{ width: '100%', height: '130rem'}} /*key={user._id}*/>
+        <Col className="bg-primary w-100 h-100" xs={12} sm={12} md={12} lg={12} xl={12}>
         <p style={{ color: 'white', paddingTop: 15, paddingLeft: 15}}>myfavfilmz</p>
         <Card
           bg={variant.toLowerCase()}
           text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
-          style={{ width: '40rem', height: '55rem', marginBottom: 10}}
+          style={{ maxWidth: '50rem', height: '50rem', marginBottom: 10}}
           className="justify-content-center text-center mx-auto"
         >
         <Card.Body>
@@ -64,7 +59,7 @@ export function RegistrationView(props) {
             <h3>Great to meet you!</h3>
           </div>
           <Form.Text>
-            Creat an account
+            Create an account
           </Form.Text>
           <Form>
             <Form.Text className="text-muted mb-4">
@@ -124,10 +119,7 @@ export function RegistrationView(props) {
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
-            <Form.Group controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="I agree to the myfavfilmz Terms of Serivce" />
-            </Form.Group>
-            <Button variant="primary mt-1 h-5" type="submit" onClick={handleSubmit}>Register</Button><br /><br /><br />
+            <Button variant="primary mt-4 h-5" type="submit" onClick={handleSubmit}>Register</Button><br /><br /><br />
             <p>Already a member?</p>
             <Link to={`/`}>
               <Button variant="primary" size="sm" block type="button">Click here to log in!</Button> 
@@ -135,8 +127,8 @@ export function RegistrationView(props) {
           </Form>
         </Card.Body>
       </Card>
+      </Col>
     </div>
-
     ))
   )}
 

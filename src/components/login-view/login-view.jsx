@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import InputGroup from 'react-bootstrap/InputGroup';
-import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+import { Link} from "react-router-dom";
 
 import '../../index.scss';
 import { Col } from 'react-bootstrap';
@@ -21,7 +21,7 @@ export function LoginView(props) {
   const handleSubmit = (e) => {
     //prevent default behavior of submitting form
     e.preventDefault();
-    console.log(username, password);
+    //console.log(username, password);
     // Send a request to the server for authentication by passing username and password
       axios.post('https://myfavfilmz.herokuapp.com/login', {
         Username: username,
@@ -29,14 +29,15 @@ export function LoginView(props) {
       })
       .then(response => {
         const data = response.data;
-        console.log(data);
+        //console.log(data);
         //call props.onLoggedIn(username), which provides the username to our parent component (child to parent communication)
         props.onLoggedIn(data); //will trigger onLoggedIn method of main-view.jsx; passed to the LoginView and triggers the function 
         //onLoggedIn(authData) in MainView when the user logs in
-        console.log(data);
+        //console.log(data);
       })
       .catch(e => {
         console.log('no such user')
+        alert("Login failed. Please check your information and try again.");
       });
     };
 
@@ -45,12 +46,12 @@ export function LoginView(props) {
       'Dark',
     ].map((variant, idx) => (
       <div className="bg-primary" style={{ width: '100%', height: '130rem'}} /*key={user._id}*/>
-        <Col className="bg-primary w-100 h-100">
+        <Col className="bg-primary w-100 h-100" xs={12} sm={12} md={12} lg={12} xl={12}>
           <p style={{ color: 'white', paddingTop: 15, paddingLeft: 0  }}>myfavfilmz</p>
           <Card
             bg={variant.toLowerCase()}
             text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
-            style={{ width: '28rem' }}
+            style={{ maxWidth: '28rem' }}
             className="justify-content-center text-center mx-auto my-5"
           >
             <Card.Body>
@@ -74,9 +75,6 @@ export function LoginView(props) {
                         onChange={e => setUsername(e.target.value)} 
                       />
                     </InputGroup>
-                  </Form.Row>
-                  <Form.Row className="align-items-left">
-                    <Form.Check label="Remember me" />
                   </Form.Row>
                 </Form.Group>
                 <Form.Group controlId="formPassword">
