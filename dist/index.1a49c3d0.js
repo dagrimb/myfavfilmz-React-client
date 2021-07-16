@@ -21243,14 +21243,11 @@ var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _reactRedux = require("react-redux");
 //import Route and BrowserRouter
 var _reactRouterDom = require("react-router-dom");
-// #0
 var _actions = require("../../actions/actions");
 var _moviesList = require("../movies-list/movies-list");
 var _moviesListDefault = parcelHelpers.interopDefault(_moviesList);
 //import LoginView into file
 var _loginView = require("../login-view/login-view");
-//import MovieCard into file
-var _movieCard = require("../movie-card/movie-card");
 //import MovieView into file
 var _movieView = require("../movie-view/movie-view");
 //import DirectorView into file
@@ -21263,8 +21260,6 @@ var _registrationView = require("../registration-view/registration-view");
 var _profileView = require("../profile-view/profile-view");
 var _profileViewDefault = parcelHelpers.interopDefault(_profileView);
 var _profileEdit = require("../profile-edit/profile-edit");
-var _faveMovies = require("../fave-movies/fave-movies");
-var _faveMoviesDefault = parcelHelpers.interopDefault(_faveMovies);
 var _navigationBar = require("../navigation-bar/navigation-bar");
 var _navigationBarDefault = parcelHelpers.interopDefault(_navigationBar);
 var _underConstruction = require("../under-construction/under-construction");
@@ -21272,19 +21267,12 @@ var _row = require("react-bootstrap/Row");
 var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
-//import Button into file
-//import { Button } from '../button/button';
-var _button = require("react-bootstrap/Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _reactBootstrap = require("react-bootstrap");
 //create MainView component as a class component by using React.Component template
 class MainView extends _reactDefault.default.Component {
     //add movies state that will hold list of movies
     constructor(){
         super(); //initialize component state
         this.state = {
-            //movies: [],
-            //selectedMovie: null,//set default (pre-click event) value to null
             user: null
         };
         this.addNewFilm = this.addNewFilm.bind(this);
@@ -21316,21 +21304,7 @@ class MainView extends _reactDefault.default.Component {
             console.log(error);
         });
     }
-    /*getUser(userID, token) {
-
-      axios.get('https://myfavfilmz.herokuapp.com/users/' + userID, {  
-        headers: { Authorization: `Bearer ${token}`}  
-      })                                              
-      .then(response => {
-        // Assign the result to the state
-        this.setState({
-          user: response.data
-        });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    }*/ getUser(userID, token) {
+    getUser(userID, token) {
         _axiosDefault.default.get('https://myfavfilmz.herokuapp.com/users/' + userID, {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -21357,47 +21331,12 @@ class MainView extends _reactDefault.default.Component {
                 FavoriteMovies: response.data
             });
             const data = response.data;
-            console.log(data);
+        //console.log(data);
         }).catch(function(error) {
             console.log(error);
         });
     }
-    /* updateUserInfo(event) {
-      event.preventDefault();
-      const newUsername = document.querySelector('#username input');
-      const newPassword = document.querySelector('#password input');
-      const newEmail = document.querySelector('#email input');
-      const newBirthday = document.querySelector('#birthday input');
-      
-      const updatedUsername = newUsername.value;
-      const updatedPassword = newPassword.value;
-      const updatedEmail = newEmail.value;
-      const updatedBirthday = newBirthday.value;
-
-      const token = localStorage.getItem('token');
-      const userID = localStorage.getItem('userID');
-
-      console.log("update User", updatedUsername, updatedPassword, updatedEmail, updatedBirthday);
-
-        axios.put('https://myfavfilmz.herokuapp.com/users/' + userID, {
-              Username: updatedUsername, 
-              Password: updatedPassword, 
-              Email: updatedEmail, 
-              Birthday: updatedBirthday 
-          },
-          { 
-            headers: { Authorization: `Bearer ${token}`}
-          })
-          .then(response => {
-            this.props.updateInfo(response.data)
-            console.log(response);
-            alert("Your information has been updated");
-          })
-          .catch (err => {
-            console.log(err);
-            alert("Something went wrong. Did you fill out the entire form?")
-          })
-        }*/ updateUserInfo(event) {
+    updateUserInfo(event) {
         event.preventDefault();
         const newUsername = document.querySelector('#username input');
         const newPassword = document.querySelector('#password input');
@@ -21490,13 +21429,7 @@ class MainView extends _reactDefault.default.Component {
             console.log(response);
         });
     }
-    //a method later passed as a prop to LoginView (below). When user clicks movie, the function updates
-    //state of the selectedMovie property with that movie
-    /*onMovieClick(movie) {
-    this.setState({
-      selectedMovie: movie
-    });
-  }*/ //Upon successful login, this method will update the user property with specific user
+    //Upon successful login, this method will update the user property with specific user
     onLoggedIn(authData) {
         //console.log("LOGIN", authData);
         //this.props.setUser(authData);
@@ -21508,14 +21441,7 @@ class MainView extends _reactDefault.default.Component {
         localStorage.setItem('userID', authData.user._id);
         this.getMovies(authData.token); // is called and gets movies from API once user is logged in
     }
-    /*setSelectedMovie(newSelectedMovie) { //setSelectedMovie is a custom component method
-    this.setState({ //to change the state of the MainView
-      selectedMovie: newSelectedMovie
-    });
-  }*/ /*
-  findFavorites = (FavoriteMovies) => {
-    this.setState({ FavoriteMovies: FavoriteMovies.map(id => movies.find(m => m._id === id))});
-  }*/ handleRegister = (value)=>{
+    handleRegister = (value)=>{
         this.setState({
             registerClicked: value
         });
@@ -21529,32 +21455,20 @@ class MainView extends _reactDefault.default.Component {
         window.location.href = '/';
     }
     render() {
-        //console.log(this.props.user.FavoriteMovies)
         const { movies  } = this.props; // movies is extracted from this.props rather than this.state
         let { FavoriteMovies , user  } = this.state;
         //console.log(FavoriteMovies);
-        console.log(movies);
-        console.log(user);
-        //if no user signed in and button to render RegistrationView is clicked, render RegistrationView
-        //<FaveMovies movie={FavoriteMovies} user={user} removeFavoriteFilm={movie => this.removeFavoriteFilm(movie)} />
-        //if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister} />
-        //if (!user && registerClicked) return <RegistrationView handleRegister={this.handleRegister} onRegistered={this.onRegistered} />;
-        //if (user) return <NavigationBar user={user} onClick={user => this.onLoggedOut(user)} />
-        //if user is logged in but not on user profile...
-        // if (user && !!movies) return <div>Loading...</div>
-        //if no user signed in, render LoginView
-        //if (user && profileEditClicked) return <ProfileEdit handleEdit={this.handleEdit} onRegistered={this.onRegistered} />;
         return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 365
+                lineNumber: 250
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "main-view justify-content-center ml-0 mr-0 w-100 bg-dark",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 366
+                lineNumber: 251
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21580,7 +21494,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 367
+                lineNumber: 252
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21598,7 +21512,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 377
+                lineNumber: 262
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21628,7 +21542,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 380
+                lineNumber: 265
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21657,7 +21571,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 393
+                lineNumber: 277
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21686,7 +21600,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 406
+                lineNumber: 289
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21713,7 +21627,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 419
+                lineNumber: 301
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21753,7 +21667,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 430
+                lineNumber: 311
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21763,7 +21677,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 442
+                lineNumber: 323
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21773,7 +21687,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 445
+                lineNumber: 326
             },
             __self: this
         }))));
@@ -21800,7 +21714,7 @@ exports.default = _reactRedux.connect(mapStateToProps, {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","axios":"7rA65","react-router-dom":"1PMSK","../login-view/login-view":"4SAAi","../movie-view/movie-view":"2ixDk","../director-view/director-view":"3R5l0","../genre-view/genre-view":"40rWj","../registration-view/registration-view":"4Fqtg","../profile-view/profile-view":"6WJfr","../profile-edit/profile-edit":"f57tM","../fave-movies/fave-movies":"66Cmf","../navigation-bar/navigation-bar":"IwuFY","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","react-bootstrap/Button":"1ru0l","react-bootstrap":"4n7hB","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad","../movie-card/movie-card":"4QrvU","react-redux":"7GDa4","../movies-list/movies-list":"5bitJ","../../actions/actions":"5S6cN","../under-construction/under-construction":"74fad"}],"7rA65":[function(require,module,exports) {
+},{"react":"3b2NM","axios":"7rA65","react-router-dom":"1PMSK","../login-view/login-view":"4SAAi","../movie-view/movie-view":"2ixDk","../director-view/director-view":"3R5l0","../genre-view/genre-view":"40rWj","../registration-view/registration-view":"4Fqtg","../profile-view/profile-view":"6WJfr","../profile-edit/profile-edit":"f57tM","../navigation-bar/navigation-bar":"IwuFY","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad","react-redux":"7GDa4","../movies-list/movies-list":"5bitJ","../../actions/actions":"5S6cN","../under-construction/under-construction":"74fad"}],"7rA65":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"4qfhW"}],"4qfhW":[function(require,module,exports) {
@@ -38649,16 +38563,10 @@ parcelHelpers.export(exports, "MovieView", ()=>MovieView
 );
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _image = require("react-bootstrap/Image");
-var _imageDefault = parcelHelpers.interopDefault(_image);
-var _row = require("react-bootstrap/Row");
-var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _reactBootstrap = require("react-bootstrap");
-//import { Button } from '../button/button';
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _reactRouterDom = require("react-router-dom");
@@ -38679,15 +38587,15 @@ class MovieView extends _reactDefault.default.Component {
             className: "movie-view",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 33
+                lineNumber: 28
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             xs: 12,
-            sm: 10,
+            sm: 8,
             md: 6,
             lg: 4,
-            xl: 4,
+            xl: 3,
             className: "pt-5 bg-dark mx-auto",
             style: {
                 paddingBottom: '20rem',
@@ -38698,7 +38606,7 @@ class MovieView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 34
+                lineNumber: 29
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -38706,7 +38614,7 @@ class MovieView extends _reactDefault.default.Component {
             fluid: true,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 35
+                lineNumber: 30
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
@@ -38715,25 +38623,25 @@ class MovieView extends _reactDefault.default.Component {
             width: "80%",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 36
+                lineNumber: 31
             },
             __self: this
         })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
-            class: "mx-auto",
+            className: "mx-auto",
             style: {
                 height: '100%',
-                maxWidth: '80%'
+                width: '100%'
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 38
+                lineNumber: 33
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-title bg-dark h-100 text-center",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 39
+                lineNumber: 34
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
@@ -38744,11 +38652,40 @@ class MovieView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 40
+                lineNumber: 35
             },
             __self: this
         }, movie.Title)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-description",
+            __source: {
+                fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 37
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "label",
+            __source: {
+                fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 38
+            },
+            __self: this
+        }, "Synopsis: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "value",
+            __source: {
+                fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 39
+            },
+            __self: this
+        }, movie.Description.Synopsis, " "), /*#__PURE__*/ _reactDefault.default.createElement("a", {
+            className: "label",
+            href: movie.Description.Source,
+            __source: {
+                fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 40
+            },
+            __self: this
+        }, "(source)")), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "movie-director",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
                 lineNumber: 42
@@ -38761,138 +38698,109 @@ class MovieView extends _reactDefault.default.Component {
                 lineNumber: 43
             },
             __self: this
-        }, "Synopsis: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
-            className: "value",
-            __source: {
-                fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 44
-            },
-            __self: this
-        }, movie.Description.Synopsis, " "), /*#__PURE__*/ _reactDefault.default.createElement("a", {
-            className: "label",
-            href: movie.Description.Source,
-            __source: {
-                fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 45
-            },
-            __self: this
-        }, "(source)")), /*#__PURE__*/ _reactDefault.default.createElement("div", {
-            className: "movie-director",
-            __source: {
-                fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 47
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
-            className: "label",
-            __source: {
-                fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 48
-            },
-            __self: this
         }, "Director: "), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
             to: `/directors/${movie.Director.Name}`,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 49
+                lineNumber: 44
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
             variant: "link",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 50
+                lineNumber: 45
             },
             __self: this
         }, movie.Director.Name))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-genre",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 53
+                lineNumber: 48
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "label",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 54
+                lineNumber: 49
             },
             __self: this
         }, "Genre: "), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
             to: `/genres/${movie.Genre.Name}`,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 55
+                lineNumber: 50
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
             variant: "link",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 56
+                lineNumber: 51
             },
             __self: this
         }, movie.Genre.Name))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-year",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 59
+                lineNumber: 54
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "label",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 60
+                lineNumber: 55
             },
             __self: this
         }, "Year Released: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 61
+                lineNumber: 56
             },
             __self: this
         }, movie.Year)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-score",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 63
+                lineNumber: 58
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "label",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 64
+                lineNumber: 59
             },
             __self: this
         }, "Rotten Tomatoes score: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 65
+                lineNumber: 60
             },
             __self: this
         }, movie.Rotten_Tomatoes_score)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-id",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 67
+                lineNumber: 62
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "label",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 68
+                lineNumber: 63
             },
             __self: this
         }, "ID: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 69
+                lineNumber: 64
             },
             __self: this
         }, movie._id)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -38901,7 +38809,7 @@ class MovieView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 71
+                lineNumber: 66
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -38912,7 +38820,7 @@ class MovieView extends _reactDefault.default.Component {
             onClick: addFavorite,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 72
+                lineNumber: 67
             },
             __self: this
         }, "Add to Favorites")), /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -38921,7 +38829,7 @@ class MovieView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 75
+                lineNumber: 70
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -38932,7 +38840,7 @@ class MovieView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 76
+                lineNumber: 71
             },
             __self: this
         }, "Back"))))));
@@ -38971,7 +38879,7 @@ MovieView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","react-bootstrap/Image":"5qrP5","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","prop-types":"4dfy5","react-bootstrap":"4n7hB","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad"}],"3R5l0":[function(require,module,exports) {
+},{"react":"3b2NM","react-bootstrap/Col":"2D0r8","prop-types":"4dfy5","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad"}],"3R5l0":[function(require,module,exports) {
 var helpers = require("../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -38985,20 +38893,12 @@ parcelHelpers.export(exports, "DirectorView", ()=>DirectorView
 );
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _image = require("react-bootstrap/Image");
-var _imageDefault = parcelHelpers.interopDefault(_image);
-var _row = require("react-bootstrap/Row");
-var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _movieView = require("../movie-view/movie-view");
-var _reactBootstrap = require("react-bootstrap");
-//import { Button } from '../button/button';
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _reactRouterDom = require("react-router-dom");
 class DirectorView extends _reactDefault.default.Component {
     //function for both adding and removing event listener
     keypressCallback(event) {
@@ -39016,7 +38916,7 @@ class DirectorView extends _reactDefault.default.Component {
             className: "director-view",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/director-view/director-view.jsx",
-                lineNumber: 33
+                lineNumber: 26
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
@@ -39035,7 +38935,7 @@ class DirectorView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/director-view/director-view.jsx",
-                lineNumber: 35
+                lineNumber: 27
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -39045,7 +38945,7 @@ class DirectorView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/director-view/director-view.jsx",
-                lineNumber: 36
+                lineNumber: 28
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -39056,7 +38956,7 @@ class DirectorView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/director-view/director-view.jsx",
-                lineNumber: 37
+                lineNumber: 29
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -39064,7 +38964,7 @@ class DirectorView extends _reactDefault.default.Component {
             fluid: true,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/director-view/director-view.jsx",
-                lineNumber: 38
+                lineNumber: 30
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
@@ -39073,34 +38973,34 @@ class DirectorView extends _reactDefault.default.Component {
             width: "80%",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/director-view/director-view.jsx",
-                lineNumber: 39
+                lineNumber: 31
             },
             __self: this
         })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/director-view/director-view.jsx",
-                lineNumber: 41
+                lineNumber: 33
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/director-view/director-view.jsx",
-                lineNumber: 42
+                lineNumber: 34
             },
             __self: this
         }, director.Name), /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/director-view/director-view.jsx",
-                lineNumber: 43
+                lineNumber: 35
             },
             __self: this
         }, " (", director.Birth, "-", director.Death, "). "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/director-view/director-view.jsx",
-                lineNumber: 44
+                lineNumber: 36
             },
             __self: this
         }, director.Bio, " "), /*#__PURE__*/ _reactDefault.default.createElement("a", {
@@ -39108,7 +39008,7 @@ class DirectorView extends _reactDefault.default.Component {
             href: director.Source,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/director-view/director-view.jsx",
-                lineNumber: 45
+                lineNumber: 37
             },
             __self: this
         }, "(source)"))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -39117,7 +39017,7 @@ class DirectorView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/director-view/director-view.jsx",
-                lineNumber: 48
+                lineNumber: 40
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -39128,7 +39028,7 @@ class DirectorView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/director-view/director-view.jsx",
-                lineNumber: 49
+                lineNumber: 41
             },
             __self: this
         }, "Back"))))));
@@ -39150,7 +39050,7 @@ DirectorView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","react-bootstrap/Image":"5qrP5","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","prop-types":"4dfy5","../movie-view/movie-view":"2ixDk","react-bootstrap":"4n7hB","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad"}],"40rWj":[function(require,module,exports) {
+},{"react":"3b2NM","react-bootstrap/Col":"2D0r8","prop-types":"4dfy5","react-bootstrap/Button":"1ru0l","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad"}],"40rWj":[function(require,module,exports) {
 var helpers = require("../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -39159,25 +39059,17 @@ helpers.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-//create DirectorView component
+//create GenreView component
 parcelHelpers.export(exports, "GenreView", ()=>GenreView
 );
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _image = require("react-bootstrap/Image");
-var _imageDefault = parcelHelpers.interopDefault(_image);
-var _row = require("react-bootstrap/Row");
-var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _movieView = require("../movie-view/movie-view");
-var _reactBootstrap = require("react-bootstrap");
-//import { Button } from '../button/button';
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _reactRouterDom = require("react-router-dom");
 class GenreView extends _reactDefault.default.Component {
     //function for both adding and removing event listener
     keypressCallback(event) {
@@ -39195,7 +39087,7 @@ class GenreView extends _reactDefault.default.Component {
             className: "genre-view",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/genre-view/genre-view.jsx",
-                lineNumber: 33
+                lineNumber: 26
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
@@ -39214,7 +39106,7 @@ class GenreView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/genre-view/genre-view.jsx",
-                lineNumber: 35
+                lineNumber: 27
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -39224,7 +39116,7 @@ class GenreView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/genre-view/genre-view.jsx",
-                lineNumber: 36
+                lineNumber: 28
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -39235,7 +39127,7 @@ class GenreView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/genre-view/genre-view.jsx",
-                lineNumber: 37
+                lineNumber: 29
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -39243,7 +39135,7 @@ class GenreView extends _reactDefault.default.Component {
             fluid: true,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/genre-view/genre-view.jsx",
-                lineNumber: 38
+                lineNumber: 30
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
@@ -39252,21 +39144,21 @@ class GenreView extends _reactDefault.default.Component {
             width: "80%",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/genre-view/genre-view.jsx",
-                lineNumber: 39
+                lineNumber: 31
             },
             __self: this
         })), /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/genre-view/genre-view.jsx",
-                lineNumber: 41
+                lineNumber: 33
             },
             __self: this
         }, genre.Name), /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/genre-view/genre-view.jsx",
-                lineNumber: 42
+                lineNumber: 34
             },
             __self: this
         }, " (", genre.Description), /*#__PURE__*/ _reactDefault.default.createElement("a", {
@@ -39274,7 +39166,7 @@ class GenreView extends _reactDefault.default.Component {
             href: genre.Source,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/genre-view/genre-view.jsx",
-                lineNumber: 43
+                lineNumber: 35
             },
             __self: this
         }, "(source)")), /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -39283,7 +39175,7 @@ class GenreView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/genre-view/genre-view.jsx",
-                lineNumber: 45
+                lineNumber: 37
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -39294,7 +39186,7 @@ class GenreView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/genre-view/genre-view.jsx",
-                lineNumber: 46
+                lineNumber: 38
             },
             __self: this
         }, "Back"))))));
@@ -39314,7 +39206,7 @@ GenreView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","react-bootstrap/Image":"5qrP5","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","prop-types":"4dfy5","../movie-view/movie-view":"2ixDk","react-bootstrap":"4n7hB","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad"}],"4Fqtg":[function(require,module,exports) {
+},{"react":"3b2NM","react-bootstrap/Col":"2D0r8","prop-types":"4dfy5","react-bootstrap/Button":"1ru0l","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad"}],"4Fqtg":[function(require,module,exports) {
 var helpers = require("../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -39329,7 +39221,6 @@ parcelHelpers.export(exports, "RegistrationView", ()=>RegistrationView
 //Import React and useState hook
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _loginView = require("../login-view/login-view");
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _form = require("react-bootstrap/Form");
@@ -39339,19 +39230,10 @@ var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _card = require("react-bootstrap/Card");
 var _cardDefault = parcelHelpers.interopDefault(_card);
 var _reactRouterDom = require("react-router-dom");
-var _row = require("react-bootstrap/Row");
-var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
 var _inputGroup = require("react-bootstrap/InputGroup");
 var _inputGroupDefault = parcelHelpers.interopDefault(_inputGroup);
-var _formControl = require("react-bootstrap/FormControl");
-var _formControlDefault = parcelHelpers.interopDefault(_formControl);
-var _formCheck = require("react-bootstrap/FormCheck");
-var _formCheckDefault = parcelHelpers.interopDefault(_formCheck);
-var _formFile = require("react-bootstrap/FormFile");
-var _formFileDefault = parcelHelpers.interopDefault(_formFile);
-var _reactDom = require("react-dom");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _s = $RefreshSig$();
@@ -39391,7 +39273,7 @@ function RegistrationView(props) {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 55
+                lineNumber: 48
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
@@ -39403,7 +39285,7 @@ function RegistrationView(props) {
             xl: 12,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 56
+                lineNumber: 49
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
@@ -39414,7 +39296,7 @@ function RegistrationView(props) {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 57
+                lineNumber: 50
             },
             __self: this
         }, "myfavfilmz"), /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default, {
@@ -39428,45 +39310,45 @@ function RegistrationView(props) {
             className: "justify-content-center text-center mx-auto",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 58
+                lineNumber: 51
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Body, {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 64
+                lineNumber: 57
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "text-align-center",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 65
+                lineNumber: 58
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 66
+                lineNumber: 59
             },
             __self: this
         }, "Great to meet you!")), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Text, {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 68
+                lineNumber: 61
             },
             __self: this
         }, "Create an account"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 71
+                lineNumber: 64
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Text, {
             className: "text-muted mb-4",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 72
+                lineNumber: 65
             },
             __self: this
         }, "We will never share your username, password, email or birthdate with a third-party."), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -39474,14 +39356,14 @@ function RegistrationView(props) {
             controlId: "validationCustomUsername",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 75
+                lineNumber: 68
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
             className: "float-left",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 76
+                lineNumber: 69
             },
             __self: this
         }, "Username"), /*#__PURE__*/ _reactDefault.default.createElement(_inputGroupDefault.default, {
@@ -39489,7 +39371,7 @@ function RegistrationView(props) {
             hasValidation: true,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 77
+                lineNumber: 70
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -39502,7 +39384,7 @@ function RegistrationView(props) {
             ,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 78
+                lineNumber: 71
             },
             __self: this
         }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -39510,21 +39392,21 @@ function RegistrationView(props) {
             controlId: "formBasicEmail",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 88
+                lineNumber: 81
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
             className: "float-left",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 89
+                lineNumber: 82
             },
             __self: this
         }, "Email address"), /*#__PURE__*/ _reactDefault.default.createElement(_inputGroupDefault.default, {
             hasValidation: true,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 90
+                lineNumber: 83
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -39536,7 +39418,7 @@ function RegistrationView(props) {
             ,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 91
+                lineNumber: 84
             },
             __self: this
         })), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -39544,21 +39426,21 @@ function RegistrationView(props) {
             controlId: "formBasicPassword",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 99
+                lineNumber: 92
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
             className: "float-left",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 100
+                lineNumber: 93
             },
             __self: this
         }, "Password"), /*#__PURE__*/ _reactDefault.default.createElement(_inputGroupDefault.default, {
             hasValidation: true,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 101
+                lineNumber: 94
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -39571,7 +39453,7 @@ function RegistrationView(props) {
             ,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 102
+                lineNumber: 95
             },
             __self: this
         })), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Text, {
@@ -39579,7 +39461,7 @@ function RegistrationView(props) {
             muted: true,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 111
+                lineNumber: 104
             },
             __self: this
         }, "Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.")), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -39587,21 +39469,21 @@ function RegistrationView(props) {
             controlId: "validationCustom01",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 116
+                lineNumber: 109
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
             className: "float-left",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 117
+                lineNumber: 110
             },
             __self: this
         }, "Birthday"), /*#__PURE__*/ _reactDefault.default.createElement(_inputGroupDefault.default, {
             hasValidation: true,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 118
+                lineNumber: 111
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -39614,13 +39496,13 @@ function RegistrationView(props) {
             placeholder: "Birthday",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 119
+                lineNumber: 112
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control.Feedback, {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 127
+                lineNumber: 120
             },
             __self: this
         }, "Looks good!")), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -39629,38 +39511,38 @@ function RegistrationView(props) {
             onClick: handleSubmit,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 129
+                lineNumber: 122
             },
             __self: this
         }, "Register"), /*#__PURE__*/ _reactDefault.default.createElement("br", {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 129
+                lineNumber: 122
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 129
+                lineNumber: 122
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 129
+                lineNumber: 122
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 130
+                lineNumber: 123
             },
             __self: this
-        }, "Already a member?"), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        }, "Already a member?"), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
             to: `/`,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 131
+                lineNumber: 124
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -39670,7 +39552,7 @@ function RegistrationView(props) {
             type: "button",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 132
+                lineNumber: 125
             },
             __self: this
         }, "Click here to log in!")))))))
@@ -39696,7 +39578,7 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","../login-view/login-view":"4SAAi","prop-types":"4dfy5","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap/Card":"1CZWQ","react-router-dom":"1PMSK","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","react-bootstrap/InputGroup":"3nb5C","react-bootstrap/FormControl":"573gP","react-bootstrap/FormCheck":"6WcKM","react-bootstrap/FormFile":"6mhKG","react-dom":"2sg1U","axios":"7rA65","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad"}],"6WJfr":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap/Card":"1CZWQ","react-router-dom":"1PMSK","react-bootstrap/Col":"2D0r8","react-bootstrap/InputGroup":"3nb5C","axios":"7rA65","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad"}],"6WJfr":[function(require,module,exports) {
 var helpers = require("../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -39709,25 +39591,12 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRedux = require("react-redux");
 var _faveMovies = require("../fave-movies/fave-movies");
-var _image = require("react-bootstrap/Image");
-var _imageDefault = parcelHelpers.interopDefault(_image);
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _row = require("react-bootstrap/Row");
-var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _reactBootstrap = require("react-bootstrap");
 //import { Button } from '../button/button';
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _reactRouterDom = require("react-router-dom");
-var _card = require("react-bootstrap/Card");
-var _cardDefault = parcelHelpers.interopDefault(_card);
-var _cardDeck = require("react-bootstrap/CardDeck");
-var _cardDeckDefault = parcelHelpers.interopDefault(_cardDeck);
 const mapStateToProps = (state)=>{
     const { visibilityFilter  } = state;
     return {
@@ -39737,7 +39606,7 @@ const mapStateToProps = (state)=>{
 //create ProfileView component
 function ProfileView(props) {
     const { user , visibilityFilter , FavoriteMovie , removeFavoriteFilm  } = props;
-    console.log(FavoriteMovie);
+    //console.log(FavoriteMovie);
     let filteredMovie = FavoriteMovie;
     if (visibilityFilter !== '') filteredMovie = FavoriteMovie.filter((fm)=>fm.Title.toLowerCase().includes(visibilityFilter.toLowerCase())
     );
@@ -39756,7 +39625,7 @@ function ProfileView(props) {
         },
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 41
+            lineNumber: 28
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -39769,7 +39638,7 @@ function ProfileView(props) {
         },
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 43
+            lineNumber: 29
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -39779,7 +39648,7 @@ function ProfileView(props) {
         },
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 44
+            lineNumber: 30
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -39789,20 +39658,20 @@ function ProfileView(props) {
         },
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 45
+            lineNumber: 31
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
         className: "user-intro mb-4 justify-content-left text-left ml-3",
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 46
+            lineNumber: 32
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("h2", {
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 47
+            lineNumber: 33
         },
         __self: this
     }, "my profile"), /*#__PURE__*/ _reactDefault.default.createElement("img", {
@@ -39811,13 +39680,13 @@ function ProfileView(props) {
         width: "20%",
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 48
+            lineNumber: 34
         },
         __self: this
     })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 50
+            lineNumber: 36
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -39827,26 +39696,26 @@ function ProfileView(props) {
         },
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 51
+            lineNumber: 37
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 52
+            lineNumber: 38
         },
         __self: this
     }, "Username"), /*#__PURE__*/ _reactDefault.default.createElement("span", {
         className: "value ml-5",
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 53
+            lineNumber: 39
         },
         __self: this
     }, user.Username)), /*#__PURE__*/ _reactDefault.default.createElement("br", {
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 54
+            lineNumber: 40
         },
         __self: this
     }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -39856,26 +39725,26 @@ function ProfileView(props) {
         },
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 55
+            lineNumber: 41
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 56
+            lineNumber: 42
         },
         __self: this
     }, "Password"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
         className: "ml-5",
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 57
+            lineNumber: 43
         },
         __self: this
     }, " ********** ")), /*#__PURE__*/ _reactDefault.default.createElement("br", {
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 58
+            lineNumber: 44
         },
         __self: this
     }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -39885,27 +39754,27 @@ function ProfileView(props) {
         },
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 59
+            lineNumber: 45
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
         className: "value mr-4",
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 60
+            lineNumber: 46
         },
         __self: this
     }, "E-mail"), /*#__PURE__*/ _reactDefault.default.createElement("span", {
         className: "value ml-4",
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 61
+            lineNumber: 47
         },
         __self: this
     }, " ", user.Email)), /*#__PURE__*/ _reactDefault.default.createElement("br", {
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 62
+            lineNumber: 48
         },
         __self: this
     }), /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -39915,20 +39784,20 @@ function ProfileView(props) {
         },
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 63
+            lineNumber: 49
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 64
+            lineNumber: 50
         },
         __self: this
     }, "Date of Birth"), /*#__PURE__*/ _reactDefault.default.createElement("span", {
         className: "value ml-4",
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 65
+            lineNumber: 51
         },
         __self: this
     }, new Date(user.Birthday).toLocaleDateString(), " "))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -39939,14 +39808,14 @@ function ProfileView(props) {
         },
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 68
+            lineNumber: 54
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
         to: `/users/${user.Username}/edit_profile`,
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 69
+            lineNumber: 55
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -39954,14 +39823,14 @@ function ProfileView(props) {
         variant: "primary",
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 70
+            lineNumber: 56
         },
         __self: this
     }, "Edit Profile or Unregister")), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
         to: `/`,
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 72
+            lineNumber: 58
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -39971,7 +39840,7 @@ function ProfileView(props) {
         variant: "primary",
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 73
+            lineNumber: 59
         },
         __self: this
     }, "Back to All Movies")))), /*#__PURE__*/ _reactDefault.default.createElement("h4", {
@@ -39981,13 +39850,13 @@ function ProfileView(props) {
         },
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 77
+            lineNumber: 63
         },
         __self: this
     }, user.Username, "'s fav filmz"), /*#__PURE__*/ _reactDefault.default.createElement("div", {
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 78
+            lineNumber: 64
         },
         __self: this
     })))), /*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, null, FavoriteMovie.length === 0 ? /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -39997,7 +39866,7 @@ function ProfileView(props) {
         },
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 84
+            lineNumber: 70
         },
         __self: this
     }, "You currently do not have any favorites. Go back to all movies to select your first ones today!") : filteredMovie.length === 0 ? /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -40008,7 +39877,7 @@ function ProfileView(props) {
         },
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-            lineNumber: 86
+            lineNumber: 72
         },
         __self: this
     }, "No movies found. Please check the name of the film you are looking for and try again.") : filteredMovie.map((fm)=>/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
@@ -40022,7 +39891,7 @@ function ProfileView(props) {
             key: fm._id,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-                lineNumber: 89
+                lineNumber: 75
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_faveMovies.FaveMovies, {
@@ -40030,7 +39899,7 @@ function ProfileView(props) {
             removeFavoriteFilm: removeFavoriteFilm,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-view/profile-view.jsx",
-                lineNumber: 90
+                lineNumber: 76
             },
             __self: this
         }))
@@ -40046,7 +39915,7 @@ $RefreshReg$(_c, "ProfileView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","../fave-movies/fave-movies":"66Cmf","react-bootstrap/Image":"5qrP5","axios":"7rA65","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","prop-types":"4dfy5","react-bootstrap":"4n7hB","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK","react-bootstrap/Card":"1CZWQ","react-bootstrap/CardDeck":"4fiZs","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad","react-redux":"7GDa4"}],"66Cmf":[function(require,module,exports) {
+},{"react":"3b2NM","../fave-movies/fave-movies":"66Cmf","react-bootstrap/Col":"2D0r8","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad","react-redux":"7GDa4"}],"66Cmf":[function(require,module,exports) {
 var helpers = require("../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -40060,18 +39929,6 @@ parcelHelpers.export(exports, "FaveMovies", ()=>FaveMovies
 );
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _image = require("react-bootstrap/Image");
-var _imageDefault = parcelHelpers.interopDefault(_image);
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _row = require("react-bootstrap/Row");
-var _rowDefault = parcelHelpers.interopDefault(_row);
-var _col = require("react-bootstrap/Col");
-var _colDefault = parcelHelpers.interopDefault(_col);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _reactBootstrap = require("react-bootstrap");
-//import { Button } from '../button/button';
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _reactRouterDom = require("react-router-dom");
@@ -40079,59 +39936,20 @@ var _card = require("react-bootstrap/Card");
 var _cardDefault = parcelHelpers.interopDefault(_card);
 var _cardDeck = require("react-bootstrap/CardDeck");
 var _cardDeckDefault = parcelHelpers.interopDefault(_cardDeck);
-const mapStateToProps = (state)=>{
-    const { visibilityFilter  } = state;
-    return {
-        visibilityFilter
-    };
-};
 class FaveMovies extends _reactDefault.default.Component {
     constructor(props){
         super(props);
     }
-    //function for both adding and removing event listener
-    /*
-  //Fetch the appropriate profile from your database with MainView is mounted
-  componentDidMount(){
-    let accessToken = localStorage.getItem('token'); // get the value of the token from localStorage
-    if (accessToken !== null) {   // access token being present (i.e. "!==null") means that user is already logged in
-      this.setState({
-        user: localStorage.getItem('user')
-      });
-      this.getProfile(accessToken);  // getMovies method is executed and a GET request to the movies endpoint
-      }
-    }
-  componentWillUnmount() {
-    document.removeEventListener('keypress', this.keypressCallback);
-  }
-  /*getProfile(token) {
-    axios.get('https://myfavfilmz.herokuapp.com//users', {
-      headers: { Authorization: `Bearer ${token}`},
-      params: { 
-        ID: match.params.userId,
-      }
-  })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  })
-  .then(function () {
-    // always executed
-  }); 
-}
-*/ render() {
+    render() {
         const { user , FavoriteMovie , removeFavoriteFilm  } = this.props;
-        console.log("ProfileView", user);
+        //console.log("ProfileView", user);
         console.log("FavoriteMovies", FavoriteMovie);
-        //   if (FavoriteMovie.length === 0) return <div>You currently do not have any favorites. Go back to all movies to select your first ones today!</div>
         return(/*#__PURE__*/ _reactDefault.default.createElement(_cardDeckDefault.default, {
             variant: "h-50",
             className: " fave-movies bg-dark",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/fave-movies/fave-movies.jsx",
-                lineNumber: 71
+                lineNumber: 20
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default, {
@@ -40144,14 +39962,14 @@ class FaveMovies extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/fave-movies/fave-movies.jsx",
-                lineNumber: 73
+                lineNumber: 21
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Body, {
             className: "bg-dark h-100 mx-2",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/fave-movies/fave-movies.jsx",
-                lineNumber: 74
+                lineNumber: 22
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Title, {
@@ -40161,7 +39979,7 @@ class FaveMovies extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/fave-movies/fave-movies.jsx",
-                lineNumber: 75
+                lineNumber: 23
             },
             __self: this
         }, FavoriteMovie.Title), /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Img, {
@@ -40174,20 +39992,20 @@ class FaveMovies extends _reactDefault.default.Component {
             src: FavoriteMovie.ImagePath,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/fave-movies/fave-movies.jsx",
-                lineNumber: 76
+                lineNumber: 24
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/fave-movies/fave-movies.jsx",
-                lineNumber: 76
+                lineNumber: 24
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
             to: `/movies/${FavoriteMovie._id}`,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/fave-movies/fave-movies.jsx",
-                lineNumber: 77
+                lineNumber: 25
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -40197,7 +40015,7 @@ class FaveMovies extends _reactDefault.default.Component {
             variant: "link",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/fave-movies/fave-movies.jsx",
-                lineNumber: 78
+                lineNumber: 26
             },
             __self: this
         }, "Read More")), /*#__PURE__*/ _reactDefault.default.createElement("button", {
@@ -40210,7 +40028,7 @@ class FaveMovies extends _reactDefault.default.Component {
             onClick: removeFavoriteFilm,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/fave-movies/fave-movies.jsx",
-                lineNumber: 80
+                lineNumber: 28
             },
             __self: this
         }, "Remove")))));
@@ -40222,7 +40040,7 @@ class FaveMovies extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","react-bootstrap/Image":"5qrP5","axios":"7rA65","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","prop-types":"4dfy5","react-bootstrap":"4n7hB","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK","react-bootstrap/Card":"1CZWQ","react-bootstrap/CardDeck":"4fiZs","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad"}],"7GDa4":[function(require,module,exports) {
+},{"react":"3b2NM","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK","react-bootstrap/Card":"1CZWQ","react-bootstrap/CardDeck":"4fiZs","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad"}],"7GDa4":[function(require,module,exports) {
 "use strict";
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 exports.__esModule = true;
@@ -41472,7 +41290,6 @@ parcelHelpers.export(exports, "ProfileEdit", ()=>ProfileEdit
 //Import React and useState hook
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _loginView = require("../login-view/login-view");
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _form = require("react-bootstrap/Form");
@@ -41481,42 +41298,28 @@ var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _card = require("react-bootstrap/Card");
 var _cardDefault = parcelHelpers.interopDefault(_card);
-var _row = require("react-bootstrap/Row");
-var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
 var _reactRouterDom = require("react-router-dom");
 var _inputGroup = require("react-bootstrap/InputGroup");
 var _inputGroupDefault = parcelHelpers.interopDefault(_inputGroup);
-var _formControl = require("react-bootstrap/FormControl");
-var _formControlDefault = parcelHelpers.interopDefault(_formControl);
-var _formCheck = require("react-bootstrap/FormCheck");
-var _formCheckDefault = parcelHelpers.interopDefault(_formCheck);
-var _formFile = require("react-bootstrap/FormFile");
-var _formFileDefault = parcelHelpers.interopDefault(_formFile);
-var _reactDom = require("react-dom");
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _s = $RefreshSig$();
 function ProfileEdit(props) {
     _s();
-    const { updateUserInfo , removeUser , user , onBackClick  } = props;
+    const { updateUserInfo , removeUser , user  } = props;
     const [username, setUsername] = _react.useState(user.Username);
-    const [password, setPassword] = _react.useState("");
-    const [email, setEmail] = _react.useState(user.Email);
-    const [birthday, setBirthday] = _react.useState(user.Birthday);
     console.log("Render ProfileEdit", username);
     return [
         'Dark', 
     ].map((variant, idx)=>/*#__PURE__*/ _reactDefault.default.createElement("div", {
-            class: "profile-edit bg-dark",
+            className: "profile-edit bg-dark",
             style: {
                 width: '100%',
                 height: '80%'
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 35
+                lineNumber: 23
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -41527,14 +41330,14 @@ function ProfileEdit(props) {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 36
+                lineNumber: 24
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
             to: `/users/${user.Username}`,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 37
+                lineNumber: 25
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -41545,7 +41348,7 @@ function ProfileEdit(props) {
             variant: "primary",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 38
+                lineNumber: 26
             },
             __self: this
         }, " Back to Your Profile"))), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
@@ -41557,7 +41360,7 @@ function ProfileEdit(props) {
             xl: 8,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 41
+                lineNumber: 29
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default, {
@@ -41571,39 +41374,39 @@ function ProfileEdit(props) {
             className: "justify-content-center text-center mx-auto",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 42
+                lineNumber: 30
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Body, {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 48
+                lineNumber: 36
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "text-align-center",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 49
+                lineNumber: 37
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 50
+                lineNumber: 38
             },
             __self: this
         }, "Update your account information")), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Text, {
             className: "mb-4 mt-3 w-100",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 52
+                lineNumber: 40
             },
             __self: this
         }, "Please complete ALL fields, including whatever you would like to change, below."), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 55
+                lineNumber: 43
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -41614,20 +41417,20 @@ function ProfileEdit(props) {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 56
+                lineNumber: 44
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
             className: "float-left mr-3",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 57
+                lineNumber: 45
             },
             __self: this
         }, "Username"), /*#__PURE__*/ _reactDefault.default.createElement("br", {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 57
+                lineNumber: 45
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_inputGroupDefault.default, {
@@ -41636,7 +41439,7 @@ function ProfileEdit(props) {
             hasValidation: true,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 58
+                lineNumber: 46
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -41649,7 +41452,7 @@ function ProfileEdit(props) {
             ,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 59
+                lineNumber: 47
             },
             __self: this
         }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -41661,14 +41464,14 @@ function ProfileEdit(props) {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 69
+                lineNumber: 57
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
             className: "float-left mr-4",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 70
+                lineNumber: 58
             },
             __self: this
         }, "Password"), /*#__PURE__*/ _reactDefault.default.createElement(_inputGroupDefault.default, {
@@ -41676,7 +41479,7 @@ function ProfileEdit(props) {
             hasValidation: true,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 71
+                lineNumber: 59
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -41693,7 +41496,7 @@ function ProfileEdit(props) {
             ,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 72
+                lineNumber: 60
             },
             __self: this
         }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Text, {
@@ -41704,7 +41507,7 @@ function ProfileEdit(props) {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 84
+                lineNumber: 72
             },
             __self: this
         }, "Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji."), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -41715,14 +41518,14 @@ function ProfileEdit(props) {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 88
+                lineNumber: 76
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
             className: "float-left",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 89
+                lineNumber: 77
             },
             __self: this
         }, "Email address"), /*#__PURE__*/ _reactDefault.default.createElement(_inputGroupDefault.default, {
@@ -41730,7 +41533,7 @@ function ProfileEdit(props) {
             hasValidation: true,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 90
+                lineNumber: 78
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -41747,7 +41550,7 @@ function ProfileEdit(props) {
             ,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 91
+                lineNumber: 79
             },
             __self: this
         }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
@@ -41758,14 +41561,14 @@ function ProfileEdit(props) {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 104
+                lineNumber: 92
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
             className: "float-left mr-4",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 105
+                lineNumber: 93
             },
             __self: this
         }, "Birthday"), /*#__PURE__*/ _reactDefault.default.createElement(_inputGroupDefault.default, {
@@ -41773,7 +41576,7 @@ function ProfileEdit(props) {
             hasValidation: true,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 106
+                lineNumber: 94
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -41786,13 +41589,13 @@ function ProfileEdit(props) {
             ,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 107
+                lineNumber: 95
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control.Feedback, {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 115
+                lineNumber: 103
             },
             __self: this
         }, "Looks good!"))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
@@ -41801,7 +41604,7 @@ function ProfileEdit(props) {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 118
+                lineNumber: 106
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -41810,19 +41613,19 @@ function ProfileEdit(props) {
             onClick: updateUserInfo,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 119
+                lineNumber: 107
             },
             __self: this
         }, "Update Account"), /*#__PURE__*/ _reactDefault.default.createElement("br", {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 119
+                lineNumber: 107
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement("br", {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 119
+                lineNumber: 107
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement("button", {
@@ -41830,7 +41633,7 @@ function ProfileEdit(props) {
             onClick: removeUser,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 120
+                lineNumber: 108
             },
             __self: this
         }, "Delete Account"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Text, {
@@ -41839,13 +41642,13 @@ function ProfileEdit(props) {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/profile-edit/profile-edit.jsx",
-                lineNumber: 121
+                lineNumber: 109
             },
             __self: this
         }, "WARNING: This action cannot be reversed!")))))))
     );
 }
-_s(ProfileEdit, "NltdAh4/il9baMC97lARd7/Mynw=");
+_s(ProfileEdit, "mjv9iV6HKAa2fDHbfV5KEqWDG/Q=");
 _c = ProfileEdit;
 ProfileEdit.propTypes = {
     username: _propTypesDefault.default.shape({
@@ -41865,7 +41668,7 @@ $RefreshReg$(_c, "ProfileEdit");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","../login-view/login-view":"4SAAi","prop-types":"4dfy5","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap/Card":"1CZWQ","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","react-router-dom":"1PMSK","react-bootstrap/InputGroup":"3nb5C","react-bootstrap/FormControl":"573gP","react-bootstrap/FormCheck":"6WcKM","react-bootstrap/FormFile":"6mhKG","react-dom":"2sg1U","axios":"7rA65","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad"}],"IwuFY":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap/Card":"1CZWQ","react-bootstrap/Col":"2D0r8","react-router-dom":"1PMSK","react-bootstrap/InputGroup":"3nb5C","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad"}],"IwuFY":[function(require,module,exports) {
 var helpers = require("../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41876,30 +41679,15 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _faveMovies = require("../fave-movies/fave-movies");
 var _reactRouterDom = require("react-router-dom");
 var _reactRedux = require("react-redux");
 var _visibilityFilterInput = require("../visibility-filter-input/visibility-filter-input");
 var _visibilityFilterInputDefault = parcelHelpers.interopDefault(_visibilityFilterInput);
-var _image = require("react-bootstrap/Image");
-var _imageDefault = parcelHelpers.interopDefault(_image);
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _row = require("react-bootstrap/Row");
 var _rowDefault = parcelHelpers.interopDefault(_row);
-var _col = require("react-bootstrap/Col");
-var _colDefault = parcelHelpers.interopDefault(_col);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _reactBootstrap = require("react-bootstrap");
-var _profileView = require("../profile-view/profile-view");
-//import { Button } from '../button/button';
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _card = require("react-bootstrap/Card");
-var _cardDefault = parcelHelpers.interopDefault(_card);
-var _cardDeck = require("react-bootstrap/CardDeck");
-var _cardDeckDefault = parcelHelpers.interopDefault(_cardDeck);
 const mapStateToProps = (state)=>{
     const { visibilityFilter  } = state;
     return {
@@ -41908,25 +41696,25 @@ const mapStateToProps = (state)=>{
 };
 //create MovieView component
 function NavigationBar(props) {
-    const { movies , user , onLoggedOut , visibilityFilter  } = props;
+    const { user , onLoggedOut , visibilityFilter  } = props;
     return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 39
+            lineNumber: 24
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         className: "main-view justify-content-md-center mx-auto w-100 bg-dark",
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 41
+            lineNumber: 25
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
         className: "w-100",
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 42
+            lineNumber: 26
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Navbar, {
@@ -41937,7 +41725,7 @@ function NavigationBar(props) {
         className: "w-100",
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 43
+            lineNumber: 27
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Navbar.Brand, {
@@ -41945,14 +41733,14 @@ function NavigationBar(props) {
         to: "/",
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 44
+            lineNumber: 28
         },
         __self: this
     }, "myfavfilmz"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Navbar.Toggle, {
         "aria-controls": "responsive-navbar-nav",
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 45
+            lineNumber: 29
         },
         __self: this
     }), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Navbar.Collapse, {
@@ -41960,7 +41748,7 @@ function NavigationBar(props) {
         className: "w-90",
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 46
+            lineNumber: 30
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Nav, {
@@ -41970,7 +41758,7 @@ function NavigationBar(props) {
         },
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 47
+            lineNumber: 31
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Nav.Link, {
@@ -41980,43 +41768,28 @@ function NavigationBar(props) {
         className: "ml-1",
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 48
+            lineNumber: 32
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 49
+            lineNumber: 33
         },
         __self: this
     }, "Account")), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Nav.Link, {
-        as: _reactRouterDom.Link,
-        to: "/",
-        variant: "transparent",
-        __source: {
-            fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 51
-        },
-        __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
-        __source: {
-            fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 52
-        },
-        __self: this
-    }, "Movies")), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Nav.Link, {
         as: _reactRouterDom.Link,
         to: "/about",
         variant: "transparent",
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 54
+            lineNumber: 35
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 55
+            lineNumber: 36
         },
         __self: this
     }, "About"))), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form, {
@@ -42027,14 +41800,14 @@ function NavigationBar(props) {
         className: "w-sm-100",
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 59
+            lineNumber: 39
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
         className: "my-4",
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 60
+            lineNumber: 40
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_visibilityFilterInputDefault.default, {
@@ -42042,21 +41815,21 @@ function NavigationBar(props) {
         visibilityFilter: visibilityFilter,
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 61
+            lineNumber: 41
         },
         __self: this
     })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
         className: "my-4 mx-auto",
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 63
+            lineNumber: 43
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
         to: `/users/${user.Username}`,
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 64
+            lineNumber: 44
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -42065,7 +41838,7 @@ function NavigationBar(props) {
         onClick: "window.location.reload()",
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 65
+            lineNumber: 45
         },
         __self: this
     }, user.Username, "'s profile")), /*#__PURE__*/ _reactDefault.default.createElement("button", {
@@ -42075,7 +41848,7 @@ function NavigationBar(props) {
         onClick: onLoggedOut,
         __source: {
             fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/navigation-bar/navigation-bar.jsx",
-            lineNumber: 67
+            lineNumber: 47
         },
         __self: this
     }, "Logout")))))))));
@@ -42090,7 +41863,7 @@ $RefreshReg$(_c, "NavigationBar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","../fave-movies/fave-movies":"66Cmf","react-bootstrap/Image":"5qrP5","axios":"7rA65","prop-types":"4dfy5","react-bootstrap":"4n7hB","../profile-view/profile-view":"6WJfr","react-router-dom":"1PMSK","react-bootstrap/Button":"1ru0l","react-bootstrap/Card":"1CZWQ","react-bootstrap/CardDeck":"4fiZs","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","react-redux":"7GDa4","../visibility-filter-input/visibility-filter-input":"39AC6"}],"39AC6":[function(require,module,exports) {
+},{"react":"3b2NM","react-bootstrap":"4n7hB","react-router-dom":"1PMSK","react-bootstrap/Button":"1ru0l","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad","react-bootstrap/Row":"3fzwD","react-redux":"7GDa4","../visibility-filter-input/visibility-filter-input":"39AC6"}],"39AC6":[function(require,module,exports) {
 var helpers = require("../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42227,7 +42000,80 @@ function removeFavorite(id) {
     };
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N"}],"4QrvU":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N"}],"5bitJ":[function(require,module,exports) {
+var helpers = require("../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+var _reactRedux = require("react-redux");
+var _movieCard = require("../movie-card/movie-card");
+const mapStateToProps = (state)=>{
+    const { visibilityFilter  } = state;
+    return {
+        visibilityFilter
+    };
+};
+function MoviesList(props) {
+    const { movies , visibilityFilter , addFavorite  } = props;
+    let filteredMovies = movies;
+    if (visibilityFilter !== '') filteredMovies = movies.filter((m)=>m.Title.toLowerCase().includes(visibilityFilter.toLowerCase())
+    );
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, null, filteredMovies.length > 0 ? filteredMovies.map((m)=>/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+            variant: "h-50",
+            className: "bg-dark justify-md-content-center",
+            xs: 12,
+            sm: 10,
+            md: 4,
+            lg: 4,
+            xl: 3,
+            xxl: 2,
+            key: m._id,
+            __source: {
+                fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movies-list/movies-list.jsx",
+                lineNumber: 25
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_movieCard.MovieCard, {
+            movie: m,
+            addFavorite: addFavorite,
+            __source: {
+                fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movies-list/movies-list.jsx",
+                lineNumber: 26
+            },
+            __self: this
+        }))
+    ) : /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "bg-dark justify-md-content-center m-5",
+        style: {
+            color: 'white',
+            height: '35rem'
+        },
+        __source: {
+            fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movies-list/movies-list.jsx",
+            lineNumber: 30
+        },
+        __self: this
+    }, "No movies found. Please check the name of the film you are looking for and try again.")));
+}
+_c = MoviesList;
+exports.default = _reactRedux.connect(mapStateToProps)(MoviesList);
+var _c;
+$RefreshReg$(_c, "MoviesList");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"3b2NM","react-bootstrap/Col":"2D0r8","react-redux":"7GDa4","../movie-card/movie-card":"4QrvU","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad"}],"4QrvU":[function(require,module,exports) {
 var helpers = require("../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42250,14 +42096,6 @@ var _cardDefault = parcelHelpers.interopDefault(_card);
 var _cardDeck = require("react-bootstrap/CardDeck");
 var _cardDeckDefault = parcelHelpers.interopDefault(_cardDeck);
 var _reactRouterDom = require("react-router-dom");
-//import { IoArrowForwardCircle } from 'react-icons/io';
-// Wanted to use  <div><IoArrowForwardCircle /> </div> to create arrow button in movies mockup
-const mapStateToProps = (state)=>{
-    const { visibilityFilter  } = state;
-    return {
-        visibilityFilter
-    };
-};
 class MovieCard extends _reactDefault.default.Component {
     constructor(props){
         super(props);
@@ -42275,20 +42113,20 @@ class MovieCard extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-card/movie-card.jsx",
-                lineNumber: 30
+                lineNumber: 19
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default, {
             className: "text-center bg-dark h-100 mx-2",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-card/movie-card.jsx",
-                lineNumber: 31
+                lineNumber: 20
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Body, {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-card/movie-card.jsx",
-                lineNumber: 32
+                lineNumber: 21
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Title, {
@@ -42298,7 +42136,7 @@ class MovieCard extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-card/movie-card.jsx",
-                lineNumber: 33
+                lineNumber: 22
             },
             __self: this
         }, movie.Title), /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Img, {
@@ -42310,7 +42148,7 @@ class MovieCard extends _reactDefault.default.Component {
             src: movie.ImagePath,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-card/movie-card.jsx",
-                lineNumber: 34
+                lineNumber: 23
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Text, {
@@ -42320,27 +42158,27 @@ class MovieCard extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-card/movie-card.jsx",
-                lineNumber: 35
+                lineNumber: 24
             },
             __self: this
         }, movie.Description.Synopsis), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
             to: `/movies/${movie._id}`,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-card/movie-card.jsx",
-                lineNumber: 36
+                lineNumber: 25
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
             variant: "link",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-card/movie-card.jsx",
-                lineNumber: 37
+                lineNumber: 26
             },
             __self: this
         }, "Read More")), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-card/movie-card.jsx",
-                lineNumber: 39
+                lineNumber: 28
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -42351,7 +42189,7 @@ class MovieCard extends _reactDefault.default.Component {
             onClick: addFavorite,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movie-card/movie-card.jsx",
-                lineNumber: 40
+                lineNumber: 29
             },
             __self: this
         }, "Add to Favorites"))))));
@@ -42389,81 +42227,7 @@ MovieCard.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","prop-types":"4dfy5","react-bootstrap/Button":"1ru0l","react-bootstrap/Card":"1CZWQ","react-bootstrap/CardDeck":"4fiZs","react-router-dom":"1PMSK","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad"}],"5bitJ":[function(require,module,exports) {
-var helpers = require("../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-helpers.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _col = require("react-bootstrap/Col");
-var _colDefault = parcelHelpers.interopDefault(_col);
-var _reactRedux = require("react-redux");
-var _movieCard = require("../movie-card/movie-card");
-const mapStateToProps = (state)=>{
-    const { visibilityFilter  } = state;
-    return {
-        visibilityFilter
-    };
-};
-function MoviesList(props) {
-    const { movies , visibilityFilter , addFavorite  } = props;
-    let filteredMovies = movies;
-    if (visibilityFilter !== '') filteredMovies = movies.filter((m)=>m.Title.toLowerCase().includes(visibilityFilter.toLowerCase())
-    );
-    //if (!movies) return <div className="main-view"/>;
-    return(/*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, null, filteredMovies.length > 0 ? filteredMovies.map((m)=>/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
-            variant: "h-50",
-            className: "bg-dark justify-md-content-center",
-            xs: 12,
-            sm: 10,
-            md: 4,
-            lg: 4,
-            xl: 3,
-            xxl: 2,
-            key: m._id,
-            __source: {
-                fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movies-list/movies-list.jsx",
-                lineNumber: 28
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_movieCard.MovieCard, {
-            movie: m,
-            addFavorite: addFavorite,
-            __source: {
-                fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movies-list/movies-list.jsx",
-                lineNumber: 29
-            },
-            __self: this
-        }))
-    ) : /*#__PURE__*/ _reactDefault.default.createElement("div", {
-        className: "bg-dark justify-md-content-center m-5",
-        style: {
-            color: 'white',
-            height: '35rem'
-        },
-        __source: {
-            fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/movies-list/movies-list.jsx",
-            lineNumber: 33
-        },
-        __self: this
-    }, "No movies found. Please check the name of the film you are looking for and try again.")));
-}
-_c = MoviesList;
-exports.default = _reactRedux.connect(mapStateToProps)(MoviesList);
-var _c;
-$RefreshReg$(_c, "MoviesList");
-
-  helpers.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"3b2NM","react-bootstrap/Col":"2D0r8","react-redux":"7GDa4","../movie-card/movie-card":"4QrvU","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad"}],"74fad":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","react-bootstrap/Button":"1ru0l","react-bootstrap/Card":"1CZWQ","react-bootstrap/CardDeck":"4fiZs","react-router-dom":"1PMSK","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad"}],"74fad":[function(require,module,exports) {
 var helpers = require("../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42477,20 +42241,6 @@ parcelHelpers.export(exports, "UnderConstruction", ()=>UnderConstruction
 );
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _image = require("react-bootstrap/Image");
-var _imageDefault = parcelHelpers.interopDefault(_image);
-var _row = require("react-bootstrap/Row");
-var _rowDefault = parcelHelpers.interopDefault(_row);
-var _col = require("react-bootstrap/Col");
-var _colDefault = parcelHelpers.interopDefault(_col);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _movieView = require("../movie-view/movie-view");
-var _reactBootstrap = require("react-bootstrap");
-//import { Button } from '../button/button';
-var _button = require("react-bootstrap/Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _reactRouterDom = require("react-router-dom");
 class UnderConstruction extends _reactDefault.default.Component {
     //function for both adding and removing event listener
     keypressCallback(event) {
@@ -42503,7 +42253,6 @@ class UnderConstruction extends _reactDefault.default.Component {
         document.removeEventListener('keypress', this.keypressCallback);
     }
     render() {
-        // const { onBackClick, director } = this.props;
         return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "under-construction",
             style: {
@@ -42512,13 +42261,13 @@ class UnderConstruction extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/under-construction/under-construction.jsx",
-                lineNumber: 33
+                lineNumber: 22
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h2", {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/under-construction/under-construction.jsx",
-                lineNumber: 34
+                lineNumber: 23
             },
             __self: this
         }, "This page is currently under construction. Please check back at a later time.")));
@@ -42530,7 +42279,7 @@ class UnderConstruction extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","react-bootstrap/Image":"5qrP5","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","prop-types":"4dfy5","../movie-view/movie-view":"2ixDk","react-bootstrap":"4n7hB","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad"}],"7eO9w":[function() {},{}],"7panR":[function(require,module,exports) {
+},{"react":"3b2NM","@parcel/transformer-js/src/esmodule-helpers.js":"5rc4N","../../../../../../../usr/local/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"Do7ad"}],"7eO9w":[function() {},{}],"7panR":[function(require,module,exports) {
 'use strict';
 Object.defineProperty(exports, '__esModule', {
     value: true
