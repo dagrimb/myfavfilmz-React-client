@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { BrowserRouter as Link} from "react-router-dom";
+import { Link} from "react-router-dom";
 
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -45,7 +45,7 @@ export function RegistrationView(props) {
     [
       'Dark',
     ].map((variant, idx) => (
-      <div class="bg-primary" style={{ width: '100%', height: '130rem'}} /*key={user._id}*/>
+      <div className="bg-primary" style={{ width: '100%', height: '130rem'}} /*key={user._id}*/>
         <Col className="bg-primary w-100 h-100" xs={12} sm={12} md={12} lg={12} xl={12}>
         <p style={{ color: 'white', paddingTop: 15, paddingLeft: 15}}>myfavfilmz</p>
         <Card
