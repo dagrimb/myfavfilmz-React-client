@@ -39266,7 +39266,7 @@ function RegistrationView(props) {
     return [
         'Dark', 
     ].map((variant, idx)=>/*#__PURE__*/ _reactDefault.default.createElement("div", {
-            class: "bg-primary",
+            className: "bg-primary",
             style: {
                 width: '100%',
                 height: '130rem'
@@ -39538,7 +39538,7 @@ function RegistrationView(props) {
                 lineNumber: 123
             },
             __self: this
-        }, "Already a member?"), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
+        }, "Already a member?"), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
             to: `/`,
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/registration-view/registration-view.jsx",
