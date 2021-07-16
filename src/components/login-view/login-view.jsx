@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import InputGroup from 'react-bootstrap/InputGroup';
-import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+import { Link} from "react-router-dom";
 
 import '../../index.scss';
 import { Col } from 'react-bootstrap';
