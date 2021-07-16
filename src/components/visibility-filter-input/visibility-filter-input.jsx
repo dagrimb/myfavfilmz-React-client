@@ -10,6 +10,7 @@ function VisibilityFilterInput(props) {
     onChange={e => props.setFilter(e.target.value)}
     value={props.visibilityFilter}
     placeholder="Type movie name here"
+    className="text-center"
   />;
 }
 
