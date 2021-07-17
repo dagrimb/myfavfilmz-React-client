@@ -136,7 +136,7 @@ class MainView extends React.Component {
       }
       
     addNewFilm(e) {
-      const favoriteMovies = this.state.FavoriteMovies;
+      const favoriteMovies = this.props.user.FavoriteMovies;
       const movieID = e.currentTarget.dataset.id;
       const token = localStorage.getItem('token');
       const userID = localStorage.getItem('userID');
