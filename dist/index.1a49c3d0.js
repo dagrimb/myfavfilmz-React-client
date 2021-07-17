@@ -21613,7 +21613,9 @@ class MainView extends _reactDefault.default.Component {
                     ,
                     onLoggedOut: (user1)=>this.onLoggedOut(user1)
                 }), /*#__PURE__*/ _reactDefault.default.createElement(_profileViewDefault.default, {
-                    FavoriteMovie: FavoriteMovies,
+                    FavoriteMovie: user.FavoriteMovies.map((movieID)=>movies.find((m)=>m._id === movieID
+                        )
+                    ),
                     user: user,
                     removeFavoriteFilm: (movie)=>this.removeFavoriteFilm(movie)
                     ,
@@ -21662,7 +21664,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 306
+                lineNumber: 307
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21672,7 +21674,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 318
+                lineNumber: 319
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21682,7 +21684,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 321
+                lineNumber: 322
             },
             __self: this
         }))));
