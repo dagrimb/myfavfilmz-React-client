@@ -143,7 +143,7 @@ class MainView extends React.Component {
 
       console.log("update Favorite Film", userID, movieID, favoriteMovies);
 
-      if ( this.state.user.FavoriteMovies.indexOf( movieID ) >= 0 ) {
+      if ( favoriteMovies.indexOf( movieID ) >= 0 ) {
         alert("This movie is already in your favorites.");
       } else {
       axios.post('https://myfavfilmz.herokuapp.com/users/' + userID + '/Movies/' + movieID, {}, {
