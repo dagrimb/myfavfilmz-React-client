@@ -21370,7 +21370,7 @@ class MainView extends _reactDefault.default.Component {
         const token = localStorage.getItem('token');
         const userID = localStorage.getItem('userID');
         console.log("update Favorite Film", userID, movieID, favoriteMovies);
-        if (this.state.user.FavoriteMovies.indexOf(movieID) >= 0) alert("This movie is already in your favorites.");
+        if (favoriteMovies.indexOf(movieID) >= 0) alert("This movie is already in your favorites.");
         else _axiosDefault.default.post('https://myfavfilmz.herokuapp.com/users/' + userID + '/Movies/' + movieID, {
         }, {
             headers: {
