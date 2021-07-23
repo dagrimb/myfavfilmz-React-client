@@ -299,8 +299,7 @@ class MainView extends React.Component {
               return (
                 <>
                   <NavigationBar FavoriteMovie={FavoriteMovies} user={user} onLoggedIn={user => this.onLoggedIn(user)} onLoggedOut={user => this.onLoggedOut(user)} />
-                  <ProfileView FavoriteMovie={user.FavoriteMovies.map(movieID => movies.find(m => m._id === movieID))} 
-                  user={user} removeFavoriteFilm={movie => this.removeFavoriteFilm(movie)} onBackClick={() => history.goBack()}/>
+                  <ProfileView FavoriteMovie={FavoriteMovies} user={user} removeFavoriteFilm={movie => this.removeFavoriteFilm(movie)} onBackClick={() => history.goBack()}/>
                 </>
               )
             }} />
