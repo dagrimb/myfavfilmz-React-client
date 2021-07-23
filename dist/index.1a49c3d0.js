@@ -21394,7 +21394,9 @@ class MainView extends _reactDefault.default.Component {
                 Authorization: `Bearer ${token}`
             }
         }).then((response)=>{
-            this.props.setUser(response.data);
+            this.props.removeFavorite(response);
+            console.log(response);
+            window.location.reload();
             alert("Your favorite movie list has been updated");
         }).catch((error)=>{
             console.log(error);
@@ -21453,14 +21455,14 @@ class MainView extends _reactDefault.default.Component {
         return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 242
+                lineNumber: 244
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "main-view justify-content-center ml-0 mr-0 w-100 bg-dark",
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 243
+                lineNumber: 245
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21486,7 +21488,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 244
+                lineNumber: 246
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21504,7 +21506,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 254
+                lineNumber: 256
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21534,7 +21536,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 257
+                lineNumber: 259
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21563,7 +21565,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 269
+                lineNumber: 271
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21592,7 +21594,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 281
+                lineNumber: 283
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21621,7 +21623,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 293
+                lineNumber: 295
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21661,7 +21663,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 304
+                lineNumber: 306
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21671,7 +21673,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 316
+                lineNumber: 318
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -21681,7 +21683,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/davidgrimberg/Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 319
+                lineNumber: 321
             },
             __self: this
         }))));
