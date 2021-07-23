@@ -237,8 +237,8 @@ class MainView extends React.Component {
 
 
   render() {
-    const { movies, user } = this.props; // movies is extracted from this.props rather than this.state
-    let { FavoriteMovies } = this.state;
+    const { movies } = this.props; // movies is extracted from this.props rather than this.state
+    let { FavoriteMovies, user } = this.state;
     //console.log(FavoriteMovies);
 
       return (
