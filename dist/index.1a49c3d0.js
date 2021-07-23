@@ -21450,8 +21450,8 @@ class MainView extends _reactDefault.default.Component {
         window.location.href = '/';
     }
     render() {
-        const { movies , user  } = this.props; // movies is extracted from this.props rather than this.state
-        let { FavoriteMovies  } = this.state;
+        const { movies  } = this.props; // movies is extracted from this.props rather than this.state
+        let { FavoriteMovies , user  } = this.state;
         //console.log(FavoriteMovies);
         return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
             __source: {
