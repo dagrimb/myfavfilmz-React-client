@@ -150,7 +150,8 @@ class MainView extends React.Component {
         headers: { Authorization: `Bearer ${token}`}
       })
       .then(response => {
-        this.props.setUser(response.data);
+        this.props.addFavorite(response.data);
+        window.location.reload();
         alert("Your favorite movie list has been updated.");
       })
       .catch (error => {
