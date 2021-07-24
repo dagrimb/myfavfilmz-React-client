@@ -229,7 +229,7 @@ class MainView extends React.Component {
     this.setState({
       user: null
     });
-    window.location.href = '/'
+    window.location.href = '/';
   }
 
 
