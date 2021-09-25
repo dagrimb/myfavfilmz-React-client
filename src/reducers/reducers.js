@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
 import { SET_FILTER, SET_MOVIES, SET_USER, SET_FAVORITES, UPDATE_INFO, ADD_FAVORITE, 
-REMOVE_FAVORITE } from '../actions/actions';
+REMOVE_FAVORITE, LOGOUT_USER, LOGIN_USER } from '../actions/actions';
 
 
 
@@ -23,12 +23,27 @@ function movies(state = [], action) { // signature, or identity card, of reducer
   }
 }
 
-function user(state = [], action) {
+const initializedState = {
+  loggedIn: false
+}
+
+export default function user(state = /*[]*/ initializedState, action) {
   switch (action.type) {
+    case LOGIN_USER:
+      return {
+        ...state,
+        loggedIn: true
+      };
     case SET_USER: // via login
       return action.value;
     case UPDATE_INFO: // via profile edit view form
       return action.value;
+    case LOGOUT_USER: 
+      return {
+        ...state,
+        loggedIn: false
+//        user: null,
+      };
     default:
       return state;
   }
