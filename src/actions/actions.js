@@ -8,6 +8,8 @@ export const UPDATE_INFO = 'UPDATE_INFO';
 export const SET_FAVORITES = 'SET_FAVORITE';
 export const ADD_FAVORITE = 'ADD_FAVORITE';
 export const REMOVE_FAVORITE = 'REMOVE_FAVORITE';
+export const LOGIN_USER = 'LOGIN_USER';
+export const LOGOUT_USER = 'LOGOUT_USER';
 
 
 export function setMovies(value) {
@@ -53,12 +55,14 @@ export function setFavorites(value) {
   }
 }
 
-export function addFavorite(id) {
+/*export function addFavorite(id) {
   return {
     type: ADD_FAVORITE,
     id
   }
-}
+}*/
+
+
 
 export function removeFavorite(id) {
   return {
@@ -66,3 +70,18 @@ export function removeFavorite(id) {
     id
   }
 }
+
+export function loginUser() {
+  return {
+    type: LOGIN_USER
+  }
+}
+
+export function logoutUser() {
+  return {
+    type: LOGOUT_USER
+  }
+}
+
+
+
