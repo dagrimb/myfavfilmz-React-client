@@ -6,25 +6,20 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link} from "react-router-dom";
 
-import { connect } from 'react-redux';
-import { reduxForm } from 'redux-form';
-import * as Actions from '../../actions/actions';
-
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import axios from 'axios';
 
-class RegistrationView extends React.Component {
 
 //call useState method and set to empty string the represents values prior to login
-/*export function RegistrationView(props) {
+export function RegistrationView(props) {
   const [ username, setUsername ] = useState('');
   const [ password, setPassword ] = useState('');
   const [ email, setEmail ] = useState('');
-  const [ birthday, setBirthday ] = useState(new Date());*/
+  const [ birthday, setBirthday ] = useState(new Date());
 
   //Send request to server for auth
-  handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log(username, password, email, birthday);
     axios.post('https://myfavfilmz.herokuapp.com/users', {
@@ -35,7 +30,6 @@ class RegistrationView extends React.Component {
     })
     .then(response => { // if previous backend validation successful...
       const data = response.data;
-      this.props.loginUser(data);
       console.log(data); // ... data logged to console
       window.open('/', '_self'); // '_self' argument opens current tab (user is being re-directed to 
                                  // main view)
@@ -44,10 +38,8 @@ class RegistrationView extends React.Component {
       console.log('error registering the user')
       alert("Registration failed. Please check your information and try again.");
     });
+    props.handleRegister(username);
   };
-
-  render() {
-    const { movies, user } = this.props;
 
   return (
     [
@@ -139,7 +131,6 @@ class RegistrationView extends React.Component {
     </div>
     ))
   )}
-    }
 
 RegistrationView.propTypes = {
   username: PropTypes.shape({
@@ -151,7 +142,3 @@ RegistrationView.propTypes = {
   }),
   onClick: PropTypes.func
 };
-
-export default connect(null, Actions)(reduxForm({
-  form: 'register',
-})(RegistrationView));
