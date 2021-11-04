@@ -10,18 +10,15 @@ import { Link} from "react-router-dom";
 import '../../index.scss';
 import { Col } from 'react-bootstrap';
 import axios from 'axios';
-import { reduxForm } from 'redux-form';
-import { connect } from 'react-redux';
-import * as Actions from '../../actions/actions';
 
-const LoginView = props => {
+
 //call useState method and set to empty string the represents values prior to login
-//export function LoginView(props) {
+export function LoginView(props) {
   const [ username, setUsername ] = useState('');
   const [ password, setPassword ] = useState('');
 
   //Send request to server for auth
-  handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     //prevent default behavior of submitting form
     e.preventDefault();
     //console.log(username, password);
@@ -32,20 +29,17 @@ const LoginView = props => {
       })
       .then(response => {
         const data = response.data;
-        console.log(data);
+        //console.log(data);
         //call props.onLoggedIn(username), which provides the username to our parent component (child to parent communication)
-        this.props.loginUser(data); //will trigger onLoggedIn method of main-view.jsx; passed to the LoginView and triggers the function 
+        props.onLoggedIn(data); //will trigger onLoggedIn method of main-view.jsx; passed to the LoginView and triggers the function 
         //onLoggedIn(authData) in MainView when the user logs in
-        console.log(data);
+        //console.log(data);
       })
       .catch(e => {
         console.log('no such user')
         alert("Login failed. Please check your information and try again.");
       });
     };
-
-//    render() {
-  //    const { movies, user } = this.props;
 
   return (
     [
@@ -111,7 +105,8 @@ const LoginView = props => {
         </Card>
       </Col>
     </div>
-    )))}
+  ))
+)}
 
 LoginView.propTypes = {
   user: PropTypes.shape({
@@ -120,9 +115,3 @@ LoginView.propTypes = {
   }),
   onClick: PropTypes.func
 };
-
-const mapStateToProps = state => ({
-  loggedIn: state.loggedIn
-})
-
-export default connect(mapStateToProps)(LoginView);
