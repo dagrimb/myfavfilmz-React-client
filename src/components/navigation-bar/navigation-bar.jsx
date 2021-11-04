@@ -2,10 +2,13 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import * as Actions from '../../actions/actions';
+
 import VisibilityFilterInput from '../visibility-filter-input/visibility-filter-input';
 
-
+const mapStateToProps = state => {
+  const { visibilityFilter } = state;
+  return { visibilityFilter };
+};
 
 import Row from 'react-bootstrap/Row';
 import { Navbar,Nav,Form} from 'react-bootstrap';
@@ -14,16 +17,8 @@ import Button from 'react-bootstrap/Button';
 
 
 //create MovieView component
-class NavigationBar extends React.Component {
-
-  onLoggedOut() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('userID');
-    this.props.logoutUser();
-  }
-
-  render() {
-    const { user, visibilityFilter } = this.props;
+function NavigationBar(props) {
+  const { user, onLoggedOut, visibilityFilter } = props;
 
     return (
       <Router>
@@ -49,7 +44,7 @@ class NavigationBar extends React.Component {
                   <Link to={`/users/${user.Username}`}>
                     <Button className="mx-4 " variant="link-white" onClick="window.location.reload()">{user.Username}'s profile</Button>
                   </Link>
-                  <button style={{ marginRight: '0' }} onClick={() => this.onLoggedOut()}>Logout</button>
+                  <button style={{ marginRight: '0' }} onClick={onLoggedOut}>Logout</button>
                   </div>  
                 </Form>
               </Navbar.Collapse>
@@ -59,14 +54,5 @@ class NavigationBar extends React.Component {
       </Router>            
       );
     }
-  }
-  
-  function mapStateToProps(state) {
-      const { visibilityFilter } = state;
-      return { 
-        visibilityFilter, 
-        loggedIn: state.loggedIn 
-      };
-    };
-
-  export default connect(mapStateToProps, Actions)(NavigationBar);
+      
+  export default connect(mapStateToProps)(NavigationBar);
