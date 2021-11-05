@@ -71,7 +71,7 @@ class MainView extends React.Component {
         headers: { Authorization: `Bearer ${token}`}  
       })                                              
       .then(response => {
-        this.props.setUser(response.data);    
+        this.props.setUser(response.data);         
       })
       .catch(function (error) {
         console.log(error);
@@ -143,7 +143,7 @@ class MainView extends React.Component {
 
       console.log("update Favorite Film", userID, movieID, favoriteMovies);
 
-      if ( favoriteMovies.indexOf( movieID ) >= 0 ) {
+      if ( this.state.user.FavoriteMovies.indexOf( movieID ) >= 0 ) {
         alert("This movie is already in your favorites.");
       } else {
       axios.post('https://myfavfilmz.herokuapp.com/users/' + userID + '/Movies/' + movieID, {}, {
@@ -234,8 +234,8 @@ class MainView extends React.Component {
 
 
   render() {
-    const { movies, user } = this.props; // movies is extracted from this.props rather than this.state
-    let { FavoriteMovies } = this.state;
+    const { movies} = this.props; // movies is extracted from this.props rather than this.state
+    let { FavoriteMovies, user} = this.state;
     //console.log(FavoriteMovies);
 
       return (
