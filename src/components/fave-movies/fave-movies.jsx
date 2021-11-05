@@ -32,4 +32,3 @@ export class FaveMovies extends React.Component {
     );
   }
 }
-
