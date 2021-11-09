@@ -71,7 +71,7 @@ class MainView extends React.Component {
         headers: { Authorization: `Bearer ${token}`}  
       })                                              
       .then(response => {
-        this.props.setUser(response.data);         
+        this.props.setUser(response.data);    
       })
       .catch(function (error) {
         console.log(error);
@@ -143,7 +143,7 @@ class MainView extends React.Component {
 
       console.log("update Favorite Film", userID, movieID, favoriteMovies);
 
-      if ( this.state.user.FavoriteMovies.indexOf( movieID ) >= 0 ) {
+      if ( favoriteMovies.indexOf( movieID ) >= 0 ) {
         alert("This movie is already in your favorites.");
       } else {
       axios.post('https://myfavfilmz.herokuapp.com/users/' + userID + '/Movies/' + movieID, {}, {
@@ -234,15 +234,15 @@ class MainView extends React.Component {
 
 
   render() {
-    const { movies} = this.props; // movies is extracted from this.props rather than this.state
-    let { FavoriteMovies, user} = this.state;
-    //console.log(FavoriteMovies);
+    const { movies, user } = this.props; // movies is extracted from this.props rather than this.state
+    //let { FavoriteMovies } = this.state;
+    console.log(user);
 
       return (
         <Router>
           <Row className="main-view justify-content-center ml-0 mr-0 w-100 bg-dark">
               <Route exact path="/" render={() => {
-                if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister} onLoggedOut={user => this.onLoggedOut(user)}/>
+                if (movies.length === 0) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister} onLoggedOut={user => this.onLoggedOut(user)}/>
                 return ( 
                   <>
                     <NavigationBar movies={movies} user={user} onLoggedIn={user => this.onLoggedIn(user)} onLoggedOut={user => this.onLoggedOut(user)} />
@@ -252,8 +252,7 @@ class MainView extends React.Component {
                 }} 
               />
             <Route exact path="/register" render={() => {
-              if (user) return <Redirect to="/" />
-              if (!user) return <RegistrationView handleRegister={value => this.handleRegister(value)} onRegistered={this.onRegistered}/>}} />
+              return <RegistrationView handleRegister={value => this.handleRegister(value)} onRegistered={this.onRegistered}/>}} />
             <Route path="/movies/:movieId" render={({ match, history }) => { // this path will display a single movie
               if (!user) return <div>Loading...</div>             
               if (movies.length === 0) return <div className="main-view" />  
@@ -291,11 +290,11 @@ class MainView extends React.Component {
               )
             }} />
             <Route exact path="/users/:Username" render={({ match, history}) => {
-             //if (!user) return <div>Loading...</div>            
-              if (movies.length === 0) return <div className="main-view" />
+             if (movies.length === 0) return <div>Loading...</div>            
+             // if (movies.length === 0) return <div className="main-view" />
               return (
                 <>
-                  <NavigationBar FavoriteMovie={FavoriteMovies} user={user} onLoggedIn={user => this.onLoggedIn(user)} onLoggedOut={user => this.onLoggedOut(user)} />
+                  <NavigationBar FavoriteMovie={user.FavoriteMovies} user={user} onLoggedIn={user => this.onLoggedIn(user)} onLoggedOut={user => this.onLoggedOut(user)} />
                   <ProfileView FavoriteMovie={user.FavoriteMovies.map(movieID => movies.find(m => m._id === movieID))} 
                   user={user} removeFavoriteFilm={movie => this.removeFavoriteFilm(movie)} onBackClick={() => history.goBack()}/>
                 </>
