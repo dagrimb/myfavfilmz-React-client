@@ -19,7 +19,7 @@ import { GenreView } from '../genre-view/genre-view';
 //import Registrationview into file
 import { RegistrationView } from '../registration-view/registration-view';
 //import ProfileView into file
-import ProfileView from '../profile-view/profile-view';
+import { ProfileView } from '../profile-view/profile-view';
 import { ProfileEdit } from '../profile-edit/profile-edit';
 import NavigationBar  from '../navigation-bar/navigation-bar';
 import { UnderConstruction } from '../under-construction/under-construction';
