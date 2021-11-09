@@ -290,8 +290,8 @@ class MainView extends React.Component {
               )
             }} />
             <Route exact path="/users/:Username" render={({ match, history}) => {
-             if (movies.length === 0) return <div>Loading...</div>            
-             // if (movies.length === 0) return <div className="main-view" />
+             //if (movies.length === 0) return <div>Loading...</div>            
+              if (movies.length === 0) return <div className="main-view" />
               return (
                 <>
                   <NavigationBar FavoriteMovie={user.FavoriteMovies} user={user} onLoggedIn={user => this.onLoggedIn(user)} onLoggedOut={user => this.onLoggedOut(user)} />
