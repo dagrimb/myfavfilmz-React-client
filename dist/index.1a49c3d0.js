@@ -21409,8 +21409,10 @@ class MainView extends _reactDefault.default.Component {
             exact: true,
             path: "/users/:Username",
             render: ({ match , history  })=>{
-                if (movies.length === 0) return(/*#__PURE__*/ _reactDefault.default.createElement("div", null, "Loading..."));
-                // if (movies.length === 0) return <div className="main-view" />
+                //if (movies.length === 0) return <div>Loading...</div>            
+                if (movies.length === 0) return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+                    className: "main-view"
+                }));
                 return(/*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, null, /*#__PURE__*/ _reactDefault.default.createElement(_navigationBarDefault.default, {
                     FavoriteMovie: user.FavoriteMovies,
                     user: user,
