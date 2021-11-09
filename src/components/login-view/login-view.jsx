@@ -34,6 +34,7 @@ export function LoginView(props) {
         props.onLoggedIn(data); //will trigger onLoggedIn method of main-view.jsx; passed to the LoginView and triggers the function 
         //onLoggedIn(authData) in MainView when the user logs in
         //console.log(data);
+        window.location.reload();
       })
       .catch(e => {
         console.log('no such user')
