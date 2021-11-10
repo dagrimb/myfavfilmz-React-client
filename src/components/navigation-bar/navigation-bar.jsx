@@ -42,7 +42,7 @@ function NavigationBar(props) {
                   </div>
                   <div className="my-4 mx-auto">           
                   <Link to={`/users/${user.Username}`}>
-                    <Button className="mx-4 " variant="link-white" onClick="window.location.reload()">{user.Username}'s profile</Button>
+                    <Button className="mx-4 " variant="link-white" onClick="window.location.reload()">{props.user.Username}'s profile</Button>
                   </Link>
                   <button style={{ marginRight: '0' }} onClick={onLoggedOut}>Logout</button>
                   </div>  
