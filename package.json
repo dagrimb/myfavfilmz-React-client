@@ -4,7 +4,7 @@
   "description": "",
   "homepage": "https://dagrimb.github.io/myfavfilmz",
   "scripts": {
-    "dev": "parcel src/index.html"
+    "dev": "parcel index.html"
   },
   "dependencies": {
     "axios": "^0.21.1",
