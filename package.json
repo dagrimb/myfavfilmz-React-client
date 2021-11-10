@@ -27,6 +27,7 @@
     "@parcel/transformer-sass": "^2.0.0-beta.2",
     "parcel": "^2.0.0-beta.2"
   },
+  "default": "src/index.html",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dagrimb/myfavfilmz-client.git"
