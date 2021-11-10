@@ -1,16 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import CardDeck from 'react-bootstrap/CardDeck';
+import { Link } from 'react-router-dom';
 
 //create MovieCard component
 export class MovieCard extends React.Component {
+  constructor(props) {
+    super(props);
+  };
+
   render() {
-    const { movie, onClick } = this.props;
+    const { movie, addFavorite } = this.props;
+    //console.log("Render MovieCard", movie)
 
     return (
-       <div onClick={() => onClick(movie)} className="movie-card">{movie.Title}</div>
+      <CardDeck variant="h-50" className="bg-dark" style={{ height: '100%', color: 'white', background: '#292b2c'}}>
+        <Card className="text-center bg-dark h-100 mx-2" >
+          <Card.Body >
+            <Card.Title style={{marginTop: 25, paddingRight: 0 }}>{movie.Title}</Card.Title>
+            <Card.Img variant="top mb-3" style={{ height: '20rem', width: '13rem'}} src={movie.ImagePath} />
+            <Card.Text style={{ width: '100%', marginBottom: 25}}>{movie.Description.Synopsis}</Card.Text>
+            <Link to={`/movies/${movie._id}`}>
+              <Button variant="link">Read More</Button>
+            </Link>
+            <div>
+            <Button data-id={movie._id} type="submit" className="mt-5 mb-1"  variant="primary" onClick={addFavorite}>Add to Favorites</Button>
+            </div>
+          </Card.Body>
+        </Card>
+      </CardDeck>
     );
   }
 }
+
+
 
 MovieCard.propTypes = {
   movie: PropTypes.shape({
@@ -36,6 +61,5 @@ MovieCard.propTypes = {
     Featured: PropTypes.bool.isRequired,
     Rotten_Tomatoes_score: PropTypes.string.isRequired,
     Year: PropTypes.string.isRequired
-  }).isRequired,
-  onClick: PropTypes.func.isRequired
+  }).isRequired
 };
