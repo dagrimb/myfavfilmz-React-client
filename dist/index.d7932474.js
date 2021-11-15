@@ -24212,7 +24212,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 256,
+                lineNumber: 257,
                 columnNumber: 13
             },
             __self: this
@@ -24242,7 +24242,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 268,
+                lineNumber: 269,
                 columnNumber: 13
             },
             __self: this
@@ -24272,7 +24272,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 280,
+                lineNumber: 281,
                 columnNumber: 13
             },
             __self: this
@@ -24302,7 +24302,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 292,
+                lineNumber: 293,
                 columnNumber: 13
             },
             __self: this
@@ -24343,7 +24343,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 303,
+                lineNumber: 304,
                 columnNumber: 13
             },
             __self: this
@@ -24354,7 +24354,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 315,
+                lineNumber: 316,
                 columnNumber: 13
             },
             __self: this
@@ -24365,7 +24365,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "Developer/myfavfilmz-client/src/components/main-view/main-view.jsx",
-                lineNumber: 318,
+                lineNumber: 319,
                 columnNumber: 13
             },
             __self: this

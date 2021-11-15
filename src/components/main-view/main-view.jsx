@@ -253,6 +253,7 @@ class MainView extends React.Component {
               />
             <Route exact path="/register" render={() => {
               return <RegistrationView handleRegister={value => this.handleRegister(value)} onRegistered={this.onRegistered}/>}} />
+              
             <Route path="/movies/:movieId" render={({ match, history }) => { // this path will display a single movie
               if (!user) return <div>Loading...</div>             
               if (movies.length === 0) return <div className="main-view" />  
