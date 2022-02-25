@@ -25,9 +25,9 @@ TECHNOLOGIES USED
   * React Bootstrap: a React-specific offshoot of vanilla Bootstrap.js that, like React, is component-based, providing such interactive UI abilities and gizmos as cards, dropdowns, forms, grids, modals, pagination styling and responsiveness.
   * React Router: for enabling routing for navigation between component views when necessary
   * React Redux: a React library used to manage and centralize state and make logic easier to test, minimizing complexity by making state updates to the store using actions and reducers (for more information, please see: https://react-redux.js.org/)
-* Parcel: the used for transpiling and building everything in the application
-* Babel: transpiles JSX into JavaScript
-* Axios library: to perform AJAX operations
+* Parcel: for transpiling and bundling everything in the application (it is what instructs Babel to carry this out). Parcel makes things organized and readable by taking the seprate component files that the JSX is written in and bundles them to one JavaScript file (the .js file in the "dist" folder).
+* Babel: for configuring and transpiling JSX into JavaScript
+* Axios: an HTTP client that can perform AJAX operations with HTTP requests to the API endpoints, connecting the server- and client-side.
 
 SETTING UP THE DEVELOPMENT ENVIRONMENT: What you will need
 * A computer with a web browser (ideally Google Chrome so, as someone how may like to look under the hood of the application, one can take advantage of the React and React Redux Developer tools Google has made available).
@@ -37,8 +37,13 @@ SETTING UP THE DEVELOPMENT ENVIRONMENT: What you will need
   * Recommended: Visual Studio Code (one of the best to use with React)
 
 DEPENDENCIES/LIBRARIES NEEDED (Note: This is not an exhaustive list of dependencies. Please refer to the **package.lock.json"** for a detailed list of dependencies in order to re-build the app)
-* Babel: transpiles JSX into JavaScript
-* Parcel: for transpiling and bundling everything in the application (it is what instructs Babel to carry this out). Parcel makes things organized and readable by taking the seprate component files that the JSX is written in and bundles them to one JavaScript file (the .js file in the "dist" folder).
+* Babel
+* Parcel
+* React
+* React Bootstrap
+* React Router
+* React Redux
+* Axios
 
 WHAT YOUR **package.json** SHOULD LOOK LIKE
 
@@ -101,6 +106,7 @@ DOWNLOADS/INSTALATIONS (to avoid issues, please follow this guide in the specifi
 * Prop-Types: **npm install --save prop-types**
 
 TO RUN THE PROJECT
+* Download the project and, in your terminal or CLI, navigate to the main (i.e. **myfavfilmz-client**) project directory
 * Run the client application using parcel: **myfavfilmz-client/src/index.html** (if this does not work, please try **npm run dev**)
   * index.html serves as the entry point of the application
 
