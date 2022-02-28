@@ -1,4 +1,4 @@
-# myfavfilmz-client
+# myfavfilmz-React-client
 
 myfavfilmz is a the client-side of a Single Page Application built on the MERN stack, using the React.js library for the User Interface. The API was for built with Node.js and Express and the database with MongoDB (for more information regarding this side of the application, please visit https://github.com/dagrimb/myfavfilmz-api).
 
