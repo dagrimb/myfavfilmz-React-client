@@ -23848,10 +23848,10 @@ function setFilter(value) {
         value
     };
 }
-function setUser(value) {
+function setUser(username) {
     return {
         type: SET_USER,
-        value
+        username
     };
 }
 function submitUser(value) {
