@@ -23,10 +23,10 @@ export function setFilter(value) {
   };
 }
 
-export function setUser(username) {
+export function setUser(value) {
   return {
     type: SET_USER,
-    username
+    value
   };
 }
 
