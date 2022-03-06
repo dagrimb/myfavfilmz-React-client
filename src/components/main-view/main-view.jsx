@@ -44,12 +44,13 @@ class MainView extends React.Component {
   componentDidMount(){
     let accessToken = localStorage.getItem('token'); // get the value of the token from localStorage
     if (accessToken !== null) {   // access token being present (i.e. "!==null") means that user is already logged in
-      this.setState( { isLoggedIn: !!accessToken }); // transform string to boolean 
-      this.getUser(localStorage.getItem('username'), accessToken);
-      this.getMovies(accessToken);  // getMovies method is executed and a GET request to the movies endpoint
-      this.getFavoriteFilms(localStorage.getItem('username'), accessToken);
-      }
+        this.setState({
+          user: localStorage.getItem('user')
+      });
+      this.getMovies(accessToken);
     }
+  }
+    
 
     getMovies(token) {
       axios.get('https://myfavfilmz.herokuapp.com/movies', {  // use axios to make GET request to movies endpoint of Node.js API
@@ -78,17 +79,17 @@ class MainView extends React.Component {
       });
     }
 
-    getFavoriteFilms(username, token) {
+    getFavoriteFilms(token) {
+      const user = localStorage.getItem('user');
+      const username = user.Username;
+      console.log(user);
       axios.get('https://myfavfilmz.herokuapp.com/users/' + username + '/Movies', {  
         headers: { Authorization: `Bearer ${token}`}   
       })                                              
       .then(response => {
-       this.props.setFavorites(response.data);
         this.setState({
-          FavoriteMovies: response.data,
+          FavoriteMovies: response.data.FavoriteMovies,
         })
-        const data = response.data;
-        //console.log(data);
       })
       .catch(function (error) {
         console.log(error);
@@ -97,7 +98,7 @@ class MainView extends React.Component {
 
     updateUserInfo(event) {
       event.preventDefault();
-
+      console.log(user);
       const newUsername = document.querySelector('#username input');
       const newPassword = document.querySelector('#password input');
       const newEmail = document.querySelector('#email input');
@@ -109,7 +110,7 @@ class MainView extends React.Component {
       const updatedBirthday = newBirthday.value;
     
       const token = localStorage.getItem('token');
-      const username = localStorage.getItem('username');
+      const username = localStorage.getItem('user');
     
       console.log("update User", updatedUsername, updatedPassword, updatedEmail, updatedBirthday);
     
@@ -139,7 +140,7 @@ class MainView extends React.Component {
       const favoriteMovies = this.props.user.FavoriteMovies;
       const movieID = e.currentTarget.dataset.id;
       const token = localStorage.getItem('token');
-      const username = localStorage.getItem('username');
+      const username = localStorage.getItem('user');
 
       console.log("update Favorite Film", username, movieID, favoriteMovies);
 
@@ -164,7 +165,7 @@ class MainView extends React.Component {
 
       const movieID = e.currentTarget.dataset.id;
       const token = localStorage.getItem('token');
-      const username = localStorage.getItem('username');
+      const username = localStorage.getItem('user');
 
       console.log("update Favorite Film", username, movieID);
 
@@ -184,7 +185,7 @@ class MainView extends React.Component {
       event.preventDefault();
 
       const token = localStorage.getItem('token');
-      const username = localStorage.getItem('username');
+      const username = localStorage.getItem('user');
 
       console.log("delete user", 'username');
 
@@ -196,7 +197,7 @@ class MainView extends React.Component {
             user: null
           })
           localStorage.removeItem('token');
-          localStorage.removeItem('username');
+          localStorage.removeItem('user');
           console.log(response);
           alert("Your account has been deleted");
         })
@@ -210,12 +211,12 @@ class MainView extends React.Component {
     //console.log("LOGIN", authData);
     //this.props.setUser(authData);
     this.setState({
-      user: authData.user // ...updates the state with the logged in authData (the user's username is saved in the user state)
+      user: authData.user.Username // ...updates the state with the logged in authData (the user's username is saved in the user state)
     });
     
     //auth info (token, user) received from handleSubmit method is saved in localStorage
     localStorage.setItem('token', authData.token);
-    localStorage.setItem('username', authData.user.username);
+    localStorage.setItem('user', authData.user.Username);
     this.getMovies(authData.token); // is called and gets movies from API once user is logged in
   }
   
@@ -225,7 +226,7 @@ class MainView extends React.Component {
 
   onLoggedOut() {
     localStorage.removeItem('token');
-    localStorage.removeItem('username');
+    localStorage.removeItem('user');
     this.setState({
       user: null
     });
@@ -300,7 +301,7 @@ class MainView extends React.Component {
                   user={user} removeFavoriteFilm={movie => this.removeFavoriteFilm(movie)} onBackClick={() => history.goBack()}/>
                 </>
               )
-            }} />
+            }} />n
             <Route exact path="/users/:Username/edit_profile" render={({ match, history }) => { // this path will display a single movie
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister} onLoggedOut={user => this.onLoggedOut(user)}/>
                 return (
