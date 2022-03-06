@@ -41,15 +41,16 @@ class MainView extends React.Component {
   }
 
   //Fetch the list of movies from your database with MainView is mounted
+  //Fetch the list of movies from your database with MainView is mounted
   componentDidMount(){
     let accessToken = localStorage.getItem('token'); // get the value of the token from localStorage
     if (accessToken !== null) {   // access token being present (i.e. "!==null") means that user is already logged in
-        this.setState({
-          user: localStorage.getItem('user')
-      });
-      this.getMovies(accessToken);
+      this.setState( { isLoggedIn: !!accessToken }); // transform string to boolean 
+      this.getUser(localStorage.getItem('user'), accessToken);
+      this.getMovies(accessToken);  // getMovies method is executed and a GET request to the movies endpoint
+      this.getFavoriteFilms(localStorage.getItem('user'), accessToken);
+      }
     }
-  }
     
 
     getMovies(token) {
@@ -72,7 +73,7 @@ class MainView extends React.Component {
         headers: { Authorization: `Bearer ${token}`}  
       })                                              
       .then(response => {
-        this.props.setUser(response.data);    
+        this.props.setUser(response.data);       
       })
       .catch(function (error) {
         console.log(error);
@@ -206,19 +207,19 @@ class MainView extends React.Component {
           })
         }
 
-  //Upon successful login, this method will update the user property with specific user
-  onLoggedIn(authData) { // authData allows us to use both the user and the token; this is triggered when the user logs in...
-    //console.log("LOGIN", authData);
-    //this.props.setUser(authData);
-    this.setState({
-      user: authData.user.Username // ...updates the state with the logged in authData (the user's username is saved in the user state)
-    });
-    
-    //auth info (token, user) received from handleSubmit method is saved in localStorage
-    localStorage.setItem('token', authData.token);
-    localStorage.setItem('user', authData.user.Username);
-    this.getMovies(authData.token); // is called and gets movies from API once user is logged in
-  }
+    //Upon successful login, this method will update the user property with specific user
+    onLoggedIn(authData) { // authData allows us to use both the user and the token; this is triggered when the user logs in...
+      //console.log("LOGIN", authData);
+      //this.props.setUser(authData);
+      this.setState({
+        user: authData.user // ...updates the state with the logged in authData (the user's username is saved in the user state)
+      });
+      
+      //auth info (token, user) received from handleSubmit method is saved in localStorage
+      localStorage.setItem('token', authData.token);
+      localStorage.setItem('userID', authData.user._id);
+      this.getMovies(authData.token); // is called and gets movies from API once user is logged in
+    }
   
   handleRegister = (value) => {
     this.setState({ registerClicked: value });
