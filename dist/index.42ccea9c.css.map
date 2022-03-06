@@ -1,1 +1,0 @@
-{"mappings":"AAIA;EACE,kBAHM","sources":["Developer/myfavfilmz-client/src/index.scss"],"sourcesContent":["\n\n$color: steelblue;\n\n.myfavfilmzApplication {\n  background-color: $color;\n}"],"names":[],"version":3,"file":"index.42ccea9c.css.map","sourceRoot":"/__parcel_source_root/"}

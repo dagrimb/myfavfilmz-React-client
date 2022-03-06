@@ -37,11 +37,11 @@ export function submitUser(value) {
   }
 }
 
-export function updateInfo(value, id) {
+export function updateInfo(value, username) {
   return {
     type: UPDATE_INFO,
     value,
-    id
+    username
   }
 }
 
@@ -52,16 +52,16 @@ export function setFavorites(value) {
   }
 }
 
-export function addFavorite(id) {
+export function addFavorite(username) {
   return {
     type: ADD_FAVORITE,
-    id
+    username
   }
 }
 
-export function removeFavorite(id) {
+export function removeFavorite(username) {
   return {
     type: REMOVE_FAVORITE,
-    id
+    username
   }
 }

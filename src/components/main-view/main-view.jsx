@@ -41,15 +41,17 @@ class MainView extends React.Component {
   }
 
   //Fetch the list of movies from your database with MainView is mounted
+  //Fetch the list of movies from your database with MainView is mounted
   componentDidMount(){
     let accessToken = localStorage.getItem('token'); // get the value of the token from localStorage
     if (accessToken !== null) {   // access token being present (i.e. "!==null") means that user is already logged in
       this.setState( { isLoggedIn: !!accessToken }); // transform string to boolean 
-      this.getUser(localStorage.getItem('userID'), accessToken);
+      this.getUser(localStorage.getItem('user'), accessToken);
       this.getMovies(accessToken);  // getMovies method is executed and a GET request to the movies endpoint
-      this.getFavoriteFilms(localStorage.getItem('userID'), accessToken);
+      this.getFavoriteFilms(localStorage.getItem('user'), accessToken);
       }
     }
+    
 
     getMovies(token) {
       axios.get('https://myfavfilmz.herokuapp.com/movies', {  // use axios to make GET request to movies endpoint of Node.js API
@@ -66,29 +68,29 @@ class MainView extends React.Component {
       });
     }
 
-    getUser(userID, token) {
-      axios.get('https://myfavfilmz.herokuapp.com/users/' + userID, {  
+    getUser(username, token) {
+      axios.get('https://myfavfilmz.herokuapp.com/users/' + username, {  
         headers: { Authorization: `Bearer ${token}`}  
       })                                              
       .then(response => {
-        this.props.setUser(response.data);    
+        this.props.setUser(response.data);       
       })
       .catch(function (error) {
         console.log(error);
       });
     }
 
-    getFavoriteFilms(userID, token) {
-      axios.get('https://myfavfilmz.herokuapp.com/users/' + userID + '/Movies', {  
+    getFavoriteFilms(token) {
+      const user = localStorage.getItem('user');
+      const username = user.Username;
+      console.log(user);
+      axios.get('https://myfavfilmz.herokuapp.com/users/' + username + '/Movies', {  
         headers: { Authorization: `Bearer ${token}`}   
       })                                              
       .then(response => {
-       this.props.setFavorites(response.data);
         this.setState({
-          FavoriteMovies: response.data,
+          FavoriteMovies: response.data.FavoriteMovies,
         })
-        const data = response.data;
-        //console.log(data);
       })
       .catch(function (error) {
         console.log(error);
@@ -97,7 +99,7 @@ class MainView extends React.Component {
 
     updateUserInfo(event) {
       event.preventDefault();
-
+      console.log(user);
       const newUsername = document.querySelector('#username input');
       const newPassword = document.querySelector('#password input');
       const newEmail = document.querySelector('#email input');
@@ -109,11 +111,11 @@ class MainView extends React.Component {
       const updatedBirthday = newBirthday.value;
     
       const token = localStorage.getItem('token');
-      const userID = localStorage.getItem('userID');
+      const username = localStorage.getItem('user');
     
       console.log("update User", updatedUsername, updatedPassword, updatedEmail, updatedBirthday);
     
-      axios.put('https://myfavfilmz.herokuapp.com/users/' + userID, {
+      axios.put('https://myfavfilmz.herokuapp.com/users/' + username, {
         Username: updatedUsername, 
         Password: updatedPassword, 
         Email: updatedEmail, 
@@ -139,14 +141,14 @@ class MainView extends React.Component {
       const favoriteMovies = this.props.user.FavoriteMovies;
       const movieID = e.currentTarget.dataset.id;
       const token = localStorage.getItem('token');
-      const userID = localStorage.getItem('userID');
+      const username = localStorage.getItem('user');
 
-      console.log("update Favorite Film", userID, movieID, favoriteMovies);
+      console.log("update Favorite Film", username, movieID, favoriteMovies);
 
       if ( favoriteMovies.indexOf( movieID ) >= 0 ) {
         alert("This movie is already in your favorites.");
       } else {
-      axios.post('https://myfavfilmz.herokuapp.com/users/' + userID + '/Movies/' + movieID, {}, {
+      axios.post('https://myfavfilmz.herokuapp.com/users/' + username + '/Movies/' + movieID, {}, {
         headers: { Authorization: `Bearer ${token}`}
       })
       .then(response => {
@@ -164,11 +166,11 @@ class MainView extends React.Component {
 
       const movieID = e.currentTarget.dataset.id;
       const token = localStorage.getItem('token');
-      const userID = localStorage.getItem('userID');
+      const username = localStorage.getItem('user');
 
-      console.log("update Favorite Film", userID, movieID);
+      console.log("update Favorite Film", username, movieID);
 
-      axios.delete('https://myfavfilmz.herokuapp.com/users/' + userID + '/Movies/' + movieID, {
+      axios.delete('https://myfavfilmz.herokuapp.com/users/' + username + '/Movies/' + movieID, {
         headers: { Authorization: `Bearer ${token}`},
     })
     .then(response => {
@@ -184,11 +186,11 @@ class MainView extends React.Component {
       event.preventDefault();
 
       const token = localStorage.getItem('token');
-      const userID = localStorage.getItem('userID');
+      const username = localStorage.getItem('user');
 
-      console.log("delete user", 'userID');
+      console.log("delete user", 'username');
 
-      axios.delete('https://myfavfilmz.herokuapp.com/users/' + userID, {
+      axios.delete('https://myfavfilmz.herokuapp.com/users/' + username, {
           headers: { Authorization: `Bearer ${token}`}      
         })
         .then(response => {
@@ -196,7 +198,7 @@ class MainView extends React.Component {
             user: null
           })
           localStorage.removeItem('token');
-          localStorage.removeItem('userID');
+          localStorage.removeItem('user');
           console.log(response);
           alert("Your account has been deleted");
         })
@@ -205,19 +207,19 @@ class MainView extends React.Component {
           })
         }
 
-  //Upon successful login, this method will update the user property with specific user
-  onLoggedIn(authData) { // authData allows us to use both the user and the token; this is triggered when the user logs in...
-    //console.log("LOGIN", authData);
-    //this.props.setUser(authData);
-    this.setState({
-      user: authData.user // ...updates the state with the logged in authData (the user's username is saved in the user state)
-    });
-    
-    //auth info (token, user) received from handleSubmit method is saved in localStorage
-    localStorage.setItem('token', authData.token);
-    localStorage.setItem('userID', authData.user._id);
-    this.getMovies(authData.token); // is called and gets movies from API once user is logged in
-  }
+    //Upon successful login, this method will update the user property with specific user
+    onLoggedIn(authData) { // authData allows us to use both the user and the token; this is triggered when the user logs in...
+      //console.log("LOGIN", authData);
+      //this.props.setUser(authData);
+      this.setState({
+        user: authData.user // ...updates the state with the logged in authData (the user's username is saved in the user state)
+      });
+      
+      //auth info (token, user) received from handleSubmit method is saved in localStorage
+      localStorage.setItem('token', authData.token);
+      localStorage.setItem('userID', authData.user._id);
+      this.getMovies(authData.token); // is called and gets movies from API once user is logged in
+    }
   
   handleRegister = (value) => {
     this.setState({ registerClicked: value });
@@ -225,7 +227,7 @@ class MainView extends React.Component {
 
   onLoggedOut() {
     localStorage.removeItem('token');
-    localStorage.removeItem('userID');
+    localStorage.removeItem('user');
     this.setState({
       user: null
     });
@@ -300,7 +302,7 @@ class MainView extends React.Component {
                   user={user} removeFavoriteFilm={movie => this.removeFavoriteFilm(movie)} onBackClick={() => history.goBack()}/>
                 </>
               )
-            }} />
+            }} />n
             <Route exact path="/users/:Username/edit_profile" render={({ match, history }) => { // this path will display a single movie
             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} handleRegister={this.handleRegister} onLoggedOut={user => this.onLoggedOut(user)}/>
                 return (

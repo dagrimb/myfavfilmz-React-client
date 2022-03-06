@@ -1,1 +1,1 @@
-{"mappings":"AAIA;EACE,kBAHM","sources":["src/index.scss"],"sourcesContent":["\n\n$color: steelblue;\n\n.myfavfilmzApplication {\n  background-color: $color;\n}"],"names":[],"version":3,"file":"index.ce1d6491.css.map","sourceRoot":"/__parcel_source_root/"}
+{"mappings":"","sources":["src/index.scss"],"sourcesContent":[null],"names":[],"version":3,"file":"index.ce1d6491.css.map","sourceRoot":"/__parcel_source_root/"}

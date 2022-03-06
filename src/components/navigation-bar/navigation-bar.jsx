@@ -19,7 +19,7 @@ import Button from 'react-bootstrap/Button';
 //create MovieView component
 function NavigationBar(props) {
   const { user, onLoggedOut, visibilityFilter } = props;
-
+  console.log(user)
     return (
       <Router>
         <Row className="main-view justify-content-md-center mx-auto w-100 bg-dark" >

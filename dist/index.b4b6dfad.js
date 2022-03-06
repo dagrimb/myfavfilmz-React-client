@@ -23920,11 +23920,11 @@ function submitUser(value) {
         value
     };
 }
-function updateInfo(value, id) {
+function updateInfo(value, username) {
     return {
         type: UPDATE_INFO,
         value,
-        id
+        username
     };
 }
 function setFavorites(value) {
@@ -23933,16 +23933,16 @@ function setFavorites(value) {
         value
     };
 }
-function addFavorite(id) {
+function addFavorite(username) {
     return {
         type: ADD_FAVORITE,
-        id
+        username
     };
 }
-function removeFavorite(id) {
+function removeFavorite(username) {
     return {
         type: REMOVE_FAVORITE,
-        id
+        username
     };
 }
 
@@ -24015,15 +24015,16 @@ class MainView extends _reactDefault.default.Component {
     //this.getFavoriteFilms = this.getFavoriteFilms(this);
     }
     //Fetch the list of movies from your database with MainView is mounted
+    //Fetch the list of movies from your database with MainView is mounted
     componentDidMount() {
         let accessToken = localStorage.getItem('token'); // get the value of the token from localStorage
         if (accessToken !== null) {
             this.setState({
                 isLoggedIn: !!accessToken
             }); // transform string to boolean 
-            this.getUser(localStorage.getItem('userID'), accessToken);
+            this.getUser(localStorage.getItem('user'), accessToken);
             this.getMovies(accessToken); // getMovies method is executed and a GET request to the movies endpoint
-            this.getFavoriteFilms(localStorage.getItem('userID'), accessToken);
+            this.getFavoriteFilms(localStorage.getItem('user'), accessToken);
         }
     }
     getMovies(token) {
@@ -24041,8 +24042,8 @@ class MainView extends _reactDefault.default.Component {
             console.log(error);
         });
     }
-    getUser(userID, token) {
-        _axiosDefault.default.get('https://myfavfilmz.herokuapp.com/users/' + userID, {
+    getUser(username, token) {
+        _axiosDefault.default.get('https://myfavfilmz.herokuapp.com/users/' + username, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -24052,24 +24053,25 @@ class MainView extends _reactDefault.default.Component {
             console.log(error);
         });
     }
-    getFavoriteFilms(userID, token) {
-        _axiosDefault.default.get('https://myfavfilmz.herokuapp.com/users/' + userID + '/Movies', {
+    getFavoriteFilms(token) {
+        const user = localStorage.getItem('user');
+        const username = user.Username;
+        console.log(user);
+        _axiosDefault.default.get('https://myfavfilmz.herokuapp.com/users/' + username + '/Movies', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         }).then((response)=>{
-            this.props.setFavorites(response.data);
             this.setState({
-                FavoriteMovies: response.data
+                FavoriteMovies: response.data.FavoriteMovies
             });
-            const data = response.data;
-        //console.log(data);
         }).catch(function(error) {
             console.log(error);
         });
     }
     updateUserInfo(event) {
         event.preventDefault();
+        console.log(user);
         const newUsername = document.querySelector('#username input');
         const newPassword = document.querySelector('#password input');
         const newEmail = document.querySelector('#email input');
@@ -24079,9 +24081,9 @@ class MainView extends _reactDefault.default.Component {
         const updatedEmail = newEmail.value;
         const updatedBirthday = newBirthday.value;
         const token = localStorage.getItem('token');
-        const userID = localStorage.getItem('userID');
+        const username = localStorage.getItem('user');
         console.log("update User", updatedUsername, updatedPassword, updatedEmail, updatedBirthday);
-        _axiosDefault.default.put('https://myfavfilmz.herokuapp.com/users/' + userID, {
+        _axiosDefault.default.put('https://myfavfilmz.herokuapp.com/users/' + username, {
             Username: updatedUsername,
             Password: updatedPassword,
             Email: updatedEmail,
@@ -24105,10 +24107,10 @@ class MainView extends _reactDefault.default.Component {
         const favoriteMovies = this.props.user.FavoriteMovies;
         const movieID = e.currentTarget.dataset.id;
         const token = localStorage.getItem('token');
-        const userID = localStorage.getItem('userID');
-        console.log("update Favorite Film", userID, movieID, favoriteMovies);
+        const username = localStorage.getItem('user');
+        console.log("update Favorite Film", username, movieID, favoriteMovies);
         if (favoriteMovies.indexOf(movieID) >= 0) alert("This movie is already in your favorites.");
-        else _axiosDefault.default.post('https://myfavfilmz.herokuapp.com/users/' + userID + '/Movies/' + movieID, {
+        else _axiosDefault.default.post('https://myfavfilmz.herokuapp.com/users/' + username + '/Movies/' + movieID, {
         }, {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -24124,9 +24126,9 @@ class MainView extends _reactDefault.default.Component {
         e.preventDefault();
         const movieID = e.currentTarget.dataset.id;
         const token = localStorage.getItem('token');
-        const userID = localStorage.getItem('userID');
-        console.log("update Favorite Film", userID, movieID);
-        _axiosDefault.default.delete('https://myfavfilmz.herokuapp.com/users/' + userID + '/Movies/' + movieID, {
+        const username = localStorage.getItem('user');
+        console.log("update Favorite Film", username, movieID);
+        _axiosDefault.default.delete('https://myfavfilmz.herokuapp.com/users/' + username + '/Movies/' + movieID, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -24140,9 +24142,9 @@ class MainView extends _reactDefault.default.Component {
     removeUser(event) {
         event.preventDefault();
         const token = localStorage.getItem('token');
-        const userID = localStorage.getItem('userID');
-        console.log("delete user", 'userID');
-        _axiosDefault.default.delete('https://myfavfilmz.herokuapp.com/users/' + userID, {
+        const username = localStorage.getItem('user');
+        console.log("delete user", 'username');
+        _axiosDefault.default.delete('https://myfavfilmz.herokuapp.com/users/' + username, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -24151,7 +24153,7 @@ class MainView extends _reactDefault.default.Component {
                 user: null
             });
             localStorage.removeItem('token');
-            localStorage.removeItem('userID');
+            localStorage.removeItem('user');
             console.log(response);
             alert("Your account has been deleted");
         }).catch((response)=>{
@@ -24177,7 +24179,7 @@ class MainView extends _reactDefault.default.Component {
     };
     onLoggedOut() {
         localStorage.removeItem('token');
-        localStorage.removeItem('userID');
+        localStorage.removeItem('user');
         this.setState({
             user: null
         });
@@ -24190,7 +24192,7 @@ class MainView extends _reactDefault.default.Component {
         return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 242,
+                lineNumber: 244,
                 columnNumber: 9
             },
             __self: this
@@ -24198,7 +24200,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view justify-content-center ml-0 mr-0 w-100 bg-dark",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 243,
+                lineNumber: 245,
                 columnNumber: 11
             },
             __self: this
@@ -24225,7 +24227,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 244,
+                lineNumber: 246,
                 columnNumber: 15
             },
             __self: this
@@ -24241,7 +24243,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 254,
+                lineNumber: 256,
                 columnNumber: 13
             },
             __self: this
@@ -24272,7 +24274,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 257,
+                lineNumber: 259,
                 columnNumber: 13
             },
             __self: this
@@ -24302,7 +24304,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 269,
+                lineNumber: 271,
                 columnNumber: 13
             },
             __self: this
@@ -24332,7 +24334,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 281,
+                lineNumber: 283,
                 columnNumber: 13
             },
             __self: this
@@ -24362,11 +24364,11 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 293,
+                lineNumber: 295,
                 columnNumber: 13
             },
             __self: this
-        }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+        }), "n", /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
             exact: true,
             path: "/users/:Username/edit_profile",
             render: ({ match , history  })=>{
@@ -24403,7 +24405,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 304,
+                lineNumber: 306,
                 columnNumber: 13
             },
             __self: this
@@ -24414,7 +24416,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 316,
+                lineNumber: 318,
                 columnNumber: 13
             },
             __self: this
@@ -24425,7 +24427,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 319,
+                lineNumber: 321,
                 columnNumber: 13
             },
             __self: this
@@ -34575,6 +34577,7 @@ const mapStateToProps = (state)=>{
 //create MovieView component
 function NavigationBar(props) {
     const { user , onLoggedOut , visibilityFilter  } = props;
+    console.log(user);
     return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
         __source: {
             fileName: "src/components/navigation-bar/navigation-bar.jsx",
