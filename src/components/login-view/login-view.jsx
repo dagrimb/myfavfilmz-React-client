@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { Link} from "react-router-dom";
 
-import '../../index.scss';
+import '../../../index.scss';
 import { Col } from 'react-bootstrap';
 import axios from 'axios';
 

@@ -53,7 +53,7 @@ WHAT YOUR **package.json** SHOULD LOOK LIKE
   "description": "",
   "homepage": "https://dagrimb.github.io/myfavfilmz-client",
   "scripts": {
-    "dev": "parcel src/index.html"
+    "dev": "parcel index.html"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -74,10 +74,10 @@ WHAT YOUR **package.json** SHOULD LOOK LIKE
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.0-beta.2",
-    "parcel": "^2.0.0-beta.2"
+    "@parcel/transformer-sass": "^2.3.2-beta.2",
+    "parcel": "^2.3.2-beta.2"
   },
-  "default": "src/index.html",
+  "default": "index.html",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dagrimb/myfavfilmz-client.git"
@@ -107,7 +107,7 @@ DOWNLOADS/INSTALATIONS (to avoid issues, please follow this guide in the specifi
 
 TO RUN THE PROJECT
 * Download the project and, in your terminal or CLI, navigate to the main (i.e. **myfavfilmz-client**) project directory
-* Run the client application using parcel: **myfavfilmz-client/src/index.html** (if this does not work, please try **npm run dev**)
+* Run the client application using parcel: **myfavfilmz-client/index.html** (if this does not work, please try **npm run dev**)
   * index.html serves as the entry point of the application
 
 Built By: David Grimberg

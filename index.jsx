@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import Container from 'react-bootstrap/Container';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import moviesApp from './reducers/reducers';
+import moviesApp from './src/reducers/reducers';
 
 
 
 import { devToolsEnhancer } from 'redux-devtools-extension';
 
-import MainView from './components/main-view/main-view';
+import MainView from './src/components/main-view/main-view';
 // Import statement that indicates the need to bundle `./index.scss`
 import './index.scss';
 

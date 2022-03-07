@@ -3,13 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "homepage": "https://dagrimb.github.io/myfavfilmz-client",
-  "scripts": {
-    "dev": "parcel src/index.html"
-  },
   "dependencies": {
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
-    "parcel": "^2.3.2",
     "postcss": "^8.2.15",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
@@ -26,10 +22,10 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.3.2",
+    "@parcel/transformer-sass": "^2.0.0-beta.3.1",
     "process": "^0.11.10"
   },
-  "default": "src/index.html",
+  "source": "index.html",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dagrimb/myfavfilmz-client.git"
