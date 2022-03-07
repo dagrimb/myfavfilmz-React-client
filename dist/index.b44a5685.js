@@ -996,7 +996,7 @@ _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElemen
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"6TuXu","react-dom":"gkWJK","react-bootstrap/Container":"2PRIq","redux":"4d0QS","react-redux":"2L0if","./src/reducers/reducers":"btgQW","redux-devtools-extension":"8GWVf","./src/components/main-view/main-view":"2zHas","./index.scss":"x6Esn","@parcel/transformer-js/src/esmodule-helpers.js":"51xWZ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1pmh1"}],"6TuXu":[function(require,module,exports) {
+},{"react":"6TuXu","react-dom":"gkWJK","react-bootstrap/Container":"2PRIq","redux":"4d0QS","react-redux":"2L0if","./src/reducers/reducers":"btgQW","redux-devtools-extension":"8GWVf","./src/components/main-view/main-view":"2zHas","./index.scss":"e3VJv","@parcel/transformer-js/src/esmodule-helpers.js":"51xWZ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1pmh1"}],"6TuXu":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react.development.js');
 
@@ -29136,7 +29136,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"6TuXu","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","prop-types":"1tgq3","react-bootstrap/Card":"MoOk8","react-bootstrap/InputGroup":"h6gtx","react-router-dom":"cpyQW","../../../index.scss":"33PyA","react-bootstrap":"h2YVd","axios":"iYoWk","@parcel/transformer-js/src/esmodule-helpers.js":"51xWZ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1pmh1"}],"5ykgY":[function(require,module,exports) {
+},{"react":"6TuXu","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","prop-types":"1tgq3","react-bootstrap/Card":"MoOk8","react-bootstrap/InputGroup":"h6gtx","react-router-dom":"cpyQW","../../../index.scss":"e3VJv","react-bootstrap":"h2YVd","axios":"iYoWk","@parcel/transformer-js/src/esmodule-helpers.js":"51xWZ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1pmh1"}],"5ykgY":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _extends = require("@babel/runtime/helpers/esm/extends");
@@ -30012,12 +30012,7 @@ var InputGroupWithExtras = _extendsDefault.default({
 });
 exports.default = InputGroupWithExtras;
 
-},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"3Rubg","@babel/runtime/helpers/esm/extends":"bKAu6","classnames":"bOXOh","react":"6TuXu","./createWithBsPrefix":"8AqEH","./ThemeProvider":"eeqfi","@parcel/transformer-js/src/esmodule-helpers.js":"51xWZ"}],"33PyA":[function(require,module,exports) {
-module.exports = height: 100%
-
-;
-
-},{}],"h2YVd":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"3Rubg","@babel/runtime/helpers/esm/extends":"bKAu6","classnames":"bOXOh","react":"6TuXu","./createWithBsPrefix":"8AqEH","./ThemeProvider":"eeqfi","@parcel/transformer-js/src/esmodule-helpers.js":"51xWZ"}],"e3VJv":[function() {},{}],"h2YVd":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Accordion", ()=>_accordionDefault.default
@@ -42538,11 +42533,6 @@ class UnderConstruction extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"51xWZ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1pmh1"}],"x6Esn":[function(require,module,exports) {
-module.exports = height: 100%
-
-;
-
-},{}]},["2aP3d","gHh5M","e84fU"], "e84fU", "parcelRequire936b")
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"51xWZ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1pmh1"}],"e3VJv":[function() {},{}]},["2aP3d","gHh5M","e84fU"], "e84fU", "parcelRequire936b")
 
 //# sourceMappingURL=index.b44a5685.js.map
