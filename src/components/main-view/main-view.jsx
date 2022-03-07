@@ -46,9 +46,9 @@ class MainView extends React.Component {
     let accessToken = localStorage.getItem('token'); // get the value of the token from localStorage
     if (accessToken !== null) {   // access token being present (i.e. "!==null") means that user is already logged in
       this.setState( { isLoggedIn: !!accessToken }); // transform string to boolean 
-      this.getUser(localStorage.getItem('user'), accessToken);
+      this.getUser(localStorage.getItem('username'), accessToken);
       this.getMovies(accessToken);  // getMovies method is executed and a GET request to the movies endpoint
-      this.getFavoriteFilms(localStorage.getItem('user'), accessToken);
+      this.getFavoriteFilms(localStorage.getItem('username'), accessToken);
       }
     }
     
@@ -73,17 +73,19 @@ class MainView extends React.Component {
         headers: { Authorization: `Bearer ${token}`}  
       })                                              
       .then(response => {
-        this.props.setUser(response.data);       
+        this.props.setUser(response.data); 
+        this.setState({
+          user: response.data
+        }) 
+        const data = response.data;
+        console.log(data);        
       })
       .catch(function (error) {
         console.log(error);
       });
     }
 
-    getFavoriteFilms(token) {
-      const user = localStorage.getItem('user');
-      const username = user.Username;
-      console.log(user);
+    getFavoriteFilms(username, token) {
       axios.get('https://myfavfilmz.herokuapp.com/users/' + username + '/Movies', {  
         headers: { Authorization: `Bearer ${token}`}   
       })                                              
@@ -111,7 +113,7 @@ class MainView extends React.Component {
       const updatedBirthday = newBirthday.value;
     
       const token = localStorage.getItem('token');
-      const username = localStorage.getItem('user');
+      const username = localStorage.getItem('username');
     
       console.log("update User", updatedUsername, updatedPassword, updatedEmail, updatedBirthday);
     
@@ -186,7 +188,7 @@ class MainView extends React.Component {
       event.preventDefault();
 
       const token = localStorage.getItem('token');
-      const username = localStorage.getItem('user');
+      const username = localStorage.getItem('username');
 
       console.log("delete user", 'username');
 
@@ -198,7 +200,7 @@ class MainView extends React.Component {
             user: null
           })
           localStorage.removeItem('token');
-          localStorage.removeItem('user');
+          localStorage.removeItem('username');
           console.log(response);
           alert("Your account has been deleted");
         })
@@ -209,15 +211,14 @@ class MainView extends React.Component {
 
     //Upon successful login, this method will update the user property with specific user
     onLoggedIn(authData) { // authData allows us to use both the user and the token; this is triggered when the user logs in...
-      //console.log("LOGIN", authData);
-      //this.props.setUser(authData);
+      console.log("LOGIN", authData);
+      this.props.setUser(authData);
       this.setState({
         user: authData.user // ...updates the state with the logged in authData (the user's username is saved in the user state)
       });
-      
       //auth info (token, user) received from handleSubmit method is saved in localStorage
       localStorage.setItem('token', authData.token);
-      localStorage.setItem('userID', authData.user._id);
+      localStorage.setItem('username', authData.user.Username);
       this.getMovies(authData.token); // is called and gets movies from API once user is logged in
     }
   
@@ -227,7 +228,7 @@ class MainView extends React.Component {
 
   onLoggedOut() {
     localStorage.removeItem('token');
-    localStorage.removeItem('user');
+    localStorage.removeItem('username');
     this.setState({
       user: null
     });
@@ -236,8 +237,8 @@ class MainView extends React.Component {
 
 
   render() {
-    const { movies, user } = this.props; // movies is extracted from this.props rather than this.state
-    //let { FavoriteMovies } = this.state;
+    const { movies} = this.props; // movies is extracted from this.props rather than this.state
+    let { FavoriteMovies, user } = this.state;
     console.log(user);
 
       return (
